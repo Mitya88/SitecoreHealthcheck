@@ -1,0 +1,52 @@
+﻿---
+ID: "f786904f-800d-4078-a337-e3095ee2b221"
+Parent: "14c2321a-c219-4a20-8ccb-b6963e183228"
+Template: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/API/Sample
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "11c04d55-70fc-4e03-b6a5-0229811ada44"
+      Hint: Name
+      Value: "Sample - google.com"
+    - ID: "155c02f4-b2b9-4d10-87bb-873b4d595cb9"
+      Hint: Post Body
+      Value: 
+    - ID: "244f889d-68af-41e3-b58d-1b191eb85e2c"
+      Hint: Expected Response Code
+      Value: 200
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200321T094752Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20200430T070024Z
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "5f1dc678-41b9-40dd-b3af-a71d8db3b612"
+      Hint: API Url
+      Value: "https://google.com"
+    - ID: "69ba1b83-0aa0-4298-b3b2-039f3e64fbb0"
+      Hint: Expected Response Body
+      Value: 
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: API endpoint looks OK
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Healthy
+    - ID: "cddface5-85e5-41ca-99ce-7ed5c4bb61c1"
+      Hint: Method
+      Value: GET
+    - ID: "dda84c75-5e8d-407f-a3a9-d8bd56a5c9fd"
+      Hint: Request Headers
+      Value: 

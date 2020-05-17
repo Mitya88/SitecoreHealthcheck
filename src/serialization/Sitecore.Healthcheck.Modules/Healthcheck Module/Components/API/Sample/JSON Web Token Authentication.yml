@@ -1,0 +1,18 @@
+﻿---
+ID: "4786ada4-8124-407c-ac7d-0cae54321aa7"
+Parent: "f786904f-800d-4078-a337-e3095ee2b221"
+Template: "3665cb86-4a00-4495-9a44-3ef7e3273beb"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/API/Sample/JSON Web Token Authentication
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200505T091307Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

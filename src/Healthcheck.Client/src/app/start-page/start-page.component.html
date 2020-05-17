@@ -1,0 +1,160 @@
+<div class="card mb-3">
+  <div class="card-block main-menu-item">
+    <div class="row">
+     
+      <div class="col-2">
+        <button scButton="primary" (click)="load()">Refresh</button>
+        <button scButton="secondary" (click)="run()">Re run</button>
+        <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate">Export state</a><br><br>
+        <h5>State Filter</h5>
+        <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
+          <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
+        </select>
+        <br/>
+        <div class="radio">
+          <label><input type="radio" name="mode" [value]="false" [(ngModel)]="isTableView">&nbsp; Normal</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="mode" [value]="true" [(ngModel)]="isTableView">&nbsp; Table</label>
+        </div>
+      </div>
+      
+      <div class="col-2" >
+        <h5 class="center">Current State</h5>
+        <canvas id="myChart" ></canvas>
+      </div>
+      <div class="col-4">
+        
+       
+      </div>  
+    </div>
+  </div>
+</div>
+<sc-progress-indicator-panel *ngIf="isLoading" [show]="isLoading">
+
+</sc-progress-indicator-panel>
+<div *ngIf="response && !isLoading && !isTableView">
+  <div *ngFor='let group of response'>
+    <div class="row">
+      <h4 class="group-name">{{group.GroupName}}</h4>
+    </div>
+    <div class="row">
+
+      <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
+        <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
+          <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
+          </sc-progress-indicator-panel>
+          <div class="card-block main-menu-item" *ngIf="!component.isLoading">
+            <span class="left title">{{component.Name}} </span><span class="right"
+              title="Error count">{{component.ErrorCount}}</span>
+            <span class="clear"></span>
+            <div class="health-icon center">
+              <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="close" size="xxxlarge"></sc-icon>
+              <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
+              <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
+              </sc-icon>
+            </div>
+
+            <p>{{component.LastCheckTime | date:'medium' }}</p>
+            <p class="healthy-message" *ngIf="component.Status=='Healthy'" title="{{component.HealthyMessage}}">
+              {{component.HealthyMessage}}</p>
+            <p class="healthy-message" *ngIf="component.Status!='Healthy'">&nbsp;</p>
+            <div>
+              <a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}">Download
+                logs</a>
+            </div>
+            <div class="tooltip2">Issues
+              <div class="tooltiptext2" *ngIf="component.ErrorCount > 0">
+                <h3>Most recent issues</h3>
+                <h4><a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}">Download
+                  All</a></h4>
+                <div class="row padding-left-15 margin-bottom-15" *ngFor='let error of component.ErrorList.Entries'>
+                  <div class="col-8" title="{{error.Reason}}" *ngIf="error.Reason.length>100">
+                    {{error.Reason.substr(0, 100) + '\u2026'}}
+                  </div>
+                  <div class="col-8" *ngIf="error.Reason.length<=100">
+                    {{error.Reason}}
+                  </div>
+                  <div class="col-4">
+                    {{error.Created  | date:'medium' }}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+<div *ngIf="response && !isLoading && isTableView">
+ 
+    <div class="row">
+      <table scTable>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Component Name</th>
+            <th class="width-1">#</th>
+            <th class="width-1">Error Count</th>
+            <th>Message</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template ngFor let-group [ngForOf]="response" let-ruleIndex="index">
+          <template ngFor let-component [ngForOf]="group.Components" let-clauseIndex="index">
+            <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
+            </sc-progress-indicator-panel>
+            <tr (dblclick)="doubleClick(component)" *ngIf="!component.isLoading && component.Display">
+              <td>{{group.GroupName}}</td>
+              <td>{{component.Name}}</td>
+              <td class="center"> <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="close" size="medium"></sc-icon>
+                <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="medium"></sc-icon>
+                <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="medium"></sc-icon></td>
+                <td ><div class="tooltip3"><p class="red bold center margin-center">{{component.ErrorCount}}</p>
+                  <div class="tooltiptext2" *ngIf="component.ErrorCount > 0">
+                    <h3>Most recent issues</h3>
+                    <h4><a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}">Download
+                      All</a></h4>
+                    <div class="row padding-left-15 margin-bottom-15" *ngFor='let error of component.ErrorList.Entries'>
+                      <div class="col-8" title="{{error.Reason}}" *ngIf="error.Reason.length>100">
+                        {{error.Reason.substr(0, 100) + '\u2026'}}
+                      </div>
+                      <div class="col-8" *ngIf="error.Reason.length<=100">
+                        {{error.Reason}}
+                      </div>
+                      <div class="col-4">
+                        {{error.Created  | date:'medium' }}
+                      </div>
+                    </div>
+    
+                  </div>
+    
+                </div></td>
+                <td>  <p *ngIf="component.Status=='Healthy'" class="margin-center" title="{{component.HealthyMessage}}">
+                    {{component.HealthyMessage}}</p>
+                  
+                    <p class="red bold margin-center" title="{{component.ErrorList.Entries[0].Reason}}" *ngIf="component.Status!='Healthy' && component.ErrorList && component.ErrorList.Entries.length > 0 && component.ErrorList.Entries[0].Reason && component.ErrorList.Entries[0].Reason.length>160">
+                      {{component.ErrorList.Entries[0].Reason.substr(0, 160) + '\u2026'}}
+                    </p>
+                    <p class="red bold margin-center" *ngIf="component.Status!='Healthy' && component.ErrorList && component.ErrorList.Entries.length > 0 && component.ErrorList.Entries[0].Reason && component.ErrorList.Entries[0].Reason.length<=160">
+                      {{component.ErrorList.Entries[0].Reason}}
+                    </p></td>
+            
+              <td> <a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}">Download
+                logs</a></td>
+            </tr>
+          </template>
+      </template>
+          
+        </tbody>
+      </table>
+    </div>
+
+
+</div>
+  

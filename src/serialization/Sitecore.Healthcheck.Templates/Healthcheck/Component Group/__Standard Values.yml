@@ -1,0 +1,40 @@
+﻿---
+ID: "58969bf1-f662-49b1-8018-8064afa76c8c"
+Parent: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Template: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Group/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {591A1DB4-6DA9-4868-BC9D-E044C3FBD759}
+    {3D561F80-51F0-4101-A5ED-F1A59EF91FF5}
+    {5762DB9B-ABDF-42E6-8747-681CE2E09573}
+    {F216E7C7-E9A4-4B24-99C7-07BF6729B085}
+    {03F72A84-A9BC-4CBD-ADDA-E9CA8871C22B}
+    {C2B000AB-7BBC-41E4-93A9-8730BBD99D90}
+    {A1EFBB73-039A-415B-8755-B2E93AFF1D60}
+    {5C879C2D-6E9A-480C-8A8A-19BB26AC0257}
+    {647ECE63-2BD1-4682-A302-90920CB85159}
+    {0808AD04-66FC-4839-AC86-6F8F58FCFCFB}
+    {A64F4366-3D8B-4EC5-9417-F44AC6030951}
+    {7EEB1FB3-6A23-46CB-9D43-8919BF4A7BFB}
+    {DA5D3DBF-6226-456C-BCF4-CFD5D4F7B2AC}
+    {72BF1985-2340-467E-A687-833E8B2E6FE5}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0d5613ef-81f3-433f-9957-e35f4fade6f7"
+      Hint: Name
+      Value: $name
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200321T093453Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

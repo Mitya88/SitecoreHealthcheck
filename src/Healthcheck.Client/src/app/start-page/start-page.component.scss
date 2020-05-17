@@ -1,0 +1,140 @@
+.health{
+    background-color: green !important;
+    display:block;
+}
+
+.center{
+    text-align:center;
+}
+
+.left{
+    float: left;
+    display: block;
+     font-size: 1.2rem;
+    font-weight: 600;
+}
+.right{
+   text-align: right;
+   display: block;
+   font-size: 1.2rem;
+   color:red;
+   font-weight: 800;
+
+  
+}
+
+.right-title{
+    text-align:right;
+    display: block;
+    font-size: 1.5rem;
+}
+
+.clear{
+    clear: both;
+}
+
+.group-name{
+    padding-left:17px;
+}
+
+.ht{
+    display:block;
+}
+
+.tooltip2 {
+    position: relative;
+     display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  .tooltip3 {
+    position: relative;
+  }
+  
+  .tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    // visibility: visible;
+     width: 600px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  .tooltip3 .tooltiptext2 {
+    visibility: hidden;
+    // visibility: visible;
+     width: 600px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .padding-left-15{
+    padding-left:15px;
+  }
+
+  .margin-bottom-15{
+    margin-bottom:15px;
+  }
+  
+  .tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+  }
+
+  .tooltip3:hover .tooltiptext2 {
+    visibility: visible;
+  }
+
+  .healthy-message{
+    width: 15em;
+    text-overflow: ellipsis;
+  
+  /**
+   * Required properties to achieve text-overflow
+   */
+      white-space: nowrap;
+    overflow: hidden;
+  }
+
+  input[type="radio"] {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+
+  tbody{
+    tr{
+        td{
+        padding:0;
+        padding-left:4px;
+        margin:0;
+        height:1.8rem;
+        vertical-align: middle;
+        }
+    }
+}
+
+.width-1{
+  width:1px;
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.red{
+  color:red;
+}
+
+.margin-center{
+  margin: 0 auto;
+}

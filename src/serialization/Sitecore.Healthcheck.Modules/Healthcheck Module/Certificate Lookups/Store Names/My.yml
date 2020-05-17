@@ -1,0 +1,18 @@
+﻿---
+ID: "1f211331-3cf8-4b6f-b54f-8dab8b515601"
+Parent: "2b6602ba-271a-402f-87d7-aec64f9af429"
+Template: "3308e120-ad83-463d-b3db-56d0f1703242"
+Path: /sitecore/system/Modules/Healthcheck Module/Certificate Lookups/Store Names/My
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200421T142536Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

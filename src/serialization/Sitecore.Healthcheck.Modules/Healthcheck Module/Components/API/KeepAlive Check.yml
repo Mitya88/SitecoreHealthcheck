@@ -1,0 +1,27 @@
+﻿---
+ID: "3a0ca106-60d4-4353-b7a0-5f050e237fb2"
+Parent: "14c2321a-c219-4a20-8ccb-b6963e183228"
+Template: "a1efbb73-039a-415b-8755-b2e93aff1d60"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/API/KeepAlive Check
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200507T105043Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20200507T085824Z
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: 
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Healthy

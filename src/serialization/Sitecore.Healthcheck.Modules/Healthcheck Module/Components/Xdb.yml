@@ -1,0 +1,21 @@
+﻿---
+ID: "4dac9b7c-6b33-4ad0-95e8-52a8c4903bb2"
+Parent: "aa16ef54-4954-4b4b-9056-537f97e9ee0f"
+Template: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Xdb
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0d5613ef-81f3-433f-9957-e35f4fade6f7"
+      Hint: Name
+      Value: Xdb
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200321T093557Z

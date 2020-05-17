@@ -1,0 +1,18 @@
+﻿---
+ID: "14c84713-2859-4ce4-ae7b-90a4cdb2531a"
+Parent: "f6eeb40e-0aa2-47b7-9f50-9d7da265d49c"
+Template: "3308e120-ad83-463d-b3db-56d0f1703242"
+Path: /sitecore/system/Modules/Healthcheck Module/Certificate Lookups/Locations/CurrentUser
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200421T142428Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

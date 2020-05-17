@@ -1,0 +1,30 @@
+﻿---
+ID: "57ce2ef1-c615-4174-9953-3fdb788826a9"
+Parent: "4dac9b7c-6b33-4ad0-95e8-52a8c4903bb2"
+Template: "a64f4366-3d8b-4ec5-9417-f44ac6030951"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Xdb/XConnect Search Indexer
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200420T080031Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20200430T070024Z
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "590f1268-3005-43c1-ac6b-4efe83ae306a"
+      Hint: Service Name
+      Value: "sc92Test.xconnect.local-IndexWorker"
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: The service is running
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Error

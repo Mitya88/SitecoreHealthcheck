@@ -1,0 +1,37 @@
+﻿---
+ID: "4797f92e-9210-49ae-b7bd-ca9185dd9040"
+Parent: "e7806750-ea93-40d5-b554-9ab4274ef532"
+Template: "5c879c2d-6e9a-480c-8a8a-19bb26ac0257"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/License/License Check
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200416T123704Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20200430T090024
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "43b7ce89-2cb0-4ea9-8868-cb627179cc80"
+      Hint: WarnBefore
+      Value: 100
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: License is ok.
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Healthy
+    - ID: "e694131c-14d8-4507-950c-bf867ced47db"
+      Hint: ErrorBefore
+      Value: 30

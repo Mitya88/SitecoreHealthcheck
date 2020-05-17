@@ -1,0 +1,16 @@
+<sc-page [showNav]="isNavigationShown">
+  <div scPageHeader>
+    <sc-global-header appName="Sitecore Healthcheck" [(show)]="isNavigationShown">
+      <a href="/sitecore/shell/sitecore/client/Applications/Launchpad" scGlobalLogo></a>
+      <!-- AccountInformation gets accountName and accountImageUrl automatically from Sitecore context which is configured in AppModule -->
+      <sc-account-information (logout)="logoutService.logout()"></sc-account-information>
+    </sc-global-header>
+  </div>
+
+   <div scPageAppHeader>
+    <sc-application-header text="Advanced Sitecore Healthcheck"></sc-application-header>
+  </div>
+  <article scPageContent class="p-4">
+    <router-outlet></router-outlet>
+  </article>
+</sc-page>

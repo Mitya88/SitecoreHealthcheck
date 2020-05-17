@@ -1,0 +1,34 @@
+﻿---
+ID: "6d02f91f-9496-4b91-94c2-3724a044583c"
+Parent: "cebdc47d-b21f-492e-888c-cfd80cab7588"
+Template: "03f72a84-a9bc-4cbd-adda-e9ca8871c22b"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Databases/web
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0970cc09-5523-4757-8759-58b23a95931b"
+      Hint: Connectionstring Key
+      Value: web
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200321T094240Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20200430T070024Z
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: Database Connection is OK
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Healthy
