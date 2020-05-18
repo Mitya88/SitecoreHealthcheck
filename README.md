@@ -40,6 +40,9 @@ The repository contains source code and documentation for the Advanced Sitecore 
 
 # Introduction
 
+* [BlogPost](https://tinyurl.com/ybq26ay8)
+* [Demo Video](https://www.youtube.com/watch?v=J_qk7jT_Y-U)
+
 ## Purpose
 The purpose of this module to check up Sitecore components if they are working correctly and notify the devs/devops engineers in time about a possible failure or just send a reminder about some upcoming expiration (e.g licence or certificate)
 
