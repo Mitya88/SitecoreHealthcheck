@@ -5,7 +5,7 @@
       <div class="col-2">
         <button scButton="primary" (click)="load()">Refresh</button>
         <button scButton="secondary" (click)="run()">Re run</button>
-        <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate">Export state</a><br><br>
+        <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a><br><br>
         <h5>State Filter</h5>
         <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
           <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
@@ -60,13 +60,13 @@
               {{component.HealthyMessage}}</p>
             <p class="healthy-message" *ngIf="component.Status!='Healthy'">&nbsp;</p>
             <div>
-              <a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}">Download
+              <a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}&sc_site=shell">Download
                 logs</a>
             </div>
             <div class="tooltip2">Issues
               <div class="tooltiptext2" *ngIf="component.ErrorCount > 0">
                 <h3>Most recent issues</h3>
-                <h4><a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}">Download
+                <h4><a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}&sc_site=shell">Download
                   All</a></h4>
                 <div class="row padding-left-15 margin-bottom-15" *ngFor='let error of component.ErrorList.Entries'>
                   <div class="col-8" title="{{error.Reason}}" *ngIf="error.Reason.length>100">

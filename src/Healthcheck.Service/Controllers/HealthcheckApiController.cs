@@ -60,7 +60,7 @@
         public List<ComponentGroup> Run()
         {
             this.healthcheckService.RunHealthcheck();
-            return this.healthcheckRepository.GetHealthcheck();
+            return this.LimitErrorEntries(this.healthcheckRepository.GetHealthcheck());
         }
 
         /// <summary>

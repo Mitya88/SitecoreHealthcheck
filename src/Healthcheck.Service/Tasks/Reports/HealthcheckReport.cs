@@ -4,6 +4,7 @@
     using Healthcheck.Service.Extensions;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
+    using Sitecore.Globalization;
     using Sitecore.Web;
 
     /// <summary>Creates the healthcheck report.</summary>
@@ -26,10 +27,13 @@
         /// <summary>Sends the email report.</summary>
         public void SendEmailReport()
         {
-            var body = GenerateReportBody();
-            var emailSettings = new SettingsModel();
+            using (new LanguageSwitcher(Language.Parse("en")))
+            {
+                var body = GenerateReportBody();
+                var emailSettings = new SettingsModel();
 
-            emailService.SendEmail(emailSettings.SenderEmail, emailSettings.RecipientEmails, emailSettings.Subject, body);
+                emailService.SendEmail(emailSettings.SenderEmail, emailSettings.RecipientEmails, emailSettings.Subject, body);
+            }
         }
 
         /// <summary>Generates the report body.</summary>

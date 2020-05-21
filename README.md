@@ -60,6 +60,12 @@ The purpose of this module to check up Sitecore components if they are working c
 ## Releases
 - 1.0  - [package](sc.package/Advanced.Sitecore.Healthcheck-1.0.zip)
   - Initial Release
+  - Hotfix for initial release [package](sc.package/Advanced.Sitecore.Healthcheck.Hotfix.20200521-1.0.zip)
+  - Download and install the hotfix package. (It only contains file changes, it will not update your configured items)
+    - **Fixes**
+    - 'ReRun' option returned wrong orders of error entries
+    - Added ?sc_site=shell querystring to each API call, it makes sure to using proper site 
+    - Added language switcher, the healtcheck may not work properly if your Default Content Language is not 'en'
 
 ## Installation
 

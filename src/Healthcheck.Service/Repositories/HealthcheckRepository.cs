@@ -6,6 +6,7 @@
     using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Items;
+    using Sitecore.Globalization;
     using Sitecore.SecurityModel;
     using System.Collections.Generic;
     using System.Linq;
@@ -24,20 +25,22 @@
         public List<ComponentGroup> GetHealthcheck()
         {
             List<ComponentGroup> groups = new List<ComponentGroup>();
-
-            using (new DatabaseSwitcher(Factory.GetDatabase("master")))
+            using (new LanguageSwitcher(Language.Parse("en")))
             {
-                using (new SecurityDisabler())
+                using (new DatabaseSwitcher(Factory.GetDatabase("master")))
                 {
-                    List<BaseComponent> components = new List<BaseComponent>();
-                    var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Constants.ComponentsRootFolderId));
-
-                    foreach (Item componentGroup in componentsFolder.Children)
+                    using (new SecurityDisabler())
                     {
-                        var group = new ComponentGroup();
-                        group.GroupName = componentGroup["Name"];
-                        group.Components = componentGroup.Children.Select(t => new ComponentHealth(t)).ToList();
-                        groups.Add(group);
+                        List<BaseComponent> components = new List<BaseComponent>();
+                        var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Constants.ComponentsRootFolderId));
+
+                        foreach (Item componentGroup in componentsFolder.Children)
+                        {
+                            var group = new ComponentGroup();
+                            group.GroupName = componentGroup["Name"];
+                            group.Components = componentGroup.Children.Select(t => new ComponentHealth(t)).ToList();
+                            groups.Add(group);
+                        }
                     }
                 }
             }
@@ -53,14 +56,16 @@
         public ComponentHealth GetHealthcheck(string id)
         {
             List<ComponentGroup> groups = new List<ComponentGroup>();
-
-            using (new DatabaseSwitcher(Factory.GetDatabase("master")))
+            using (new LanguageSwitcher(Language.Parse("en")))
             {
-                using (new SecurityDisabler())
+                using (new DatabaseSwitcher(Factory.GetDatabase("master")))
                 {
-                    var component = Sitecore.Context.Database.GetItem(new ID(id));
+                    using (new SecurityDisabler())
+                    {
+                        var component = Sitecore.Context.Database.GetItem(new ID(id));
 
-                    return new ComponentHealth(component);
+                        return new ComponentHealth(component);
+                    }
                 }
             }
         }
@@ -74,27 +79,30 @@
         /// </returns>
         public string GenerateErrorReport(string id)
         {
-            using (new DatabaseSwitcher(Factory.GetDatabase("master")))
+            using (new LanguageSwitcher(Language.Parse("en")))
             {
-                using (new SecurityDisabler())
+                using (new DatabaseSwitcher(Factory.GetDatabase("master")))
                 {
-                    var component = Sitecore.Context.Database.GetItem(new ID(id));
-
-                    var componentHealth = new ComponentHealth(component);
-
-                    StringBuilder sb = new StringBuilder();
-
-                    sb.AppendLine("Created,Reason,Exception");
-
-                    foreach (var error in componentHealth.ErrorList.Entries.OrderByDescending(t => t.Created))
+                    using (new SecurityDisabler())
                     {
-                        sb.AppendLine(string.Format("{0},{1},{2}",
-                            EscapeSpecialCharacters(error.Created.ToString()),
-                             EscapeSpecialCharacters(error.Reason),
-                            EscapeSpecialCharacters(error.Exception != null ? error.Exception.ToString() : string.Empty)));
-                    }
+                        var component = Sitecore.Context.Database.GetItem(new ID(id));
 
-                    return sb.ToString();
+                        var componentHealth = new ComponentHealth(component);
+
+                        StringBuilder sb = new StringBuilder();
+
+                        sb.AppendLine("Created,Reason,Exception");
+
+                        foreach (var error in componentHealth.ErrorList.Entries.OrderByDescending(t => t.Created))
+                        {
+                            sb.AppendLine(string.Format("{0},{1},{2}",
+                                EscapeSpecialCharacters(error.Created.ToString()),
+                                 EscapeSpecialCharacters(error.Reason),
+                                EscapeSpecialCharacters(error.Exception != null ? error.Exception.ToString() : string.Empty)));
+                        }
+
+                        return sb.ToString();
+                    }
                 }
             }
         }
@@ -107,28 +115,31 @@
         /// </returns>
         public string GenerateReport()
         {
-            using (new DatabaseSwitcher(Factory.GetDatabase("master")))
+            using (new LanguageSwitcher(Language.Parse("en")))
             {
-                using (new SecurityDisabler())
+                using (new DatabaseSwitcher(Factory.GetDatabase("master")))
                 {
-                    StringBuilder sb = new StringBuilder();
-
-                    sb.AppendLine("Group,Component,Status,LastCheckTime,Message");
-
-                    foreach (var group in this.GetHealthcheck())
+                    using (new SecurityDisabler())
                     {
-                        foreach (var component in group.Components)
-                        {
-                            sb.AppendLine(string.Format("{0},{1},{2},{3},{4}",
-                                EscapeSpecialCharacters(group.GroupName),
-                                EscapeSpecialCharacters(component.Name),
-                                EscapeSpecialCharacters(component.Status.ToString()),
-                                EscapeSpecialCharacters(component.LastCheckTime.ToString()),
-                                EscapeSpecialCharacters(component.Status == Customization.HealthcheckStatus.Healthy ? component.HealthyMessage : component.ErrorList.Entries.OrderByDescending(t => t.Created).FirstOrDefault().Reason)));
-                        }
-                    }
+                        StringBuilder sb = new StringBuilder();
 
-                    return sb.ToString();
+                        sb.AppendLine("Group,Component,Status,LastCheckTime,Message");
+
+                        foreach (var group in this.GetHealthcheck())
+                        {
+                            foreach (var component in group.Components)
+                            {
+                                sb.AppendLine(string.Format("{0},{1},{2},{3},{4}",
+                                    EscapeSpecialCharacters(group.GroupName),
+                                    EscapeSpecialCharacters(component.Name),
+                                    EscapeSpecialCharacters(component.Status.ToString()),
+                                    EscapeSpecialCharacters(component.LastCheckTime.ToString()),
+                                    EscapeSpecialCharacters(component.Status == Customization.HealthcheckStatus.Healthy ? component.HealthyMessage : component.ErrorList.Entries.OrderByDescending(t => t.Created).FirstOrDefault().Reason)));
+                            }
+                        }
+
+                        return sb.ToString();
+                    }
                 }
             }
         }

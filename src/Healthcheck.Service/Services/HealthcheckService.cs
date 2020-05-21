@@ -5,6 +5,7 @@
     using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Items;
+    using Sitecore.Globalization;
     using Sitecore.SecurityModel;
     using System;
     using System.Collections.Concurrent;
@@ -49,59 +50,62 @@
         /// <param name="id">The identifier.</param>
         public void RunHealthcheck(string id = null)
         {
-            var maximumNumberOfThreads = Settings.GetIntSetting(maxNumberOfThreadsSettingsKey, 1);
-
-            var queue = new ConcurrentQueue<BaseComponent>();
-
-            using (new DatabaseSwitcher(Factory.GetDatabase("master")))
+            using (new LanguageSwitcher(Language.Parse("en")))
             {
-                using (new SecurityDisabler())
+                var maximumNumberOfThreads = Settings.GetIntSetting(maxNumberOfThreadsSettingsKey, 1);
+
+                var queue = new ConcurrentQueue<BaseComponent>();
+
+                using (new DatabaseSwitcher(Factory.GetDatabase("master")))
                 {
-                    var settingsItem = Sitecore.Context.Database.GetItem(new ID(Constants.SettingsItemId));
-
-                    int numberOfDaysToKeepLogs = 0;
-
-                    if(!int.TryParse(settingsItem["Days"], out numberOfDaysToKeepLogs))
+                    using (new SecurityDisabler())
                     {
+                        var settingsItem = Sitecore.Context.Database.GetItem(new ID(Constants.SettingsItemId));
 
-                        numberOfDaysToKeepLogs = DefaultNumberOfDaysToKeepLogs;
-                    }
+                        int numberOfDaysToKeepLogs = 0;
 
-                    var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Constants.ComponentsRootFolderId));
-
-                    foreach (Item item in componentsFolder.Axes.GetDescendants())
-                    {
-                        if (!string.IsNullOrEmpty(id) && !item.ID.ToString().Equals(id, System.StringComparison.OrdinalIgnoreCase))
+                        if (!int.TryParse(settingsItem["Days"], out numberOfDaysToKeepLogs))
                         {
-                            continue;
+
+                            numberOfDaysToKeepLogs = DefaultNumberOfDaysToKeepLogs;
                         }
 
-                        var component = componentFactory.CreateComponent(item);
+                        var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Constants.ComponentsRootFolderId));
 
-                        if (component != null)
+                        foreach (Item item in componentsFolder.Axes.GetDescendants())
                         {
-                            queue.Enqueue(component);
-                        }
-                    }
-
-                    List<Action> actions = new List<Action>();
-
-                    for (int i = 0; i < maximumNumberOfThreads; i++)
-                    {
-                        Action action = () =>
-                        {
-                            BaseComponent component;
-                            while (queue.TryDequeue(out component))
+                            if (!string.IsNullOrEmpty(id) && !item.ID.ToString().Equals(id, System.StringComparison.OrdinalIgnoreCase))
                             {
-                                component.RunHealthcheck();
-                                component.SaveHealthcheckResult(numberOfDaysToKeepLogs);
+                                continue;
                             }
-                        };
 
-                        actions.Add(action);
+                            var component = componentFactory.CreateComponent(item);
+
+                            if (component != null)
+                            {
+                                queue.Enqueue(component);
+                            }
+                        }
+
+                        List<Action> actions = new List<Action>();
+
+                        for (int i = 0; i < maximumNumberOfThreads; i++)
+                        {
+                            Action action = () =>
+                            {
+                                BaseComponent component;
+                                while (queue.TryDequeue(out component))
+                                {
+                                    component.RunHealthcheck();
+                                    component.SaveHealthcheckResult(numberOfDaysToKeepLogs);
+                                }
+                            };
+
+                            actions.Add(action);
+                        }
+
+                        Parallel.Invoke(actions.ToArray());
                     }
-
-                    Parallel.Invoke(actions.ToArray());
                 }
             }
         }
