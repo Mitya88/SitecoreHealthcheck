@@ -2,10 +2,12 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Models;
+    using Sitecore.Configuration;
     using Sitecore.ContentSearch;
     using Sitecore.ContentSearch.Linq;
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.ContentSearch.Utilities;
+    using Sitecore.Data;
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Generic;
@@ -98,7 +100,7 @@
             try
             {
                 IQueryable<SearchResultItem> query = null;
-                
+
                 using (var context = index.CreateSearchContext())
                 {
                     if (string.IsNullOrEmpty(CustomQuery))
@@ -108,11 +110,13 @@
                     else
                     {
                         var stringModel = SearchStringModel.ExtractSearchQuery(CustomQuery);
-                        query = LinqHelper.CreateQuery<SearchResultItem>(context, stringModel);
+                        using (var switcher = new DatabaseSwitcher(Factory.GetDatabase("master")))
+                        {
+                            query = LinqHelper.CreateQuery<SearchResultItem>(context, stringModel);
+                        }
                     }
 
-                    var results = query.GetResults();
-                    totalResults = results.TotalSearchResults;
+                    totalResults = query.Count();
                 }
 
                 if (MinimumExpectedDocumentsCount > totalResults)

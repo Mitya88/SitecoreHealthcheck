@@ -66,6 +66,10 @@ The purpose of this module to check up Sitecore components if they are working c
     - 'ReRun' option returned wrong orders of error entries
     - Added ?sc_site=shell querystring to each API call, it makes sure to using proper site 
     - Added language switcher, the healtcheck may not work properly if your Default Content Language is not 'en'
+- 1.0.1 - [package](sc.package/Advanced.Sitecore.Healthcheck-1.0.1.zip)
+  - Contains hotfix #1
+  - Fixing performance issue in Search Component check
+  - Fixing an issue in Search Component Check - exception has been throwed when 'Run' button was clicked in the application
 
 ## Installation
 
