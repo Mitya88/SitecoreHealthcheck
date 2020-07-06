@@ -239,6 +239,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\ApiHealthCheck.cs" />
+    <Compile Include="Domain\LocalDisk\DriveDetails.cs" />
+    <Compile Include="Domain\LocalDisk\LocalDiskSpaceCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
     <Compile Include="Domain\WebJobCheck.cs" />
     <Compile Include="Domain\KeepAliveCheck.cs" />

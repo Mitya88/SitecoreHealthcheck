@@ -109,6 +109,11 @@
             /// The queue check template name
             /// </summary>
             public const string QueueCheckTemplateName = "Queue Check";
+
+            /// <summary>
+            /// The local disk space check template name
+            /// </summary>
+            public const string LocalDiskSpaceCheckTemplateName = "LocalDisk Space Check";
         }
     }
 }

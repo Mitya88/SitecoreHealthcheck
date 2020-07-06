@@ -1,6 +1,7 @@
 ﻿namespace Healthcheck.Service.Factories
 {
     using Healthcheck.Service.Domain;
+    using Healthcheck.Service.Domain.LocalDisk;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Data.Items;
     using System;
@@ -76,6 +77,11 @@
             else if (item.TemplateName.Equals(Constants.TemplateNames.QueueCheckTemplateName))
             {
                 return new QueueCheck(item);
+            }
+
+            else if (item.TemplateName.Equals(Constants.TemplateNames.LocalDiskSpaceCheckTemplateName))
+            {
+                return new LocalDiskSpaceCheck(item);
             }
 
             return null;
