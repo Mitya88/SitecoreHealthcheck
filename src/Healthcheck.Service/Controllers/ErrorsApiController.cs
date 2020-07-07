@@ -64,21 +64,8 @@ namespace Healthcheck.Service.Controllers
 
                     if (item != null)
                     {
-                        // get last error entry
-                        var indexOfLastEntry = componentHealth.ErrorList.Entries.Count - 1;
-
-                        if (indexOfLastEntry > -1)
-                        {
-                            var lastErrorEntry = componentHealth.ErrorList.Entries[indexOfLastEntry];
-
-                            // clear the error list and add the last entry
-                            componentHealth.ErrorList.Entries.Clear();
-                            componentHealth.ErrorList.Entries.Add(lastErrorEntry);
-                            componentHealth.ErrorCount = componentHealth.ErrorList.Entries.Count;
-
-                            // save component
-                            componentHealth.SaveComponent(item);
-                        }
+                        componentHealth.ClearButLastErrorEntry();
+                        componentHealth.SaveComponent(item);
                     }
                 } 
             }

@@ -132,5 +132,24 @@
                 }
             }
         }
+
+        /// <summary>
+        /// Clears all errors entry but last
+        /// </summary>
+        public void ClearButLastErrorEntry()
+        {
+            // get last error entry
+            var indexOfLastEntry = this.ErrorList.Entries.Count - 1;
+
+            if (indexOfLastEntry > -1)
+            {
+                var lastErrorEntry = this.ErrorList.Entries[indexOfLastEntry];
+
+                // clear the error list and add the last entry
+                this.ErrorList.Entries.Clear();
+                this.ErrorList.Entries.Add(lastErrorEntry);
+                this.ErrorCount = this.ErrorList.Entries.Count;
+            }
+        }
     }
 }
