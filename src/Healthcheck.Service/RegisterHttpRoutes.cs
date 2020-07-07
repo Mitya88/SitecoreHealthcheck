@@ -1,10 +1,6 @@
 ﻿namespace Healthcheck.Service
 {
     using Sitecore.Pipelines;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Http;
     using System.Web.Routing;
 
@@ -24,6 +20,10 @@
             RouteTable.Routes.MapHttpRoute("HealthcheckComponent",
                 "sitecore/api/ssc/healthcheck/{action}/{id}",
                 new { controller = "HealthcheckApi" });
+
+            RouteTable.Routes.MapHttpRoute("HealthcheckErrors",
+                "sitecore/api/ssc/errors/{action}",
+                new { controller = "ErrorsApi" });
         }
     }
 }

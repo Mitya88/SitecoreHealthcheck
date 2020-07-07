@@ -26,6 +26,7 @@ namespace Healthcheck.Service.DI
             serviceCollection.AddTransient<IApplicationInsightsService, ApplicationInsightsService>();
             
             serviceCollection.AddTransient<HealthcheckApiController>();
+            serviceCollection.AddTransient<ErrorsApiController>();
         }
     }
 }

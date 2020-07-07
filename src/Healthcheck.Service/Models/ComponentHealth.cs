@@ -1,12 +1,15 @@
 ﻿namespace Healthcheck.Service.Models
 {
     using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Utilities;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Sitecore;
     using Sitecore.Data.Items;
+    using Sitecore.SecurityModel;
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
 
     /// <summary>
     /// Component health model
@@ -111,6 +114,23 @@
             }
 
             this.ErrorCount = this.ErrorList.Entries.Count;
+        }
+
+        /// <summary>
+        /// Saves the healthcheck related component's fields.
+        /// </summary>
+        public void SaveComponent(Item item)
+        {
+            using (new SecurityDisabler())
+            {
+                using (new EditContext(item))
+                {
+                    item["Status"] = this.Status == HealthcheckStatus.UnKnown ? string.Empty : this.Status.ToString();
+                    item["Error Messages"] = JsonUtil.GetErrorMessagesJson(this.ErrorList);
+                    item["Healthy Message"] = this.HealthyMessage;
+                    item["Last Check Time"] = DateUtil.FormatDateTime(this.LastCheckTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
+                }
+            }
         }
     }
 }
