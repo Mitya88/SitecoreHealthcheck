@@ -1,15 +1,12 @@
 ﻿namespace Healthcheck.Service.Models
 {
     using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Utilities;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Sitecore;
     using Sitecore.Data.Items;
-    using Sitecore.SecurityModel;
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
 
     /// <summary>
     /// Component health model
@@ -114,42 +111,6 @@
             }
 
             this.ErrorCount = this.ErrorList.Entries.Count;
-        }
-
-        /// <summary>
-        /// Saves the healthcheck related component's fields.
-        /// </summary>
-        public void SaveComponent(Item item)
-        {
-            using (new SecurityDisabler())
-            {
-                using (new EditContext(item))
-                {
-                    item["Status"] = this.Status == HealthcheckStatus.UnKnown ? string.Empty : this.Status.ToString();
-                    item["Error Messages"] = JsonUtil.GetErrorMessagesJson(this.ErrorList);
-                    item["Healthy Message"] = this.HealthyMessage;
-                    item["Last Check Time"] = DateUtil.FormatDateTime(this.LastCheckTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Clears all errors entry but last
-        /// </summary>
-        public void ClearButLastErrorEntry()
-        {
-            // get last error entry
-            var indexOfLastEntry = this.ErrorList.Entries.Count - 1;
-
-            if (indexOfLastEntry > -1)
-            {
-                var lastErrorEntry = this.ErrorList.Entries[indexOfLastEntry];
-
-                // clear the error list and add the last entry
-                this.ErrorList.Entries.Clear();
-                this.ErrorList.Entries.Add(lastErrorEntry);
-                this.ErrorCount = this.ErrorList.Entries.Count;
-            }
         }
     }
 }

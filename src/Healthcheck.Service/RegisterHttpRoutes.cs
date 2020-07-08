@@ -11,8 +11,17 @@
             RegisterRoute(RouteTable.Routes);
         }
 
+        /// <summary>
+        /// Registers the route.
+        /// </summary>
+        /// <remarks>The order of the routes is important.</remarks>
+        /// <param name="routes">The routes.</param>
         protected virtual void RegisterRoute(RouteCollection routes)
         {
+            RouteTable.Routes.MapHttpRoute("HealthcheckErrors",
+                "sitecore/api/ssc/healthcheck/errors/{action}",
+                new { controller = "ErrorsApi" });
+
             RouteTable.Routes.MapHttpRoute("Healthcheck",
                 "sitecore/api/ssc/healthcheck/{action}",
                 new { controller = "HealthcheckApi" });
@@ -20,10 +29,6 @@
             RouteTable.Routes.MapHttpRoute("HealthcheckComponent",
                 "sitecore/api/ssc/healthcheck/{action}/{id}",
                 new { controller = "HealthcheckApi" });
-
-            RouteTable.Routes.MapHttpRoute("HealthcheckErrors",
-                "sitecore/api/ssc/errors/{action}",
-                new { controller = "ErrorsApi" });
         }
     }
 }

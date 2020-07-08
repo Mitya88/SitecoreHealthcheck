@@ -50,26 +50,9 @@ namespace Healthcheck.Service.Controllers
         [HttpGet]
         public List<ComponentGroup> Clear()
         {
+            this.healthcheckRepository.ClearComponentsErrorsButLast();
             var componentsGroups = this.healthcheckRepository.GetHealthcheck();
-
-            foreach (var group in componentsGroups)
-            {
-                foreach (var componentHealth in group.Components)
-                {
-                    Item item;
-                    using (new DatabaseSwitcher(Factory.GetDatabase(Constants.MasterDatabaseName)))
-                    {
-                        item = Sitecore.Context.Database.GetItem(new ID(componentHealth.Id));
-                    }
-
-                    if (item != null)
-                    {
-                        componentHealth.ClearButLastErrorEntry();
-                        componentHealth.SaveComponent(item);
-                    }
-                } 
-            }
-
+            
             return componentsGroups;
         }
     }
