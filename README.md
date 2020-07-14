@@ -33,6 +33,7 @@ The repository contains source code and documentation for the Advanced Sitecore 
         * [Windows Services](#windows-services)
         * [WebJobs](#webjobs)
         * [Queues](#queues)
+        * [Local Disk Space](#local-disk-space)
         * [Custom](#custom)
             * [How to implement a custom healthcheck](#how-to-implement-custom-healthcheck)
 * [Configure the development environment](#configure-the-developer-environment)
@@ -471,11 +472,31 @@ The queue check gets the records count in the configured database-table pair.
 
 Returns warning when: 
 * The fields are not configured correctly
-* Then the records count >=Warn Count and records count <Error Count
+* Then the records count >= Warn Count and records count < Error Count
 
 Returns error when
 * The record count > Error Count
 
+#### Local Disk Space
+
+|Fields|Description|
+|---|---|
+|WarningPercentageThreshold|Display an **error** message if the percentage of available free space is lower.|
+|ErrorPercentageThreshold|Display a **warning** message if the percentage of available free space is lower.|
+
+The component checks the available space from local disks.
+
+Returns warning when:
+* The available free space is lower than the warning threshold and greater than the error threshold.
+
+Returns error when:
+* The available free space is lower than the error threshold
+* Drives aren't ready
+* Can't access drives info
+
+Defaults:
+* WarningPercentageThreshold = 25
+* ErrorPercentageThreshold = 10
 #### Custom
 
 |Field|Description|
