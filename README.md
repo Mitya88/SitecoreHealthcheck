@@ -12,6 +12,7 @@ The repository contains source code and documentation for the Advanced Sitecore 
         * [Component groups & items](#component-groups-and-items)
             * [Component item templates](#component-item-templates)
     * [Scheduled Task](#scheduled-task)
+    * [Errors Endpoint](#errors-endpoint)
     * [Client application](#client-application)
         * [Start page](#start-page)
         * [Buttons and clicks](#buttons-and-clicks)
@@ -132,6 +133,10 @@ The following scheduled tasks and commands are created after the installation.
 **/sitecore/system/Tasks/Commands/Healthcheck/Healthcheck Update Command**
 
 This scheduled task iterates through all Component items and runs the healthcheck on them.
+## Errors Endpoint
+An endpoint where the errors can be cleared, except of the last error message.
+
+Usage: **sitecore/api/ssc/healthcheck/errors/clear**
 ## Client Application
 The shortcut of the client applications is located on the Launchpad, in the **Control Panel** section.
 ![Shortcut](documentation/shortcut.png)
