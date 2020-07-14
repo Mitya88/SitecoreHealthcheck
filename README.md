@@ -1,5 +1,6 @@
 # Advanced Sitecore Healthcheck
 The repository contains source code and documentation for the Advanced Sitecore Healthcheck Application.
+[Detailed Documentation](https://docs.advancedschealthcheck.com/)
 
 # Table of Contents
 * [Introduction](#Introduction)
