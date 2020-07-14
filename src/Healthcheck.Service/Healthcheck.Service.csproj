@@ -238,7 +238,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ErrorsApiController.cs" />
+    <Compile Include="Controllers\HealthcheckErrorsApiController.cs" />
     <Compile Include="Domain\ApiHealthCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
     <Compile Include="Domain\WebJobCheck.cs" />

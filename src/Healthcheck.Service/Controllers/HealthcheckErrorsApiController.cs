@@ -1,21 +1,18 @@
-﻿using Healthcheck.Service.Interfaces;
-using Healthcheck.Service.Models;
-using Sitecore.Configuration;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Services.Infrastructure.Web.Http;
-using System.Collections.Generic;
-using System.Web.Http;
-using System.Web.Http.Cors;
-
-namespace Healthcheck.Service.Controllers
+﻿namespace Healthcheck.Service.Controllers
 {
+    using Healthcheck.Service.Interfaces;
+    using Healthcheck.Service.Models;
+    using Sitecore.Services.Infrastructure.Web.Http;
+    using System.Collections.Generic;
+    using System.Web.Http;
+    using System.Web.Http.Cors;
+
     /// <summary>
     /// Controller for managing errors
     /// </summary>
     [Authorize]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class ErrorsApiController : ServicesApiController
+    public class HealthcheckErrorsApiController : ServicesApiController
     {
         /// <summary>
         /// The healthcheck repository
@@ -35,7 +32,7 @@ namespace Healthcheck.Service.Controllers
         /// <summary>
         /// Initializes a new instance of the <see cref="HealthcheckController" /> class.
         /// </summary>
-        public ErrorsApiController(IHealthcheckRepository healthcheckRepository, IHealthcheckService healthcheckService, IComponentFactory componentFactory)
+        public HealthcheckErrorsApiController(IHealthcheckRepository healthcheckRepository, IHealthcheckService healthcheckService, IComponentFactory componentFactory)
         {
             this.healthcheckRepository = healthcheckRepository;
             this.healthcheckService = healthcheckService;

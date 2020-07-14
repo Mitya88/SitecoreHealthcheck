@@ -20,7 +20,7 @@
         {
             RouteTable.Routes.MapHttpRoute("HealthcheckErrors",
                 "sitecore/api/ssc/healthcheck/errors/{action}",
-                new { controller = "ErrorsApi" });
+                new { controller = "HealthcheckErrorsApi" });
 
             RouteTable.Routes.MapHttpRoute("Healthcheck",
                 "sitecore/api/ssc/healthcheck/{action}",
