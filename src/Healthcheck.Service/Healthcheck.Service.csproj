@@ -238,6 +238,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HealthcheckErrorsApiController.cs" />
     <Compile Include="Domain\ApiHealthCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
     <Compile Include="Domain\WebJobCheck.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Services\HealthcheckService.cs" />
     <Compile Include="Tasks\HealthcheckUpdateCommand.cs" />
     <Compile Include="Tasks\Reports\HealthcheckReport.cs" />
+    <Compile Include="Utilities\JsonUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Rainbow.config" />

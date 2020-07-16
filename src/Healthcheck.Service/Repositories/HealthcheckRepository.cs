@@ -1,14 +1,18 @@
 ﻿namespace Healthcheck.Service.Repositories
 {
+    using Healthcheck.Service.Customization;
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
+    using Healthcheck.Service.Utilities;
+    using Sitecore;
     using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.Globalization;
     using Sitecore.SecurityModel;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Text;
 
@@ -32,7 +36,7 @@
                     using (new SecurityDisabler())
                     {
                         List<BaseComponent> components = new List<BaseComponent>();
-                        var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Constants.ComponentsRootFolderId));
+                        var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Service.Constants.ComponentsRootFolderId));
 
                         foreach (Item componentGroup in componentsFolder.Children)
                         {
@@ -139,6 +143,76 @@
                         }
 
                         return sb.ToString();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Clears all errors entries but last
+        /// </summary>
+        public void ClearComponentsErrorsButLast()
+        {
+            var componentsGroups = this.GetHealthcheck();
+            var components = componentsGroups.SelectMany(group => group.Components);
+
+            foreach (var componentHealth in components)
+            {
+                var hasClearedEntries = this.ClearButLastErrorEntry(componentHealth);
+                
+                if (hasClearedEntries)
+                {
+                    this.SaveComponent(componentHealth);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Clears all errors entries but last
+        /// </summary>
+        /// <returns>true if the entries have been cleared, false otherwise</returns>
+        private bool ClearButLastErrorEntry(ComponentHealth componentHealth)
+        {
+            // get last error entry
+            var indexOfLastEntry = componentHealth.ErrorList.Entries.Count - 1;
+
+            if (indexOfLastEntry > -1)
+            {
+                var lastErrorEntry = componentHealth.ErrorList.Entries[indexOfLastEntry];
+
+                // clear the error list and add the last entry
+                componentHealth.ErrorList.Entries.Clear();
+                componentHealth.ErrorList.Entries.Add(lastErrorEntry);
+                componentHealth.ErrorCount = componentHealth.ErrorList.Entries.Count;
+
+                return true;
+            }
+
+            return false;
+        }
+        
+        /// <summary>
+        /// Saves the healthcheck related component's fields.
+        /// </summary>
+        /// <param name="componentHealth">Holds data that needs to be saved</param>
+        public void SaveComponent(ComponentHealth componentHealth)
+        {
+            Item item;
+            using (new DatabaseSwitcher(Factory.GetDatabase(Service.Constants.MasterDatabaseName)))
+            {
+                item = Context.Database.GetItem(new ID(componentHealth.Id));
+            }
+
+            if (item != null)
+            {
+                using (new SecurityDisabler())
+                {
+                    using (new EditContext(item))
+                    {
+                        item["Status"] = componentHealth.Status == HealthcheckStatus.UnKnown ? string.Empty : componentHealth.Status.ToString();
+                        item["Error Messages"] = JsonUtil.GetErrorMessagesJson(componentHealth.ErrorList);
+                        item["Healthy Message"] = componentHealth.HealthyMessage;
+                        item["Last Check Time"] = DateUtil.FormatDateTime(componentHealth.LastCheckTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
                     }
                 }
             }
