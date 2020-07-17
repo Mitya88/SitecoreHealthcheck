@@ -1,6 +1,7 @@
 ﻿namespace Healthcheck.Service.Tasks.Reports
 {
     using System.Text;
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Extensions;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;

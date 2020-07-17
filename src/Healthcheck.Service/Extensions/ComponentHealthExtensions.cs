@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Extensions
 {
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Models;
 
     /// <summary>ComponentHealth extension methods.</summary>

@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.Models
+﻿namespace Healthcheck.Service.Customization.Models
 {
     using Healthcheck.Service.Customization;
     using Newtonsoft.Json;

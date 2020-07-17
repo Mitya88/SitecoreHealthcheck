@@ -271,10 +271,6 @@
     <Compile Include="Interfaces\IHealthcheckService.cs" />
     <Compile Include="LogParsing\LogLevel.cs" />
     <Compile Include="LogParsing\LogReaderSettings.cs" />
-    <Compile Include="Models\ComponentHealth.cs" />
-    <Compile Include="Models\ErrorEntry.cs" />
-    <Compile Include="Models\ErrorList.cs" />
-    <Compile Include="Models\ComponentGroup.cs" />
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Models\WebJobResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -307,7 +303,9 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

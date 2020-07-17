@@ -1,6 +1,7 @@
 ﻿namespace Healthcheck.Service.Domain
 {
     using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
     using Sitecore.Web;

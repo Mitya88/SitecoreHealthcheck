@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Repositories
 {
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
