@@ -35,5 +35,10 @@
         /// </summary>
         /// <returns>The current state report</returns>
         string GenerateReport();
+
+        /// <summary>
+        /// Clears the errors but last entry for each component.
+        /// </summary>
+        void ClearComponentsErrorsButLast();
     }
 }

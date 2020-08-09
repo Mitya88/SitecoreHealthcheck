@@ -1,10 +1,6 @@
 ﻿namespace Healthcheck.Service
 {
     using Sitecore.Pipelines;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Http;
     using System.Web.Routing;
 
@@ -15,8 +11,17 @@
             RegisterRoute(RouteTable.Routes);
         }
 
+        /// <summary>
+        /// Registers the route.
+        /// </summary>
+        /// <remarks>The order of the routes is important.</remarks>
+        /// <param name="routes">The routes.</param>
         protected virtual void RegisterRoute(RouteCollection routes)
         {
+            RouteTable.Routes.MapHttpRoute("HealthcheckErrors",
+                "sitecore/api/ssc/healthcheck/errors/{action}",
+                new { controller = "HealthcheckErrorsApi" });
+
             RouteTable.Routes.MapHttpRoute("Healthcheck",
                 "sitecore/api/ssc/healthcheck/{action}",
                 new { controller = "HealthcheckApi" });

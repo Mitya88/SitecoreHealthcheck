@@ -21,6 +21,11 @@
         public const string SettingsItemId = "{857AAA78-61C8-42F7-9CC5-8D5C68EF9FD8}";
 
         /// <summary>
+        /// The master database name
+        /// </summary>
+        public const string MasterDatabaseName = "master";
+
+        /// <summary>
         /// Template name constants
         /// </summary>
         public struct TemplateNames
@@ -109,6 +114,11 @@
             /// The queue check template name
             /// </summary>
             public const string QueueCheckTemplateName = "Queue Check";
+
+            /// <summary>
+            /// The local disk space check template name
+            /// </summary>
+            public const string LocalDiskSpaceCheckTemplateName = "LocalDisk Space Check";
         }
     }
 }

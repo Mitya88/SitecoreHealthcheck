@@ -12,6 +12,7 @@ The repository contains source code and documentation for the Advanced Sitecore 
         * [Component groups & items](#component-groups-and-items)
             * [Component item templates](#component-item-templates)
     * [Scheduled Task](#scheduled-task)
+    * [Errors Endpoint](#errors-endpoint)
     * [Client application](#client-application)
         * [Start page](#start-page)
         * [Buttons and clicks](#buttons-and-clicks)
@@ -33,6 +34,7 @@ The repository contains source code and documentation for the Advanced Sitecore 
         * [Windows Services](#windows-services)
         * [WebJobs](#webjobs)
         * [Queues](#queues)
+        * [Local Disk Space](#local-disk-space)
         * [Custom](#custom)
             * [How to implement a custom healthcheck](#how-to-implement-custom-healthcheck)
 * [Configure the development environment](#configure-the-developer-environment)
@@ -132,6 +134,10 @@ The following scheduled tasks and commands are created after the installation.
 **/sitecore/system/Tasks/Commands/Healthcheck/Healthcheck Update Command**
 
 This scheduled task iterates through all Component items and runs the healthcheck on them.
+## Errors Endpoint
+An endpoint where the errors can be cleared, except of the last error message.
+
+Usage: **sitecore/api/ssc/healthcheck/errors/clear**
 ## Client Application
 The shortcut of the client applications is located on the Launchpad, in the **Control Panel** section.
 ![Shortcut](documentation/shortcut.png)
@@ -471,11 +477,31 @@ The queue check gets the records count in the configured database-table pair.
 
 Returns warning when: 
 * The fields are not configured correctly
-* Then the records count >=Warn Count and records count <Error Count
+* Then the records count >= Warn Count and records count < Error Count
 
 Returns error when
 * The record count > Error Count
 
+#### Local Disk Space
+
+|Fields|Description|
+|---|---|
+|WarningPercentageThreshold|Display an **error** message if the percentage of available free space is lower.|
+|ErrorPercentageThreshold|Display a **warning** message if the percentage of available free space is lower.|
+
+The component checks the available space from local disks.
+
+Returns warning when:
+* The available free space is lower than the warning threshold and greater than the error threshold.
+
+Returns error when:
+* The available free space is lower than the error threshold
+* Drives aren't ready
+* Can't access drives info
+
+Defaults:
+* WarningPercentageThreshold = 25
+* ErrorPercentageThreshold = 10
 #### Custom
 
 |Field|Description|

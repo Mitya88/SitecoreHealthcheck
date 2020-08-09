@@ -2,6 +2,7 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Models;
+    using Healthcheck.Service.Utilities;
     using Newtonsoft.Json;
     using Sitecore;
     using Sitecore.Data.Items;
@@ -122,22 +123,11 @@
                 using (new EditContext(this.InnerItem))
                 {
                     this.InnerItem["Status"] = this.Status == HealthcheckStatus.UnKnown ? string.Empty : this.Status.ToString();
-                    this.InnerItem["Error Messages"] = GetErrorMessagesJson(this.ErrorList);
+                    this.InnerItem["Error Messages"] = JsonUtil.GetErrorMessagesJson(this.ErrorList);
                     this.InnerItem["Healthy Message"] = this.HealthyMessage;
                     this.InnerItem["Last Check Time"] = DateUtil.FormatDateTime(this.LastCheckTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
                 }
             }
-        }
-
-        /// <summary>
-        /// Gets the error messages list in JSON.
-        /// </summary>
-        /// <param name="errorList">The error list.</param>
-        /// <remarks>Since there are some Exception classes that can't be serialized / deserialized properly we have to apply a hack.</remarks>
-        /// <returns></returns>
-        private string GetErrorMessagesJson(ErrorList errorList)
-        {
-            return JsonConvert.SerializeObject(this.ErrorList).Replace("\"SafeSerializationManager\":", "\"_SafeSerializationManager\":");
         }
     }
 }
