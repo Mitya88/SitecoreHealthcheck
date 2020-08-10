@@ -3,6 +3,7 @@
     using System;
     using System.Xml;
     using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Models;
     using Sitecore.Configuration;
     using Sitecore.Data.Items;

@@ -1,5 +1,6 @@
 # Advanced Sitecore Healthcheck
 The repository contains source code and documentation for the Advanced Sitecore Healthcheck Application.
+[Detailed Documentation](https://docs.advancedschealthcheck.com/)
 
 # Table of Contents
 * [Introduction](#Introduction)
@@ -72,6 +73,10 @@ The purpose of this module to check up Sitecore components if they are working c
   - Contains hotfix #1
   - Fixing performance issue in Search Component check
   - Fixing an issue in Search Component Check - exception has been throwed when 'Run' button was clicked in the application
+- 1.1.0 - [package](sc.package/Advanced.Sitecore.Healthcheck-1.1.0.zip)
+  - Moving models into customization project
+  - Adding Readonly repository to customization project
+  - publishing customization project on [Nuget.org](https://www.nuget.org/packages/AdvancedSitecoreHealthCheckExtensions/1.1.0)
 
 ## Installation
 

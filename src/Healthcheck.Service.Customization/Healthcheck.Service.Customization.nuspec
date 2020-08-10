@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AdvancedSitecoreHealthCheckExtensions</id>
+    <version>1.1.0</version>
+    <title>Advanced Sitecore Healthcheck Extenions</title>
+    <authors>Mitya88</authors>
+    <owners>Mitya88</owners>
+    <licenseUrl>https://docs.advancedschealthcheck.com/</licenseUrl>
+    <projectUrl>https://github.com/Mitya88/SitecoreHealthcheck/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Extensions for Advanced Sitecore Healthcheck Module</description>
+    <releaseNotes>Adding readonly repository</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>Sitecore SitecoreModule</tags>
+	
+  </metadata> <files>
+    <file src="bin\release\Healthcheck.Service.Customization.dll" target="lib\net462" />
+  </files>
+</package>
