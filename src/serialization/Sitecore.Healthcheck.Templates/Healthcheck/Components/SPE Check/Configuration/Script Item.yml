@@ -1,24 +1,31 @@
 ﻿---
-ID: "4862d741-4843-4728-8d6d-48576c0855a7"
-Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+ID: "581c8024-c66b-4464-b4e7-a6af37e55646"
+Parent: "f3fc0654-5eef-412b-92c0-b667b0021e3d"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Recipient Emails
+Path: /sitecore/templates/User Defined/Healthcheck/Components/SPE Check/Configuration/Script Item
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
-  Value: "Single-Line Text"
+  Value: Droptree
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 300
+  Value: 100
 Languages:
 - Language: en
+  Fields:
+  - ID: "577f1689-7de4-4ad2-a15f-7fdc1759285f"
+    Hint: __Long description
+    Value: 
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: 
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20200321T095232Z
+      Value: 20200323T125155Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
