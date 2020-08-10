@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Utilities
 {
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Models;
     using Newtonsoft.Json;
 
