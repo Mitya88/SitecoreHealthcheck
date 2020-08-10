@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Text;
     using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
 

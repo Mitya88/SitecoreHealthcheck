@@ -23,11 +23,11 @@ Languages:
       Value: 20200321T094752Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200713T072915
+      Value: 20200810T065954
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"One or more errors occurred.","Created":"2020-07-13T06:28:02.0592353Z","Exception":{"ClassName":"System.AggregateException","Message":"One or more errors occurred.","Data":null,"InnerException":{"ClassName":"System.Net.Http.HttpRequestException","Message":"An error occurred while sending the request.","Data":null,"InnerException":{"ClassName":"System.Net.WebException","Message":"The remote name could not be resolved: 'google.com'","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)\r\n   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233079,"Source":"System","WatsonBuckets":null},"HelpURL":null,"StackTraceString":null,"RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":null,"WatsonBuckets":null},"HelpURL":null,"StackTraceString":"   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)\r\n   at Healthcheck.Service.Domain.ApiHealthCheck.RunHealthcheck() in C:\\git\\healthcheck\\src\\Healthcheck.Service\\Domain\\ApiHealthCheck.cs:line 244","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233088,"Source":"mscorlib","WatsonBuckets":null}}]}
+        {"Entries":[]}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

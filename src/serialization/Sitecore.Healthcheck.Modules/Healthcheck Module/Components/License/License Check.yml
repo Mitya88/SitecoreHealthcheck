@@ -14,11 +14,11 @@ Languages:
       Value: 20200416T123704Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200713T072915
+      Value: 20200810T065954
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"License will expire in 48 days.","Created":"2020-07-13T06:28:01.2922343Z","Exception":null},{"Reason":"License will expire in 48 days.","Created":"2020-07-13T06:38:07.0749113Z","Exception":null},{"Reason":"License will expire in 48 days.","Created":"2020-07-13T06:48:11.2638795Z","Exception":null},{"Reason":"License will expire in 48 days.","Created":"2020-07-13T06:58:14.3948326Z","Exception":null},{"Reason":"License will expire in 48 days.","Created":"2020-07-13T07:08:37.182383Z","Exception":null},{"Reason":"License will expire in 48 days.","Created":"2020-07-13T07:18:47.3909157Z","Exception":null},{"Reason":"License will expire in 48 days.","Created":"2020-07-13T07:29:15.396108Z","Exception":null}]}
+        {"Entries":[{"Reason":"License will expire in 20 days.","Created":"2020-08-10T06:59:54.843266Z","Exception":null}]}
     - ID: "43b7ce89-2cb0-4ea9-8868-cb627179cc80"
       Hint: WarnBefore
       Value: 100
@@ -31,7 +31,7 @@ Languages:
       Value: License is ok.
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Healthy
+      Value: Error
     - ID: "e694131c-14d8-4507-950c-bf867ced47db"
       Hint: ErrorBefore
       Value: 30
