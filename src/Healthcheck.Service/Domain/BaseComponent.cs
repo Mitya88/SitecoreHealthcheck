@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Healthcheck.Service.Utilities;
     using Newtonsoft.Json;
     using Sitecore;
@@ -80,7 +79,7 @@
             {
                 this.Status = HealthcheckStatus.UnKnown;
             }
-            
+
             this.ErrorMessages = item["Error Messages"];
             this.HealthyMessage = item["Healthy Message"];
             this.LastCheckTime = DateUtil.ParseDateTime(item["Last Check Time"], DateTime.MinValue);

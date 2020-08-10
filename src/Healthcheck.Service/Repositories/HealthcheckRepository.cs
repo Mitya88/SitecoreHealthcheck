@@ -4,7 +4,6 @@
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
-    using Healthcheck.Service.Models;
     using Healthcheck.Service.Utilities;
     using Sitecore;
     using Sitecore.Configuration;
@@ -160,7 +159,7 @@
             foreach (var componentHealth in components)
             {
                 var hasClearedEntries = this.ClearButLastErrorEntry(componentHealth);
-                
+
                 if (hasClearedEntries)
                 {
                     this.SaveComponent(componentHealth);
@@ -191,7 +190,7 @@
 
             return false;
         }
-        
+
         /// <summary>
         /// Saves the healthcheck related component's fields.
         /// </summary>

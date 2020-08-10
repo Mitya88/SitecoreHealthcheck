@@ -64,7 +64,6 @@
 
                         if (!int.TryParse(settingsItem["Days"], out numberOfDaysToKeepLogs))
                         {
-
                             numberOfDaysToKeepLogs = DefaultNumberOfDaysToKeepLogs;
                         }
 

@@ -3,9 +3,6 @@
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
     using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Text;
@@ -43,7 +40,7 @@
             parametersBuilder.Append("&$top=5000");
 
             var req = string.Format(URL, appid, "events", "traces", parametersBuilder.ToString());
-            
+
             HttpResponseMessage response = client.GetAsync(req).Result;
 
             var appInsightResult = new ApplicationInsightResult();

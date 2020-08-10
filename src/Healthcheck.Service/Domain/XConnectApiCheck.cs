@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
@@ -19,7 +18,6 @@
     /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
     public class XConnectApiCheck : BaseComponent
     {
-
         /// <summary>
         /// Gets or sets the x connect API connection string key.
         /// </summary>
@@ -52,7 +50,7 @@
         {
             this.XConnectApiConnectionStringKey = item["XConnect Api ConnectionString Key"];
             this.XConnectApiCertificateConnectionStringKey = item["XConnect Certificate ConnectionString Key"];
-            this.WarnBefore = Sitecore.MainUtil.GetInt(item["Warn Before"], 100);            
+            this.WarnBefore = Sitecore.MainUtil.GetInt(item["Warn Before"], 100);
         }
 
         /// <summary>
@@ -119,7 +117,7 @@
             {
                 var certificateConnectionstring = ConfigurationManager.ConnectionStrings[XConnectApiCertificateConnectionStringKey].ConnectionString.Split(';');
                 NameValueCollection certDetails = new NameValueCollection();
-                foreach(var values in certificateConnectionstring)
+                foreach (var values in certificateConnectionstring)
                 {
                     var parsed = values.Split('=');
                     certDetails.Add(parsed[0], parsed[1]);
@@ -132,7 +130,7 @@
                 {
                     store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
 
-                    var cert = store.Certificates.Find((X509FindType)Enum.Parse(typeof(X509FindType),certDetails["FindType"]), certDetails["FindValue"], false);
+                    var cert = store.Certificates.Find((X509FindType)Enum.Parse(typeof(X509FindType), certDetails["FindType"]), certDetails["FindValue"], false);
                     if (cert == null || cert.Count == 0)
                     {
                         this.Status = HealthcheckStatus.Error;
@@ -216,7 +214,6 @@
                             Created = DateTime.UtcNow,
                             Reason = exception.Message,
                             Exception = exception
-
                         });
                     }
                     finally

@@ -1,11 +1,10 @@
 ﻿namespace Healthcheck.Service.Utilities
 {
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Newtonsoft.Json;
 
     public static class JsonUtil
-    {        
+    {
         /// <summary>
         /// Gets the error messages list in JSON.
         /// </summary>

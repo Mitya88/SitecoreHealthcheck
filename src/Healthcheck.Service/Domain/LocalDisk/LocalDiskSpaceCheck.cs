@@ -1,14 +1,13 @@
 ﻿namespace Healthcheck.Service.Domain.LocalDisk
 {
+    using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
+    using Sitecore.Data.Items;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Text;
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
-    using Sitecore.Data.Items;
 
     /// <summary>Local disk space check.</summary>
     public class LocalDiskSpaceCheck : BaseComponent
@@ -72,7 +71,7 @@
 
                 return;
             }
-            
+
             this.Status = HealthcheckStatus.Healthy;
             this.HealthyMessage = CreateStatusMessage(drives, "Overall, drives are in good capacity.");
         }

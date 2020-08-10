@@ -33,6 +33,7 @@
                 Credentials = new NetworkCredential(userName, password)
             };
         }
+
         /// <summary>Sends the email.</summary>
         /// <param name="from">From.</param>
         /// <param name="to">To.</param>

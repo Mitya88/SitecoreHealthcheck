@@ -30,7 +30,7 @@
         /// <summary>Gets or sets the error level.</summary>
         /// <value>The error level.</value>
         public HealthcheckStatus ErrorLevel { get; set; }
-        
+
         /// <summary>Initializes a new instance of the <see cref="SettingsModel"/> class.</summary>
         public SettingsModel()
         {

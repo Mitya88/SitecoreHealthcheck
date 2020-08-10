@@ -3,14 +3,10 @@
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
-    using Healthcheck.Service.Models;
     using Microsoft.Extensions.DependencyInjection;
     using Sitecore.Data.Items;
     using Sitecore.DependencyInjection;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
 
     /// <summary>
     /// Application Insight healtcheck component

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Globalization;
     using System.Text.RegularExpressions;
 
@@ -13,7 +12,7 @@
     {
         private LogEntry current;
         private readonly LogData logData;
-        
+
         /// <summary>
         /// The last used pattern
         /// </summary>
@@ -47,7 +46,6 @@
             }
             else
             {
-
                 if (current == null)
                 {
                     current = new LogEntry { Message = new LogMessage(line) };
@@ -62,7 +60,7 @@
         /// <summary>
         /// The log patterns
         /// </summary>
-        readonly List<LogPattern> logPatterns = new List<LogPattern> {
+        private readonly List<LogPattern> logPatterns = new List<LogPattern> {
           new LogPattern(@"^(?<process>\S+)\s+(?<date>\d{2}:\d{2}:\d{2})\s+(?<level>\w+)\s+(?<message>.*)$","HH:mm:ss"),
           new LogPattern(@"^(?<process>\S+)\s+(?<thread>\S+)\s+(?<date>\d{2}:\d{2}:\d{2})\s+(?<level>\w+)\s+(?<message>.*)$","HH:mm:ss"),
         };
@@ -85,7 +83,7 @@
                 {
                     //skip last used pattern (returned first)
                     if (oldLastUsedPattern == logPattern) continue;
-                    
+
                     lastUsedPattern = logPattern;
 
                     yield return lastUsedPattern;
@@ -100,7 +98,6 @@
         /// <returns></returns>
         private LogEntry ParseEntry(string line)
         {
-
             foreach (var logPattern in LogPatterns)
             {
                 var match = Regex.Match(line, logPattern.Pattern, RegexOptions.Compiled | RegexOptions.IgnorePatternWhitespace);

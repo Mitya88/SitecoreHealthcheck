@@ -39,7 +39,7 @@
             /// The database healthcheck template name
             /// </summary>
             public const string DatabaseHealthcheckTemplateName = "Database Healthcheck";
-
+            
             /// <summary>
             /// The certificate check template name
             /// </summary>
@@ -69,7 +69,7 @@
             /// The basic authentication template name
             /// </summary>
             public const string BasicAuthenticationTemplateName = "Basic Authentication";
-
+        
             /// <summary>
             /// The json web token authentication template name
             /// </summary>
@@ -119,11 +119,6 @@
             /// The local disk space check template name
             /// </summary>
             public const string LocalDiskSpaceCheckTemplateName = "LocalDisk Space Check";
-
-            /// <summary>
-            /// The spe check template name
-            /// </summary>
-            public const string SPECheckTemplateName = "SPE Check";
         }
     }
 }

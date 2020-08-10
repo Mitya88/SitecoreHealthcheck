@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
-    using Healthcheck.Service.Models;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System;
     using System.Collections.Generic;

@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
-    using Healthcheck.Service.Models;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System.Collections.Generic;
     using System.Web.Http;
@@ -50,7 +49,7 @@
         {
             this.healthcheckRepository.ClearComponentsErrorsButLast();
             var componentsGroups = this.healthcheckRepository.GetHealthcheck();
-            
+
             return componentsGroups;
         }
     }

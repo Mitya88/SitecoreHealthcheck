@@ -1,7 +1,6 @@
 ﻿namespace Healthcheck.Service.Interfaces
 {
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using System.Collections.Generic;
 
     /// <summary>

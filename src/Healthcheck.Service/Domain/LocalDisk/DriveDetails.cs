@@ -15,5 +15,4 @@
         /// <value>The available free space.</value>
         public double AvailableFreeSpace { get; set; }
     }
-
 }

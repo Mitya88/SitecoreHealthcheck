@@ -1,9 +1,7 @@
 ﻿namespace Healthcheck.Service.LogParsing
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
+
     /// <summary>
     /// Log reader settings
     /// </summary>
@@ -13,7 +11,7 @@
         /// Initializes a new instance of the <see cref="LogReaderSettings"/> class.
         /// </summary>
         public LogReaderSettings()
-          : this((string)null)
+          : this(null)
         {
         }
 
@@ -32,7 +30,7 @@
         /// <param name="start">The start.</param>
         /// <param name="finish">The finish.</param>
         public LogReaderSettings(DateTime start, DateTime finish)
-          : this(start, finish, (string)null)
+          : this(start, finish, null)
         {
         }
 

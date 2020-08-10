@@ -1,12 +1,12 @@
 ﻿namespace Healthcheck.Service.Tasks.Reports
 {
-    using System.Text;
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Extensions;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
     using Sitecore.Globalization;
     using Sitecore.Web;
+    using System.Text;
 
     /// <summary>Creates the healthcheck report.</summary>
     public class HealthcheckReport
@@ -41,7 +41,6 @@
         /// <returns>Report body as HTML.</returns>
         private string GenerateReportBody()
         {
-
             string header = "<p> This is a summary of components after Healtcheck: </p>";
             mailBodyBuilder.AppendLine().AppendLine(header);
 
