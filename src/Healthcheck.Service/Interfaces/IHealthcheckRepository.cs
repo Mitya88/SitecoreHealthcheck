@@ -1,7 +1,6 @@
 ﻿namespace Healthcheck.Service.Interfaces
 {
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using System.Collections.Generic;
 
     /// <summary>
@@ -36,5 +35,10 @@
         /// </summary>
         /// <returns>The current state report</returns>
         string GenerateReport();
+
+        /// <summary>
+        /// Clears the errors but last entry for each component.
+        /// </summary>
+        void ClearComponentsErrorsButLast();
     }
 }

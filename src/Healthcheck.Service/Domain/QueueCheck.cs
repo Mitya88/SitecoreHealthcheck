@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore;
     using Sitecore.Data.Items;
     using System;
@@ -84,7 +83,7 @@
 
             try
             {
-                string selectCount = string.Format("select count(*) from {0}",this.Table);
+                string selectCount = string.Format("select count(*) from {0}", this.Table);
 
                 using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[this.Database].ConnectionString))
                 {

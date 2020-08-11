@@ -3,10 +3,6 @@
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Data.Items;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
 
     /// <summary>
     /// Factory for creating components
@@ -76,6 +72,14 @@
             else if (item.TemplateName.Equals(Constants.TemplateNames.QueueCheckTemplateName))
             {
                 return new QueueCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.LocalDiskSpaceCheckTemplateName))
+            {
+                return new LocalDiskSpaceCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.SPECheckTemplateName))
+            {
+                return new SPECheck(item);
             }
 
             return null;

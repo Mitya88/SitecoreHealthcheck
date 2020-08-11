@@ -1,11 +1,7 @@
 ﻿namespace Healthcheck.Service.LogParsing
 {
-    using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Diagnostics;
     using System.Linq;
-    using System.Web;
 
     /// <summary>
     /// Log data
@@ -41,7 +37,7 @@
         /// </value>
         public List<LogEntry> Warns
         {
-            get 
+            get
             {
                 return LoggerDataSource.Where(p => p.Level == LogLevel.WARN).FirstOrDefault()?.DataSource;
             }

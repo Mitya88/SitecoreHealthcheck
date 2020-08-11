@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "50be51f8-746d-4dc2-9c3b-b14abc5ce9b7"
   Hint: Schedule
-  Value: "20200630T000000|20800101T000000|127|00:10:00"
+  Value: "20200830T000000|20800101T000000|127|00:10:00"
 - ID: "62e64dbb-0a39-4dd7-ba05-7bd08c5404e0"
   Hint: Command
   Value: "{FBF35846-2B9C-4780-8F33-FBB33272C6E5}"

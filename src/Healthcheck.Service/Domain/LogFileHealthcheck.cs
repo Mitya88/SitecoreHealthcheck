@@ -3,13 +3,10 @@
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.LogParsing;
-    using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Web;
     using System.Web.Hosting;
 
     /// <summary>

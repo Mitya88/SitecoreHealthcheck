@@ -13,6 +13,7 @@ The repository contains source code and documentation for the Advanced Sitecore 
         * [Component groups & items](#component-groups-and-items)
             * [Component item templates](#component-item-templates)
     * [Scheduled Task](#scheduled-task)
+    * [Errors Endpoint](#errors-endpoint)
     * [Client application](#client-application)
         * [Start page](#start-page)
         * [Buttons and clicks](#buttons-and-clicks)
@@ -34,6 +35,7 @@ The repository contains source code and documentation for the Advanced Sitecore 
         * [Windows Services](#windows-services)
         * [WebJobs](#webjobs)
         * [Queues](#queues)
+        * [Local Disk Space](#local-disk-space)
         * [Custom](#custom)
             * [How to implement a custom healthcheck](#how-to-implement-custom-healthcheck)
 * [Configure the development environment](#configure-the-developer-environment)
@@ -57,6 +59,7 @@ The purpose of this module to check up Sitecore components if they are working c
 - Sitecore 9.1 Update-1
 - Sitecore 9.2
 - Sitecore 9.3 
+- Sitecore 10.0
 
 ## Releases
 - 1.0  - [package](sc.package/Advanced.Sitecore.Healthcheck-1.0.zip)
@@ -75,6 +78,17 @@ The purpose of this module to check up Sitecore components if they are working c
   - Moving models into customization project
   - Adding Readonly repository to customization project
   - publishing customization project on [Nuget.org](https://www.nuget.org/packages/AdvancedSitecoreHealthCheckExtensions/1.1.0)
+- 1.2.0 - [Full Installer](sc.package/Advanced.Sitecore.Healthcheck-1.2.0.zip)
+  - [Upgrade Package](sc.package/Advanced.Sitecore.Healthcheck-upgrade-1.2.0.zip)
+    - You can upgrade any of previous healthcheck module version with the upgrade package. (Existing component configurations wont be overwritten)
+  - [SPE Extenions](sc.package/Advanced.Sitecore.Healthcheck.SPE.Extensions-1.2.0.zip)
+    - Gives you ability to write custom checks in Sitecore PowerShell Extenions
+    - It has a powershell health check report application
+  - Contains:
+    - Local Disk Space Check
+    - SPE Support
+    - Ability to remove error entries for **Administrator** users
+    - Application contains a link for the official documentation
 
 ## Installation
 
@@ -137,6 +151,10 @@ The following scheduled tasks and commands are created after the installation.
 **/sitecore/system/Tasks/Commands/Healthcheck/Healthcheck Update Command**
 
 This scheduled task iterates through all Component items and runs the healthcheck on them.
+## Errors Endpoint
+An endpoint where the errors can be cleared, except of the last error message.
+
+Usage: **sitecore/api/ssc/healthcheck/errors/clear**
 ## Client Application
 The shortcut of the client applications is located on the Launchpad, in the **Control Panel** section.
 ![Shortcut](documentation/shortcut.png)
@@ -476,11 +494,34 @@ The queue check gets the records count in the configured database-table pair.
 
 Returns warning when: 
 * The fields are not configured correctly
-* Then the records count >=Warn Count and records count <Error Count
+* Then the records count >= Warn Count and records count < Error Count
 
 Returns error when
 * The record count > Error Count
 
+#### Local Disk Space
+
+|Fields|Description|
+|---|---|
+|DriveName|Defines the drive name (e.g c:\) which should be checked|
+|WarningPercentageThreshold|Display an **error** message if the percentage of available free space is lower.|
+|ErrorPercentageThreshold|Display a **warning** message if the percentage of available free space is lower.|
+
+The component checks the available space from local disks.
+
+Returns warning when:
+* The available free space is lower than the warning threshold and greater than the error threshold.
+* DriveName is not configured
+* Cannot find the configured drive
+
+Returns error when:
+* The available free space is lower than the error threshold
+* Drives aren't ready
+* Can't access drives info
+
+Defaults:
+* WarningPercentageThreshold = 25
+* ErrorPercentageThreshold = 10
 #### Custom
 
 |Field|Description|

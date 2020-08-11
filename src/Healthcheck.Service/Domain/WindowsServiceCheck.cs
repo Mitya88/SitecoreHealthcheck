@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
     using System;
     using System.ServiceProcess;
@@ -55,13 +54,13 @@
             try
             {
                 ServiceController service = new ServiceController(this.ServiceName);
-                if(service.Status != ServiceControllerStatus.Running)
+                if (service.Status != ServiceControllerStatus.Running)
                 {
                     this.Status = HealthcheckStatus.Error;
                     this.ErrorList.Entries.Add(new ErrorEntry
                     {
                         Created = DateTime.UtcNow,
-                        Reason = string.Format("{0} service is now: {1}",this.ServiceName, service.Status),
+                        Reason = string.Format("{0} service is now: {1}", this.ServiceName, service.Status),
                         Exception = null
                     });
 

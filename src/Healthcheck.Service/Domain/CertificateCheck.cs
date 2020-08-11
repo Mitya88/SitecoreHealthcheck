@@ -2,16 +2,9 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
-    using Sitecore.Configuration;
-    using Sitecore.Data;
     using Sitecore.Data.Items;
-    using Sitecore.Data.Managers;
-    using Sitecore.Globalization;
-    using Sitecore.SecurityModel;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Security.Cryptography.X509Certificates;
 
     /// <summary>

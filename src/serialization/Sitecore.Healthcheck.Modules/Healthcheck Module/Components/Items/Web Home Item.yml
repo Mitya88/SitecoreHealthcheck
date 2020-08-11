@@ -11,30 +11,17 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20200323T125817Z
+      Value: 20200707T085604Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200430T070024Z
+      Value: 20200811T100326
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[]}
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\admin
-    - ID: "7609b94f-43ea-40f6-82cf-f9e3b69b5cfd"
-      Hint: Database
-      Value: web
+        {"Entries":[{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T07:42:32.3440576Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T07:52:35.8068972Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T08:02:40.0413913Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T08:12:44.7069839Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T08:22:48.1230849Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T08:32:52.6052312Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T08:42:56.6256608Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T08:52:59.9226195Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T09:03:03.2097727Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T09:13:06.9896303Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T09:23:10.5044978Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T09:33:14.2864957Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T09:43:18.0178274Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T09:53:22.7028648Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2020-08-11T10:03:26.6982773Z","Exception":null}]}
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
-      Value: "{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9} item is exists in web database, in en language"
-    - ID: "a4a0aeba-f78b-45ae-8ea1-47ace70fa6a5"
-      Hint: Language
-      Value: en
+      Value:  item is exists in  database, in  language
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Healthy
-    - ID: "db9bac8f-cd3c-4eef-aa29-5fbce9072b6e"
-      Hint: Item
-      Value: "{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}"
+      Value: Warning

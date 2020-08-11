@@ -2,13 +2,10 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Newtonsoft.Json;
     using Sitecore.Data.Items;
     using System;
-    using System.Collections.Generic;
     using System.Collections.Specialized;
-    using System.Linq;
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Security.Cryptography.X509Certificates;
@@ -224,7 +221,7 @@
                 HttpResponseMessage response = new HttpResponseMessage();
 
                 httpClient = AddAuthentication(httpClient);
-                
+
                 if (RequestHeaders != null && RequestHeaders.Count > 0)
                 {
                     httpClient.DefaultRequestHeaders.Accept.Clear();
@@ -277,7 +274,6 @@
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
                     Exception = exception
-
                 });
             }
             finally

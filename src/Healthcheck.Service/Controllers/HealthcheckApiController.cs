@@ -48,9 +48,12 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public string IsOk()
+        public ApplicationInformation IsAdministrator()
         {
-            return "Ok";
+            return new ApplicationInformation
+            {
+                IsAdministrator = Sitecore.Context.User.IsAdministrator
+            };
         }
 
         /// <summary>

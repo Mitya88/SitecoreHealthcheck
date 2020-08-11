@@ -7,7 +7,6 @@
     using System;
     using System.IO;
     using System.Net;
-    using System.Text;
 
     /// <summary>
     /// Web Job healthcheck component
@@ -38,7 +37,6 @@
         /// The password.
         /// </value>
         public string Password { get; set; }
-
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WebJobCheck"/> class.

@@ -2,18 +2,14 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore.Configuration;
     using Sitecore.ContentSearch;
-    using Sitecore.ContentSearch.Linq;
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.ContentSearch.Utilities;
     using Sitecore.Data;
     using Sitecore.Data.Items;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
 
     /// <summary>
     /// Search Index Heatlh check component
@@ -83,7 +79,7 @@
             {
                 index = ContentSearchManager.GetIndex(IndexName);
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 this.Status = HealthcheckStatus.Warning;
                 this.ErrorList.Entries.Add(new ErrorEntry
@@ -132,7 +128,7 @@
 
                     return;
                 }
-            }   
+            }
             catch (Exception ex)
             {
                 this.Status = HealthcheckStatus.Error;

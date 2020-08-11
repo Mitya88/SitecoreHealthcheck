@@ -30,5 +30,30 @@
         /// The exception.
         /// </value>
         public Exception Exception { get; set; }
+
+        /// <summary>Gets the default error entry.</summary>
+        /// defaults: Created = DateTime.UtcNow
+        ///           Exception = null
+        /// <param name="reason">The reason.</param>
+        /// <returns>Default ErrorEntry with a specific reason.</returns>
+        public static ErrorEntry CreateErrorEntry(string reason)
+        {
+            return new ErrorEntry()
+            {
+                Created = DateTime.UtcNow,
+                Reason = reason,
+                Exception = null
+            };
+        }
+
+        public static ErrorEntry CreateErrorEntry(string reason, Exception exception)
+        {
+            return new ErrorEntry()
+            {
+                Created = DateTime.UtcNow,
+                Reason = reason,
+                Exception = exception
+            };
+        }
     }
 }

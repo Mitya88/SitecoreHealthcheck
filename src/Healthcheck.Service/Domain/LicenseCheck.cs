@@ -1,12 +1,11 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using System;
-    using System.Xml;
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
+    using System;
+    using System.Xml;
 
     /// <summary>
     /// Licence check component
@@ -51,7 +50,8 @@
             this.LastCheckTime = DateTime.UtcNow;
             this.Status = HealthcheckStatus.Healthy;
 
-            try {
+            try
+            {
                 var licenseFile = Settings.LicenseFile;
                 XmlDocument doc = new XmlDocument();
                 doc.Load(licenseFile);
@@ -84,7 +84,7 @@
                     return;
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 this.Status = HealthcheckStatus.Error;
                 this.ErrorList.Entries.Add(new ErrorEntry

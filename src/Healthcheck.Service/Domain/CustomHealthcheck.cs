@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Specialized;
@@ -70,7 +69,6 @@
             Assembly assembly = null;
             try
             {
-
                 assembly = Assembly.Load(assemblyName);
             }
             catch (Exception ex)

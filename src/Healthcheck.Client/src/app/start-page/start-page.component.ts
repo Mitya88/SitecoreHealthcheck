@@ -14,31 +14,31 @@ export class StartPageComponent implements OnInit {
   canvas: any;
   ctx: any;
 
-  ngAfterViewInit() {    
+  ngAfterViewInit() {
   }
 
-  loadChart(){
+  loadChart() {
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
     let myChart = new Chart(this.ctx, {
       type: 'pie',
       data: {
-          labels: ["Healthy", "Warning", "Error","Unknown"],
-          datasets: [{
-              label: '# of Components',
-              data: [this.healthyCount , this.warningCount, this.errorCount, this.unknownCount],
-              backgroundColor: [
-                  'rgba(0, 128, 0, 1)',
-                  'rgba(255, 166, 0, 1)',
-                  'rgba(255, 0, 0, 1)',
-                  'rgba(0, 0, 0, 1)'
-              ],
-              borderWidth: 1
-          }]
+        labels: ["Healthy", "Warning", "Error", "Unknown"],
+        datasets: [{
+          label: '# of Components',
+          data: [this.healthyCount, this.warningCount, this.errorCount, this.unknownCount],
+          backgroundColor: [
+            'rgba(0, 128, 0, 1)',
+            'rgba(255, 166, 0, 1)',
+            'rgba(255, 0, 0, 1)',
+            'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+        }]
       },
       options: {
-        legend:{
-          display:false
+        legend: {
+          display: false
         }
       }
     });
@@ -49,7 +49,7 @@ export class StartPageComponent implements OnInit {
 
   filterStates: any;
   selectedState: any;
-  isTableView:boolean;
+  isTableView: boolean;
 
   ngOnInit() {
 
@@ -57,6 +57,17 @@ export class StartPageComponent implements OnInit {
     this.filterStates = ["All", "Healthy only", "Non-Healthy only"];
     this.selectedState = "All";
     this.isTableView = false;
+    this.applicationInformation();
+  }
+
+  appInfo: any;
+  applicationInformation() {
+    this.healthcheckService.fetchApplicationInformation().subscribe({
+      next: response => {
+        this.appInfo = response;
+      }, error: response => {
+      }
+    });
   }
 
   load() {
@@ -173,6 +184,22 @@ export class StartPageComponent implements OnInit {
     }
     else {
       return "";
+    }
+  }
+
+  cleanErrors() {
+    var r = confirm("Are you sure to remove error entries?");
+    if (r == true) {
+      this.isLoading = true;
+      this.healthcheckService.clearErrors().subscribe({
+        next: response => {
+          this.response = response as Array<ComponentGroup>;
+          this.isLoading = false;
+          this.flattenComponents();
+          this.loadChart();
+        }, error: response => {
+        }
+      });
     }
   }
 }

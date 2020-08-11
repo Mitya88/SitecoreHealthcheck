@@ -5,7 +5,8 @@
       <div class="col-2">
         <button scButton="primary" (click)="load()">Refresh</button>
         <button scButton="secondary" (click)="run()">Re run</button>
-        <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a><br><br>
+        <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a>
+        <br><br>
         <h5>State Filter</h5>
         <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
           <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
@@ -25,7 +26,9 @@
       </div>
       <div class="col-4">
         
-       
+    <a href="https://docs.advancedschealthcheck.com/" target="_blank">Documentation</a>
+       <br>
+       <button scButton="primary" *ngIf="appInfo && appInfo.IsAdministrator" (click)="cleanErrors()">Clean Errors</button>
       </div>  
     </div>
   </div>

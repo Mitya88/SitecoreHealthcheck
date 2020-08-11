@@ -1,13 +1,9 @@
 ﻿namespace Healthcheck.Service.LogParsing
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
-    using System.Threading;
-    using System.Web;
 
     /// <summary>
     /// Log data source
@@ -21,7 +17,7 @@
         /// The log data.
         /// </value>
         public LogData LogData { get; }
-        
+
         private FileInfo[] logFiles;
         private LogReaderSettings logReaderSettings;
 
@@ -68,7 +64,7 @@
         public void ParseFile(string path)
         {
             var fileDate = GetDateFromFileName(path);
-            
+
             using (var file = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 var parser = new Parser(LogData, fileDate);
@@ -81,7 +77,7 @@
                         parser.ParseLine(line);
                         noOfLines++;
                     }
-                    
+
                     Debug.WriteLine($"Added {noOfLines} lines");
                 }
             }
@@ -98,14 +94,14 @@
             {
                 if (line[index] == '.' && index + 9 < line.Length && (char.IsDigit(line[index + 1]) && char.IsDigit(line[index + 2])) && (char.IsDigit(line[index + 3]) && char.IsDigit(line[index + 4]) && (char.IsDigit(line[index + 5]) && char.IsDigit(line[index + 6]))) && (char.IsDigit(line[index + 7]) && char.IsDigit(line[index + 8])))
                 {
-                    int year = ((int)line[index + 1] - 48) * 1000 + ((int)line[index + 2] - 48) * 100 + ((int)line[index + 3] - 48) * 10 + (int)line[index + 4] - 48;
-                    int month = ((int)line[index + 5] - 48) * 10 + (int)line[index + 6] - 48;
-                    int day = ((int)line[index + 7] - 48) * 10 + (int)line[index + 8] - 48;
+                    int year = (line[index + 1] - 48) * 1000 + (line[index + 2] - 48) * 100 + (line[index + 3] - 48) * 10 + line[index + 4] - 48;
+                    int month = (line[index + 5] - 48) * 10 + line[index + 6] - 48;
+                    int day = (line[index + 7] - 48) * 10 + line[index + 8] - 48;
                     if (line[index + 9] != '.' || !char.IsDigit(line[index + 10]) || (!char.IsDigit(line[index + 11]) || !char.IsDigit(line[index + 12])) || (!char.IsDigit(line[index + 13]) || !char.IsDigit(line[index + 14]) || !char.IsDigit(line[index + 15])))
                         return new DateTime(year, month, day, 0, 0, 0);
-                    int hour = ((int)line[index + 10] - 48) * 10 + ((int)line[index + 11] - 48);
-                    int minute = ((int)line[index + 12] - 48) * 10 + ((int)line[index + 13] - 48);
-                    int second = ((int)line[index + 14] - 48) * 10 + ((int)line[index + 15] - 48);
+                    int hour = (line[index + 10] - 48) * 10 + (line[index + 11] - 48);
+                    int minute = (line[index + 12] - 48) * 10 + (line[index + 13] - 48);
+                    int second = (line[index + 14] - 48) * 10 + (line[index + 15] - 48);
                     return new DateTime(year, month, day, hour, minute, second);
                 }
             }

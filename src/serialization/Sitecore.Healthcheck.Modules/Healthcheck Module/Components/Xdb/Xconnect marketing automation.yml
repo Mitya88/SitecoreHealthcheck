@@ -11,20 +11,17 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20200420T080031Z
+      Value: 20200709T183436Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200430T070024Z
+      Value: 20200811T101426
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[]}
-    - ID: "590f1268-3005-43c1-ac6b-4efe83ae306a"
-      Hint: Service Name
-      Value: "sc920Test.xconnect.local-MarketingAutomationService"
+        {"Entries":[{"Reason":"Missing service name value","Created":"2020-08-11T07:32:20.1215842Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T07:42:32.2230654Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T07:52:35.6858948Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T08:02:39.9304202Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T08:12:44.5860155Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T08:22:47.9761245Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T08:32:52.4532316Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T08:42:56.4966612Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T08:52:59.7346195Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T09:03:03.1127694Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T09:13:06.8766464Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T09:23:10.4175474Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T09:33:14.1915362Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T09:43:17.93682Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T09:53:22.4579009Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T10:03:26.6303115Z","Exception":null},{"Reason":"Missing service name value","Created":"2020-08-11T10:14:26.619267Z","Exception":null}]}
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
-      Value: The service is running
+      Value: The  service is running
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Error
+      Value: Warning
