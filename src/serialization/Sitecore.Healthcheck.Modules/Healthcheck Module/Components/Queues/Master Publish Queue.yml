@@ -14,17 +14,17 @@ Languages:
       Value: 20200508T090015Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200811T053220Z
+      Value: 20200811T100326
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[]}
+        {"Entries":[{"Reason":"PublishQueue table in master database has 10160 record","Created":"2020-08-11T07:42:32.3110559Z","Exception":null},{"Reason":"PublishQueue table in master database has 10194 record","Created":"2020-08-11T07:52:35.7778944Z","Exception":null},{"Reason":"PublishQueue table in master database has 10224 record","Created":"2020-08-11T08:02:40.013388Z","Exception":null},{"Reason":"PublishQueue table in master database has 10256 record","Created":"2020-08-11T08:12:44.6749845Z","Exception":null},{"Reason":"PublishQueue table in master database has 10288 record","Created":"2020-08-11T08:22:48.0530842Z","Exception":null},{"Reason":"PublishQueue table in master database has 10321 record","Created":"2020-08-11T08:32:52.5632356Z","Exception":null},{"Reason":"PublishQueue table in master database has 10358 record","Created":"2020-08-11T08:42:56.6006572Z","Exception":null},{"Reason":"PublishQueue table in master database has 10389 record","Created":"2020-08-11T08:52:59.8696176Z","Exception":null},{"Reason":"PublishQueue table in master database has 10424 record","Created":"2020-08-11T09:03:03.1767676Z","Exception":null},{"Reason":"PublishQueue table in master database has 10456 record","Created":"2020-08-11T09:13:06.9596311Z","Exception":null},{"Reason":"PublishQueue table in master database has 10489 record","Created":"2020-08-11T09:23:10.4724964Z","Exception":null},{"Reason":"PublishQueue table in master database has 10520 record","Created":"2020-08-11T09:33:14.2624987Z","Exception":null},{"Reason":"PublishQueue table in master database has 10557 record","Created":"2020-08-11T09:43:17.9868235Z","Exception":null},{"Reason":"PublishQueue table in master database has 10589 record","Created":"2020-08-11T09:53:22.5368606Z","Exception":null},{"Reason":"PublishQueue table in master database has 10633 record","Created":"2020-08-11T10:03:26.6732792Z","Exception":null}]}
     - ID: "4e2186ac-3ea9-4875-ba13-b7fd2c384552"
       Hint: Warn Count
       Value: 1000
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
-      Value: 
+      Value: Database Connection is OK
     - ID: "aa244095-4de8-49bc-8cc9-eeb119141a87"
       Hint: Database
       Value: master

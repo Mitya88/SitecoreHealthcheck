@@ -7,6 +7,7 @@
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Component health model
@@ -109,6 +110,8 @@
             {
                 this.ErrorList.Entries = new List<ErrorEntry>();
             }
+
+            this.ErrorList.Entries = this.ErrorList.Entries.OrderByDescending(t => t.Created).ToList();
 
             this.ErrorCount = this.ErrorList.Entries.Count;
         }

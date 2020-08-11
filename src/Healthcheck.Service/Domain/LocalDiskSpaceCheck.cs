@@ -112,7 +112,7 @@
             {
                 var driveBasic = $"Drive: {drive.DriveName}" +
                     $"\tFree space: {drive.AvailableFreeSpace:0.00} GB" +
-                    $"\tPercentagea free space: {drive.PercentageOfFreeSpace:0.00} %";
+                    $"\tPercentage free space: {drive.PercentageOfFreeSpace:0.00} %";
 
                 builder.AppendLine(driveBasic);
             }

@@ -4,6 +4,10 @@ Parent: "aa16ef54-4954-4b4b-9056-537f97e9ee0f"
 Template: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
 Path: /sitecore/system/Modules/Healthcheck Module/Components/Sitecore PowerShell Checks
 DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1100
 Languages:
 - Language: en
   Versions:
