@@ -1,8 +1,8 @@
 ﻿---
 ID: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
-Parent: "4c9b91a0-c105-478e-b5d4-a718ddd68f2f"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk/LocalDisk Space Check
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

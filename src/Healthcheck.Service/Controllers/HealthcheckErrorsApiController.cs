@@ -1,9 +1,7 @@
 ﻿namespace Healthcheck.Service.Controllers
 {
-    using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Services.Infrastructure.Web.Http;
-    using System.Collections.Generic;
     using System.Web.Http;
     using System.Web.Http.Cors;
 
@@ -20,23 +18,11 @@
         private readonly IHealthcheckRepository healthcheckRepository;
 
         /// <summary>
-        /// The healthcheck service
-        /// </summary>
-        private readonly IHealthcheckService healthcheckService;
-
-        /// <summary>
-        /// The healthcheck service
-        /// </summary>
-        private readonly IComponentFactory componentFactory;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="HealthcheckController" /> class.
         /// </summary>
-        public HealthcheckErrorsApiController(IHealthcheckRepository healthcheckRepository, IHealthcheckService healthcheckService, IComponentFactory componentFactory)
+        public HealthcheckErrorsApiController(IHealthcheckRepository healthcheckRepository)
         {
             this.healthcheckRepository = healthcheckRepository;
-            this.healthcheckService = healthcheckService;
-            this.componentFactory = componentFactory;
         }
 
         /// <summary>
@@ -45,12 +31,17 @@
         /// <remarks>Keeps the last error entry.</remarks>
         /// <returns>A list of all components.</returns>
         [HttpGet]
-        public List<ComponentGroup> Clear()
+        public IHttpActionResult Clear()
         {
+            if (!Sitecore.Context.User.IsAdministrator)
+            {
+                return this.Unauthorized();
+            }
+
             this.healthcheckRepository.ClearComponentsErrorsButLast();
             var componentsGroups = this.healthcheckRepository.GetHealthcheck();
 
-            return componentsGroups;
+            return this.Ok(componentsGroups);
         }
     }
 }

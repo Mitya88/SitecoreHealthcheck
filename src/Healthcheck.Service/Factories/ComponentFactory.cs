@@ -1,7 +1,6 @@
 ﻿namespace Healthcheck.Service.Factories
 {
     using Healthcheck.Service.Domain;
-    using Healthcheck.Service.Domain.LocalDisk;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Data.Items;
 

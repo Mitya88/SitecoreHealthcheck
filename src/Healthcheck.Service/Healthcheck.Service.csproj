@@ -243,8 +243,8 @@
   <ItemGroup>
     <Compile Include="Controllers\HealthcheckErrorsApiController.cs" />
     <Compile Include="Domain\ApiHealthCheck.cs" />
-    <Compile Include="Domain\LocalDisk\DriveDetails.cs" />
-    <Compile Include="Domain\LocalDisk\LocalDiskSpaceCheck.cs" />
+    <Compile Include="Models\DriveDetails.cs" />
+    <Compile Include="Domain\LocalDiskSpaceCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
     <Compile Include="Domain\SPECheck.cs" />
     <Compile Include="Domain\WebJobCheck.cs" />
@@ -261,6 +261,7 @@
     <Compile Include="LogParsing\LogEntry.cs" />
     <Compile Include="LogParsing\Logger.cs" />
     <Compile Include="LogParsing\Parser.cs" />
+    <Compile Include="Models\ApplicationInformation.cs" />
     <Compile Include="Models\ApplicationInsights.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\HealthcheckApiController.cs" />

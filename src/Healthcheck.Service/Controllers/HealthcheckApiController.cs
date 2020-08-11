@@ -2,6 +2,7 @@
 {
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
+    using Healthcheck.Service.Models;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System;
     using System.Collections.Generic;
@@ -47,9 +48,12 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public string IsOk()
+        public ApplicationInformation IsAdministrator()
         {
-            return "Ok";
+            return new ApplicationInformation
+            {
+                IsAdministrator = Sitecore.Context.User.IsAdministrator
+            };
         }
 
         /// <summary>

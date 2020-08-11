@@ -2,7 +2,7 @@
 ID: "81c1756c-ebdf-452f-989c-548607f718ff"
 Parent: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk/LocalDisk Space Check/Configuration
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/Configuration
 DB: master
 Languages:
 - Language: en

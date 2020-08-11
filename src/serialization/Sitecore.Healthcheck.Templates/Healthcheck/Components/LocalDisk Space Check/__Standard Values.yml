@@ -2,7 +2,7 @@
 ID: "2332a349-989f-401b-8cf3-9295d2496358"
 Parent: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
 Template: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
-Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk/LocalDisk Space Check/__Standard Values
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/__Standard Values
 DB: master
 Languages:
 - Language: en

@@ -1,8 +1,8 @@
 ﻿---
-ID: "56d91857-4715-46ae-a7a3-2395f6f939eb"
+ID: "1490bd14-4411-486e-833e-760ae1606e58"
 Parent: "81c1756c-ebdf-452f-989c-548607f718ff"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk/LocalDisk Space Check/Configuration/WarningPercentageThreshold
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/Configuration/ErrorPercentageThreshold
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
@@ -10,7 +10,7 @@ SharedFields:
   Value: "Single-Line Text"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 100
+  Value: 200
 Languages:
 - Language: en
   Versions:
@@ -18,7 +18,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20200706T094156Z
+      Value: 20200706T094157Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.Domain.LocalDisk
+﻿namespace Healthcheck.Service.Models
 {
     /// <summary>Store drive details.</summary>
     public class DriveDetails

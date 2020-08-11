@@ -17,4 +17,12 @@ export class HealthcheckService {
   fetchStatusByComponent(id:any){
     return this.httpClient.get('/sitecore/api/ssc/healthcheck/component?id='+id+'&sc_site=shell');
   }
+
+  fetchApplicationInformation(){
+    return this.httpClient.get('/sitecore/api/ssc/healthcheck/IsAdministrator?sc_site=shell');
+  }
+
+  clearErrors(){
+    return this.httpClient.get('/sitecore/api/ssc/healthcheck/errors/clear?sc_site=shell');
+  }
 }

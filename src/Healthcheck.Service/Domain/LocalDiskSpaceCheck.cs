@@ -1,7 +1,8 @@
-﻿namespace Healthcheck.Service.Domain.LocalDisk
+﻿namespace Healthcheck.Service.Domain
 {
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
+    using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Generic;
@@ -18,9 +19,13 @@
         /// <summary>The error percentage threshold.</summary>
         private double _errorPercentageThreshold;
 
+        private string _driveName;
+
         private const string WarningPercentageFieldName = "WarningPercentageThreshold";
 
         private const string ErrorPercentageFieldName = "ErrorPercentageThreshold";
+
+        private const string DriveNameFieldName = "DriveName";
 
         private const double WarningPercentageDefault = 25;
 
@@ -37,6 +42,15 @@
         public override void RunHealthcheck()
         {
             this.LastCheckTime = DateTime.UtcNow;
+
+            if (string.IsNullOrEmpty(_driveName))
+            {
+                this.Status = HealthcheckStatus.Warning;
+                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("DriveName is not configured!"));
+
+                return;
+            }
+
             var drives = GetReadyDrives();
 
             if (drives == null)
@@ -54,11 +68,21 @@
                 return;
             }
 
+            drives = drives.Where(t => t.DriveName.Equals(_driveName, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            if (!drives.Any())
+            {
+                this.Status = HealthcheckStatus.Warning;
+                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry($"Cannot find drive with name: {_driveName}"));
+
+                return;
+            }
+
             var errorDrivesCapacity = drives.Where(d => d.PercentageOfFreeSpace < _errorPercentageThreshold);
             if (errorDrivesCapacity.Count() > 0)
             {
                 this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(errorDrivesCapacity, "Some drives are very low capacity.")));
+                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(errorDrivesCapacity, $"Drive: {_driveName} is on very low capacity.")));
 
                 return;
             }
@@ -67,13 +91,13 @@
             if (warningDrivesCapacity.Count() > 0)
             {
                 this.Status = HealthcheckStatus.Warning;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(warningDrivesCapacity, "Some drives are low capacity.")));
+                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(warningDrivesCapacity, $"Drive: {_driveName} is on low capacity.")));
 
                 return;
             }
 
             this.Status = HealthcheckStatus.Healthy;
-            this.HealthyMessage = CreateStatusMessage(drives, "Overall, drives are in good capacity.");
+            this.HealthyMessage = CreateStatusMessage(drives, $"Drive, {_driveName} are in good capacity.");
         }
 
         /// <summary>Creates the status message displayed to the user.</summary>
@@ -103,12 +127,13 @@
         /// <param name="item">The item.</param>
         private void ReadParameters(Item item)
         {
-            var warningPercentageField = item.Fields[WarningPercentageFieldName];
-            var errorPercentageField = item.Fields[ErrorPercentageFieldName];
+            var warningPercentageField = item[WarningPercentageFieldName];
+            var errorPercentageField = item[ErrorPercentageFieldName];
+            _driveName = item[DriveNameFieldName];
 
             if (errorPercentageField != null)
             {
-                var parsedErrorParameter = double.TryParse(errorPercentageField.Value, out _errorPercentageThreshold);
+                var parsedErrorParameter = double.TryParse(errorPercentageField, out _errorPercentageThreshold);
                 if (!parsedErrorParameter)
                 {
                     _errorPercentageThreshold = ErrorPercentageDefault;
@@ -121,7 +146,7 @@
 
             if (warningPercentageField != null)
             {
-                var parsedWarningParameter = double.TryParse(warningPercentageField.Value, out _warningPercentageThreshold);
+                var parsedWarningParameter = double.TryParse(warningPercentageField, out _warningPercentageThreshold);
                 if (!parsedWarningParameter)
                 {
                     _warningPercentageThreshold = WarningPercentageDefault;
