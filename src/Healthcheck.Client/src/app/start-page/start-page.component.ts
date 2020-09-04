@@ -187,6 +187,21 @@ export class StartPageComponent implements OnInit {
     }
   }
 
+  getStateClass(component: any){
+    if(component.Status == "Healthy"){
+      return "healthy-state";
+    }
+    else if(component.Status == "Warning"){
+      return "warning-state";
+    }
+    else if(component.Status == "Error"){
+      return "error-state";
+    }
+    else{
+      return "unknown-state";
+    }
+  }
+
   cleanErrors() {
     var r = confirm("Are you sure to remove error entries?");
     if (r == true) {

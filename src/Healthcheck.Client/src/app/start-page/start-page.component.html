@@ -93,10 +93,14 @@
         <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
           <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
           </sc-progress-indicator-panel>
-          <div class="card-block main-menu-item" *ngIf="!component.isLoading">
-            <span class="left title">{{component.Name}} </span><span class="right"
+          <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
+            <div class="p-4" [ngClass]="getStateClass(component)">
+              <p><span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span></p>
+            <!-- <span class="left title" >{{component.Name}} </span><span class="right"
               title="Error count">{{component.ErrorCount}}</span>
-            <span class="clear"></span>
+            <span class="clear"></span> -->
+            </div>
+            <div class="p-4">
             <div class="health-icon center">
               <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="band_ai" size="xxxlarge"></sc-icon>
               <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
@@ -132,6 +136,7 @@
               </div>
 
             </div>
+          </div>
           </div>
         </div>
       </div>
