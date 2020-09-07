@@ -50,6 +50,8 @@ export class StartPageComponent implements OnInit {
   filterStates: any;
   selectedState: any;
   isTableView: boolean;
+  viewType:any;
+  
 
   ngOnInit() {
 
@@ -57,6 +59,7 @@ export class StartPageComponent implements OnInit {
     this.filterStates = ["All", "Healthy only", "Non-Healthy only"];
     this.selectedState = "All";
     this.isTableView = false;
+    this.viewType = "normal";
     this.applicationInformation();
   }
 
@@ -180,10 +183,25 @@ export class StartPageComponent implements OnInit {
   getClass(component: any) {
     if (component.Display) {
 
-      return "col-2";
+      return "col-2 flex-correction";
     }
     else {
       return "";
+    }
+  }
+
+  getStateClass(component: any){
+    if(component.Status == "Healthy"){
+      return "healthy-state";
+    }
+    else if(component.Status == "Warning"){
+      return "warning-state";
+    }
+    else if(component.Status == "Error"){
+      return "error-state";
+    }
+    else{
+      return "unknown-state";
     }
   }
 
