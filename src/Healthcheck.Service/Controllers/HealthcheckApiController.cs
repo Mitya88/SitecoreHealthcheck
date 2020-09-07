@@ -48,11 +48,12 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ApplicationInformation IsAdministrator()
+        public ApplicationInformation AppInfo()
         {
             return new ApplicationInformation
             {
-                IsAdministrator = Sitecore.Context.User.IsAdministrator
+                IsAdministrator = Sitecore.Context.User.IsAdministrator,
+                MemoryUsage = string.Format("{0} MB", System.Diagnostics.Process.GetCurrentProcess().WorkingSet64 / 1024 / 1024)
             };
         }
 
