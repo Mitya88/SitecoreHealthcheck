@@ -16,7 +16,7 @@
         <label class="container-rb"><input type="radio" name="mode" value="table" [(ngModel)]="viewType">&nbsp; Table<span class="checkmark-rb"></span></label> 
       </div>
       <div class="radio">
-        <label class="container-rb"><input type="radio" name="mode" value="groupped" [(ngModel)]="viewType">&nbsp; Groupped<span class="checkmark-rb"></span></label>  
+        <label class="container-rb"><input type="radio" name="mode" value="grid" [(ngModel)]="viewType">&nbsp; Grid<span class="checkmark-rb"></span></label>  
       </div>
 
       
@@ -88,7 +88,7 @@
 
 </sc-progress-indicator-panel>
 
-<div  *ngIf="response && !isLoading && viewType == 'normal'">
+<div  *ngIf="response && !isLoading && viewType == 'grid'">
   <div class="row" >
     <template ngFor let-group [ngForOf]="response" let-ruleIndex="index">
    
@@ -145,6 +145,69 @@
   </template>
 </div>
   </div>
+
+  <div *ngIf="response && !isLoading && viewType=='normal'">
+    <div *ngFor='let group of response'>
+      <div class="row">
+        <h4 class="group-name">{{group.GroupName}}</h4>
+      </div>
+      <div class="row">
+  
+        <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
+          <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
+            <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
+            </sc-progress-indicator-panel>
+            <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
+              <div class="p-4" [ngClass]="getStateClass(component)">
+                <p><span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span></p>
+              <!-- <span class="left title" >{{component.Name}} </span><span class="right"
+                title="Error count">{{component.ErrorCount}}</span>
+              <span class="clear"></span> -->
+              </div>
+              <div class="p-4">
+              <div class="health-icon center">
+                <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="band_ai" size="xxxlarge"></sc-icon>
+                <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
+                <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
+                </sc-icon>
+              </div>
+  <!-- heart broken   wrench-->
+              <p>{{component.LastCheckTime | date:'medium' }}</p>
+              <p class="healthy-message" *ngIf="component.Status=='Healthy'" title="{{component.HealthyMessage}}">
+                {{component.HealthyMessage}}</p>
+              <p class="healthy-message" *ngIf="component.Status!='Healthy'">&nbsp;</p>
+              <div>
+                <a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}&sc_site=shell">Download
+                  logs</a>
+              </div>
+              <div class="tooltip2">Issues
+                <div class="tooltiptext2" *ngIf="component.ErrorCount > 0">
+                  <h3>Most recent issues</h3>
+                  <h4><a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}&sc_site=shell">Download
+                    All</a></h4>
+                  <div class="row padding-left-15 margin-bottom-15" *ngFor='let error of component.ErrorList.Entries'>
+                    <div class="col-8" title="{{error.Reason}}" *ngIf="error.Reason.length>100">
+                      {{error.Reason.substr(0, 100) + '\u2026'}}
+                    </div>
+                    <div class="col-8" *ngIf="error.Reason.length<=100">
+                      {{error.Reason}}
+                    </div>
+                    <div class="col-4">
+                      {{error.Created  | date:'medium' }}
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    </div>
 <div *ngIf="response && !isLoading && viewType == 'table'">
  
     <div class="row">
