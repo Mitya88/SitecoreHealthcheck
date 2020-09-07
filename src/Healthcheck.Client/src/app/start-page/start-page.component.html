@@ -1,63 +1,113 @@
-<div class="card mb-3">
-  <div class="card-block main-menu-item">
-    <div class="row">
-     
-      <div class="col-2">
-        <button scButton="primary" (click)="load()">Refresh</button>
-        <button scButton="secondary" (click)="run()">Re run</button>
-        <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a>
-        <br><br>
-        <h5>State Filter</h5>
-        <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
-          <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
-        </select>
-        <br/>
-        <div class="radio">
-          <label><input type="radio" name="mode" [value]="false" [(ngModel)]="isTableView">&nbsp; Normal</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" name="mode" [value]="true" [(ngModel)]="isTableView">&nbsp; Table</label>
-        </div>
+<div scPageActionBar>
+  <sc-action-bar>
+    <sc-action-bar-left>
+      <button scButton="primary" (click)="load()">Refresh</button>
+      <button scButton="secondary" (click)="run()">Re run</button>
+      <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a>
+      <button scButton="primary" *ngIf="appInfo && appInfo.IsAdministrator" (click)="cleanErrors()">Clean Errors</button>
+
+      <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
+        <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
+      </select>
+      <div class="radio">
+        <label class="container-rb"><input type="radio" name="mode" value="normal" [(ngModel)]="viewType">&nbsp; Normal<span class="checkmark-rb"></span></label> 
       </div>
+      <div class="radio">
+        <label class="container-rb"><input type="radio" name="mode" value="table" [(ngModel)]="viewType">&nbsp; Table<span class="checkmark-rb"></span></label> 
+      </div>
+      <div class="radio">
+        <label class="container-rb"><input type="radio" name="mode" value="grid" [(ngModel)]="viewType">&nbsp; Grid<span class="checkmark-rb"></span></label>  
+      </div>
+
       
-      <div class="col-2" >
-        <h5 class="center">Current State</h5>
-        <canvas id="myChart" ></canvas>
+    </sc-action-bar-left>
+    <sc-action-bar-right>
+      <a href="https://docs.advancedschealthcheck.com/" target="_blank">  <sc-icon size="small" icon="question"></sc-icon></a>
+      
+    </sc-action-bar-right>
+  </sc-action-bar>
+
+ 
+</div>
+
+<div class="p-4">
+  <div class="row state-row">
+    <div class="card  mb-3 state-block state-block-first">
+      <div class="card-block no-padding parent" style="background-color: green;">
+        <div class="row state-row ">
+          <div class="col-5" > <sc-icon   icon="navigate_check" size="xxxlarge"></sc-icon></div>
+          <div class="col-7 padding-top-30" style="background-color:rgb(1, 112, 1)" > <h1>{{healthyCount}}</h1>
+            <p>component(s) looks ok!</p></div>
+        </div>
+       
+    
+       
       </div>
-      <div class="col-4">
-        
-    <a href="https://docs.advancedschealthcheck.com/" target="_blank">Documentation</a>
-       <br>
-       <button scButton="primary" *ngIf="appInfo && appInfo.IsAdministrator" (click)="cleanErrors()">Clean Errors</button>
-      </div>  
+    </div>
+    <div class="card  mb-3 state-block">
+      <div class="card-block no-padding parent" style="background-color: orange;">
+        <div class="row state-row ">
+          <div class="col-5" > <sc-icon   icon="about" size="xxxlarge"></sc-icon></div>
+          <div class="col-7 padding-top-30" style="background-color: rgb(204, 133, 0);" > <h1>{{warningCount}}</h1>
+            <p>component(s) need attention!</p></div>
+        </div>
+       
+    
+       
+      </div>
+    </div>
+    <div class="card  mb-3 state-block">
+      <div class="card-block no-padding parent" style="background-color: red;">
+        <div class="row state-row ">
+          <div class="col-5" > <sc-icon   icon="heart_broken" size="xxxlarge"></sc-icon></div>
+          <div class="col-7 padding-top-30" style="background-color: rgb(172, 0, 0);" > <h1>{{errorCount}}</h1>
+            <p>component(s) are broken!</p></div>
+        </div>
+       
+    
+       
+      </div>
+    </div>
+    <div class="card  mb-3 state-block">
+      <div class="card-block no-padding parent" style="background-color: rgb(53, 53, 53);">
+        <div class="row state-row ">
+          <div class="col-5" > <sc-icon   icon="wrench" size="xxxlarge"></sc-icon></div>
+          <div class="col-7 padding-top-30" style="background-color:black;" > <h1>{{unknownCount}}</h1>
+            <p>component(s) state are unknown!</p></div>
+        </div>
+       
+    
+       
+      </div>
     </div>
   </div>
-</div>
+ 
+
+
 <sc-progress-indicator-panel *ngIf="isLoading" [show]="isLoading">
 
 </sc-progress-indicator-panel>
-<div *ngIf="response && !isLoading && !isTableView">
-  <div *ngFor='let group of response'>
-    <div class="row">
-      <h4 class="group-name">{{group.GroupName}}</h4>
-    </div>
-    <div class="row">
+
+<div  *ngIf="response && !isLoading && viewType == 'grid'">
+  <div class="row" >
+    <template ngFor let-group [ngForOf]="response" let-ruleIndex="index">
+   
+   
 
       <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
         <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
           <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
           </sc-progress-indicator-panel>
-          <div class="card-block main-menu-item" *ngIf="!component.isLoading">
-            <span class="left title">{{component.Name}} </span><span class="right"
+          <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
+            <div [ngClass]="getStateClass(component)">
+              <span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span>
+            <!-- <span class="left title" >{{component.Name}} </span><span class="right"
               title="Error count">{{component.ErrorCount}}</span>
-            <span class="clear"></span>
-            <div class="health-icon center">
-              <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="close" size="xxxlarge"></sc-icon>
-              <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
-              <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
-              </sc-icon>
+            <span class="clear"></span> -->
             </div>
-
+            <div class="p-4">
+           
+<!-- heart broken   wrench-->
             <p>{{component.LastCheckTime | date:'medium' }}</p>
             <p class="healthy-message" *ngIf="component.Status=='Healthy'" title="{{component.HealthyMessage}}">
               {{component.HealthyMessage}}</p>
@@ -87,13 +137,78 @@
 
             </div>
           </div>
+          </div>
         </div>
       </div>
 
+    
+  </template>
+</div>
+  </div>
+
+  <div *ngIf="response && !isLoading && viewType=='normal'">
+    <div *ngFor='let group of response'>
+      <div class="row">
+        <h4 class="group-name">{{group.GroupName}}</h4>
+      </div>
+      <div class="row">
+  
+        <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
+          <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
+            <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
+            </sc-progress-indicator-panel>
+            <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
+              <div class="p-4" [ngClass]="getStateClass(component)">
+                <p><span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span></p>
+              <!-- <span class="left title" >{{component.Name}} </span><span class="right"
+                title="Error count">{{component.ErrorCount}}</span>
+              <span class="clear"></span> -->
+              </div>
+              <div class="p-4">
+              <div class="health-icon center">
+                <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="band_ai" size="xxxlarge"></sc-icon>
+                <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
+                <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
+                </sc-icon>
+              </div>
+  <!-- heart broken   wrench-->
+              <p>{{component.LastCheckTime | date:'medium' }}</p>
+              <p class="healthy-message" *ngIf="component.Status=='Healthy'" title="{{component.HealthyMessage}}">
+                {{component.HealthyMessage}}</p>
+              <p class="healthy-message" *ngIf="component.Status!='Healthy'">&nbsp;</p>
+              <div>
+                <a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}&sc_site=shell">Download
+                  logs</a>
+              </div>
+              <div class="tooltip2">Issues
+                <div class="tooltiptext2" *ngIf="component.ErrorCount > 0">
+                  <h3>Most recent issues</h3>
+                  <h4><a href="/sitecore/api/ssc/healthcheck/csv?id={{component.Id}}&componentName={{component.Name}}&sc_site=shell">Download
+                    All</a></h4>
+                  <div class="row padding-left-15 margin-bottom-15" *ngFor='let error of component.ErrorList.Entries'>
+                    <div class="col-8" title="{{error.Reason}}" *ngIf="error.Reason.length>100">
+                      {{error.Reason.substr(0, 100) + '\u2026'}}
+                    </div>
+                    <div class="col-8" *ngIf="error.Reason.length<=100">
+                      {{error.Reason}}
+                    </div>
+                    <div class="col-4">
+                      {{error.Created  | date:'medium' }}
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
     </div>
-  </div>
-  </div>
-<div *ngIf="response && !isLoading && isTableView">
+    </div>
+<div *ngIf="response && !isLoading && viewType == 'table'">
  
     <div class="row">
       <table scTable>
@@ -160,4 +275,4 @@
 
 
 </div>
-  
+</div>
