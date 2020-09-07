@@ -80,6 +80,19 @@
        
       </div>
     </div>
+    <div class="card  mb-3 state-block" *ngIf="appInfo">
+      <div class="card-block no-padding parent" style="background-color: purple;">
+        <div class="row state-row ">
+          <div class="col-5" > <sc-icon   icon="memory_stick" size="xxxlarge"></sc-icon></div>
+          <div class="col-7 padding-top-30" style="background-color: rgb(100, 1, 100)" > <h1>{{appInfo.MemoryUsage}}</h1>
+            <p>The current memory usage</p></div>
+        </div>
+       
+    
+       
+      </div>
+    </div>
+    
   </div>
  
 

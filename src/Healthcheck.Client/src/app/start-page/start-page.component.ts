@@ -51,6 +51,7 @@ export class StartPageComponent implements OnInit {
   selectedState: any;
   isTableView: boolean;
   viewType:any;
+  memoryUsage:any;
   
 
   ngOnInit() {
@@ -60,14 +61,24 @@ export class StartPageComponent implements OnInit {
     this.selectedState = "All";
     this.isTableView = false;
     this.viewType = "normal";
-    this.applicationInformation();
+    this.loadAppInformation();
+    this.updateAppInformation();
   }
 
   appInfo: any;
-  applicationInformation() {
+
+  
+  updateAppInformation() {
+    setInterval(()=> {
+      this.loadAppInformation();
+      },2000); 
+  }
+
+  loadAppInformation(){
     this.healthcheckService.fetchApplicationInformation().subscribe({
       next: response => {
         this.appInfo = response;
+        
       }, error: response => {
       }
     });
@@ -75,6 +86,7 @@ export class StartPageComponent implements OnInit {
 
   load() {
     this.isLoading = true;
+    
     this.healthcheckService.fetchStatus().subscribe({
       next: response => {
         this.response = response as Array<ComponentGroup>;

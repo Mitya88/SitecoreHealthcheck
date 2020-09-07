@@ -19,7 +19,7 @@ export class HealthcheckService {
   }
 
   fetchApplicationInformation(){
-    return this.httpClient.get('/sitecore/api/ssc/healthcheck/IsAdministrator?sc_site=shell');
+    return this.httpClient.get('/sitecore/api/ssc/healthcheck/AppInfo?sc_site=shell');
   }
 
   clearErrors(){
