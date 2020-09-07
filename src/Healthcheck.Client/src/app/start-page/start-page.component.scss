@@ -109,6 +109,7 @@
   input[type="radio"] {
     margin-top: -1px;
     vertical-align: middle;
+   
   }
 
   tbody{
@@ -172,21 +173,37 @@
 .healthy-state{
 background-color:green;
 color:white;
+padding:1.1em;
+display: inline-block;
+width: 100%;
+height: 75px;
 }
 
 .warning-state{
 background-color:orange;
 color:white;
+padding:1.1em;
+display: inline-block;
+width: 100%;
+height: 75px;
 }
 
 .error-state{
   background-color:red;
   color:white;
+  padding:1.1em;
+  display: inline-block;
+width: 100%;
+height: 75px;
 }
 
 .unknown-state{
   background-color: rgb(53, 53, 53);
   color:white;
+  padding:1.1em;
+  display: inline-block;
+width: 100%;
+height: 75px;
 }
 
 .error-count{
@@ -196,11 +213,98 @@ color:white;
   border-radius: 10px;
   padding:5px;
   font-weight: 700;
-  
 }
 
 .component-title{
   font-weight: 400;
-  font-size: 1.3em;
+  font-size: 1.1em;
+  padding-top:5px;
+  word-break: normal;
+  width: 210px;
+  display:block;
+  float:left;
+}
+
+.flex-correction{
+  flex: 0 0 16.666667%;
+}
+
+
+@media (max-width: 1785px) {
+  .component-title{
+   
+    width: 170px;
+  }
+}
+
+@media (min-width: 1786px) {
+
+}
+
+
+.container-rb {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container-rb input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark-rb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container-rb:hover input ~ .checkmark-rb {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-rb input:checked ~ .checkmark-rb {
+  background-color:#c42224;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark-rb:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container-rb input:checked ~ .checkmark-rb:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container-rb .checkmark-rb:after {
+     top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.radio{
   padding-top:5px;
 }

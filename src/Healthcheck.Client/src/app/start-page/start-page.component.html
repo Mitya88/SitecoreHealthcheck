@@ -10,11 +10,16 @@
         <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
       </select>
       <div class="radio">
-        <label><input type="radio" name="mode" [value]="false" [(ngModel)]="isTableView">&nbsp; Normal</label>
+        <label class="container-rb"><input type="radio" name="mode" value="normal" [(ngModel)]="viewType">&nbsp; Normal<span class="checkmark-rb"></span></label> 
       </div>
       <div class="radio">
-        <label><input type="radio" name="mode" [value]="true" [(ngModel)]="isTableView">&nbsp; Table</label>
+        <label class="container-rb"><input type="radio" name="mode" value="table" [(ngModel)]="viewType">&nbsp; Table<span class="checkmark-rb"></span></label> 
       </div>
+      <div class="radio">
+        <label class="container-rb"><input type="radio" name="mode" value="groupped" [(ngModel)]="viewType">&nbsp; Groupped<span class="checkmark-rb"></span></label>  
+      </div>
+
+      
     </sc-action-bar-left>
     <sc-action-bar-right>
       <a href="https://docs.advancedschealthcheck.com/" target="_blank">  <sc-icon size="small" icon="question"></sc-icon></a>
@@ -31,7 +36,7 @@
       <div class="card-block no-padding parent" style="background-color: green;">
         <div class="row state-row ">
           <div class="col-5" > <sc-icon   icon="navigate_check" size="xxxlarge"></sc-icon></div>
-          <div class="col-7 padding-top-30" style="background-color:rgb(1, 112, 1)" > <h1>5</h1>
+          <div class="col-7 padding-top-30" style="background-color:rgb(1, 112, 1)" > <h1>{{healthyCount}}</h1>
             <p>component(s) looks ok!</p></div>
         </div>
        
@@ -43,7 +48,7 @@
       <div class="card-block no-padding parent" style="background-color: orange;">
         <div class="row state-row ">
           <div class="col-5" > <sc-icon   icon="about" size="xxxlarge"></sc-icon></div>
-          <div class="col-7 padding-top-30" style="background-color: rgb(204, 133, 0);" > <h1>5</h1>
+          <div class="col-7 padding-top-30" style="background-color: rgb(204, 133, 0);" > <h1>{{warningCount}}</h1>
             <p>component(s) need attention!</p></div>
         </div>
        
@@ -55,7 +60,7 @@
       <div class="card-block no-padding parent" style="background-color: red;">
         <div class="row state-row ">
           <div class="col-5" > <sc-icon   icon="heart_broken" size="xxxlarge"></sc-icon></div>
-          <div class="col-7 padding-top-30" style="background-color: rgb(172, 0, 0);" > <h1>5</h1>
+          <div class="col-7 padding-top-30" style="background-color: rgb(172, 0, 0);" > <h1>{{errorCount}}</h1>
             <p>component(s) are broken!</p></div>
         </div>
        
@@ -67,7 +72,7 @@
       <div class="card-block no-padding parent" style="background-color: rgb(53, 53, 53);">
         <div class="row state-row ">
           <div class="col-5" > <sc-icon   icon="wrench" size="xxxlarge"></sc-icon></div>
-          <div class="col-7 padding-top-30" style="background-color:black;" > <h1>5</h1>
+          <div class="col-7 padding-top-30" style="background-color:black;" > <h1>{{unknownCount}}</h1>
             <p>component(s) state are unknown!</p></div>
         </div>
        
@@ -82,31 +87,26 @@
 <sc-progress-indicator-panel *ngIf="isLoading" [show]="isLoading">
 
 </sc-progress-indicator-panel>
-<div *ngIf="response && !isLoading && !isTableView">
-  <div *ngFor='let group of response'>
-    <div class="row">
-      <h4 class="group-name">{{group.GroupName}}</h4>
-    </div>
-    <div class="row">
+
+<div  *ngIf="response && !isLoading && viewType == 'normal'">
+  <div class="row" >
+    <template ngFor let-group [ngForOf]="response" let-ruleIndex="index">
+   
+   
 
       <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
         <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
           <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
           </sc-progress-indicator-panel>
           <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
-            <div class="p-4" [ngClass]="getStateClass(component)">
-              <p><span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span></p>
+            <div [ngClass]="getStateClass(component)">
+              <span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span>
             <!-- <span class="left title" >{{component.Name}} </span><span class="right"
               title="Error count">{{component.ErrorCount}}</span>
             <span class="clear"></span> -->
             </div>
             <div class="p-4">
-            <div class="health-icon center">
-              <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="band_ai" size="xxxlarge"></sc-icon>
-              <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
-              <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
-              </sc-icon>
-            </div>
+           
 <!-- heart broken   wrench-->
             <p>{{component.LastCheckTime | date:'medium' }}</p>
             <p class="healthy-message" *ngIf="component.Status=='Healthy'" title="{{component.HealthyMessage}}">
@@ -141,10 +141,11 @@
         </div>
       </div>
 
-    </div>
+    
+  </template>
+</div>
   </div>
-  </div>
-<div *ngIf="response && !isLoading && isTableView">
+<div *ngIf="response && !isLoading && viewType == 'table'">
  
     <div class="row">
       <table scTable>
