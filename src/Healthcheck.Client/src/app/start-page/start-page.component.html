@@ -35,7 +35,7 @@
     <div class="card  mb-3 state-block state-block-first">
       <div class="card-block no-padding parent" style="background-color: green;">
         <div class="row state-row ">
-          <div class="col-5" > <sc-icon   icon="navigate_check" size="xxxlarge"></sc-icon></div>
+          <div class="col-5 no-padding" > <sc-icon   icon="navigate_check" size="xxxlarge"></sc-icon></div>
           <div class="col-7 padding-top-30" style="background-color:rgb(1, 112, 1)" > <h1>{{healthyCount}}</h1>
             <p>component(s) looks ok!</p></div>
         </div>
@@ -47,7 +47,7 @@
     <div class="card  mb-3 state-block">
       <div class="card-block no-padding parent" style="background-color: orange;">
         <div class="row state-row ">
-          <div class="col-5" > <sc-icon   icon="about" size="xxxlarge"></sc-icon></div>
+          <div class="col-5 no-padding" > <sc-icon   icon="about" size="xxxlarge"></sc-icon></div>
           <div class="col-7 padding-top-30" style="background-color: rgb(204, 133, 0);" > <h1>{{warningCount}}</h1>
             <p>component(s) need attention!</p></div>
         </div>
@@ -59,7 +59,7 @@
     <div class="card  mb-3 state-block">
       <div class="card-block no-padding parent" style="background-color: red;">
         <div class="row state-row ">
-          <div class="col-5" > <sc-icon   icon="heart_broken" size="xxxlarge"></sc-icon></div>
+          <div class="col-5 no-padding" > <sc-icon   icon="heart_broken" size="xxxlarge"></sc-icon></div>
           <div class="col-7 padding-top-30" style="background-color: rgb(172, 0, 0);" > <h1>{{errorCount}}</h1>
             <p>component(s) are broken!</p></div>
         </div>
@@ -71,7 +71,7 @@
     <div class="card  mb-3 state-block">
       <div class="card-block no-padding parent" style="background-color: rgb(53, 53, 53);">
         <div class="row state-row ">
-          <div class="col-5" > <sc-icon   icon="wrench" size="xxxlarge"></sc-icon></div>
+          <div class="col-5 no-padding" > <sc-icon   icon="wrench" size="xxxlarge"></sc-icon></div>
           <div class="col-7 padding-top-30" style="background-color:black;" > <h1>{{unknownCount}}</h1>
             <p>component(s) state are unknown!</p></div>
         </div>
@@ -83,9 +83,21 @@
     <div class="card  mb-3 state-block" *ngIf="appInfo">
       <div class="card-block no-padding parent" style="background-color: purple;">
         <div class="row state-row ">
-          <div class="col-5" > <sc-icon   icon="memory_stick" size="xxxlarge"></sc-icon></div>
+          <div class="col-5 no-padding" > <sc-icon   icon="memory_stick" size="xxxlarge"></sc-icon></div>
           <div class="col-7 padding-top-30" style="background-color: rgb(100, 1, 100)" > <h1>{{appInfo.MemoryUsage}}</h1>
             <p>The current memory usage</p></div>
+        </div>
+       
+    
+       
+      </div>
+    </div>
+    <div class="card  mb-3 state-block" *ngIf="appInfo">
+      <div class="card-block no-padding parent" style="background-color: darkblue;">
+        <div class="row state-row ">
+          <div class="col-5 no-padding" > <sc-icon   icon="timer" size="xxxlarge"></sc-icon></div>
+          <div class="col-7 padding-top-30" style="background-color:  rgb(0, 0, 97)" > <h1>{{appInfo.CpuTime}} %</h1>
+            <p>The current CPU utiliziation</p></div>
         </div>
        
     
