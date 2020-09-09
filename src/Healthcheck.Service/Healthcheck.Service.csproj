@@ -256,11 +256,6 @@
     <Compile Include="Domain\LicenseCheck.cs" />
     <Compile Include="Extensions\ComponentHealthExtensions.cs" />
     <Compile Include="Interfaces\IEmailService.cs" />
-    <Compile Include="LogParsing\LogData.cs" />
-    <Compile Include="LogParsing\LogDataSource.cs" />
-    <Compile Include="LogParsing\LogEntry.cs" />
-    <Compile Include="LogParsing\Logger.cs" />
-    <Compile Include="LogParsing\Parser.cs" />
     <Compile Include="Models\ApplicationInformation.cs" />
     <Compile Include="Models\ApplicationInsights.cs" />
     <Compile Include="Constants.cs" />
@@ -277,8 +272,6 @@
     <Compile Include="Interfaces\IComponentFactory.cs" />
     <Compile Include="Interfaces\IHealthcheckRepository.cs" />
     <Compile Include="Interfaces\IHealthcheckService.cs" />
-    <Compile Include="LogParsing\LogLevel.cs" />
-    <Compile Include="LogParsing\LogReaderSettings.cs" />
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Models\WebJobResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -323,6 +316,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Healthcheck.Service.Checks\Healthcheck.Service.Checks.csproj">
+      <Project>{2D943F3F-1DAA-4F20-98F3-16724923C409}</Project>
+      <Name>Healthcheck.Service.Checks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Healthcheck.Service.Customization\Healthcheck.Service.Customization.csproj">
       <Project>{2a52dba6-1373-45fe-a795-67dc2b842d47}</Project>
       <Name>Healthcheck.Service.Customization</Name>

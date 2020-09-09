@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.LogParsing
+﻿namespace Healthcheck.Service.Checks.LogParsing
 {
     using System.Collections.Generic;
     using System.Linq;

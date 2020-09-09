@@ -1,0 +1,102 @@
+﻿using Microsoft.Azure.ServiceBus;
+using Microsoft.Azure.ServiceBus.Management;
+using System;
+using System.Configuration;
+
+namespace Healthcheck.ExternalSampleApplication
+{
+    class Program
+    {
+        static ManagementClient _managementClient;
+        static string topicName = "";
+        static string queueName = "";
+        static string subName;
+        static void Main(string[] args)
+        {
+            var connection = ConfigurationManager.ConnectionStrings["messaging"].ConnectionString;
+            _managementClient = new ManagementClient(new ServiceBusConnectionStringBuilder(connection));
+            topicName = ConfigurationManager.AppSettings["TopicName"];
+            queueName = ConfigurationManager.AppSettings["IncomingQueueName"];
+            subName = ConfigurationManager.AppSettings["SubscritionName"];
+            var topic = GetTopic(topicName);
+            var queue = GetQueue(queueName);
+            var subscription = GetSubscription(topicName, subName);
+        }
+
+        static TopicDescription GetTopic(string topicName)
+        {
+            try
+            {
+                return _managementClient.GetTopicAsync(topicName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityNotFoundException)
+            {
+                // it's OK... try and create it instead
+            }
+
+            try
+            {
+                return _managementClient.CreateTopicAsync(topicName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityAlreadyExistsException)
+            {
+                return _managementClient.GetTopicAsync(topicName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (Exception exception)
+            {
+                throw new ArgumentException($"Could not create topic '{topicName}'", exception);
+            }
+        }
+
+        static SubscriptionDescription GetSubscription(string topicName, string subscription)
+        {
+            try
+            {
+                return _managementClient.GetSubscriptionAsync(topicName, subscription).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityNotFoundException)
+            {
+                // it's OK... try and create it instead
+            }
+
+            try
+            {
+                return _managementClient.CreateSubscriptionAsync(topicName, subscription).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityAlreadyExistsException)
+            {
+                return _managementClient.GetSubscriptionAsync(topicName, subscription).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (Exception exception)
+            {
+                throw new ArgumentException($"Could not create topic '{topicName}'", exception);
+            }
+        }
+
+
+        static QueueDescription GetQueue(string queueName)
+        {
+            try
+            {
+                return _managementClient.GetQueueAsync(queueName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityNotFoundException)
+            {
+                // it's OK... try and create it instead
+            }
+
+            try
+            {
+                return _managementClient.CreateQueueAsync(queueName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityAlreadyExistsException)
+            {
+                return _managementClient.GetQueueAsync(queueName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (Exception exception)
+            {
+                throw new ArgumentException($"Could not create topic '{topicName}'", exception);
+            }
+        }
+    }
+}
