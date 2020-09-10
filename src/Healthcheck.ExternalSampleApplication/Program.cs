@@ -4,6 +4,8 @@ using Microsoft.Azure.ServiceBus.Management;
 using System;
 using System.Configuration;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Healthcheck.ExternalSampleApplication
 {
@@ -32,7 +34,9 @@ namespace Healthcheck.ExternalSampleApplication
             {
                 Body = Encoding.UTF8.GetBytes("hello")
             }).ConfigureAwait(false).GetAwaiter().GetResult();
-        }
+
+           
+                }
 
         static TopicDescription GetTopic(string topicName)
         {
@@ -59,6 +63,7 @@ namespace Healthcheck.ExternalSampleApplication
             }
         }
 
+
         static SubscriptionDescription GetSubscription(string topicName, string subscription)
         {
             try
@@ -82,6 +87,17 @@ namespace Healthcheck.ExternalSampleApplication
             {
                 throw new ArgumentException($"Could not create topic '{topicName}'", exception);
             }
+        }
+
+        private static async Task ReceiveMessage(Message message, CancellationToken token)
+        {
+            Console.WriteLine(Encoding.UTF8.GetString(message.Body));
+        }
+
+        private static Task LogMessageHandlerException(ExceptionReceivedEventArgs e)
+        {
+            Console.WriteLine("Exception: \"{0}\" {1}", e.Exception.Message, e.ExceptionReceivedContext.EntityPath);
+            return Task.CompletedTask;
         }
 
 
