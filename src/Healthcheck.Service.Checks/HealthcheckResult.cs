@@ -1,13 +1,12 @@
-﻿using Healthcheck.Service.Customization;
-using Healthcheck.Service.Customization.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Healthcheck.Service.Checks
+﻿namespace Healthcheck.Service.Core
 {
+    using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
+    using System;
+
+    /// <summary>
+    /// Class represents result object for a healthcheck run
+    /// </summary>
     public class HealthcheckResult
     {
         /// <summary>

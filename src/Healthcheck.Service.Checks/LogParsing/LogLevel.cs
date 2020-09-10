@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.Checks.LogParsing
+﻿namespace Healthcheck.Service.Core.LogParsing
 {
     /// <summary>
     /// Log level

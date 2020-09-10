@@ -1,6 +1,6 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using Healthcheck.Service.Checks;
+    using Healthcheck.Service.Core;
     using Sitecore.Data.Items;
     using System;
     using System.IO;

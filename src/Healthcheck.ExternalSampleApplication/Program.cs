@@ -1,7 +1,9 @@
 ﻿using Microsoft.Azure.ServiceBus;
+using Microsoft.Azure.ServiceBus.Core;
 using Microsoft.Azure.ServiceBus.Management;
 using System;
 using System.Configuration;
+using System.Text;
 
 namespace Healthcheck.ExternalSampleApplication
 {
@@ -21,6 +23,15 @@ namespace Healthcheck.ExternalSampleApplication
             var topic = GetTopic(topicName);
             var queue = GetQueue(queueName);
             var subscription = GetSubscription(topicName, subName);
+            ITopicClient client = new TopicClient(connection, topicName);
+            
+
+
+            var messageSender = new MessageSender(connection, topicName);
+            messageSender.SendAsync(new Message
+            {
+                Body = Encoding.UTF8.GetBytes("hello")
+            }).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         static TopicDescription GetTopic(string topicName)

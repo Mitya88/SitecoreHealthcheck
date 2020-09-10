@@ -1,16 +1,14 @@
-﻿using Healthcheck.Service.Checks.LogParsing;
-using Healthcheck.Service.Customization;
-using Healthcheck.Service.Customization.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Hosting;
-
-namespace Healthcheck.Service.Checks
+﻿namespace Healthcheck.Service.Core
 {
+    using Healthcheck.Service.Core.LogParsing;
+    using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Web.Hosting;
+
     public class LogFileCheck
     {
         public static HealthcheckResult RunHealthcheck(string fileNameFormat, string directoryPath, DateTime itemCreationDate, int numberDaysToCheck)
@@ -20,9 +18,9 @@ namespace Healthcheck.Service.Checks
                 LastCheckTime = DateTime.UtcNow,
                 Status = Customization.HealthcheckStatus.Healthy,
                 HealthyMessage = "Log files contain no errors",
-                ErrorList = new Customization.Models.ErrorList
+                ErrorList = new ErrorList
                 {
-                    Entries = new List<Customization.Models.ErrorEntry>()
+                    Entries = new List<ErrorEntry>()
                 }
             };
            
