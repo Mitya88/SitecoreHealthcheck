@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Services
 {
+    using Healthcheck.Service.Core;
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Configuration;

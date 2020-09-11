@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Domain
 {
+    using Healthcheck.Service.Core;
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
     using Newtonsoft.Json;

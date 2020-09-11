@@ -88,6 +88,10 @@
       <Project>{2d943f3f-1daa-4f20-98f3-16724923c409}</Project>
       <Name>Healthcheck.Service.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Healthcheck.Service.Customization\Healthcheck.Service.Customization.csproj">
+      <Project>{2A52DBA6-1373-45FE-A795-67DC2B842D47}</Project>
+      <Name>Healthcheck.Service.Customization</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

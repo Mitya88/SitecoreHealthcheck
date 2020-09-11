@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service
+﻿namespace Healthcheck.Service.Core
 {
     /// <summary>
     /// Constants class
@@ -124,6 +124,11 @@
             /// The spe check template name
             /// </summary>
             public const string SPECheckTemplateName = "SPE Check";
+
+            /// <summary>
+            /// The remote log file check template name
+            /// </summary>
+            public const string RemoteLogFileCheckTemplateName = "Remote Log File Check";
         }
     }
 }

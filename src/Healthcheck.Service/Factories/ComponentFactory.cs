@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Factories
 {
+    using Healthcheck.Service.Core;
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Data.Items;
@@ -80,6 +81,10 @@
             else if (item.TemplateName.Equals(Constants.TemplateNames.SPECheckTemplateName))
             {
                 return new SPECheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteLogFileCheckTemplateName))
+            {
+                return new RemoteLogFileCheck(item);
             }
 
             return null;
