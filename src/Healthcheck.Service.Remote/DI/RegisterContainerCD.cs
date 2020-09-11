@@ -10,7 +10,7 @@ namespace Healthcheck.Service.Remote.DI
     /// Registering the DI container
     /// </summary>
     /// <seealso cref="Sitecore.DependencyInjection.IServicesConfigurator"/>
-    public class RegisterContainer : IServicesConfigurator
+    public class RegisterContainerCD : IServicesConfigurator
     {
         /// <summary>
         /// Configures the specified service collection.

@@ -16,14 +16,23 @@ namespace Healthcheck.Service.Remote
     {
         public virtual void Process(PipelineArgs args)
         {
-            ISubscriptionClient client = (ISubscriptionClient)ServiceLocator.ServiceProvider.GetService(typeof(ISubscriptionClient));
+            Sitecore.Diagnostics.Log.Info("Initialize Healthcheck Topic", this);
+            try
+            {
+                ISubscriptionClient client = (ISubscriptionClient)ServiceLocator.ServiceProvider.GetService(typeof(ISubscriptionClient));
 
-            var _managementClient = new ManagementClient(new ServiceBusConnectionStringBuilder(SharedConfig.ConnectionStringOrKey));
-            EnsureTopicExists(_managementClient, SharedConfig.TopicName);
-            EnsureSubscriptionExists(_managementClient, SharedConfig.TopicName, SharedConfig.SubscriptionName);
+                var _managementClient = new ManagementClient(new ServiceBusConnectionStringBuilder(SharedConfig.ConnectionStringOrKey));
+                EnsureTopicExists(_managementClient, SharedConfig.TopicName);
+                EnsureSubscriptionExists(_managementClient, SharedConfig.TopicName, SharedConfig.SubscriptionName);
 
-            client.RegisterMessageHandler(MessageHandler.ReceiveMessage,
-                new MessageHandlerOptions((e) => MessageHandler.LogMessageHandlerException(e)) { AutoComplete = true, MaxConcurrentCalls = 1 });
+                client.RegisterMessageHandler(MessageHandler.ReceiveMessage,
+                    new MessageHandlerOptions((e) => MessageHandler.LogMessageHandlerException(e)) { AutoComplete = true, MaxConcurrentCalls = 1 });
+            }
+            catch(Exception ex)
+            {
+                Sitecore.Diagnostics.Log.Error("Initialize failed Healthcheck Topic", ex,this);
+            }
+            Sitecore.Diagnostics.Log.Info("Initialize finished Healthcheck Topic", this);
         }
 
         TopicDescription EnsureTopicExists(ManagementClient _managementClient, string topicName)

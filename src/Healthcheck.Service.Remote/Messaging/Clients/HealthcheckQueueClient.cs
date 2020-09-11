@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace Healthcheck.Service.Remote.Messaging.Clients
 {
-    public class HealthcheckSubscriptionClient: SubscriptionClient
+    public class HealthcheckQueueClient :QueueClient
     {
-        public HealthcheckSubscriptionClient():base(SharedConfig.ConnectionStringOrKey,SharedConfig.TopicName, SharedConfig.SubscriptionName)
+        public HealthcheckQueueClient():base(SharedConfig.ConnectionStringOrKey,SharedConfig.IncomingQueueName)
         {
-            
         }
     }
 }

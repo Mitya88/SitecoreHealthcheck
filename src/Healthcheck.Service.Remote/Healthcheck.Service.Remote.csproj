@@ -45,9 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DI\RegisterContainer.cs" />
+    <Compile Include="DI\RegisterContainerCM.cs" />
+    <Compile Include="DI\RegisterContainerCD.cs" />
+    <Compile Include="InitializeQueueClient.cs" />
     <Compile Include="InitializeSubscriptionClient.cs" />
+    <Compile Include="Messaging\Clients\HealthcheckQueueClient.cs" />
     <Compile Include="Messaging\Clients\HealthcheckSubscriptionClient.cs" />
+    <Compile Include="Messaging\IncomingQueueMessageHandler.cs" />
     <Compile Include="Messaging\MessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
