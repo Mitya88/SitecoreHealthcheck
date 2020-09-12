@@ -14,11 +14,11 @@ Languages:
       Value: 20200416T123704Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200811T100326
+      Value: 20200912T091615
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"License will expire in 19 days.","Created":"2020-08-11T07:42:32.3640602Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T07:52:35.8308987Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T08:02:40.0593886Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T08:12:44.7219853Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T08:22:48.1260838Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T08:32:52.6092341Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T08:42:56.6426593Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T08:52:59.9256217Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T09:03:03.2177699Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T09:13:07.0036327Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T09:23:10.5074986Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T09:33:14.2904989Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T09:43:18.0228235Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T09:53:22.7098655Z","Exception":null},{"Reason":"License will expire in 19 days.","Created":"2020-08-11T10:03:26.7042754Z","Exception":null}]}
+        {"Entries":[]}
     - ID: "43b7ce89-2cb0-4ea9-8868-cb627179cc80"
       Hint: WarnBefore
       Value: 100
@@ -31,7 +31,7 @@ Languages:
       Value: License is ok.
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Error
+      Value: Healthy
     - ID: "e694131c-14d8-4507-950c-bf867ced47db"
       Hint: ErrorBefore
       Value: 30
