@@ -194,8 +194,7 @@ export class StartPageComponent implements OnInit {
 
   getClass(component: any) {
     if (component.Display) {
-
-      return "col-2 flex-correction";
+      return "col-md-2 flex-correction";
     }
     else {
       return "";

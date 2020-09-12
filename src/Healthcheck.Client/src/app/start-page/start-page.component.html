@@ -5,7 +5,6 @@
       <button scButton="secondary" (click)="run()">Re run</button>
       <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a>
       <button scButton="primary" *ngIf="appInfo && appInfo.IsAdministrator" (click)="cleanErrors()">Clean Errors</button>
-
       <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
         <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
       </select>
@@ -18,17 +17,14 @@
       <div class="radio">
         <label class="container-rb"><input type="radio" name="mode" value="grid" [(ngModel)]="viewType">&nbsp; Grid<span class="checkmark-rb"></span></label>  
       </div>
-
       
     </sc-action-bar-left>
     <sc-action-bar-right>
-      <a href="https://docs.advancedschealthcheck.com/" target="_blank">  <sc-icon size="small" icon="question"></sc-icon></a>
-      
+      <a href="https://docs.advancedschealthcheck.com/" target="_blank">  <sc-icon size="small" icon="question"></sc-icon></a>      
     </sc-action-bar-right>
-  </sc-action-bar>
-
- 
+  </sc-action-bar> 
 </div>
+
 
 <div class="p-4">
   <div class="row state-row">
@@ -39,9 +35,6 @@
           <div class="col-7 padding-top-30" style="background-color:rgb(1, 112, 1)" > <h1>{{healthyCount}}</h1>
             <p>component(s) looks ok!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block">
@@ -51,9 +44,6 @@
           <div class="col-7 padding-top-30" style="background-color: rgb(204, 133, 0);" > <h1>{{warningCount}}</h1>
             <p>component(s) need attention!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block">
@@ -63,9 +53,6 @@
           <div class="col-7 padding-top-30" style="background-color: rgb(172, 0, 0);" > <h1>{{errorCount}}</h1>
             <p>component(s) are broken!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block">
@@ -75,9 +62,6 @@
           <div class="col-7 padding-top-30" style="background-color:black;" > <h1>{{unknownCount}}</h1>
             <p>component(s) state are unknown!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block" >
@@ -87,9 +71,6 @@
           <div *ngIf="appInfo" class="col-7 padding-top-30" style="background-color: rgb(100, 1, 100)" > <h1>{{appInfo.MemoryUsage}}</h1>
             <p>The current memory usage</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block" >
@@ -99,15 +80,11 @@
           <div *ngIf="appInfo" class="col-7 padding-top-30" style="background-color:  rgb(0, 0, 97)" > <h1>{{appInfo.CpuTime}} %</h1>
             <p>The current CPU utiliziation</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     
   </div>
  
-
 
 <sc-progress-indicator-panel *ngIf="isLoading" [show]="isLoading">
 
@@ -120,10 +97,10 @@
    
 
       <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
-        <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
+        <div  style="background-color:white;" (dblclick)="doubleClick(component)" *ngIf="component.Display">
           <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
           </sc-progress-indicator-panel>
-          <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
+          <div class="" style="padding:0;" *ngIf="!component.isLoading">
             <div [ngClass]="getStateClass(component)">
               <span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span>          
             </div>

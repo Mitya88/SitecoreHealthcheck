@@ -289,6 +289,7 @@
     <Compile Include="Services\HealthcheckService.cs" />
     <Compile Include="Tasks\HealthcheckUpdateCommand.cs" />
     <Compile Include="Tasks\Reports\HealthcheckReport.cs" />
+    <Compile Include="Utilities\HardwareUtil.cs" />
     <Compile Include="Utilities\JsonUtil.cs" />
   </ItemGroup>
   <ItemGroup>
