@@ -105,7 +105,7 @@
 
                 var result = logDataSource.LogData;
 
-                if (result.Errors.Count > 0)
+                if (result.Errors != null && result.Errors.Count > 0)
                 {
                     this.Status = HealthcheckStatus.Error;
                     foreach (var error in result.Errors)
@@ -118,7 +118,7 @@
                         });
                     }
                 }
-                else if (result.Warns.Count > 0)
+                else if (result.Warns != null && result.Warns.Count > 0)
                 {
                     this.Status = HealthcheckStatus.Warning;
                     foreach (var warn in result.Warns)
@@ -160,7 +160,15 @@
         /// <returns>Mapped full path</returns>
         private string GetFullPath(string fileName)
         {
-            return HostingEnvironment.MapPath(fileName);
+            if (fileName.Contains(":\\"))
+            {
+                return fileName;
+            }
+            else
+            {
+                return HostingEnvironment.MapPath(fileName);
+            }
+
         }
 
         /// <summary>

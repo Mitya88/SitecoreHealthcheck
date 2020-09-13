@@ -3,6 +3,7 @@
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
+    using Healthcheck.Service.Utilities;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System;
     using System.Collections.Generic;
@@ -48,12 +49,18 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ApplicationInformation IsAdministrator()
+        public ApplicationInformation AppInfo()
         {
-            return new ApplicationInformation
+            var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
+
+            var data = new ApplicationInformation
             {
-                IsAdministrator = Sitecore.Context.User.IsAdministrator
+                IsAdministrator = Sitecore.Context.User.IsAdministrator,
+                MemoryUsage = string.Format("{0} MB", currentProcess.WorkingSet64 / (1024 * 1024)),
+                CpuTime = String.Format("{0:0.0}", HardwareUtil.GetCpuLoadAsync(1000) * 100)            
             };
+
+            return data;
         }
 
         /// <summary>

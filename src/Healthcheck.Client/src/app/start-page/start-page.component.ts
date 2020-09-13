@@ -50,6 +50,9 @@ export class StartPageComponent implements OnInit {
   filterStates: any;
   selectedState: any;
   isTableView: boolean;
+  viewType:any;
+  memoryUsage:any;
+  
 
   ngOnInit() {
 
@@ -57,14 +60,25 @@ export class StartPageComponent implements OnInit {
     this.filterStates = ["All", "Healthy only", "Non-Healthy only"];
     this.selectedState = "All";
     this.isTableView = false;
-    this.applicationInformation();
+    this.viewType = "normal";
+    this.loadAppInformation();
+    this.updateAppInformation();
   }
 
   appInfo: any;
-  applicationInformation() {
+
+  
+  updateAppInformation() {
+    setInterval(()=> {
+      this.loadAppInformation();
+      },2000); 
+  }
+
+  loadAppInformation(){
     this.healthcheckService.fetchApplicationInformation().subscribe({
       next: response => {
         this.appInfo = response;
+        
       }, error: response => {
       }
     });
@@ -72,6 +86,7 @@ export class StartPageComponent implements OnInit {
 
   load() {
     this.isLoading = true;
+    
     this.healthcheckService.fetchStatus().subscribe({
       next: response => {
         this.response = response as Array<ComponentGroup>;
@@ -179,11 +194,25 @@ export class StartPageComponent implements OnInit {
 
   getClass(component: any) {
     if (component.Display) {
-
-      return "col-2";
+      return "col-md-2 flex-correction";
     }
     else {
       return "";
+    }
+  }
+
+  getStateClass(component: any){
+    if(component.Status == "Healthy"){
+      return "healthy-state";
+    }
+    else if(component.Status == "Warning"){
+      return "warning-state";
+    }
+    else if(component.Status == "Error"){
+      return "error-state";
+    }
+    else{
+      return "unknown-state";
     }
   }
 

@@ -89,12 +89,21 @@ The purpose of this module to check up Sitecore components if they are working c
     - SPE Support
     - Ability to remove error entries for **Administrator** users
     - Application contains a link for the official documentation
+- 1.3.0 - [Full Installer](sc.package/Advanced.Sitecore.Healthcheck-1.3.0.zip)
+  - [Upgrade Package](sc.package/Advanced.Sitecore.Healthcheck-upgrade-1.3.0.zip)
+    - You can upgrade the v1.2 healthcheck module version with the upgrade package. (Existing component configurations wont be overwritten)  
+  - Contains:
+    - [Memory and CPU Usage](https://docs.advancedschealthcheck.com/memory-and-cpu-usage)
+    - LogFile check bugfixes
+    - Updated UI
+      - Redesigned header 
+      - new grid styled view
 
 ## Installation
 
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 
-1. Use the Sitecore Installation wizard to install the [package](sc.package/Advanced.Sitecore.Healthcheck-1.0.zip)
+1. Use the Sitecore Installation wizard to install the [package](sc.package/Advanced.Sitecore.Healthcheck-1.3.0.zip)
 2. Make sure if your search indexes are working correctly
 3. Go the LaunchPad and open the Healthcheck
 
