@@ -3,18 +3,15 @@
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
+    using Healthcheck.Service.Utilities;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.IO;
     using System.Linq;
     using System.Net;
     using System.Net.Http;
     using System.Net.Http.Headers;
-    using System.Runtime.InteropServices;
-    using System.Threading;
-    using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Cors;
 
@@ -56,43 +53,15 @@
         {
             var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
 
-            
-
-           
             var data = new ApplicationInformation
             {
                 IsAdministrator = Sitecore.Context.User.IsAdministrator,
                 MemoryUsage = string.Format("{0} MB", currentProcess.WorkingSet64 / (1024 * 1024)),
-                CpuTime = String.Format("{0:0.0}", GetCpuLoadAsync(1000) * 100)            
+                CpuTime = String.Format("{0:0.0}", HardwareUtil.GetCpuLoadAsync(1000) * 100)            
             };
 
-            try
-            {
-                PerformanceCounter memProcess = new PerformanceCounter("Memory", "Available KBytes");
-                data.AvailableMemory = string.Format("{0:0.0} MB", memProcess.NextValue() / (1024));
-            }
-            catch(Exception ex)
-            {
-                data.AvailableMemory = ex.Message;
-            }
-
-            try
-            {
-                long memKb;
-                GetPhysicallyInstalledSystemMemory(out memKb);
-
-                data.HardwareMemory = (memKb / 1024 / 1024).ToString();
-            }
-            catch(Exception ex)
-            {
-                data.HardwareMemory = ex.Message;
-            }
             return data;
         }
-
-        [DllImport("kernel32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool GetPhysicallyInstalledSystemMemory(out long TotalMemoryInKilobytes);
 
         /// <summary>
         /// Runs the healthcheck.
@@ -204,21 +173,6 @@
             component.ErrorList.Entries = component.ErrorList.Entries.OrderByDescending(t => t.Created).Take(100).ToList();
 
             return component;
-        }
-
-        double GetCpuLoadAsync(int MeasurementWindow)
-        {
-            Process CurrentProcess = Process.GetCurrentProcess();
-
-            TimeSpan StartCpuTime = CurrentProcess.TotalProcessorTime;
-            Stopwatch Timer = Stopwatch.StartNew();
-
-            Thread.Sleep(1000);
-
-            TimeSpan EndCpuTime = CurrentProcess.TotalProcessorTime;
-            Timer.Stop();
-
-            return (EndCpuTime - StartCpuTime).TotalMilliseconds / (Environment.ProcessorCount * Timer.ElapsedMilliseconds);
         }
     }
 }

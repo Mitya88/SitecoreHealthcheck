@@ -15,10 +15,6 @@
 
         public string MemoryUsage { get; set; }
 
-        public string AvailableMemory { get; set; }
-
         public string CpuTime { get; set; }
-
-        public string HardwareMemory { get; set; }
     }
 }

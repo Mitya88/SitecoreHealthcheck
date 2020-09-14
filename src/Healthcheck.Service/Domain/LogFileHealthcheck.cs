@@ -59,6 +59,8 @@
             this.LastCheckTime = result.LastCheckTime;
         }
 
+        }
+
         /// <summary>
         /// Gets the log file directory path.
         /// </summary>

@@ -5,7 +5,6 @@
       <button scButton="secondary" (click)="run()">Re run</button>
       <a class="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a>
       <button scButton="primary" *ngIf="appInfo && appInfo.IsAdministrator" (click)="cleanErrors()">Clean Errors</button>
-
       <select id="state" [(ngModel)]="selectedState" class="form-control" (change)="changeState()">
         <option *ngFor="let c of filterStates" [value]="c">{{ c }}</option>
       </select>
@@ -18,17 +17,14 @@
       <div class="radio">
         <label class="container-rb"><input type="radio" name="mode" value="grid" [(ngModel)]="viewType">&nbsp; Grid<span class="checkmark-rb"></span></label>  
       </div>
-
       
     </sc-action-bar-left>
     <sc-action-bar-right>
-      <a href="https://docs.advancedschealthcheck.com/" target="_blank">  <sc-icon size="small" icon="question"></sc-icon></a>
-      
+      <a href="https://docs.advancedschealthcheck.com/" target="_blank">  <sc-icon size="small" icon="question"></sc-icon></a>      
     </sc-action-bar-right>
-  </sc-action-bar>
-
- 
+  </sc-action-bar> 
 </div>
+
 
 <div class="p-4">
   <div class="row state-row">
@@ -39,9 +35,6 @@
           <div class="col-7 padding-top-30" style="background-color:rgb(1, 112, 1)" > <h1>{{healthyCount}}</h1>
             <p>component(s) looks ok!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block">
@@ -51,9 +44,6 @@
           <div class="col-7 padding-top-30" style="background-color: rgb(204, 133, 0);" > <h1>{{warningCount}}</h1>
             <p>component(s) need attention!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block">
@@ -63,9 +53,6 @@
           <div class="col-7 padding-top-30" style="background-color: rgb(172, 0, 0);" > <h1>{{errorCount}}</h1>
             <p>component(s) are broken!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     <div class="card  mb-3 state-block">
@@ -75,39 +62,29 @@
           <div class="col-7 padding-top-30" style="background-color:black;" > <h1>{{unknownCount}}</h1>
             <p>component(s) state are unknown!</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
-    <div class="card  mb-3 state-block" *ngIf="appInfo">
+    <div class="card  mb-3 state-block" >
       <div class="card-block no-padding parent" style="background-color: purple;">
         <div class="row state-row ">
           <div class="col-5 no-padding" > <sc-icon   icon="memory_stick" size="xxxlarge"></sc-icon></div>
-          <div class="col-7 padding-top-30" style="background-color: rgb(100, 1, 100)" > <h1>{{appInfo.MemoryUsage}}</h1>
+          <div *ngIf="appInfo" class="col-7 padding-top-30" style="background-color: rgb(100, 1, 100)" > <h1>{{appInfo.MemoryUsage}}</h1>
             <p>The current memory usage</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
-    <div class="card  mb-3 state-block" *ngIf="appInfo">
+    <div class="card  mb-3 state-block" >
       <div class="card-block no-padding parent" style="background-color: darkblue;">
         <div class="row state-row ">
           <div class="col-5 no-padding" > <sc-icon   icon="timer" size="xxxlarge"></sc-icon></div>
-          <div class="col-7 padding-top-30" style="background-color:  rgb(0, 0, 97)" > <h1>{{appInfo.CpuTime}} %</h1>
+          <div *ngIf="appInfo" class="col-7 padding-top-30" style="background-color:  rgb(0, 0, 97)" > <h1>{{appInfo.CpuTime}} %</h1>
             <p>The current CPU utiliziation</p></div>
         </div>
-       
-    
-       
       </div>
     </div>
     
   </div>
  
-
 
 <sc-progress-indicator-panel *ngIf="isLoading" [show]="isLoading">
 
@@ -120,19 +97,14 @@
    
 
       <div *ngFor='let component of group.Components' [ngClass]="getClass(component)">
-        <div class="card mb-3" (dblclick)="doubleClick(component)" *ngIf="component.Display">
+        <div  style="background-color:white;" (dblclick)="doubleClick(component)" *ngIf="component.Display">
           <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
           </sc-progress-indicator-panel>
-          <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
+          <div class="" style="padding:0;" *ngIf="!component.isLoading">
             <div [ngClass]="getStateClass(component)">
-              <span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span>
-            <!-- <span class="left title" >{{component.Name}} </span><span class="right"
-              title="Error count">{{component.ErrorCount}}</span>
-            <span class="clear"></span> -->
+              <span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span>          
             </div>
             <div class="p-4">
-           
-<!-- heart broken   wrench-->
             <p>{{component.LastCheckTime | date:'medium' }}</p>
             <p class="healthy-message" *ngIf="component.Status=='Healthy'" title="{{component.HealthyMessage}}">
               {{component.HealthyMessage}}</p>
@@ -183,15 +155,13 @@
             <sc-progress-indicator-panel *ngIf="component.isLoading" [show]="component.isLoading">
             </sc-progress-indicator-panel>
             <div class="card-block main-menu-item" style="padding:0;" *ngIf="!component.isLoading">
-              <div class="p-4" [ngClass]="getStateClass(component)">
-                <p><span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span></p>
-              <!-- <span class="left title" >{{component.Name}} </span><span class="right"
-                title="Error count">{{component.ErrorCount}}</span>
-              <span class="clear"></span> -->
+              <div  [ngClass]="getStateClass(component)">
+                <span class="component-title">{{component.Name}}</span><span class="error-count">{{component.ErrorCount}}</span>
+            
               </div>
               <div class="p-4">
               <div class="health-icon center">
-                <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="band_ai" size="xxxlarge"></sc-icon>
+                <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="heart_broken" size="xxxlarge"></sc-icon>
                 <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
                 <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
                 </sc-icon>
@@ -255,7 +225,7 @@
             <tr (dblclick)="doubleClick(component)" *ngIf="!component.isLoading && component.Display">
               <td>{{group.GroupName}}</td>
               <td>{{component.Name}}</td>
-              <td class="center"> <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="close" size="medium"></sc-icon>
+              <td class="center"> <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="heart_broken" size="medium"></sc-icon>
                 <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="medium"></sc-icon>
                 <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="medium"></sc-icon></td>
                 <td ><div class="tooltip3"><p class="red bold center margin-center">{{component.ErrorCount}}</p>
