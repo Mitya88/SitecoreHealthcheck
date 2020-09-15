@@ -1,0 +1,14 @@
+﻿---
+ID: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200915T134145Z

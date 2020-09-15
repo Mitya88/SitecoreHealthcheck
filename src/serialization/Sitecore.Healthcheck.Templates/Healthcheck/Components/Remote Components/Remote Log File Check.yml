@@ -1,8 +1,8 @@
 ﻿---
 ID: "d9af243c-7a27-47fc-945f-d1c321fac343"
-Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Log File Check
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Log File Check
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
