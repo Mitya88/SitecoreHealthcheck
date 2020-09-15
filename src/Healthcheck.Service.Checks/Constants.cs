@@ -129,6 +129,11 @@
             /// The remote log file check template name
             /// </summary>
             public const string RemoteLogFileCheckTemplateName = "Remote Log File Check";
+
+            /// <summary>
+            /// The remote certificate check template name
+            /// </summary>
+            public const string RemoteCertificateCheckTemplateName = "Remote Certificate Check";
         }
     }
 }

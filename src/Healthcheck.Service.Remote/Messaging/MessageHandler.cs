@@ -27,6 +27,10 @@ namespace Healthcheck.Service.Remote.Messaging
                 {
                     result = LogFileCheck.RunHealthcheck(messageContract.Parameters["FileNameFormat"], Path.Combine(Sitecore.Configuration.Settings.DataFolder, "logs"), DateTime.ParseExact(messageContract.Parameters["ItemCreationDate"], "yyyyMMddTHHmmss", CultureInfo.InvariantCulture), int.Parse(messageContract.Parameters["NumberOfDaysToCheck"]));
                 }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteCertificateCheckTemplateName))
+                {
+                    result = CertificateCheck.RunHealthcheck(messageContract.Parameters["StoreName"], messageContract.Parameters["Location"], messageContract.Parameters["Value"], messageContract.Parameters["FindByType"], int.Parse(messageContract.Parameters["Warn Before"]));
+                }
 
                 if (result != null)
                 {

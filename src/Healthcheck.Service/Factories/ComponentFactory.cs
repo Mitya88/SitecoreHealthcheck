@@ -28,7 +28,7 @@
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.CertificateCheckTemplateName))
             {
-                return new CertificateCheck(item);
+                return new Domain.CertificateCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.LogFileCheckTemplateName))
             {
@@ -85,6 +85,10 @@
             else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteLogFileCheckTemplateName))
             {
                 return new RemoteLogFileCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteCertificateCheckTemplateName))
+            {
+                return new RemoteCertificateCheck(item);
             }
 
             return null;

@@ -1,12 +1,19 @@
 ﻿namespace Healthcheck.Service.Domain
 {
+    using Healthcheck.Service.Core;
+    using Healthcheck.Service.Core.Messages;
+    using Microsoft.Azure.ServiceBus.Core;
+    using Newtonsoft.Json;
     using Sitecore.Data.Items;
+    using System;
+    using System.IO;
+    using System.Text;
 
     /// <summary>
-    /// Certificate check component
+    /// RemoteCertificateCheck
     /// </summary>
     /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
-    public class CertificateCheck : BaseComponent
+    public class RemoteCertificateCheck : RemoteBaseComponent
     {
         /// <summary>
         /// Gets or sets the name of the store.
@@ -52,7 +59,7 @@
         /// Initializes a new instance of the <see cref="CertificateCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
-        public CertificateCheck(Item item) : base(item)
+        public RemoteCertificateCheck(Item item) : base(item)
         {
             this.StoreName = item["StoreName"];
             this.Location = item["Location"];
@@ -68,12 +75,33 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            var result = Healthcheck.Service.Core.CertificateCheck.RunHealthcheck(this.StoreName, this.Location, this.Value, this.FindByType, this.WarnBefore);
+            var dateTime = DateTime.UtcNow;
+            this.SaveRemoteCheckStarted();
 
-            this.Status = result.Status;
-            this.HealthyMessage = result.HealthyMessage;
-            this.ErrorList = result.ErrorList;
-            this.LastCheckTime = result.LastCheckTime;
+            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
+            
+            var message = new OutGoingMessage
+            {
+                Parameters = new System.Collections.Generic.Dictionary<string, string>
+                {
+                    {"StoreName", this.StoreName },
+                    {"Location", this.Location },
+                    {"Value", this.Value },
+                     {"Warn Before", this.WarnBefore.ToString() },
+                    {"FindByType", this.FindByType }
+                },
+                TargetInstance = this.TargetInstance,
+                ComponentId = this.InnerItem.ID.Guid
+            };
+
+            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            {
+                ContentType = "application/json",
+                Label = Constants.TemplateNames.RemoteCertificateCheckTemplateName,
+                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
+            };
+
+            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }
 }
