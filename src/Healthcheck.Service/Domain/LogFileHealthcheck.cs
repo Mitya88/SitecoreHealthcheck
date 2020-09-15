@@ -58,8 +58,7 @@
             this.ErrorList = result.ErrorList;
             this.LastCheckTime = result.LastCheckTime;
         }
-
-        }
+       
 
         /// <summary>
         /// Gets the log file directory path.
