@@ -3,6 +3,7 @@ using Healthcheck.Service.Core.Messages;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Core;
 using Newtonsoft.Json;
+using Sitecore.Configuration;
 using System;
 using System.Globalization;
 using System.IO;
@@ -22,6 +23,11 @@ namespace Healthcheck.Service.Remote.Messaging
             {
                 HealthcheckResult result = null;
                 var messageContract = JsonConvert.DeserializeObject<OutGoingMessage>(Encoding.UTF8.GetString(message.Body));
+
+                if (!Settings.InstanceName.Equals(messageContract.TargetInstance, StringComparison.OrdinalIgnoreCase))
+                {
+                    return;
+                }
 
                 if (message.Label.Equals(Constants.TemplateNames.RemoteLogFileCheckTemplateName))
                 {
