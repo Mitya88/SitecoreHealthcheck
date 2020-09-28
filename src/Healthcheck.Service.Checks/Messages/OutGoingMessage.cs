@@ -10,5 +10,7 @@
         public Dictionary<string, string> Parameters { get; set; }
 
         public Guid ComponentId { get; set; }
+
+        public DateTime EventRaised { get; set; }
     }
 }

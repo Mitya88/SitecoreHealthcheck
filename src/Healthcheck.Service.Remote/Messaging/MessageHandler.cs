@@ -24,7 +24,7 @@ namespace Healthcheck.Service.Remote.Messaging
                 HealthcheckResult result = null;
                 var messageContract = JsonConvert.DeserializeObject<OutGoingMessage>(Encoding.UTF8.GetString(message.Body));
 
-                if (!Settings.InstanceName.Equals(messageContract.TargetInstance, StringComparison.OrdinalIgnoreCase))
+                if (!SharedConfig.SubscriptionName.Equals(messageContract.TargetInstance, StringComparison.OrdinalIgnoreCase))
                 {
                     return;
                 }
@@ -45,7 +45,8 @@ namespace Healthcheck.Service.Remote.Messaging
                     var incomingMessage = new HealthcheckResultMessage
                     {
                         Result = result,
-                        ComponentId = messageContract.ComponentId
+                        ComponentId = messageContract.ComponentId,
+                        LastCheckTime = messageContract.EventRaised
                     };
                     await sender.SendAsync(new Message
                     {

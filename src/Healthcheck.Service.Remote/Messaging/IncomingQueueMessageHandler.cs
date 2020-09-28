@@ -42,7 +42,7 @@ namespace Healthcheck.Service.Remote.Messaging
                             errors.Entries.AddRange(messageContract.Result.ErrorList.Entries);
                             item["Error Messages"] = GetErrorMessagesJson(errors);
                             item["Healthy Message"] = messageContract.Result.HealthyMessage;
-                            item["Last Check Time"] = DateUtil.FormatDateTime(messageContract.Result.LastCheckTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
+                            item["Last Check Time"] = DateUtil.FormatDateTime(messageContract.LastCheckTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
                         }
                     }
                 }

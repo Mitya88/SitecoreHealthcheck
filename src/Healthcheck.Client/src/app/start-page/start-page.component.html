@@ -163,8 +163,9 @@
               <div class="health-icon center">
                 <sc-icon style="color:red" *ngIf="component.Status=='Error'" icon="heart_broken" size="xxxlarge"></sc-icon>
                 <sc-icon style="color:orange" *ngIf="component.Status=='Warning'" icon="about" size="xxxlarge"></sc-icon>
-                <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge">
-                </sc-icon>
+                <sc-icon style="color:green" *ngIf="component.Status=='Healthy'" icon="navigate_check" size="xxxlarge"> </sc-icon>
+                  <sc-icon style="color:black" *ngIf="component.Status=='Waiting'" icon="alarmclock" size="xxxlarge"></sc-icon>
+               
               </div>
   <!-- heart broken   wrench-->
               <p>{{component.LastCheckTime | date:'medium' }}</p>

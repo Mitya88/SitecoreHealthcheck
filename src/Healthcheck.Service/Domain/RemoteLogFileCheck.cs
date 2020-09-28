@@ -56,7 +56,7 @@
         public override void RunHealthcheck()
         {
             var dateTime = DateTime.UtcNow;
-            this.SaveRemoteCheckStarted();
+            this.SaveRemoteCheckStarted(dateTime);
 
             var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
             
@@ -69,7 +69,8 @@
                     {"NumberOfDaysToCheck", this.NumberOfDaysToCheck.ToString() }
                 },
                 TargetInstance = this.TargetInstance,
-                ComponentId = this.InnerItem.ID.Guid
+                ComponentId = this.InnerItem.ID.Guid,
+                EventRaised = dateTime
             };
 
             var busMessage = new Microsoft.Azure.ServiceBus.Message

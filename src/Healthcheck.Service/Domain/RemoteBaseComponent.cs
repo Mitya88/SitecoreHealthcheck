@@ -41,13 +41,13 @@
         /// Saves the healthcheck result.
         /// </summary>
         /// <param name="numberOfDaysToKeepLogs">The number of days to keep logs.</param>
-        public void SaveRemoteCheckStarted()
+        public void SaveRemoteCheckStarted(DateTime dateTime)
         {
             using (new SecurityDisabler())
             {
                 using (new EditContext(this.InnerItem))
                 {
-                    this.InnerItem["Remote Check Started"] = DateUtil.FormatDateTime(this.RemoteCheckStarted, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);                   
+                    this.InnerItem["Remote Check Started"] = DateUtil.FormatDateTime(dateTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);                   
                 }
             }
         }
