@@ -134,6 +134,9 @@
             /// The remote certificate check template name
             /// </summary>
             public const string RemoteCertificateCheckTemplateName = "Remote Certificate Check";
-        }
+
+            public const string RemoteXConnectApiCheckTemplateName = "Remote XConnectAPI Check";
+        
+    }
     }
 }

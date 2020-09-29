@@ -1,7 +1,11 @@
 ﻿namespace Healthcheck.Service.Domain
 {
+    using Healthcheck.Service.Core;
+    using Healthcheck.Service.Core.Messages;
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
+    using Microsoft.Azure.ServiceBus.Core;
+    using Newtonsoft.Json;
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
@@ -11,12 +15,13 @@
     using System.Net;
     using System.Net.Http;
     using System.Security.Cryptography.X509Certificates;
+    using System.Text;
 
     /// <summary>
     /// Xconnect Api check component
     /// </summary>
     /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
-    public class XConnectApiCheck : BaseComponent
+    public class RemoteXConnectApiCheck : RemoteBaseComponent
     {
         /// <summary>
         /// Gets or sets the x connect API connection string key.
@@ -46,7 +51,7 @@
         /// Initializes a new instance of the <see cref="XConnectApiCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
-        public XConnectApiCheck(Item item) : base(item)
+        public RemoteXConnectApiCheck(Item item) : base(item)
         {
             this.XConnectApiConnectionStringKey = item["XConnect Api ConnectionString Key"];
             this.XConnectApiCertificateConnectionStringKey = item["XConnect Certificate ConnectionString Key"];
@@ -58,12 +63,32 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            var result = Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(this.XConnectApiCertificateConnectionStringKey, this.XConnectApiConnectionStringKey ,this.WarnBefore);
+            var dateTime = DateTime.UtcNow;
+            this.SaveRemoteCheckStarted(dateTime);
 
-            this.Status = result.Status;
-            this.HealthyMessage = result.HealthyMessage;
-            this.ErrorList = result.ErrorList;
-            this.LastCheckTime = result.LastCheckTime;
+            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
+
+            var message = new OutGoingMessage
+            {
+                Parameters = new System.Collections.Generic.Dictionary<string, string>
+                {
+                    {"XConnectApiConnectionStringKey", this.XConnectApiConnectionStringKey },
+                    {"XConnectApiCertificateConnectionStringKey", this.XConnectApiCertificateConnectionStringKey },
+                     {"Warn Before", this.WarnBefore.ToString() }
+                },
+                TargetInstance = this.TargetInstance,
+                ComponentId = this.InnerItem.ID.Guid,
+                EventRaised = dateTime
+            };
+
+            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            {
+                ContentType = "application/json",
+                Label = Constants.TemplateNames.RemoteXConnectApiCheckTemplateName,
+                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
+            };
+
+            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }
 }

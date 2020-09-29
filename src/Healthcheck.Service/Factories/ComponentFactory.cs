@@ -56,7 +56,7 @@
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.XConnectApiCheckTemplateName))
             {
-                return new XConnectApiCheck(item);
+                return new Domain.XConnectApiCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.WindowsServiceCheckTemplateName))
             {
@@ -89,6 +89,10 @@
             else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteCertificateCheckTemplateName))
             {
                 return new RemoteCertificateCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteXConnectApiCheckTemplateName))
+            {
+                return new RemoteXConnectApiCheck(item);
             }
 
             return null;

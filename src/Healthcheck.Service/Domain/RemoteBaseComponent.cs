@@ -33,7 +33,7 @@
         /// <param name="item">The item.</param>
         public RemoteBaseComponent(Item item):base(item)
         {
-            this.TargetInstance = item["Target Instance"];
+            this.TargetInstance = item.Parent["Target Instance"];
             this.RemoteCheckStarted = DateUtil.ParseDateTime(item["Remote Check Started"], DateTime.MinValue);
         }
 

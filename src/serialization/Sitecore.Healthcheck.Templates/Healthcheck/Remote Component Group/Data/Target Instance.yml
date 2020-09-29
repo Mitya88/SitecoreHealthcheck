@@ -1,8 +1,8 @@
 ﻿---
-ID: "a23f366c-8c26-4fad-a2a7-207fe59e8f9b"
-Parent: "ab5bc0e2-5359-4c07-b25e-715b7f89bdfc"
+ID: "c0971f6a-0521-447c-ae59-f72ac767c4a0"
+Parent: "9bc5f154-eb71-4495-b757-27e3e02adb85"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Base/Remote/Target Instance
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group/Data/Target Instance
 DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
@@ -10,7 +10,7 @@ SharedFields:
   Value: "Single-Line Text"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 50
+  Value: 200
 Languages:
 - Language: en
   Versions:
@@ -18,8 +18,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20200323T143103Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\admin
+      Value: 20200929T101801Z
