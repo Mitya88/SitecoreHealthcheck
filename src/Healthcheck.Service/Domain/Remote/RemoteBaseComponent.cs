@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.Domain
+﻿namespace Healthcheck.Service.Domain.Remote
 {
     using Sitecore;
     using Sitecore.Data.Items;

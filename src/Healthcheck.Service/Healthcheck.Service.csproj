@@ -98,10 +98,10 @@
   <ItemGroup>
     <Compile Include="Controllers\HealthcheckErrorsApiController.cs" />
     <Compile Include="Domain\ApiHealthCheck.cs" />
-    <Compile Include="Domain\RemoteCertificateCheck.cs" />
-    <Compile Include="Domain\RemoteLogFileCheck.cs" />
-    <Compile Include="Domain\RemoteBaseComponent.cs" />
-    <Compile Include="Domain\RemoteXConnectApiCheck.cs" />
+    <Compile Include="Domain\Remote\RemoteCertificateCheck.cs" />
+    <Compile Include="Domain\Remote\RemoteLogFileCheck.cs" />
+    <Compile Include="Domain\Remote\RemoteBaseComponent.cs" />
+    <Compile Include="Domain\Remote\RemoteXConnectApiCheck.cs" />
     <Compile Include="Models\DriveDetails.cs" />
     <Compile Include="Domain\LocalDiskSpaceCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
@@ -184,9 +184,7 @@
       <Name>Healthcheck.Service.Customization</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\Custom\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,20 +1,11 @@
-﻿namespace Healthcheck.Service.Domain
+﻿namespace Healthcheck.Service.Domain.Remote
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
     using Microsoft.Azure.ServiceBus.Core;
     using Newtonsoft.Json;
-    using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
-    using System.Collections.Generic;
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using System.Net;
-    using System.Net.Http;
-    using System.Security.Cryptography.X509Certificates;
     using System.Text;
 
     /// <summary>

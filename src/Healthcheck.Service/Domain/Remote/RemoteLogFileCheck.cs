@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.Domain
+﻿namespace Healthcheck.Service.Domain.Remote
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
@@ -10,64 +10,44 @@
     using System.Text;
 
     /// <summary>
-    /// RemoteCertificateCheck
+    /// Log file healthcheck
     /// </summary>
     /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
-    public class RemoteCertificateCheck : RemoteBaseComponent
+    public class RemoteLogFileCheck : RemoteBaseComponent
     {
         /// <summary>
-        /// Gets or sets the name of the store.
+        /// Gets or sets the file name format.
         /// </summary>
         /// <value>
-        /// The name of the store.
+        /// The file name format.
         /// </value>
-        public string StoreName { get; set; }
+        public string FileNameFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the location.
+        /// Gets or sets the number of days to check.
         /// </summary>
         /// <value>
-        /// The location.
+        /// The number of days to check.
         /// </value>
-        public string Location { get; set; }
+        public int NumberOfDaysToCheck { get; set; }
 
         /// <summary>
-        /// Gets or sets the value.
+        /// Gets or sets the item creation date.
         /// </summary>
         /// <value>
-        /// The value.
+        /// The item creation date.
         /// </value>
-        public string Value { get; set; }
+        private DateTime ItemCreationDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the "find by type".
-        /// </summary>
-        /// <value>
-        /// The find by type.
-        /// </value>
-        public string FindByType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the warn before.
-        /// </summary>
-        /// <value>
-        /// The warn before.
-        /// </value>
-        public int WarnBefore { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CertificateCheck"/> class.
+        /// Initializes a new instance of the <see cref="LogFileHealthcheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
-        public RemoteCertificateCheck(Item item) : base(item)
+        public RemoteLogFileCheck(Item item) : base(item)
         {
-            this.StoreName = item["StoreName"];
-            this.Location = item["Location"];
-            this.Value = item["Value"];
-            this.FindByType = item["FindByType"];
-            int warnBefore = 100;
-
-            this.WarnBefore = Sitecore.MainUtil.GetInt(item["Warn Before"], warnBefore);
+            this.FileNameFormat = item["File Name Format"];
+            this.NumberOfDaysToCheck = Sitecore.MainUtil.GetInt(item["Number of Days to Check"], 0);
+            this.ItemCreationDate = item.Created;
         }
 
         /// <summary>
@@ -84,11 +64,9 @@
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
                 {
-                    {"StoreName", this.StoreName },
-                    {"Location", this.Location },
-                    {"Value", this.Value },
-                     {"Warn Before", this.WarnBefore.ToString() },
-                    {"FindByType", this.FindByType }
+                    {"FileNameFormat", this.FileNameFormat },
+                    {"ItemCreationDate", this.ItemCreationDate.ToString("yyyyMMddTHHmmss") },
+                    {"NumberOfDaysToCheck", this.NumberOfDaysToCheck.ToString() }
                 },
                 TargetInstance = this.TargetInstance,
                 ComponentId = this.InnerItem.ID.Guid,
@@ -98,11 +76,20 @@
             var busMessage = new Microsoft.Azure.ServiceBus.Message
             {
                 ContentType = "application/json",
-                Label = Constants.TemplateNames.RemoteCertificateCheckTemplateName,
+                Label = Constants.TemplateNames.RemoteLogFileCheckTemplateName,
                 Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
             };
 
             messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        /// Gets the log file directory path.
+        /// </summary>
+        /// <returns>Path to the directory.</returns>
+        private string GetLogFileDirectoryPath()
+        {
+            return Path.Combine(Sitecore.Configuration.Settings.DataFolder, "logs");
         }
     }
 }

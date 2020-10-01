@@ -2,6 +2,7 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Domain;
+    using Healthcheck.Service.Domain.Remote;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Data.Items;
 
