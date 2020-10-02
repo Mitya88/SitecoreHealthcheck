@@ -102,7 +102,6 @@
     <Compile Include="Domain\Remote\RemoteLogFileCheck.cs" />
     <Compile Include="Domain\Remote\RemoteBaseComponent.cs" />
     <Compile Include="Domain\Remote\RemoteXConnectApiCheck.cs" />
-    <Compile Include="Models\DriveDetails.cs" />
     <Compile Include="Domain\LocalDiskSpaceCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
     <Compile Include="Domain\SPECheck.cs" />

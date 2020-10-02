@@ -1,17 +1,8 @@
 ﻿namespace Healthcheck.Service.Domain
 {
     using Healthcheck.Service.Core;
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Newtonsoft.Json;
     using Sitecore.Data.Items;
-    using System;
     using System.Collections.Specialized;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Text;
-    using System.Web;
 
     /// <summary>
     /// API Healthcheck component
@@ -198,12 +189,12 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            var result = ApiCheck.RunHealthcheck(Url, RequestHeaders, Method, PostBody, ExpectedResponseCode, ExpectedResponseBody,  usingBasicAuthentication,  usingJwtAuthentication,  usingCertificateAuthentication,  Username,  Password,  JwtToken,  GenerateTokenUrl,  GenerateTokenEndpointMethod,  StoreName,  Location,  this.FindByType,  this.Value);
+            var result = ApiCheck.RunHealthcheck(Url, RequestHeaders, Method, PostBody, ExpectedResponseCode, ExpectedResponseBody, usingBasicAuthentication, usingJwtAuthentication, usingCertificateAuthentication, Username, Password, JwtToken, GenerateTokenUrl, GenerateTokenEndpointMethod, StoreName, Location, this.FindByType, this.Value);
 
             this.Status = result.Status;
             this.HealthyMessage = result.HealthyMessage;
             this.ErrorList = result.ErrorList;
             this.LastCheckTime = result.LastCheckTime;
-        }        
+        }
     }
 }

@@ -53,7 +53,7 @@
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.LicenseCheckTemplateName))
             {
-                return new LicenseCheck(item);
+                return new Domain.LicenseCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.XConnectApiCheckTemplateName))
             {
@@ -61,7 +61,7 @@
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.WindowsServiceCheckTemplateName))
             {
-                return new WindowsServiceCheck(item);
+                return new Domain.WindowsServiceCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.WebJobCheckTemplateName))
             {

@@ -1,16 +1,6 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Sitecore.Configuration;
     using Sitecore.Data.Items;
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using System.Net;
-    using System.Net.Http;
-    using System.Security.Cryptography.X509Certificates;
 
     /// <summary>
     /// Xconnect Api check component
@@ -58,7 +48,7 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            var result = Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(this.XConnectApiCertificateConnectionStringKey, this.XConnectApiConnectionStringKey ,this.WarnBefore);
+            var result = Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(this.XConnectApiCertificateConnectionStringKey, this.XConnectApiConnectionStringKey, this.WarnBefore);
 
             this.Status = result.Status;
             this.HealthyMessage = result.HealthyMessage;

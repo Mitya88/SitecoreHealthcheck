@@ -1,7 +1,6 @@
 ﻿namespace Healthcheck.Service.Core.Messages
 {
     using System;
-    using System.Collections.Generic;
 
     public class HealthcheckResultMessage
     {

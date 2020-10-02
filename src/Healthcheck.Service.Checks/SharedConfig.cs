@@ -1,10 +1,6 @@
 ﻿using Sitecore.Configuration;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Healthcheck.Service.Core
 {
@@ -12,7 +8,8 @@ namespace Healthcheck.Service.Core
     {
         public static string ConnectionStringOrKey
         {
-            get {
+            get
+            {
                 var connectionStringOrKey = Settings.GetSetting("Healthcheck.ConnectionStringKeyOrConnectionString");
 
                 if (connectionStringOrKey.StartsWith("Endpoint=sb://", StringComparison.OrdinalIgnoreCase))

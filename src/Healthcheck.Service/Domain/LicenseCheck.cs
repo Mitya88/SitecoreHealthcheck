@@ -1,11 +1,6 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Sitecore.Configuration;
     using Sitecore.Data.Items;
-    using System;
-    using System.Xml;
 
     /// <summary>
     /// Licence check component
@@ -47,53 +42,12 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            this.LastCheckTime = DateTime.UtcNow;
-            this.Status = HealthcheckStatus.Healthy;
+            var result = Healthcheck.Service.Core.LicenseCheck.RunHealthcheck(this.WarnBefore, this.ErrorBefore);
 
-            try
-            {
-                var licenseFile = Settings.LicenseFile;
-                XmlDocument doc = new XmlDocument();
-                doc.Load(licenseFile);
-                var expirationNodeList = doc.GetElementsByTagName("expiration");
-                var expirationDate = DateTime.ParseExact(expirationNodeList[0].InnerText, "yyyyMMddTHHmmss", System.Globalization.CultureInfo.CurrentCulture);
-
-                if (expirationDate.AddDays(-WarnBefore).Date <= DateTime.Now.Date && expirationDate.AddDays(-ErrorBefore).Date > DateTime.UtcNow.Date)
-                {
-                    this.Status = HealthcheckStatus.Warning;
-                    this.ErrorList.Entries.Add(new ErrorEntry
-                    {
-                        Created = DateTime.UtcNow,
-                        Reason = string.Format("License will expire in {0} days.", (expirationDate - DateTime.UtcNow).Days),
-                        Exception = null
-                    });
-
-                    return;
-                }
-
-                if (expirationDate.AddDays(-ErrorBefore).Date <= DateTime.UtcNow.Date)
-                {
-                    this.Status = HealthcheckStatus.Error;
-                    this.ErrorList.Entries.Add(new ErrorEntry
-                    {
-                        Created = DateTime.UtcNow,
-                        Reason = string.Format("License will expire in {0} days.", (expirationDate - DateTime.UtcNow).Days),
-                        Exception = null
-                    });
-
-                    return;
-                }
-            }
-            catch (Exception exception)
-            {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(new ErrorEntry
-                {
-                    Created = DateTime.UtcNow,
-                    Reason = exception.Message,
-                    Exception = exception
-                });
-            }
+            this.Status = result.Status;
+            this.HealthyMessage = result.HealthyMessage;
+            this.ErrorList = result.ErrorList;
+            this.LastCheckTime = result.LastCheckTime;
         }
     }
 }

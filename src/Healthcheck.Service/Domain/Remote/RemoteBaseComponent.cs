@@ -9,7 +9,7 @@
     /// <summary>
     /// Abstract base class for remote components
     /// </summary>
-    public abstract class RemoteBaseComponent:BaseComponent
+    public abstract class RemoteBaseComponent : BaseComponent
     {
         /// <summary>
         /// Gets or sets the file name format.
@@ -31,7 +31,7 @@
         /// Initializes a new instance of the <see cref="BaseComponent"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
-        public RemoteBaseComponent(Item item):base(item)
+        public RemoteBaseComponent(Item item) : base(item)
         {
             this.TargetInstance = item.Parent["Target Instance"];
             this.RemoteCheckStarted = DateUtil.ParseDateTime(item["Remote Check Started"], DateTime.MinValue);
@@ -47,7 +47,7 @@
             {
                 using (new EditContext(this.InnerItem))
                 {
-                    this.InnerItem["Remote Check Started"] = DateUtil.FormatDateTime(dateTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);                   
+                    this.InnerItem["Remote Check Started"] = DateUtil.FormatDateTime(dateTime, "yyyyMMddTHHmmss", CultureInfo.InvariantCulture);
                 }
             }
         }

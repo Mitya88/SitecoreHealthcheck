@@ -23,7 +23,6 @@
                     Entries = new List<ErrorEntry>()
                 }
             };
-           
 
             if (string.IsNullOrEmpty(fileNameFormat))
             {
@@ -133,7 +132,7 @@
             else
             {
                 return HostingEnvironment.MapPath(fileName);
-            }            
+            }
         }
     }
 }

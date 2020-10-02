@@ -6,7 +6,6 @@
     using Newtonsoft.Json;
     using Sitecore.Data.Items;
     using System;
-    using System.IO;
     using System.Text;
 
     /// <summary>
@@ -79,7 +78,7 @@
             this.SaveRemoteCheckStarted(dateTime);
 
             var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-            
+
             var message = new OutGoingMessage
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>

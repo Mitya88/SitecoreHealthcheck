@@ -4,19 +4,17 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace Healthcheck.Service.Core
 {
     public class ApiCheck
     {
-        public static HealthcheckResult RunHealthcheck(string Url, NameValueCollection RequestHeaders, string Method, string PostBody, int ExpectedResponseCode, string ExpectedResponseBody,bool usingBasicAuthentication, bool usingJwtAuthentication, bool usingCertificateAuthentication, string Username, string Password, string JwtToken, string GenerateTokenUrl, string generateTokenEndpointMetho, string storeName, string location, string findByTypeName, string value)
+        public static HealthcheckResult RunHealthcheck(string Url, NameValueCollection RequestHeaders, string Method, string PostBody, int ExpectedResponseCode, string ExpectedResponseBody, bool usingBasicAuthentication, bool usingJwtAuthentication, bool usingCertificateAuthentication, string Username, string Password, string JwtToken, string GenerateTokenUrl, string generateTokenEndpointMetho, string storeName, string location, string findByTypeName, string value)
         {
             var checkResult = new HealthcheckResult
             {
@@ -48,7 +46,7 @@ namespace Healthcheck.Service.Core
             {
                 HttpResponseMessage response = new HttpResponseMessage();
 
-                httpClient = AddAuthentication(httpClient,usingBasicAuthentication,usingJwtAuthentication,usingCertificateAuthentication,Username,Password,JwtToken,GenerateTokenUrl,generateTokenEndpointMetho,storeName,location,findByTypeName,value);
+                httpClient = AddAuthentication(httpClient, usingBasicAuthentication, usingJwtAuthentication, usingCertificateAuthentication, Username, Password, JwtToken, GenerateTokenUrl, generateTokenEndpointMetho, storeName, location, findByTypeName, value);
 
                 if (RequestHeaders != null && RequestHeaders.Count > 0)
                 {
