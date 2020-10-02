@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiCheck.cs" />
     <Compile Include="CertificateCheck.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="HealthcheckResult.cs" />
