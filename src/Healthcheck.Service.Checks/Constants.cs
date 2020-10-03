@@ -136,6 +136,8 @@
             public const string RemoteCertificateCheckTemplateName = "Remote Certificate Check";
 
             public const string RemoteXConnectApiCheckTemplateName = "Remote XConnectAPI Check";
+
+            public const string RemoteApiHealthcheckTemplateName= "Remote API Healthcheck";
         }
     }
 }

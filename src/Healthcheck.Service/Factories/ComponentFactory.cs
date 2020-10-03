@@ -95,6 +95,10 @@
             {
                 return new RemoteXConnectApiCheck(item);
             }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteApiHealthcheckTemplateName))
+            {
+                return new RemoteApiHealtcheck(item);
+            }
 
             return null;
         }

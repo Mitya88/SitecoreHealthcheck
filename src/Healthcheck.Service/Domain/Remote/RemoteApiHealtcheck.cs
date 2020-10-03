@@ -1,15 +1,20 @@
-﻿namespace Healthcheck.Service.Domain
+﻿namespace Healthcheck.Service.Domain.Remote
 {
     using Healthcheck.Service.Core;
+    using Healthcheck.Service.Core.Messages;
+    using Microsoft.Azure.ServiceBus.Core;
+    using Newtonsoft.Json;
     using Sitecore.Data.Items;
     using Sitecore.Services.Core.ComponentModel;
+    using System;
     using System.Collections.Specialized;
+    using System.Text;
 
     /// <summary>
     /// API Healthcheck component
     /// </summary>
     /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
-    public class ApiHealthCheck : BaseComponent
+    public class RemoteApiHealtcheck : RemoteBaseComponent
     {
         /// <summary>
         /// Gets or sets the URL.
@@ -141,7 +146,7 @@
         /// Initializes a new instance of the <see cref="ApiHealthCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
-        public ApiHealthCheck(Item item) : base(item)
+        public RemoteApiHealtcheck(Item item) : base(item)
         {
             this.Url = item["API Url"];
             this.Method = item["Method"];
@@ -190,12 +195,52 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            var result = ApiCheck.RunHealthcheck(Url, RequestHeaders.ToDictionary(), Method, PostBody, ExpectedResponseCode, ExpectedResponseBody, usingBasicAuthentication, usingJwtAuthentication, usingCertificateAuthentication, Username, Password, JwtToken, GenerateTokenUrl, GenerateTokenEndpointMethod, StoreName, Location, this.FindByType, this.Value);
+            var dateTime = DateTime.UtcNow;
+            this.SaveRemoteCheckStarted(dateTime);
 
-            this.Status = result.Status;
-            this.HealthyMessage = result.HealthyMessage;
-            this.ErrorList = result.ErrorList;
-            this.LastCheckTime = result.LastCheckTime;
+            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
+
+            var message = new OutGoingMessage
+            {
+                Parameters = new System.Collections.Generic.Dictionary<string, string>
+                {
+                   
+                    {"Url", this.Url },
+                    {"RequestHeaders", JsonConvert.SerializeObject( this.RequestHeaders.ToDictionary()) },
+                    {"Method", this.Method },
+                     {"PostBody", this.PostBody},
+                    {"ExpectedResponseCode", this.ExpectedResponseCode.ToString()},
+
+                     {"ExpectedResponseBody", this.ExpectedResponseBody },
+                    {"usingBasicAuthentication", this.usingBasicAuthentication.ToString() },
+                    {"usingJwtAuthentication", this.usingJwtAuthentication.ToString() },
+                     {"usingCertificateAuthentication", this.usingCertificateAuthentication.ToString() },
+                    {"Username", this.Username },
+
+                     {"Password", this.Password },
+                    {"JwtToken", this.JwtToken },
+                    {"GenerateTokenUrl", this.GenerateTokenUrl },
+                     {"generateTokenEndpointMetho", this.GenerateTokenEndpointMethod },
+                    {"storeName", this.StoreName },
+
+                     {"location", this.Location },
+                    {"findByTypeName", this.FindByType },
+                    {"value", this.Value }
+
+                },
+                TargetInstance = this.TargetInstance,
+                ComponentId = this.InnerItem.ID.Guid,
+                EventRaised = dateTime
+            };
+
+            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            {
+                ContentType = "application/json",
+                Label = Constants.TemplateNames.RemoteApiHealthcheckTemplateName,
+                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
+            };
+
+            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }
 }

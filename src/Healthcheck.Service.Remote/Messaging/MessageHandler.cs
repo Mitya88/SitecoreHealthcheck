@@ -41,6 +41,10 @@ namespace Healthcheck.Service.Remote.Messaging
                 {
                     result = XConnectApiCheck.RunHealthcheck(messageContract.Parameters["XConnectApiCertificateConnectionStringKey"], messageContract.Parameters["XConnectApiConnectionStringKey"], int.Parse(messageContract.Parameters["Warn Before"]));
                 }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteApiHealthcheckTemplateName))
+                {
+                    result = ApiCheck.RunHealthcheck(messageContract);
+                }
 
                 if (result != null)
                 {
