@@ -3,7 +3,6 @@ using Healthcheck.Service.Core.Messages;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Core;
 using Newtonsoft.Json;
-using Sitecore.Configuration;
 using System;
 using System.Globalization;
 using System.IO;
@@ -61,7 +60,7 @@ namespace Healthcheck.Service.Remote.Messaging
                         Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(incomingMessage)),
                         ContentType = "application/json",
                         Label = "Result"
-                    }).ConfigureAwait(false);                    
+                    }).ConfigureAwait(false);
                 }
             }
         }

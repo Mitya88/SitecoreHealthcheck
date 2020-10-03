@@ -190,7 +190,7 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            var result = ApiCheck.RunHealthcheck(Url, RequestHeaders.ToDictionary(), Method, PostBody, ExpectedResponseCode, ExpectedResponseBody, usingBasicAuthentication, usingJwtAuthentication, usingCertificateAuthentication, Username, Password, JwtToken, GenerateTokenUrl, GenerateTokenEndpointMethod, StoreName, Location, this.FindByType, this.Value);
+            var result = ApiCheck.RunHealthcheck(Url, RequestHeaders, Method, PostBody, ExpectedResponseCode, ExpectedResponseBody, usingBasicAuthentication, usingJwtAuthentication, usingCertificateAuthentication, Username, Password, JwtToken, GenerateTokenUrl, GenerateTokenEndpointMethod, StoreName, Location, this.FindByType, this.Value);
 
             this.Status = result.Status;
             this.HealthyMessage = result.HealthyMessage;

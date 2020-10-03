@@ -1,6 +1,5 @@
 namespace Healthcheck.Service.Remote.DI
 {
-   
     using Healthcheck.Service.Remote.Messaging.Clients;
     using Microsoft.Azure.ServiceBus;
     using Microsoft.Extensions.DependencyInjection;

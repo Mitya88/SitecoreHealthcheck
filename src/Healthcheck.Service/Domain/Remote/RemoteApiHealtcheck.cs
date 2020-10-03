@@ -8,6 +8,7 @@
     using Sitecore.Services.Core.ComponentModel;
     using System;
     using System.Collections.Specialized;
+    using System.Linq;
     using System.Text;
 
     /// <summary>
@@ -206,7 +207,9 @@
                 {
                    
                     {"Url", this.Url },
-                    {"RequestHeaders", JsonConvert.SerializeObject( this.RequestHeaders.ToDictionary()) },
+                    {"RequestHeaders", string.Join("&",
+        this.RequestHeaders.ToDictionary().Select(kvp =>
+            string.Format("{0}={1}", kvp.Key, kvp.Value))) },
                     {"Method", this.Method },
                      {"PostBody", this.PostBody},
                     {"ExpectedResponseCode", this.ExpectedResponseCode.ToString()},

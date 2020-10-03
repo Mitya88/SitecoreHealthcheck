@@ -97,6 +97,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HealthcheckErrorsApiController.cs" />
+    <Compile Include="Domain\Remote\RemoteDiskSpaceCheck.cs" />
+    <Compile Include="Domain\Remote\RemoteLicenseCheck.cs" />
+    <Compile Include="Domain\Remote\RemoteCustomHealthcheck.cs" />
+    <Compile Include="Domain\Remote\RemoteDatabaseHealthCheck.cs" />
     <Compile Include="Domain\Remote\RemoteApiHealtcheck.cs" />
     <Compile Include="Domain\ApiHealthCheck.cs" />
     <Compile Include="Domain\Remote\RemoteCertificateCheck.cs" />
@@ -105,6 +109,7 @@
     <Compile Include="Domain\Remote\RemoteXConnectApiCheck.cs" />
     <Compile Include="Domain\LocalDiskSpaceCheck.cs" />
     <Compile Include="Domain\QueueCheck.cs" />
+    <Compile Include="Domain\Remote\RemoteWindowsServiceCheck.cs" />
     <Compile Include="Domain\SPECheck.cs" />
     <Compile Include="Domain\WebJobCheck.cs" />
     <Compile Include="Domain\KeepAliveCheck.cs" />

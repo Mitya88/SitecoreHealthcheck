@@ -141,7 +141,7 @@
 
             public const string RemoteDatabaseHealtcheckTemplateName = "Remote Database Healthcheck";
 
-            public const string RemoteCustomHealthcheckTemplateName = "Remote Database Healthcheck";
+            public const string RemoteCustomHealthcheckTemplateName = "Remote Custom Healthcheck";
 
             public const string RemoteLicenseHealthcheckTemplateName = "Remote License Check";
 

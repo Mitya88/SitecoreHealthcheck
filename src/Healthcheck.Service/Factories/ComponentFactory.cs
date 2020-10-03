@@ -99,6 +99,26 @@
             {
                 return new RemoteApiHealtcheck(item);
             }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteCustomHealthcheckTemplateName))
+            {
+                return new RemoteCustomHealthcheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName))
+            {
+                return new RemoteDatabaseHealthCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteDiskSpaceCheckTemplateName))
+            {
+                return new RemoteDiskSpaceCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteLicenseHealthcheckTemplateName))
+            {
+                return new RemoteLicenseCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteWindowsServiceCheckTemplateName))
+            {
+                return new RemoteWindowsServiceCheck(item);
+            }
 
             return null;
         }

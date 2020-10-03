@@ -5,14 +5,10 @@ using Microsoft.Azure.ServiceBus.Management;
 using Sitecore.DependencyInjection;
 using Sitecore.Pipelines;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Healthcheck.Service.Remote
 {
-     public class InitializeQueueClient
+    public class InitializeQueueClient
     {
         public virtual void Process(PipelineArgs args)
         {
@@ -25,7 +21,7 @@ namespace Healthcheck.Service.Remote
                 new MessageHandlerOptions((e) => IncomingQueueMessageHandler.LogMessageHandlerException(e)) { AutoComplete = true, MaxConcurrentCalls = 1 });
         }
 
-        QueueDescription EnsureQueueExists(ManagementClient _managementClient, string queueName)
+        private QueueDescription EnsureQueueExists(ManagementClient _managementClient, string queueName)
         {
             try
             {

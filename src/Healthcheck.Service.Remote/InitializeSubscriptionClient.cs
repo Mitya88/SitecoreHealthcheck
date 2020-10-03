@@ -5,14 +5,10 @@ using Microsoft.Azure.ServiceBus.Management;
 using Sitecore.DependencyInjection;
 using Sitecore.Pipelines;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Healthcheck.Service.Remote
 {
-     public class InitializeSubscriptionClient
+    public class InitializeSubscriptionClient
     {
         public virtual void Process(PipelineArgs args)
         {
@@ -28,14 +24,14 @@ namespace Healthcheck.Service.Remote
                 client.RegisterMessageHandler(MessageHandler.ReceiveMessage,
                     new MessageHandlerOptions((e) => MessageHandler.LogMessageHandlerException(e)) { AutoComplete = true, MaxConcurrentCalls = 1 });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Sitecore.Diagnostics.Log.Error("Initialize failed Healthcheck Topic", ex,this);
+                Sitecore.Diagnostics.Log.Error("Initialize failed Healthcheck Topic", ex, this);
             }
             Sitecore.Diagnostics.Log.Info("Initialize finished Healthcheck Topic", this);
         }
 
-        TopicDescription EnsureTopicExists(ManagementClient _managementClient, string topicName)
+        private TopicDescription EnsureTopicExists(ManagementClient _managementClient, string topicName)
         {
             try
             {
@@ -60,8 +56,7 @@ namespace Healthcheck.Service.Remote
             }
         }
 
-
-        SubscriptionDescription EnsureSubscriptionExists(ManagementClient _managementClient, string topicName, string subscription)
+        private SubscriptionDescription EnsureSubscriptionExists(ManagementClient _managementClient, string topicName, string subscription)
         {
             try
             {

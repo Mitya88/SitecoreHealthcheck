@@ -46,12 +46,10 @@ namespace Healthcheck.Service.Remote.Messaging
                         }
                     }
                 }
-
             }
 
             return Task.CompletedTask;
         }
-
 
         private static string GetErrorMessagesJson(ErrorList errorList)
         {
