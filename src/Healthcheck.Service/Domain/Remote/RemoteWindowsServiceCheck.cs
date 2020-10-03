@@ -45,7 +45,8 @@
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
                 {
-                    {"ServiceName", this.ServiceName }
+                    {"ServiceName", this.ServiceName },
+                    {"HealthyMessage",this.HealthyMessage }
                 },
                 TargetInstance = this.TargetInstance,
                 ComponentId = this.InnerItem.ID.Guid,

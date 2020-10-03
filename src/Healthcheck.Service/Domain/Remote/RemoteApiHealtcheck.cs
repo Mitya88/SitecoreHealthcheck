@@ -143,6 +143,8 @@
 
         private bool usingCertificateAuthentication;
 
+        private Item InnerItem { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiHealthCheck"/> class.
         /// </summary>
@@ -150,6 +152,7 @@
         public RemoteApiHealtcheck(Item item) : base(item)
         {
             this.Url = item["API Url"];
+            this.InnerItem = item;
             this.Method = item["Method"];
             this.ExpectedResponseCode = Sitecore.MainUtil.GetInt(item["Expected Response Code"], 200);
             this.ExpectedResponseBody = item["Expected Response Body"];
@@ -207,9 +210,8 @@
                 {
                    
                     {"Url", this.Url },
-                    {"RequestHeaders", string.Join("&",
-        this.RequestHeaders.ToDictionary().Select(kvp =>
-            string.Format("{0}={1}", kvp.Key, kvp.Value))) },
+                    {"RequestHeaders",this.InnerItem    ["Request Headers"] },
+      
                     {"Method", this.Method },
                      {"PostBody", this.PostBody},
                     {"ExpectedResponseCode", this.ExpectedResponseCode.ToString()},

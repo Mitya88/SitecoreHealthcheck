@@ -33,6 +33,8 @@
         /// </value>
         public NameValueCollection Parameters { get; set; }
 
+        private Item InnerItem { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CertificateCheck"/> class.
         /// </summary>
@@ -42,6 +44,7 @@
             this.Type = item["Type"];
             var parameters = item["Parameters"];
             this.Parameters = Sitecore.Web.WebUtil.ParseUrlParameters(parameters);
+            this.InnerItem = item;
         }
 
         /// <summary>
@@ -54,14 +57,14 @@
 
             var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
 
+            var parameters = string.Join("&", Array.ConvertAll(this.Parameters.AllKeys, key => string.Format("{0}={1}", key, this.Parameters[key])));
+
             var message = new OutGoingMessage
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
                 {
                     {"Type", this.Type },
-                    {"Parameters", string.Join("&",
-        this.Parameters.ToDictionary().Select(kvp =>
-            string.Format("{0}={1}", kvp.Key, kvp.Value))) }
+                    {"Parameters", this.InnerItem["Parameters"] }
                 },
                 TargetInstance = this.TargetInstance,
                 ComponentId = this.InnerItem.ID.Guid,

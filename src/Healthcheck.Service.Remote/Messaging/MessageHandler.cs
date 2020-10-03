@@ -44,6 +44,26 @@ namespace Healthcheck.Service.Remote.Messaging
                 {
                     result = ApiCheck.RunHealthcheck(messageContract);
                 }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteCustomHealthcheckTemplateName))
+                {
+                    result = CustomCheck.RunHealthcheck(messageContract.Parameters["Type"], Sitecore.StringUtil.GetNameValues(messageContract.Parameters["Parameters"]));
+                }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName))
+                {
+                    result = DatabaseCheck.RunHealthcheck(messageContract.Parameters["ConnectionStringKey"]);
+                }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteDiskSpaceCheckTemplateName))
+                {
+                    result = DiskSpaceCheck.RunHealthcheck(messageContract.Parameters["DriveName"], int.Parse(messageContract.Parameters["ErrorPercentageThreshold"]), int.Parse(messageContract.Parameters["WarningPercentageThreshold"]));
+                }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteLicenseHealthcheckTemplateName))
+                {
+                    result = LicenseCheck.RunHealthcheck(int.Parse(messageContract.Parameters["WarnBefore"]), int.Parse(messageContract.Parameters["ErrorBefore"]));
+                }
+                else if (message.Label.Equals(Constants.TemplateNames.RemoteWindowsServiceCheckTemplateName))
+                {
+                    result = WindowsServiceCheck.RunHealthcheck(messageContract.Parameters["ServiceName"], messageContract.Parameters["HealthyMessage"]);
+                }
 
                 if (result != null)
                 {
