@@ -11,7 +11,7 @@
     /// <summary>
     /// RemoteCertificateCheck
     /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteCertificateCheck : RemoteBaseComponent
     {
         /// <summary>
@@ -55,7 +55,7 @@
         public int WarnBefore { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CertificateCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteCertificateCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteCertificateCheck(Item item) : base(item)

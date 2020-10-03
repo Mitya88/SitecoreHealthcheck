@@ -1,17 +1,17 @@
-﻿using Healthcheck.Service.Core;
-using Healthcheck.Service.Core.Messages;
-using Microsoft.Azure.ServiceBus;
-using Microsoft.Azure.ServiceBus.Core;
-using Newtonsoft.Json;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Healthcheck.Service.Remote.Messaging
+﻿namespace Healthcheck.Service.Remote.Messaging
 {
+    using Healthcheck.Service.Core;
+    using Healthcheck.Service.Core.Messages;
+    using Microsoft.Azure.ServiceBus;
+    using Microsoft.Azure.ServiceBus.Core;
+    using Newtonsoft.Json;
+    using System;
+    using System.Globalization;
+    using System.IO;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+
     public class MessageHandler
     {
         public static async Task ReceiveMessage(Message message, CancellationToken token)

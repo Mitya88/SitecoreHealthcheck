@@ -9,9 +9,9 @@
     using System.Text;
 
     /// <summary>
-    /// Xconnect Api check component
+    /// Remote Xconnect Api check component
     /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteXConnectApiCheck : RemoteBaseComponent
     {
         /// <summary>
@@ -39,7 +39,7 @@
         public int WarnBefore { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XConnectApiCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteXConnectApiCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteXConnectApiCheck(Item item) : base(item)

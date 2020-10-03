@@ -9,7 +9,7 @@
     using System.Text;
 
     /// <summary>
-    /// Licence check component
+    /// Remote Licence check component
     /// </summary>
     public class RemoteLicenseCheck : RemoteBaseComponent
     {
@@ -30,7 +30,7 @@
         public int ErrorBefore { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LicenseCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteLicenseCheck"/> class.
         /// </summary>
         /// <param name="item"></param>
         public RemoteLicenseCheck(Item item) : base(item)

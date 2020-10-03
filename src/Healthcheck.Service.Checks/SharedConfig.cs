@@ -1,9 +1,9 @@
-﻿using Sitecore.Configuration;
-using System;
-using System.Configuration;
-
-namespace Healthcheck.Service.Core
+﻿namespace Healthcheck.Service.Core
 {
+    using Sitecore.Configuration;
+    using System;
+    using System.Configuration;
+
     public static class SharedConfig
     {
         public static string ConnectionStringOrKey

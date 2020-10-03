@@ -1,21 +1,21 @@
-﻿using Healthcheck.Service.Core.Messages;
-using Healthcheck.Service.Customization;
-using Healthcheck.Service.Customization.Models;
-using Microsoft.Azure.ServiceBus;
-using Newtonsoft.Json;
-using Sitecore;
-using Sitecore.Configuration;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.SecurityModel;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Healthcheck.Service.Remote.Messaging
+﻿namespace Healthcheck.Service.Remote.Messaging
 {
+    using Healthcheck.Service.Core.Messages;
+    using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
+    using Microsoft.Azure.ServiceBus;
+    using Newtonsoft.Json;
+    using Sitecore;
+    using Sitecore.Configuration;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.SecurityModel;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+
     public class IncomingQueueMessageHandler
     {
         public static Task ReceiveMessage(Message message, CancellationToken token)

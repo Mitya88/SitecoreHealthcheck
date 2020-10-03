@@ -2,7 +2,6 @@
 {
     using Healthcheck.Service.Core;
     using Sitecore.Data.Items;
-    using Sitecore.Services.Core.ComponentModel;
     using System.Collections.Specialized;
 
     /// <summary>

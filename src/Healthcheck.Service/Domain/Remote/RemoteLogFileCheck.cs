@@ -10,9 +10,9 @@
     using System.Text;
 
     /// <summary>
-    /// Log file healthcheck
+    /// Remote Log file healthcheck
     /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteLogFileCheck : RemoteBaseComponent
     {
         /// <summary>
@@ -40,7 +40,7 @@
         private DateTime ItemCreationDate { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LogFileHealthcheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteLogFileHealthcheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteLogFileCheck(Item item) : base(item)

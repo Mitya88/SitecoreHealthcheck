@@ -8,7 +8,7 @@
     using System;
     using System.Text;
 
-    /// <summary>Local disk space check.</summary>
+    /// <summary>Remote disk space check.</summary>
     public class RemoteDiskSpaceCheck : RemoteBaseComponent
     {
         /// <summary>The warning percentage threshold.</summary>
@@ -29,6 +29,8 @@
 
         private const double ErrorPercentageDefault = 10;
 
+        /// <summary>Initializes a new instance of the <a onclick="return false;" href="RemoteDiskSpaceCheck" originaltag="see">RemoteDiskSpaceCheck</a> class.</summary>
+        /// <param name="item">The item.</param>
         public RemoteDiskSpaceCheck(Item item) : base(item)
         {
             ReadParameters(item);

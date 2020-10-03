@@ -9,9 +9,9 @@
     using System.Text;
 
     /// <summary>
-    /// Windows Service healthcheck component
+    /// Remote Windows Service healthcheck component
     /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteWindowsServiceCheck : RemoteBaseComponent
     {
         /// <summary>
@@ -23,7 +23,7 @@
         public string ServiceName { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DatabaseHealthCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteWindowsServiceCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteWindowsServiceCheck(Item item) : base(item)

@@ -135,18 +135,33 @@
             /// </summary>
             public const string RemoteCertificateCheckTemplateName = "Remote Certificate Check";
 
+            /// <summary>The remote x connect API check template name</summary>
             public const string RemoteXConnectApiCheckTemplateName = "Remote XConnectAPI Check";
 
-            public const string RemoteApiHealthcheckTemplateName= "Remote API Healthcheck";
+            /// <summary>The remote API healthcheck template name</summary>
+            public const string RemoteApiHealthcheckTemplateName = "Remote API Healthcheck";
 
+            /// <summary>The remote database healtcheck template name</summary>
             public const string RemoteDatabaseHealtcheckTemplateName = "Remote Database Healthcheck";
 
+            /// <summary>
+            /// The remote custom healthcheck template name
+            /// </summary>
             public const string RemoteCustomHealthcheckTemplateName = "Remote Custom Healthcheck";
 
+            /// <summary>
+            /// The remote license healthcheck template name
+            /// </summary>
             public const string RemoteLicenseHealthcheckTemplateName = "Remote License Check";
 
+            /// <summary>
+            /// The remote disk space check template name
+            /// </summary>
             public const string RemoteDiskSpaceCheckTemplateName = "Remote Disk Space Check";
 
+            /// <summary>
+            /// The remote windows service check template name
+            /// </summary>
             public const string RemoteWindowsServiceCheckTemplateName = "Remote Windows Service Check";
         }
     }

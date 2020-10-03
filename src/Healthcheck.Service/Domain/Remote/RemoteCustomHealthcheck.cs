@@ -5,16 +5,14 @@
     using Microsoft.Azure.ServiceBus.Core;
     using Newtonsoft.Json;
     using Sitecore.Data.Items;
-    using Sitecore.Services.Core.ComponentModel;
     using System;
     using System.Collections.Specialized;
-    using System.Linq;
     using System.Text;
 
     /// <summary>
-    /// Custom healthcheck component
+    /// Remote Custom healthcheck component
     /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteCustomHealthcheck : RemoteBaseComponent
     {
         /// <summary>
@@ -33,10 +31,8 @@
         /// </value>
         public NameValueCollection Parameters { get; set; }
 
-        private Item InnerItem { get; set; }
-
         /// <summary>
-        /// Initializes a new instance of the <see cref="CertificateCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteCertificateCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteCustomHealthcheck(Item item) : base(item)

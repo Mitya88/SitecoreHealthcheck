@@ -9,9 +9,9 @@
     using System.Text;
 
     /// <summary>
-    /// Database healthcheck component
+    /// Remote Database healthcheck component
     /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteDatabaseHealthCheck : RemoteBaseComponent
     {
         /// <summary>
@@ -23,7 +23,7 @@
         public string ConnectionStringKey { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DatabaseHealthCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteDatabaseHealthCheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteDatabaseHealthCheck(Item item) : base(item)

@@ -1,16 +1,16 @@
-﻿using Healthcheck.Service.Customization;
-using Healthcheck.Service.Customization.Models;
-using Sitecore.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Configuration;
-using System.Net;
-using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Healthcheck.Service.Core
+﻿namespace Healthcheck.Service.Core
 {
+    using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
+    using Sitecore.Configuration;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.Configuration;
+    using System.Net;
+    using System.Net.Http;
+    using System.Security.Cryptography.X509Certificates;
+
     public class XConnectApiCheck
     {
         public static HealthcheckResult RunHealthcheck(string xConnectApiCertificateConnectionStringKey, string xConnectApiConnectionStringKey, int wWarnBefore)

@@ -1,25 +1,23 @@
-﻿using Healthcheck.Service.Core.Messages;
-using Healthcheck.Service.Customization;
-using Healthcheck.Service.Customization.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Web;
-
-namespace Healthcheck.Service.Core
+﻿namespace Healthcheck.Service.Core
 {
+    using Healthcheck.Service.Core.Messages;
+    using Healthcheck.Service.Customization;
+    using Healthcheck.Service.Customization.Models;
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Security.Cryptography.X509Certificates;
+    using System.Text;
+    using System.Web;
+
     public class ApiCheck
     {
-
         public static HealthcheckResult RunHealthcheck(OutGoingMessage message)
         {
-            
-            return RunHealthcheck(message.Parameters["Url"], Sitecore.StringUtil.GetNameValues(message.Parameters["RequestHeaders"]), message.Parameters["Method"], message.Parameters["PostBody"], int.Parse(message.Parameters["ExpectedResponseCode"]), message.Parameters["ExpectedResponseBody"], bool.Parse(message.Parameters["usingBasicAuthentication"]), bool.Parse(message.Parameters["usingJwtAuthentication"]), bool.Parse(message.Parameters["usingCertificateAuthentication"]), message.Parameters["Username"], message.Parameters["Password"], message.Parameters["JwtToken"],message.Parameters["GenerateTokenUrl"], message.Parameters["generateTokenEndpointMetho"],message.Parameters["storeName"], message.Parameters["location"], message.Parameters["findByTypeName"], message.Parameters["value"]);
+            return RunHealthcheck(message.Parameters["Url"], Sitecore.StringUtil.GetNameValues(message.Parameters["RequestHeaders"]), message.Parameters["Method"], message.Parameters["PostBody"], int.Parse(message.Parameters["ExpectedResponseCode"]), message.Parameters["ExpectedResponseBody"], bool.Parse(message.Parameters["usingBasicAuthentication"]), bool.Parse(message.Parameters["usingJwtAuthentication"]), bool.Parse(message.Parameters["usingCertificateAuthentication"]), message.Parameters["Username"], message.Parameters["Password"], message.Parameters["JwtToken"], message.Parameters["GenerateTokenUrl"], message.Parameters["generateTokenEndpointMetho"], message.Parameters["storeName"], message.Parameters["location"], message.Parameters["findByTypeName"], message.Parameters["value"]);
         }
 
         public static HealthcheckResult RunHealthcheck(string Url, NameValueCollection RequestHeaders, string Method, string PostBody, int ExpectedResponseCode, string ExpectedResponseBody, bool usingBasicAuthentication, bool usingJwtAuthentication, bool usingCertificateAuthentication, string Username, string Password, string JwtToken, string GenerateTokenUrl, string generateTokenEndpointMetho, string storeName, string location, string findByTypeName, string value)

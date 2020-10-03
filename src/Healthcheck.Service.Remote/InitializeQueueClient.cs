@@ -1,13 +1,13 @@
-﻿using Healthcheck.Service.Core;
-using Healthcheck.Service.Remote.Messaging;
-using Microsoft.Azure.ServiceBus;
-using Microsoft.Azure.ServiceBus.Management;
-using Sitecore.DependencyInjection;
-using Sitecore.Pipelines;
-using System;
-
-namespace Healthcheck.Service.Remote
+﻿namespace Healthcheck.Service.Remote
 {
+    using Healthcheck.Service.Core;
+    using Healthcheck.Service.Remote.Messaging;
+    using Microsoft.Azure.ServiceBus;
+    using Microsoft.Azure.ServiceBus.Management;
+    using Sitecore.DependencyInjection;
+    using Sitecore.Pipelines;
+    using System;
+
     public class InitializeQueueClient
     {
         public virtual void Process(PipelineArgs args)

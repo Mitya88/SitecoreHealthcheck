@@ -75,9 +75,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="EnterpriseLibrary.TransientFaultHandling.Caching">
       <Version>6.0.1304</Version>
     </PackageReference>

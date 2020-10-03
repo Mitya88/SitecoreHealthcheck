@@ -5,16 +5,12 @@
     using Microsoft.Azure.ServiceBus.Core;
     using Newtonsoft.Json;
     using Sitecore.Data.Items;
-    using Sitecore.Services.Core.ComponentModel;
     using System;
     using System.Collections.Specialized;
-    using System.Linq;
     using System.Text;
 
-    /// <summary>
-    /// API Healthcheck component
-    /// </summary>
-    /// <seealso cref="Healthcheck.Service.Domain.BaseComponent" />
+    /// <summary>API Healthcheck component</summary>
+    /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
     public class RemoteApiHealtcheck : RemoteBaseComponent
     {
         /// <summary>
@@ -143,10 +139,8 @@
 
         private bool usingCertificateAuthentication;
 
-        private Item InnerItem { get; set; }
-
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiHealthCheck"/> class.
+        /// Initializes a new instance of the <see cref="RemoteApiHealtcheck"/> class.
         /// </summary>
         /// <param name="item">The item.</param>
         public RemoteApiHealtcheck(Item item) : base(item)
@@ -208,10 +202,9 @@
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
                 {
-                   
                     {"Url", this.Url },
                     {"RequestHeaders",this.InnerItem    ["Request Headers"] },
-      
+
                     {"Method", this.Method },
                      {"PostBody", this.PostBody},
                     {"ExpectedResponseCode", this.ExpectedResponseCode.ToString()},
@@ -231,7 +224,6 @@
                      {"location", this.Location },
                     {"findByTypeName", this.FindByType },
                     {"value", this.Value }
-
                 },
                 TargetInstance = this.TargetInstance,
                 ComponentId = this.InnerItem.ID.Guid,
