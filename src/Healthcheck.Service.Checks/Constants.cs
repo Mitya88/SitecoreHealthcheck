@@ -138,6 +138,16 @@
             public const string RemoteXConnectApiCheckTemplateName = "Remote XConnectAPI Check";
 
             public const string RemoteApiHealthcheckTemplateName= "Remote API Healthcheck";
+
+            public const string RemoteDatabaseHealtcheckTemplateName = "Remote Database Healthcheck";
+
+            public const string RemoteCustomHealthcheckTemplateName = "Remote Database Healthcheck";
+
+            public const string RemoteLicenseHealthcheckTemplateName = "Remote License Check";
+
+            public const string RemoteDiskSpaceCheckTemplateName = "Remote Disk Space Check";
+
+            public const string RemoteWindowsServiceCheckTemplateName = "Remote Windows Service Check";
         }
     }
 }

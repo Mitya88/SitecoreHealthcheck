@@ -1,0 +1,21 @@
+﻿---
+ID: "cad90a89-8606-44d3-a968-5023530c4126"
+Parent: "eea81b7a-c702-410d-9716-443721d09760"
+Template: "eea81b7a-c702-410d-9716-443721d09760"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Windows Service Check/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200420T075316Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: "The {0} service is running"
