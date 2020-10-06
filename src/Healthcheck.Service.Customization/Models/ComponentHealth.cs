@@ -114,6 +114,30 @@
             this.ErrorList.Entries = this.ErrorList.Entries.OrderByDescending(t => t.Created).ToList();
 
             this.ErrorCount = this.ErrorList.Entries.Count;
+
+            if(!string.IsNullOrEmpty(item["Remote Check Started"]))
+            {
+                var remoteCheck = DateUtil.ParseDateTime(item["Remote Check Started"], DateTime.MinValue);
+
+                if (remoteCheck != this.LastCheckTime)
+                {
+
+                    if (remoteCheck.AddMinutes(1) >= DateTime.UtcNow)
+                    {
+                        this.Status = HealthcheckStatus.Waiting;
+                    }
+                    else
+                    {
+                        this.Status = HealthcheckStatus.Error;
+
+                        this.ErrorList.Entries.Insert(0, new ErrorEntry
+                        {
+                            Created = DateTime.UtcNow,
+                            Reason = "No Response Received from the Remote"
+                        });
+                    }
+                }
+            }
         }
     }
 }

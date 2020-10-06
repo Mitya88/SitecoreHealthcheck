@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Models
 {
+    using Healthcheck.Service.Core;
     using Healthcheck.Service.Customization;
     using Sitecore.Configuration;
     using Sitecore.Data;

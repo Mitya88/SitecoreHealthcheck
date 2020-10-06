@@ -1,0 +1,42 @@
+﻿---
+ID: "f48f7833-4747-44d7-ae1e-8224e8ffee5b"
+Parent: "e52ed6a4-3cf8-499c-a46b-d2218ad1b910"
+Template: "d9af243c-7a27-47fc-945f-d1c321fac343"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/CD/Remote Log File Check
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "11c04d55-70fc-4e03-b6a5-0229811ada44"
+      Hint: Name
+      Value: Remote CD Log
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200911T103836Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20200915T134015
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[{"Reason":"Failed to create counter 'Sitecore.System\\IO | File Watcher Events / sec'. Sitecore has no necessary permissions for reading/creating counters.\r\n\t\tMessage: Access to the registry key 'Global' is denied.","Created":"2020-09-15T15:38:06","Exception":null}]}
+    - ID: "68fd9461-d993-41ea-8acd-4e241f0d216c"
+      Hint: Number of Days to Check
+      Value: 2
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: Log files contain no errors
+    - ID: "a23f366c-8c26-4fad-a2a7-207fe59e8f9b"
+      Hint: Target Instance
+      Value: CDSC10
+    - ID: "b1327643-8f5e-445f-83e4-ab43932889bc"
+      Hint: Remote Check Started
+      Value: 00010101T000000
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Warning
+    - ID: "fd310104-f023-46d3-ba0c-38d9de6bc66f"
+      Hint: File Name Format
+      Value: log.*.txt

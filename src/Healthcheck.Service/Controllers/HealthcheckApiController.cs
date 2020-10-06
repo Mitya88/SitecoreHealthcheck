@@ -92,9 +92,13 @@
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         [HttpGet]
-        public ComponentHealth Component(string id)
+        public ComponentHealth Component(string id, bool onlyState = false)
         {
-            this.healthcheckService.RunHealthcheck(id);
+            if (!onlyState)
+            {
+                this.healthcheckService.RunHealthcheck(id);
+            }
+            
             return this.LimitErrorEntries(this.healthcheckRepository.GetHealthcheck(id));
         }
 

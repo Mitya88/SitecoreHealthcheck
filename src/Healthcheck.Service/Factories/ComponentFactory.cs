@@ -1,6 +1,8 @@
 ﻿namespace Healthcheck.Service.Factories
 {
+    using Healthcheck.Service.Core;
     using Healthcheck.Service.Domain;
+    using Healthcheck.Service.Domain.Remote;
     using Healthcheck.Service.Interfaces;
     using Sitecore.Data.Items;
 
@@ -27,7 +29,7 @@
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.CertificateCheckTemplateName))
             {
-                return new CertificateCheck(item);
+                return new Domain.CertificateCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.LogFileCheckTemplateName))
             {
@@ -51,15 +53,15 @@
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.LicenseCheckTemplateName))
             {
-                return new LicenseCheck(item);
+                return new Domain.LicenseCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.XConnectApiCheckTemplateName))
             {
-                return new XConnectApiCheck(item);
+                return new Domain.XConnectApiCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.WindowsServiceCheckTemplateName))
             {
-                return new WindowsServiceCheck(item);
+                return new Domain.WindowsServiceCheck(item);
             }
             else if (item.TemplateName.Equals(Constants.TemplateNames.WebJobCheckTemplateName))
             {
@@ -80,6 +82,42 @@
             else if (item.TemplateName.Equals(Constants.TemplateNames.SPECheckTemplateName))
             {
                 return new SPECheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteLogFileCheckTemplateName))
+            {
+                return new RemoteLogFileCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteCertificateCheckTemplateName))
+            {
+                return new RemoteCertificateCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteXConnectApiCheckTemplateName))
+            {
+                return new RemoteXConnectApiCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteApiHealthcheckTemplateName))
+            {
+                return new RemoteApiHealtcheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteCustomHealthcheckTemplateName))
+            {
+                return new RemoteCustomHealthcheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName))
+            {
+                return new RemoteDatabaseHealthCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteDiskSpaceCheckTemplateName))
+            {
+                return new RemoteDiskSpaceCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteLicenseHealthcheckTemplateName))
+            {
+                return new RemoteLicenseCheck(item);
+            }
+            else if (item.TemplateName.Equals(Constants.TemplateNames.RemoteWindowsServiceCheckTemplateName))
+            {
+                return new RemoteWindowsServiceCheck(item);
             }
 
             return null;

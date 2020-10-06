@@ -8,6 +8,7 @@
         Healthy,
         Warning,
         Error,
-        UnKnown
+        UnKnown,
+        Waiting
     }
 }

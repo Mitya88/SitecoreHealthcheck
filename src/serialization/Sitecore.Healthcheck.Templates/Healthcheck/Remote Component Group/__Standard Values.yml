@@ -1,0 +1,35 @@
+﻿---
+ID: "ea847df9-df02-41ee-9490-2c9d37930b50"
+Parent: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Template: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {36F33B5D-08AE-4E53-BFAA-8154AC126C16}
+    {347B8ABF-325D-42D0-9AE3-6B2DF204E510}
+    {1B8301FE-1971-41AE-87E3-DBB217B908CB}
+    {CF3A0EA4-1E3A-40FB-BC85-742EEF162E78}
+    {95B37919-CBF9-47F4-B0E7-F3D194A80B4B}
+    {1F1DFD53-2F82-48E0-906B-3336343CA3F2}
+    {D9AF243C-7A27-47FC-945F-D1C321FAC343}
+    {E1F493CD-FEFF-4809-84E7-469870BA1AB2}
+    {EEA81B7A-C702-410D-9716-443721D09760}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200321T093453Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d681ad34-4b3b-40d1-b65f-c7d044cee130"
+      Hint: Name
+      Value: $name
