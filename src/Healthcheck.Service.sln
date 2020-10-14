@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2046
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.Service", "Healthcheck.Service\Healthcheck.Service.csproj", "{96C0FC48-90CC-47AC-AE04-B13F2ECE8CFB}"
 EndProject
@@ -16,9 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.Service.Customi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.Service.Remote", "Healthcheck.Service.Remote\Healthcheck.Service.Remote.csproj", "{DC9CF100-2A5A-4B46-8D31-1F7FB60BDAB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.ExternalSampleApplication", "Healthcheck.ExternalSampleApplication\Healthcheck.ExternalSampleApplication.csproj", "{AE4651C7-6CED-4DC1-A5BF-BA1F0E4FA79B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.Service.Core", "Healthcheck.Service.Checks\Healthcheck.Service.Core.csproj", "{2D943F3F-1DAA-4F20-98F3-16724923C409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.Service.Sc10", "Healthcheck.Service\Healthcheck.Service.Sc10.csproj", "{64445F68-88F5-4731-8E7F-B9858911D653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Healthcheck.Service.Remote.Sc10", "Healthcheck.Service.Remote\Healthcheck.Service.Remote.Sc10.csproj", "{6E1E8D83-72D3-40A7-A886-02E29A9DBCD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,20 +44,24 @@ Global
 		{DC9CF100-2A5A-4B46-8D31-1F7FB60BDAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC9CF100-2A5A-4B46-8D31-1F7FB60BDAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC9CF100-2A5A-4B46-8D31-1F7FB60BDAB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE4651C7-6CED-4DC1-A5BF-BA1F0E4FA79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE4651C7-6CED-4DC1-A5BF-BA1F0E4FA79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE4651C7-6CED-4DC1-A5BF-BA1F0E4FA79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE4651C7-6CED-4DC1-A5BF-BA1F0E4FA79B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D943F3F-1DAA-4F20-98F3-16724923C409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D943F3F-1DAA-4F20-98F3-16724923C409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D943F3F-1DAA-4F20-98F3-16724923C409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D943F3F-1DAA-4F20-98F3-16724923C409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64445F68-88F5-4731-8E7F-B9858911D653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64445F68-88F5-4731-8E7F-B9858911D653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64445F68-88F5-4731-8E7F-B9858911D653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64445F68-88F5-4731-8E7F-B9858911D653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E1E8D83-72D3-40A7-A886-02E29A9DBCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E1E8D83-72D3-40A7-A886-02E29A9DBCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E1E8D83-72D3-40A7-A886-02E29A9DBCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E1E8D83-72D3-40A7-A886-02E29A9DBCD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
 		SolutionGuid = {E00E75D3-410F-463A-9E23-5A2348A36578}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

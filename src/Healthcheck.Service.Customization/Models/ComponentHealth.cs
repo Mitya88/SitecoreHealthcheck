@@ -135,6 +135,8 @@
                             Created = DateTime.UtcNow,
                             Reason = "No Response Received from the Remote"
                         });
+
+                        this.ErrorCount++;
                     }
                 }
             }
