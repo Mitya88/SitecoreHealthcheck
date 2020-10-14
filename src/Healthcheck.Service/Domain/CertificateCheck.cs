@@ -72,7 +72,14 @@
 
             this.Status = result.Status;
             this.HealthyMessage = result.HealthyMessage;
-            this.ErrorList = result.ErrorList;
+            if (this.ErrorList == null || this.ErrorList.Entries == null)
+            {
+                this.ErrorList = result.ErrorList;
+            }
+            else if (this.ErrorList != null && this.ErrorList.Entries != null)
+            {
+                this.ErrorList.Entries.AddRange(result.ErrorList.Entries);
+            }
             this.LastCheckTime = result.LastCheckTime;
         }
     }
