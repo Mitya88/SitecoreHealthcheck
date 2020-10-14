@@ -21,7 +21,7 @@ Languages:
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"Certificate Check is not configured correctly","Created":"2020-09-15T13:38:39.6143305Z","Exception":null}]}
+        {"Entries":[]}
     - ID: "4072b845-610e-4c7c-9c13-91d1da19713a"
       Hint: FindByType
       Value: FindByThumbprint
@@ -43,7 +43,7 @@ Languages:
       Value: CDSC10
     - ID: "b1327643-8f5e-445f-83e4-ab43932889bc"
       Hint: Remote Check Started
-      Value: 00010101T000000
+      Value: 20201008T111811
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
       Value: Healthy
