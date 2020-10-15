@@ -14,14 +14,14 @@ Languages:
       Value: 20200323T134154Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200914T165544
+      Value: 20201015T083810
     - ID: "377a62bf-6533-450b-9cb7-a3cc87145803"
       Hint: StoreName
       Value: My
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-09-14T16:55:44.4065524Z","Exception":null}]}
+        {"Entries":[{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:28:58.8203266Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:29:02.5658086Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:30:03.4217371Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:30:04.1167379Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:31:04.9099564Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:31:06.0089579Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:32:06.8401558Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:32:07.5271563Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:33:29.8123219Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:33:38.5942572Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:34:39.4355757Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:34:41.3920123Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:35:42.7423839Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2020-10-15T08:38:10.8512183Z","Exception":null}]}
     - ID: "4072b845-610e-4c7c-9c13-91d1da19713a"
       Hint: FindByType
       Value: FindByThumbprint
@@ -37,7 +37,7 @@ Languages:
         sitecore\admin
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
-      Value: "Expiration: 16/02/2022"
+      Value: Log files contain no errors
     - ID: "b57fde00-b26a-4530-8c4e-a55e01a1f2e0"
       Hint: Warn Before
       Value: 50

@@ -14,23 +14,23 @@ Languages:
       Value: 20200508T061846Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200914T165544
+      Value: 20201015T083810
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[]}
+        {"Entries":[{"Reason":"EventQueue table in master database has 821 record","Created":"2020-10-15T08:28:58.735329Z","Exception":null},{"Reason":"EventQueue table in master database has 847 record","Created":"2020-10-15T08:29:02.5488061Z","Exception":null},{"Reason":"EventQueue table in master database has 874 record","Created":"2020-10-15T08:30:03.3657377Z","Exception":null},{"Reason":"EventQueue table in master database has 897 record","Created":"2020-10-15T08:30:04.0787387Z","Exception":null},{"Reason":"EventQueue table in master database has 925 record","Created":"2020-10-15T08:31:04.8669565Z","Exception":null},{"Reason":"EventQueue table in master database has 948 record","Created":"2020-10-15T08:31:05.9749575Z","Exception":null},{"Reason":"EventQueue table in master database has 976 record","Created":"2020-10-15T08:32:06.8011562Z","Exception":null},{"Reason":"EventQueue table in master database has 999 record","Created":"2020-10-15T08:32:07.4921584Z","Exception":null},{"Reason":"EventQueue table in master database has 1027 record","Created":"2020-10-15T08:33:23.5650424Z","Exception":null},{"Reason":"EventQueue table in master database has 1050 record","Created":"2020-10-15T08:33:38.5482577Z","Exception":null},{"Reason":"EventQueue table in master database has 1081 record","Created":"2020-10-15T08:34:39.3875748Z","Exception":null},{"Reason":"EventQueue table in master database has 1105 record","Created":"2020-10-15T08:34:41.357013Z","Exception":null},{"Reason":"EventQueue table in master database has 1136 record","Created":"2020-10-15T08:35:42.6943835Z","Exception":null},{"Reason":"EventQueue table in master database has 1162 record","Created":"2020-10-15T08:38:10.7762181Z","Exception":null}]}
     - ID: "4e2186ac-3ea9-4875-ba13-b7fd2c384552"
       Hint: Warn Count
       Value: 100
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
-      Value: EventQueue table in master database has 26 record
+      Value: Database Connection is OK
     - ID: "aa244095-4de8-49bc-8cc9-eeb119141a87"
       Hint: Database
       Value: master
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Healthy
+      Value: Warning
     - ID: "ccff75fe-2aa6-4d89-bf5d-a276176856b4"
       Hint: Table
       Value: EventQueue
