@@ -2,8 +2,10 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
+    using Healthcheck.Service.Remote.EventQueue.Models.Event;
     using Microsoft.Azure.ServiceBus.Core;
     using Newtonsoft.Json;
+    using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
     using System.Text;
@@ -42,8 +44,6 @@
             var dateTime = DateTime.UtcNow;
             this.SaveRemoteCheckStarted(dateTime);
 
-            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-
             var message = new OutGoingMessage
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
@@ -57,14 +57,25 @@
                 EventRaised = dateTime
             };
 
-            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            if (Settings.GetSetting("Healthcheck.Remote.Mode").Equals("eventqueue", StringComparison.OrdinalIgnoreCase))
             {
-                ContentType = "application/json",
-                Label = Constants.TemplateNames.RemoteDiskSpaceCheckTemplateName,
-                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
-            };
+                var remoteEvent = new HealthcheckStartedRemoteEvent(Constants.TemplateNames.RemoteDiskSpaceCheckTemplateName, "healthcheck:started:remote", message);
+                var database = Sitecore.Configuration.Factory.GetDatabase("web");
+                var eventQueue = database.RemoteEvents.EventQueue;
+                eventQueue.QueueEvent<HealthcheckStartedRemoteEvent>(remoteEvent, true, false);
+            }
+            else
+            {
+                var busMessage = new Microsoft.Azure.ServiceBus.Message
+                {
+                    ContentType = "application/json",
+                    Label = Constants.TemplateNames.RemoteDiskSpaceCheckTemplateName,
+                    Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
+                };
 
-            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+                var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
+                messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
         }
 
         /// <summary>

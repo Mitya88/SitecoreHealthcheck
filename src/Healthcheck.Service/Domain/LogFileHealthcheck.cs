@@ -55,14 +55,7 @@
 
             this.Status = result.Status;
             this.HealthyMessage = result.HealthyMessage;
-            if (this.ErrorList == null || this.ErrorList.Entries == null)
-            {
-                this.ErrorList = result.ErrorList;
-            }
-            else if (this.ErrorList != null && this.ErrorList.Entries != null)
-            {
-                this.ErrorList.Entries.AddRange(result.ErrorList.Entries);
-            }
+            this.ErrorList = result.ErrorList;
             this.LastCheckTime = result.LastCheckTime;
         }
 

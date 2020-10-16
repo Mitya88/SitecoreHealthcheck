@@ -190,6 +190,10 @@
       <Project>{2a52dba6-1373-45fe-a795-67dc2b842d47}</Project>
       <Name>Healthcheck.Service.Customization</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Healthcheck.Service.Remote.EventQueue\Healthcheck.Service.Remote.EventQueue.csproj">
+      <Project>{C76D4CAC-CAE0-4972-B87F-CD445A64C950}</Project>
+      <Name>Healthcheck.Service.Remote.EventQueue</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

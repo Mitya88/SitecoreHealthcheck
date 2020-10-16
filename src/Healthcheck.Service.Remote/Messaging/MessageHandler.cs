@@ -30,7 +30,7 @@
 
                 if (message.Label.Equals(Constants.TemplateNames.RemoteLogFileCheckTemplateName))
                 {
-                    result = LogFileCheck.RunHealthcheck(messageContract.Parameters["FileNameFormat"], Path.Combine(Sitecore.Configuration.Settings.DataFolder, "logs"), DateTime.ParseExact(messageContract.Parameters["ItemCreationDate"], "yyyyMMddTHHmmss", CultureInfo.InvariantCulture), int.Parse(messageContract.Parameters["NumberOfDaysToCheck"]));
+                    result = LogFileCheck.RunHealthcheck(messageContract.Parameters["FileNameFormat"], Path.Combine(Sitecore.Configuration.Settings.DataFolder, "logs"), DateTime.ParseExact(messageContract.Parameters["LastCheckTime"], "yyyyMMddTHHmmss", CultureInfo.InvariantCulture), int.Parse(messageContract.Parameters["NumberOfDaysToCheck"]), true);
                 }
                 else if (message.Label.Equals(Constants.TemplateNames.RemoteCertificateCheckTemplateName))
                 {
