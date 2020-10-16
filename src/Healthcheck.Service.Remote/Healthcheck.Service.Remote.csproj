@@ -84,7 +84,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Healthcheck.Service.Checks\Healthcheck.Service.Core.csproj">
+    <ProjectReference Include="..\Healthcheck.Service.Core\Healthcheck.Service.Core.csproj">
       <Project>{2d943f3f-1daa-4f20-98f3-16724923c409}</Project>
       <Name>Healthcheck.Service.Core</Name>
     </ProjectReference>

@@ -173,8 +173,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Healthcheck.Service.Checks\Healthcheck.Service.Core.csproj">
-      <Project>{2D943F3F-1DAA-4F20-98F3-16724923C409}</Project>
+    <ProjectReference Include="..\Healthcheck.Service.Core\Healthcheck.Service.Core.csproj">
+      <Project>{2d943f3f-1daa-4f20-98f3-16724923c409}</Project>
       <Name>Healthcheck.Service.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Healthcheck.Service.Customization\Healthcheck.Service.Customization.csproj">
