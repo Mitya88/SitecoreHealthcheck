@@ -60,15 +60,6 @@
     <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.RegisterContainer.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Amqp">
-      <Version>2.3.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Azure.ServiceBus">
-      <Version>3.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication">
-      <Version>1.0.3</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>9.0.1</Version>
     </PackageReference>

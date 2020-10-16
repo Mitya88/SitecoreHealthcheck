@@ -1,6 +1,6 @@
 ﻿namespace Healthcheck.Service.Remote.EventQueue
 {
-    using Healthcheck.Service.Remote.EventQueue.Models.Event;
+    using Healthcheck.Service.Core.Models.Event;
     using Sitecore.Data.Events;
     using Sitecore.Eventing;
     using Sitecore.Events;

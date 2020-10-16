@@ -2,9 +2,9 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
+    using Healthcheck.Service.Core.Models.Event;
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Remote.EventQueue.Models.Event;
     using Newtonsoft.Json;
     using Sitecore;
     using Sitecore.Configuration;

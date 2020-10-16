@@ -2,14 +2,11 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
-    using Healthcheck.Service.Remote.EventQueue.Models.Event;
-    using Microsoft.Azure.ServiceBus.Core;
-    using Newtonsoft.Json;
+    using Healthcheck.Service.Core.Senders;
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
     using System.IO;
-    using System.Text;
 
     /// <summary>
     /// Remote Log file healthcheck
@@ -80,22 +77,11 @@
 
             if (Settings.GetSetting("Healthcheck.Remote.Mode").Equals("eventqueue", StringComparison.OrdinalIgnoreCase))
             {
-                var remoteEvent = new HealthcheckStartedRemoteEvent(Constants.TemplateNames.RemoteLogFileCheckTemplateName, "healthcheck:started:remote", message);
-                var database = Sitecore.Configuration.Factory.GetDatabase("web");
-                var eventQueue = database.RemoteEvents.EventQueue;
-                eventQueue.QueueEvent<HealthcheckStartedRemoteEvent>(remoteEvent, true, false);
+                EventQueueSender.Send(Constants.TemplateNames.RemoteLogFileCheckTemplateName, message);
             }
             else
             {
-                var busMessage = new Microsoft.Azure.ServiceBus.Message
-                {
-                    ContentType = "application/json",
-                    Label = Constants.TemplateNames.RemoteLogFileCheckTemplateName,
-                    Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
-                };
-
-                var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-                messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+                MessageBusSender.Send(Constants.TemplateNames.RemoteLogFileCheckTemplateName, message);
             }
         }
 

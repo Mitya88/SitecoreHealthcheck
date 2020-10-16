@@ -2,13 +2,10 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
-    using Healthcheck.Service.Remote.EventQueue.Models.Event;
-    using Microsoft.Azure.ServiceBus.Core;
-    using Newtonsoft.Json;
+    using Healthcheck.Service.Core.Senders;
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
-    using System.Text;
 
     /// <summary>
     /// Remote Database healthcheck component
@@ -54,22 +51,11 @@
 
             if (Settings.GetSetting("Healthcheck.Remote.Mode").Equals("eventqueue", StringComparison.OrdinalIgnoreCase))
             {
-                var remoteEvent = new HealthcheckStartedRemoteEvent(Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName, "healthcheck:started:remote", message);
-                var database = Sitecore.Configuration.Factory.GetDatabase("web");
-                var eventQueue = database.RemoteEvents.EventQueue;
-                eventQueue.QueueEvent<HealthcheckStartedRemoteEvent>(remoteEvent, true, false);
+                EventQueueSender.Send(Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName, message);
             }
             else
             {
-                var busMessage = new Microsoft.Azure.ServiceBus.Message
-                {
-                    ContentType = "application/json",
-                    Label = Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName,
-                    Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
-                };
-
-                var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-                messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+                MessageBusSender.Send(Constants.TemplateNames.RemoteDatabaseHealtcheckTemplateName, message);
             }
         }
     }

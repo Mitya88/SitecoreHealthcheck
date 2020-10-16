@@ -48,8 +48,6 @@
   <ItemGroup>
     <Compile Include="EventHandlers\HealthcheckEventHandler.cs" />
     <Compile Include="HealthcheckEventMap.cs" />
-    <Compile Include="Models\Event\HealthcheckFinishedRemoteEvent.cs" />
-    <Compile Include="Models\Event\HealthcheckStartedRemoteEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace Healthcheck.Service.Remote.EventQueue.Models.Event
+﻿namespace Healthcheck.Service.Core.Models.Event
 {
     using Healthcheck.Service.Core.Messages;
     using Sitecore.Eventing;
