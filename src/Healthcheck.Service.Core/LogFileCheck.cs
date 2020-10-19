@@ -17,7 +17,7 @@
             {
                 LastCheckTime = DateTime.UtcNow,
                 Status = Customization.HealthcheckStatus.Healthy,
-                HealthyMessage = "Log files contain no errors",
+                HealthyMessage = "There is no new error since the last check",
                 ErrorList = new ErrorList
                 {
                     Entries = new List<ErrorEntry>()

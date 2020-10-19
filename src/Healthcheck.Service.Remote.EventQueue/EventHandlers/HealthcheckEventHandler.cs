@@ -31,10 +31,10 @@
 
             var messageContract = data.Event.ComponentData;
 
-            if (!SharedConfig.InstanceName.Equals(messageContract.TargetInstance))
+            if (!SharedConfig.InstanceName.Equals(messageContract.TargetInstance) && !string.IsNullOrEmpty(messageContract.TargetInstance))
             {
-                // TRigger only on the proper instance
-                Sitecore.Diagnostics.Log.Info($"skipping remote event: {messageContract.TargetInstance}, current instance {Settings.InstanceName}", this);
+                // Trigger only on the proper instance
+                Sitecore.Diagnostics.Log.Info($"[Advanced.Healthcheck] - Skipping remote event: {messageContract.TargetInstance}, current instance {Settings.InstanceName}", this);
                 return;
             }
             HealthcheckResult result = null;
@@ -119,7 +119,7 @@
                     }
                 }
             }
-            Sitecore.Diagnostics.Log.Info(string.Format("HEALTHCHECKFINISHEDRAISED {0}", data.Event.InstanceName), this);
+            Sitecore.Diagnostics.Log.Info(string.Format("[Advanced.Healthcheck] - Checking finished {0}", data.Event.InstanceName), this);
         }
 
         private string GetErrorMessagesJson(ErrorList errorList)
