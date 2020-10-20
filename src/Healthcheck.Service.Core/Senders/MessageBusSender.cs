@@ -16,7 +16,7 @@ namespace Healthcheck.Service.Core.Senders
             var busMessage = new Microsoft.Azure.ServiceBus.Message
             {
                 ContentType = "application/json",
-                Label = Constants.TemplateNames.RemoteLogFileCheckTemplateName,
+                Label = type,
                 Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
             };
 

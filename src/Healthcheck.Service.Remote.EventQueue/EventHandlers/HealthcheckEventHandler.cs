@@ -17,6 +17,7 @@
     using System.Collections.Generic;
     using System.Globalization;
     using System.IO;
+    using System.Linq;
     using Constants = Core.Constants;
 
     public class HealthcheckEventHandler
@@ -78,6 +79,18 @@
 
             if (result != null)
             {
+                if(result.ErrorList?.Entries != null && result.ErrorList.Entries.Any(t=> t.Exception != null))
+                {
+                    foreach(var entry in result.ErrorList.Entries)
+                    {
+                        if(entry.Exception != null)
+                        {
+                            entry.SerializedException = JsonConvert.SerializeObject(entry.Exception).Replace("\"SafeSerializationManager\":", "\"_SafeSerializationManager\":");
+                            entry.Exception = null;
+                        }
+                    }
+                }
+
                 var incomingMessage = new HealthcheckResultMessage
                 {
                     Result = result,
@@ -110,6 +123,17 @@
                         if (errors.Entries == null)
                         {
                             errors.Entries = new List<ErrorEntry>();
+                        }
+
+                        if (messageContract?.Result?.ErrorList?.Entries != null)
+                        {
+                            foreach (var entry in messageContract.Result.ErrorList.Entries)
+                            {
+                                if (!string.IsNullOrEmpty(entry.SerializedException))
+                                {
+                                    entry.Exception = JsonConvert.DeserializeObject<Exception>(entry.SerializedException);
+                                }
+                            }
                         }
 
                         errors.Entries.AddRange(messageContract.Result.ErrorList.Entries);
