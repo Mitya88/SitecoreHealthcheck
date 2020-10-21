@@ -2,12 +2,11 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
-    using Microsoft.Azure.ServiceBus.Core;
-    using Newtonsoft.Json;
+    using Healthcheck.Service.Core.Senders;
+    using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Specialized;
-    using System.Text;
 
     /// <summary>
     /// Remote Custom healthcheck component
@@ -51,8 +50,6 @@
             var dateTime = DateTime.UtcNow;
             this.SaveRemoteCheckStarted(dateTime);
 
-            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-
             var parameters = string.Join("&", Array.ConvertAll(this.Parameters.AllKeys, key => string.Format("{0}={1}", key, this.Parameters[key])));
 
             var message = new OutGoingMessage
@@ -67,14 +64,14 @@
                 EventRaised = dateTime
             };
 
-            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            if (Settings.GetSetting("Healthcheck.Remote.Mode").Equals("eventqueue", StringComparison.OrdinalIgnoreCase))
             {
-                ContentType = "application/json",
-                Label = Constants.TemplateNames.RemoteCustomHealthcheckTemplateName,
-                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
-            };
-
-            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+                EventQueueSender.Send(Constants.TemplateNames.RemoteCustomHealthcheckTemplateName, message);
+            }
+            else
+            {
+                MessageBusSender.Send(Constants.TemplateNames.RemoteCustomHealthcheckTemplateName, message);
+            }
         }
     }
 }

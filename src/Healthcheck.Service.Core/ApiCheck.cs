@@ -20,6 +20,7 @@
             return RunHealthcheck(message.Parameters["Url"], Sitecore.StringUtil.GetNameValues(message.Parameters["RequestHeaders"]), message.Parameters["Method"], message.Parameters["PostBody"], int.Parse(message.Parameters["ExpectedResponseCode"]), message.Parameters["ExpectedResponseBody"], bool.Parse(message.Parameters["usingBasicAuthentication"]), bool.Parse(message.Parameters["usingJwtAuthentication"]), bool.Parse(message.Parameters["usingCertificateAuthentication"]), message.Parameters["Username"], message.Parameters["Password"], message.Parameters["JwtToken"], message.Parameters["GenerateTokenUrl"], message.Parameters["generateTokenEndpointMetho"], message.Parameters["storeName"], message.Parameters["location"], message.Parameters["findByTypeName"], message.Parameters["value"]);
         }
 
+        // TODO: REFACTOR in later release
         public static HealthcheckResult RunHealthcheck(string Url, NameValueCollection RequestHeaders, string Method, string PostBody, int ExpectedResponseCode, string ExpectedResponseBody, bool usingBasicAuthentication, bool usingJwtAuthentication, bool usingCertificateAuthentication, string Username, string Password, string JwtToken, string GenerateTokenUrl, string generateTokenEndpointMetho, string storeName, string location, string findByTypeName, string value)
         {
             var checkResult = new HealthcheckResult

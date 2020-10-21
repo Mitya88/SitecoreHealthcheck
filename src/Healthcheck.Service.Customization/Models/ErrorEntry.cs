@@ -1,5 +1,6 @@
 ﻿namespace Healthcheck.Service.Customization.Models
 {
+    using Newtonsoft.Json;
     using System;
 
     /// <summary>
@@ -30,6 +31,15 @@
         /// The exception.
         /// </value>
         public Exception Exception { get; set; }
+
+        /// <summary>
+        /// Gets or sets the serialized exception.
+        /// </summary>
+        /// <value>
+        /// The serialized exception.
+        /// </value>
+        [JsonIgnore]
+        public string SerializedException { get; set; }
 
         /// <summary>Gets the default error entry.</summary>
         /// defaults: Created = DateTime.UtcNow

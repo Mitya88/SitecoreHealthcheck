@@ -7,6 +7,7 @@
     using Sitecore.Data.Items;
     using System;
     using System.Linq;
+    using System.Threading;
 
     /// <summary>
     /// The behavior for the 'Healthcheck Update Command' Sitecore command.
@@ -43,9 +44,20 @@
 
             Sitecore.Diagnostics.Log.Info("[Sitecore.Healthcheck] Send Email Report started", this);
 
+            
+
             try
             {
-                var components = new HealthcheckRepository().GetHealthcheck();
+                var repository = new HealthcheckRepository();
+                var components = repository.GetHealthcheck();
+
+                if (components.SelectMany(t => t.Components).Any(t => t.Status == Customization.HealthcheckStatus.Waiting))
+                {
+                    // If there is any pending remote check, lets wait 1 minute and retrieve it again
+                    Thread.Sleep(60 * 1000);
+
+                    components = repository.GetHealthcheck();
+                }
 
                 if (items != null && items.Length > 0)
                 {

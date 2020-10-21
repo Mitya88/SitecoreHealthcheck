@@ -4,16 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E1E8D83-72D3-40A7-A886-02E29A9DBCD5}</ProjectGuid>
+    <ProjectGuid>{A0B30D91-7FD9-4892-8883-5C0E8B94FD63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Healthcheck.Service.Remote</RootNamespace>
-    <AssemblyName>Healthcheck.Service.Remote</AssemblyName>
+    <RootNamespace>Healthcheck.Service.Core</RootNamespace>
+    <AssemblyName>Healthcheck.Service.Core</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -35,8 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,30 +47,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DI\RegisterContainerCM.cs" />
-    <Compile Include="DI\RegisterContainerCD.cs" />
-    <Compile Include="InitializeQueueClient.cs" />
-    <Compile Include="InitializeSubscriptionClient.cs" />
-    <Compile Include="Messaging\Clients\HealthcheckQueueClient.cs" />
-    <Compile Include="Messaging\Clients\HealthcheckSubscriptionClient.cs" />
-    <Compile Include="Messaging\IncomingQueueMessageHandler.cs" />
-    <Compile Include="Messaging\MessageHandler.cs" />
+    <Compile Include="ApiCheck.cs" />
+    <Compile Include="CertificateCheck.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Models\Event\HealthcheckFinishedRemoteEvent.cs" />
+    <Compile Include="Models\Event\HealthcheckStartedRemoteEvent.cs" />
+    <Compile Include="Senders\EventQueueSender.cs" />
+    <Compile Include="Senders\MessageBusSender.cs" />
+    <Compile Include="WindowsServiceCheck.cs" />
+    <Compile Include="DiskSpaceCheck.cs" />
+    <Compile Include="LicenseCheck.cs" />
+    <Compile Include="DatabaseCheck.cs" />
+    <Compile Include="HealthcheckResult.cs" />
+    <Compile Include="CustomCheck.cs" />
+    <Compile Include="LogFileCheck.cs" />
+    <Compile Include="LogParsing\LogData.cs" />
+    <Compile Include="LogParsing\LogDataSource.cs" />
+    <Compile Include="LogParsing\LogEntry.cs" />
+    <Compile Include="LogParsing\Logger.cs" />
+    <Compile Include="LogParsing\LogLevel.cs" />
+    <Compile Include="LogParsing\LogReaderSettings.cs" />
+    <Compile Include="LogParsing\Parser.cs" />
+    <Compile Include="Messages\HealthcheckResultMessage.cs" />
+    <Compile Include="Messages\OutGoingMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedConfig.cs" />
+    <Compile Include="XConnectApiCheck.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.config" />
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.RegisterContainer.config" />
-    <None Include="app.config" />
+    <ProjectReference Include="..\Healthcheck.Service.Customization\Healthcheck.Service.Customization.csproj">
+      <Project>{2A52DBA6-1373-45FE-A795-67DC2B842D47}</Project>
+      <Name>Healthcheck.Service.Customization</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Amqp">
-      <Version>2.3.0</Version>
+    <PackageReference Include="EnterpriseLibrary.TransientFaultHandling.Caching">
+      <Version>6.0.1304</Version>
+    </PackageReference>
+    <PackageReference Include="EnterpriseLibrary.TransientFaultHandling.ServiceBus">
+      <Version>6.0.1304</Version>
+    </PackageReference>
+    <PackageReference Include="EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage">
+      <Version>6.0.1304</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.ServiceBus">
       <Version>3.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication">
-      <Version>1.0.3</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>9.0.1</Version>
@@ -76,22 +99,6 @@
     <PackageReference Include="Sitecore.Kernel">
       <Version>9.0.180604</Version>
     </PackageReference>
-    <PackageReference Include="System.Diagnostics.DiagnosticSource">
-      <Version>4.4.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt">
-      <Version>5.4.0</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Healthcheck.Service.Core\Healthcheck.Service.Core.Sc10.csproj">
-      <Project>{a0b30d91-7fd9-4892-8883-5c0e8b94fd63}</Project>
-      <Name>Healthcheck.Service.Core.Sc10</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Healthcheck.Service.Customization\Healthcheck.Service.Customization.csproj">
-      <Project>{2A52DBA6-1373-45FE-A795-67DC2B842D47}</Project>
-      <Name>Healthcheck.Service.Customization</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

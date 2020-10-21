@@ -11,13 +11,13 @@
 
     public class LogFileCheck
     {
-        public static HealthcheckResult RunHealthcheck(string fileNameFormat, string directoryPath, DateTime itemCreationDate, int numberDaysToCheck)
+        public static HealthcheckResult RunHealthcheck(string fileNameFormat, string directoryPath, DateTime itemCreationDate, int numberDaysToCheck, bool isRemote = false)
         {
             var checkResult = new HealthcheckResult
             {
                 LastCheckTime = DateTime.UtcNow,
                 Status = Customization.HealthcheckStatus.Healthy,
-                HealthyMessage = "Log files contain no errors",
+                HealthyMessage = "There is no new error since the last check",
                 ErrorList = new ErrorList
                 {
                     Entries = new List<ErrorEntry>()
@@ -59,7 +59,14 @@
 
                 if (numberDaysToCheck > 0)
                 {
-                    logReaderSettings.StartDateTime = DateTime.Now.AddDays(-numberDaysToCheck).Date;
+                    if (isRemote)
+                    {
+                        logReaderSettings.StartDateTime = itemCreationDate.ToLocalTime();
+                    }
+                    else
+                    {
+                        logReaderSettings.StartDateTime = DateTime.Now.AddDays(-numberDaysToCheck).Date;
+                    }
                     logReaderSettings.FinishDateTime = DateTime.Now;
                 }
 

@@ -41,5 +41,20 @@
                 }
             }
         }
+
+        public static string InstanceName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Settings.GetSetting("Healthcheck.Instancename")))
+                {
+                    return Settings.InstanceName;
+                }
+                else
+                {
+                    return Settings.GetSetting("Healthcheck.Instancename");
+                }
+            }
+        }
     }
 }

@@ -2,12 +2,11 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
-    using Microsoft.Azure.ServiceBus.Core;
-    using Newtonsoft.Json;
+    using Healthcheck.Service.Core.Senders;
+    using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
     using System.IO;
-    using System.Text;
 
     /// <summary>
     /// Remote Log file healthcheck
@@ -58,29 +57,32 @@
             var dateTime = DateTime.UtcNow;
             this.SaveRemoteCheckStarted(dateTime);
 
-            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-
+            if(this.LastCheckTime == DateTime.MinValue)
+            {
+                this.LastCheckTime = DateTime.Now.AddDays(-this.NumberOfDaysToCheck);
+            }
             var message = new OutGoingMessage
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
                 {
                     {"FileNameFormat", this.FileNameFormat },
                     {"ItemCreationDate", this.ItemCreationDate.ToString("yyyyMMddTHHmmss") },
-                    {"NumberOfDaysToCheck", this.NumberOfDaysToCheck.ToString() }
+                    {"NumberOfDaysToCheck", this.NumberOfDaysToCheck.ToString() },
+                    {"LastCheckTime", this.LastCheckTime.ToString("yyyyMMddTHHmmss") }
                 },
                 TargetInstance = this.TargetInstance,
                 ComponentId = this.InnerItem.ID.Guid,
                 EventRaised = dateTime
             };
 
-            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            if (Settings.GetSetting("Healthcheck.Remote.Mode").Equals("eventqueue", StringComparison.OrdinalIgnoreCase))
             {
-                ContentType = "application/json",
-                Label = Constants.TemplateNames.RemoteLogFileCheckTemplateName,
-                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
-            };
-
-            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+                EventQueueSender.Send(Constants.TemplateNames.RemoteLogFileCheckTemplateName, message);
+            }
+            else
+            {
+                MessageBusSender.Send(Constants.TemplateNames.RemoteLogFileCheckTemplateName, message);
+            }
         }
 
         /// <summary>

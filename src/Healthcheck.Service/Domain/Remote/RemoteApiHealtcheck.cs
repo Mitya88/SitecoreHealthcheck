@@ -2,12 +2,11 @@
 {
     using Healthcheck.Service.Core;
     using Healthcheck.Service.Core.Messages;
-    using Microsoft.Azure.ServiceBus.Core;
-    using Newtonsoft.Json;
+    using Healthcheck.Service.Core.Senders;
+    using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using System;
     using System.Collections.Specialized;
-    using System.Text;
 
     /// <summary>API Healthcheck component</summary>
     /// <seealso cref="Healthcheck.Service.Domain.RemoteBaseComponent" />
@@ -196,8 +195,6 @@
             var dateTime = DateTime.UtcNow;
             this.SaveRemoteCheckStarted(dateTime);
 
-            var messageSender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.TopicName);
-
             var message = new OutGoingMessage
             {
                 Parameters = new System.Collections.Generic.Dictionary<string, string>
@@ -230,14 +227,14 @@
                 EventRaised = dateTime
             };
 
-            var busMessage = new Microsoft.Azure.ServiceBus.Message
+            if (Settings.GetSetting("Healthcheck.Remote.Mode").Equals("eventqueue", StringComparison.OrdinalIgnoreCase))
             {
-                ContentType = "application/json",
-                Label = Constants.TemplateNames.RemoteApiHealthcheckTemplateName,
-                Body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message))
-            };
-
-            messageSender.SendAsync(busMessage).ConfigureAwait(false).GetAwaiter().GetResult();
+                EventQueueSender.Send(Constants.TemplateNames.RemoteApiHealthcheckTemplateName, message);
+            }
+            else
+            {
+                MessageBusSender.Send(Constants.TemplateNames.RemoteApiHealthcheckTemplateName, message);
+            }
         }
     }
 }
