@@ -1,0 +1,28 @@
+﻿---
+ID: "25ab84dd-14c2-46e8-800b-c44ec2c83fb8"
+Parent: "703105dc-3a93-4628-8369-f03ac1e17206"
+Template: "70244923-fa84-477c-8cbd-62f39642c42b"
+Path: /sitecore/system/Tasks/Schedules/Healthcheck/Configured Healthcheck Update Task
+DB: master
+SharedFields:
+- ID: "50be51f8-746d-4dc2-9c3b-b14abc5ce9b7"
+  Hint: Schedule
+  Value: "20290830T000000|20800101T000000|127|00:01:00"
+- ID: "62e64dbb-0a39-4dd7-ba05-7bd08c5404e0"
+  Hint: Command
+  Value: "{FBF35846-2B9C-4780-8F33-FBB33272C6E5}"
+- ID: "70893ef5-98e6-4721-844a-c364d0d9e48e"
+  Hint: Items
+  Value: /sitecore/system/Modules/Healthcheck Module/Components/Disk Space/LocalDisk Space Check|/sitecore/system/Modules/Healthcheck Module/Components/Xdb/XConnect Marketing Automation
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200413T072831Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

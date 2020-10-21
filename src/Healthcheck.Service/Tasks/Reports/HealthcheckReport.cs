@@ -6,31 +6,30 @@
     using Healthcheck.Service.Models;
     using Sitecore.Globalization;
     using Sitecore.Web;
+    using System.Collections.Generic;
     using System.Text;
 
     /// <summary>Creates the healthcheck report.</summary>
     public class HealthcheckReport
-    {
-        private readonly IHealthcheckRepository healthcheckRepository;
+    {  
         private readonly IEmailService emailService;
         private StringBuilder mailBodyBuilder;
 
         /// <summary>Initializes a new instance of the <see cref="HealthcheckReport"/> class.</summary>
         /// <param name="healthcheckRepository">The healthcheck repository.</param>
         /// <param name="emailService">The email service.</param>
-        public HealthcheckReport(IHealthcheckRepository healthcheckRepository, IEmailService emailService)
-        {
-            this.healthcheckRepository = healthcheckRepository;
+        public HealthcheckReport(IEmailService emailService)
+        {   
             this.emailService = emailService;
             mailBodyBuilder = new StringBuilder();
         }
 
         /// <summary>Sends the email report.</summary>
-        public void SendEmailReport()
+        public void SendEmailReport(List<ComponentGroup> groups)
         {
             using (new LanguageSwitcher(Language.Parse("en")))
             {
-                var body = GenerateReportBody();
+                var body = GenerateReportBody(groups);
                 var emailSettings = new SettingsModel();
 
                 emailService.SendEmail(emailSettings.SenderEmail, emailSettings.RecipientEmails, emailSettings.Subject, body);
@@ -39,7 +38,7 @@
 
         /// <summary>Generates the report body.</summary>
         /// <returns>Report body as HTML.</returns>
-        private string GenerateReportBody()
+        private string GenerateReportBody(List<ComponentGroup> groups)
         {
             string header = "<p> This is a summary of components after Healtcheck: </p>";
             mailBodyBuilder.AppendLine().AppendLine(header);
@@ -48,7 +47,7 @@
 
             CreateTableHeader();
 
-            AddTableData();
+            AddTableData(groups);
 
             mailBodyBuilder.AppendLine($"</table style=\"{Styles.table}\">").AppendLine();
 
@@ -59,10 +58,10 @@
         }
 
         /// <summary>Adds the table data.</summary>
-        private void AddTableData()
+        private void AddTableData(List<ComponentGroup> groups)
         {
             var settingsModel = new SettingsModel();
-            foreach (var componentsGroup in healthcheckRepository.GetHealthcheck())
+            foreach (var componentsGroup in groups)
             {
                 var groupName = componentsGroup.GroupName;
 

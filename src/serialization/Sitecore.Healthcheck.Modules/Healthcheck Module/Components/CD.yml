@@ -1,0 +1,20 @@
+﻿---
+ID: "e52ed6a4-3cf8-499c-a46b-d2218ad1b910"
+Parent: "aa16ef54-4954-4b4b-9056-537f97e9ee0f"
+Template: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/CD
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200911T103547Z
+    - ID: "c0971f6a-0521-447c-ae59-f72ac767c4a0"
+      Hint: Target Instance
+      Value: CD
+    - ID: "d681ad34-4b3b-40d1-b65f-c7d044cee130"
+      Hint: Name
+      Value: CD

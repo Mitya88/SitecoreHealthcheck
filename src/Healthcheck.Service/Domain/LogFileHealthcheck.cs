@@ -1,13 +1,9 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.LogParsing;
+    using Healthcheck.Service.Core;
     using Sitecore.Data.Items;
     using System;
     using System.IO;
-    using System.Linq;
-    using System.Web.Hosting;
 
     /// <summary>
     /// Log file healthcheck
@@ -55,120 +51,12 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            this.LastCheckTime = DateTime.UtcNow;
-            this.Status = HealthcheckStatus.Healthy;
-            this.HealthyMessage = "Log files contain no errors";
+            var result = LogFileCheck.RunHealthcheck(this.FileNameFormat, this.GetLogFileDirectoryPath(), this.ItemCreationDate, this.NumberOfDaysToCheck);
 
-            this.ErrorList.Entries.Clear();
-
-            if (string.IsNullOrEmpty(FileNameFormat))
-            {
-                this.Status = HealthcheckStatus.Warning;
-                this.ErrorList.Entries.Add(new ErrorEntry
-                {
-                    Created = DateTime.UtcNow,
-                    Reason = "Log File Check is not configured correctly",
-                    Exception = null
-                });
-
-                return;
-            }
-
-            try
-            {
-                var directory = this.GetLogFileDirectory();
-                var files = directory.GetFiles(FileNameFormat);
-
-                if (files == null || files.Count() == 0)
-                {
-                    this.Status = HealthcheckStatus.Warning;
-                    this.ErrorList.Entries.Add(new ErrorEntry
-                    {
-                        Created = DateTime.UtcNow,
-                        Reason = string.Format("No files can be found with the following pattern: {0}", this.FileNameFormat),
-                        Exception = null
-                    });
-
-                    return;
-                }
-
-                LogReaderSettings logReaderSettings = new LogReaderSettings(ItemCreationDate, DateTime.MaxValue);
-
-                if (NumberOfDaysToCheck > 0)
-                {
-                    logReaderSettings.StartDateTime = DateTime.Now.AddDays(-NumberOfDaysToCheck).Date;
-                    logReaderSettings.FinishDateTime = DateTime.Now;
-                }
-
-                LogDataSource logDataSource = new LogDataSource(files, logReaderSettings);
-                logDataSource.ParseFiles();
-
-                var result = logDataSource.LogData;
-
-                if (result.Errors != null && result.Errors.Count > 0)
-                {
-                    this.Status = HealthcheckStatus.Error;
-                    foreach (var error in result.Errors)
-                    {
-                        this.ErrorList.Entries.Add(new ErrorEntry
-                        {
-                            Created = error.Time,
-                            Reason = error.Message?.Message,
-                            Exception = null
-                        });
-                    }
-                }
-                else if (result.Warns != null && result.Warns.Count > 0)
-                {
-                    this.Status = HealthcheckStatus.Warning;
-                    foreach (var warn in result.Warns)
-                    {
-                        this.ErrorList.Entries.Add(new ErrorEntry
-                        {
-                            Created = warn.Time,
-                            Reason = warn.Message?.Message,
-                            Exception = null
-                        });
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(new ErrorEntry
-                {
-                    Created = DateTime.UtcNow,
-                    Reason = exception.Message,
-                    Exception = exception
-                });
-            }
-        }
-
-        /// <summary>
-        /// Gets the log file directory.
-        /// </summary>
-        /// <returns>Directory info object.</returns>
-        private DirectoryInfo GetLogFileDirectory()
-        {
-            return new DirectoryInfo(this.GetFullPath(this.GetLogFileDirectoryPath()));
-        }
-
-        /// <summary>
-        /// Gets the full path of a file..
-        /// </summary>
-        /// <param name="fileName">Name of the file.</param>
-        /// <returns>Mapped full path</returns>
-        private string GetFullPath(string fileName)
-        {
-            if (fileName.Contains(":\\"))
-            {
-                return fileName;
-            }
-            else
-            {
-                return HostingEnvironment.MapPath(fileName);
-            }
-
+            this.Status = result.Status;
+            this.HealthyMessage = result.HealthyMessage;
+            this.ErrorList = result.ErrorList;
+            this.LastCheckTime = result.LastCheckTime;
         }
 
         /// <summary>

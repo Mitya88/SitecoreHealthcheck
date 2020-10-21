@@ -123,7 +123,7 @@ export class StartPageComponent implements OnInit {
     for (var i = 0; i < this.response.length; i++) {
       for (var j = 0; j < this.response[i].Components.length; j++) {
 
-        if (this.response[i].Components[j].Status == '') {
+        if (this.response[i].Components[j].Status == '' || this.response[i].Components[j].Status == 'Waiting') {
           this.unknownCount++;
           if (this.selectedState == this.filterStates[0]) {
             this.response[i].Components[j].Display = true;
@@ -170,7 +170,11 @@ export class StartPageComponent implements OnInit {
   componentResponse: any;
   doubleClick(component: any) {
     component.isLoading = true;
-    this.healthcheckService.fetchStatusByComponent(component.Id).subscribe({
+    let onlyState=false;
+    if(component.Status == "Waiting"){
+      onlyState = true;
+    }
+    this.healthcheckService.fetchStatusByComponent(component.Id, onlyState).subscribe({
       next: response => {
         this.componentResponse = response;
         for (var i = 0; i < this.response.length; i++) {

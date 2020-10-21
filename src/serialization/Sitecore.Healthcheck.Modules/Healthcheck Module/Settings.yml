@@ -15,6 +15,9 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20200321T095344Z
+    - ID: "4862d741-4843-4728-8d6d-48576c0855a7"
+      Hint: Recipient Emails
+      Value: mihaly.arvai@mirumagency.com
     - ID: "5890d553-86ed-4297-bbc8-3f89a0c42a95"
       Hint: Days
       Value: 1
@@ -22,3 +25,12 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\admin
+    - ID: "66f6c01c-fa3e-4f89-9b00-a2b9c3d62f70"
+      Hint: Sender Name
+      Value: Mihaly
+    - ID: "84b70fb0-87b7-4892-b8d4-9a7f96f53593"
+      Hint: Subject
+      Value: Healthcheck
+    - ID: "87e5dbf7-db41-4d25-89dc-826b099d391c"
+      Hint: Sender Email
+      Value: mihaly.arvai@mirumagency.com

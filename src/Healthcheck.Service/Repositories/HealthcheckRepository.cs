@@ -36,7 +36,7 @@
                     using (new SecurityDisabler())
                     {
                         List<BaseComponent> components = new List<BaseComponent>();
-                        var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Service.Constants.ComponentsRootFolderId));
+                        var componentsFolder = Sitecore.Context.Database.GetItem(new ID(Healthcheck.Service.Core.Constants.ComponentsRootFolderId));
 
                         foreach (Item componentGroup in componentsFolder.Children)
                         {
@@ -198,7 +198,7 @@
         public void SaveComponent(ComponentHealth componentHealth)
         {
             Item item;
-            using (new DatabaseSwitcher(Factory.GetDatabase(Service.Constants.MasterDatabaseName)))
+            using (new DatabaseSwitcher(Factory.GetDatabase(Healthcheck.Service.Core.Constants.MasterDatabaseName)))
             {
                 item = Context.Database.GetItem(new ID(componentHealth.Id));
             }

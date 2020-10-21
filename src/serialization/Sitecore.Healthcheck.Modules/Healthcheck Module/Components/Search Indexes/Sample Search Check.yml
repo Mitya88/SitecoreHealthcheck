@@ -21,11 +21,11 @@ Languages:
       Value: sitecore_master_index
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20200811T100326
+      Value: 20201015T083811
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T07:42:32.3910599Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T07:52:35.8768989Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T08:02:40.095392Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T08:12:44.7599894Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T08:22:48.1640866Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T08:32:52.6522341Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T08:42:56.7216644Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T08:53:00.1286183Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T09:03:03.279778Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T09:13:07.1486385Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T09:23:10.6645041Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T09:33:14.3315005Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T09:43:18.1678242Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T09:53:22.756866Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2020-08-11T10:03:26.7282742Z","Exception":null}]}
+        {"Entries":[]}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -38,4 +38,4 @@ Languages:
       Value: Search index contain no errors
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Error
+      Value: Healthy

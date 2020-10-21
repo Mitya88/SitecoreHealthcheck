@@ -1,14 +1,6 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Healthcheck.Service.Models;
     using Sitecore.Data.Items;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
 
     /// <summary>Local disk space check.</summary>
     public class LocalDiskSpaceCheck : BaseComponent
@@ -31,8 +23,6 @@
 
         private const double ErrorPercentageDefault = 10;
 
-        private const double BytesInGB = 1073741824;
-
         public LocalDiskSpaceCheck(Item item) : base(item)
         {
             ReadParameters(item);
@@ -41,83 +31,19 @@
         /// <summary>Runs the local disk space healthcheck.</summary>
         public override void RunHealthcheck()
         {
-            this.LastCheckTime = DateTime.UtcNow;
+            var result = Healthcheck.Service.Core.DiskSpaceCheck.RunHealthcheck(this._driveName, this._errorPercentageThreshold, this._warningPercentageThreshold);
 
-            if (string.IsNullOrEmpty(_driveName))
+            this.Status = result.Status;
+            this.HealthyMessage = result.HealthyMessage;
+            if (this.ErrorList == null || this.ErrorList.Entries == null)
             {
-                this.Status = HealthcheckStatus.Warning;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("DriveName is not configured!"));
-
-                return;
+                this.ErrorList = result.ErrorList;
             }
-
-            var drives = GetReadyDrives();
-
-            if (drives == null)
+            else if (this.ErrorList != null && this.ErrorList.Entries != null)
             {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("Error retriving drives info."));
-
-                return;
+                this.ErrorList.Entries.AddRange(result.ErrorList.Entries);
             }
-            else if (drives.Count() == 0)
-            {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("Drives aren't ready."));
-
-                return;
-            }
-
-            drives = drives.Where(t => t.DriveName.Equals(_driveName, StringComparison.OrdinalIgnoreCase)).ToList();
-
-            if (!drives.Any())
-            {
-                this.Status = HealthcheckStatus.Warning;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry($"Cannot find drive with name: {_driveName}"));
-
-                return;
-            }
-
-            var errorDrivesCapacity = drives.Where(d => d.PercentageOfFreeSpace < _errorPercentageThreshold);
-            if (errorDrivesCapacity.Count() > 0)
-            {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(errorDrivesCapacity, $"Drive: {_driveName} is on very low capacity.")));
-
-                return;
-            }
-
-            var warningDrivesCapacity = drives.Where(d => d.PercentageOfFreeSpace < _warningPercentageThreshold);
-            if (warningDrivesCapacity.Count() > 0)
-            {
-                this.Status = HealthcheckStatus.Warning;
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(warningDrivesCapacity, $"Drive: {_driveName} is on low capacity.")));
-
-                return;
-            }
-
-            this.Status = HealthcheckStatus.Healthy;
-            this.HealthyMessage = CreateStatusMessage(drives, $"Drive, {_driveName} are in good capacity.");
-        }
-
-        /// <summary>Creates the status message displayed to the user.</summary>
-        /// <param name="drives">The drives.</param>
-        /// <param name="message">The message.</param>
-        /// <returns>The status message.</returns>
-        private string CreateStatusMessage(IEnumerable<DriveDetails> drives, string message)
-        {
-            var builder = new StringBuilder();
-            builder.AppendLine(message);
-            foreach (var drive in drives)
-            {
-                var driveBasic = $"Drive: {drive.DriveName}" +
-                    $"\tFree space: {drive.AvailableFreeSpace:0.00} GB" +
-                    $"\tPercentage free space: {drive.PercentageOfFreeSpace:0.00} %";
-
-                builder.AppendLine(driveBasic);
-            }
-
-            return builder.ToString();
+            this.LastCheckTime = result.LastCheckTime;
         }
 
         /// <summary>
@@ -156,37 +82,6 @@
             {
                 _warningPercentageThreshold = WarningPercentageDefault;
             }
-        }
-
-        /// <summary>Gets the ready drives.</summary>
-        /// <returns>A list of ready drives.</returns>
-        private List<DriveDetails> GetReadyDrives()
-        {
-            var readyDrivesDetails = new List<DriveDetails>();
-
-            IEnumerable<DriveInfo> readyDrives;
-            try
-            {
-                readyDrives = DriveInfo.GetDrives().Where(d => d.IsReady);
-
-                foreach (var drive in readyDrives)
-                {
-                    var driveDetails = new DriveDetails();
-
-                    driveDetails.DriveName = drive.Name;
-                    driveDetails.AvailableFreeSpace = drive.AvailableFreeSpace / BytesInGB;
-                    driveDetails.PercentageOfFreeSpace = (drive.AvailableFreeSpace / (double)drive.TotalSize) * 100;
-
-                    readyDrivesDetails.Add(driveDetails);
-                }
-            }
-            catch (Exception exception)
-            {
-                this.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(exception.Message, exception));
-                return null;
-            }
-
-            return readyDrivesDetails;
         }
     }
 }

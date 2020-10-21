@@ -1,16 +1,9 @@
 ﻿namespace Healthcheck.Service.Domain
 {
-    using Healthcheck.Service.Customization;
-    using Healthcheck.Service.Customization.Models;
-    using Newtonsoft.Json;
+    using Healthcheck.Service.Core;
     using Sitecore.Data.Items;
-    using System;
     using System.Collections.Specialized;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Text;
-    using System.Web;
+    using System.Runtime.InteropServices;
 
     /// <summary>
     /// API Healthcheck component
@@ -197,238 +190,20 @@
         /// </summary>
         public override void RunHealthcheck()
         {
-            this.LastCheckTime = DateTime.UtcNow;
-            this.Status = Customization.HealthcheckStatus.Healthy;
-            this.HealthyMessage = "API endpoint looks OK";
+            var result = ApiCheck.RunHealthcheck(Url, RequestHeaders, Method, PostBody, ExpectedResponseCode, ExpectedResponseBody, usingBasicAuthentication, usingJwtAuthentication, usingCertificateAuthentication, Username, Password, JwtToken, GenerateTokenUrl, GenerateTokenEndpointMethod, StoreName, Location, this.FindByType, this.Value);
 
-            if (string.IsNullOrEmpty(Url))
+            this.Status = result.Status;
+            this.HealthyMessage = result.HealthyMessage;
+            if (this.ErrorList == null || this.ErrorList.Entries == null)
             {
-                this.Status = HealthcheckStatus.Warning;
-                this.ErrorList.Entries.Add(new ErrorEntry
-                {
-                    Created = DateTime.UtcNow,
-                    Reason = "Missing API URL",
-                    Exception = null
-                });
-
-                return;
+                this.ErrorList = result.ErrorList;
             }
-
-            HttpClient httpClient = new HttpClient();
-
-            try
+            else if (this.ErrorList != null && this.ErrorList.Entries != null)
             {
-                HttpResponseMessage response = new HttpResponseMessage();
-
-                httpClient = AddAuthentication(httpClient);
-
-                if (RequestHeaders != null && RequestHeaders.Count > 0)
-                {
-                    httpClient.DefaultRequestHeaders.Accept.Clear();
-                    foreach (string headerKey in RequestHeaders)
-                    {
-                        httpClient.DefaultRequestHeaders.Add(headerKey, RequestHeaders[headerKey]);
-                    }
-                }
-
-                if (Method == "POST")
-                {
-                    HttpContent content = new StringContent(PostBody);
-
-                    response = httpClient.PostAsync(Url, content).Result;
-                }
-                else
-                {
-                    response = httpClient.GetAsync(Url).Result;
-                }
-
-                if ((int)response.StatusCode != ExpectedResponseCode)
-                {
-                    this.Status = HealthcheckStatus.Error;
-                    this.ErrorList.Entries.Add(new ErrorEntry
-                    {
-                        Created = DateTime.UtcNow,
-                        Reason = $"API returned with status code: {(int)response.StatusCode} - {response.ReasonPhrase}"
-                    });
-                }
-                else if (!string.IsNullOrEmpty(ExpectedResponseBody))
-                {
-                    var responseBody = CleanText(response.Content.ReadAsStringAsync().Result);
-
-                    if (!responseBody.Equals(CleanText(ExpectedResponseBody), StringComparison.OrdinalIgnoreCase))
-                    {
-                        this.Status = HealthcheckStatus.Error;
-                        this.ErrorList.Entries.Add(new ErrorEntry
-                        {
-                            Created = DateTime.UtcNow,
-                            Reason = $"API returned with an unexpected response body"
-                        }); ;
-                    }
-                }
+                this.ErrorList.Entries.AddRange(result.ErrorList.Entries);
             }
-            catch (Exception exception)
-            {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(new ErrorEntry
-                {
-                    Created = DateTime.UtcNow,
-                    Reason = exception.Message,
-                    Exception = exception
-                });
-            }
-            finally
-            {
-                httpClient.Dispose();
-            }
-        }
-
-        /// <summary>
-        /// Adds an authentication method.
-        /// </summary>
-        /// <param name="httpClient">The HTTP client.</param>
-        private HttpClient AddAuthentication(HttpClient httpClient)
-        {
-            if (usingBasicAuthentication)
-            {
-                var byteArray = Encoding.ASCII.GetBytes($"{Username}:{Password}");
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
-            }
-            else if (usingJwtAuthentication)
-            {
-                string accessToken = JwtToken;
-
-                if (string.IsNullOrEmpty(accessToken))
-                {
-                    accessToken = GetToken(Username, Password, GenerateTokenUrl);
-                }
-
-                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            }
-            else if (usingCertificateAuthentication)
-            {
-                var certificate = GetCertificate();
-
-                if (certificate == null)
-                {
-                    throw new ArgumentException("Certificate can't be found");
-                }
-
-                WebRequestHandler handler = new WebRequestHandler();
-                handler.ClientCertificates.Add(certificate);
-
-                httpClient = new HttpClient(handler);
-            }
-
-            return httpClient;
-        }
-
-        /// <summary>
-        /// Gets the JWT token.
-        /// </summary>
-        /// <param name="username">The username.</param>
-        /// <param name="password">The password.</param>
-        /// <param name="generateTokenUrl">The generate token URL.</param>
-        /// <returns></returns>
-        private string GetToken(string username, string password, string generateTokenUrl)
-        {
-            string token = string.Empty;
-
-            using (HttpClient client = new HttpClient())
-            {
-                if (GenerateTokenEndpointMethod == "POST")
-                {
-                    var userModel = new UserModel()
-                    {
-                        Username = username,
-                        Password = password
-                    };
-
-                    string stringData = JsonConvert.SerializeObject(userModel);
-                    var contentData = new StringContent(stringData, System.Text.Encoding.UTF8, "application/json");
-
-                    HttpResponseMessage response = client.PostAsync(generateTokenUrl, contentData).Result;
-                    token = response.Content.ReadAsStringAsync().Result;
-                }
-                else
-                {
-                    var uriBuilder = new UriBuilder(generateTokenUrl);
-                    var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-                    query["username"] = username;
-                    query["password"] = password;
-                    uriBuilder.Query = query.ToString();
-
-                    token = client.GetStringAsync(uriBuilder.Uri).Result;
-                }
-            }
-
-            return token;
-        }
-
-        /// <summary>
-        /// Cleans the text.
-        /// </summary>
-        /// <param name="result">The result.</param>
-        /// <returns></returns>
-        private string CleanText(string result)
-        {
-            var resultText = result.Replace("\r\n", string.Empty).Replace(" ", string.Empty);
-
-            return resultText;
-        }
-
-        /// <summary>
-        /// Gets the certificate.
-        /// </summary>
-        /// <returns></returns>
-        private X509Certificate2 GetCertificate()
-        {
-            X509Certificate2 cert = null;
-            var st = (StoreName)Enum.Parse(typeof(StoreName), this.StoreName);
-            var store = new X509Store(st, (StoreLocation)Enum.Parse(typeof(StoreLocation), this.Location));
-            var findByType = (X509FindType)Enum.Parse(typeof(X509FindType), this.FindByType);
-
-            try
-            {
-                store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-
-                X509Certificate2Collection certCollection = store.Certificates.Find
-                (
-                    findByType,
-                    this.Value,
-                    false
-                );
-
-                if (certCollection.Count > 0)
-                {
-                    cert = certCollection[0];
-                }
-            }
-            catch (Exception exception)
-            {
-                this.Status = HealthcheckStatus.Error;
-                this.ErrorList.Entries.Add(new ErrorEntry
-                {
-                    Created = DateTime.UtcNow,
-                    Reason = exception.Message,
-                    Exception = exception
-                });
-            }
-            finally
-            {
-                store?.Close();
-            }
-
-            return cert;
-        }
-
-        /// <summary>
-        /// User model
-        /// </summary>
-        private class UserModel
-        {
-            public string Username { get; set; }
-
-            public string Password { get; set; }
+            
+            this.LastCheckTime = result.LastCheckTime;
         }
     }
 }
