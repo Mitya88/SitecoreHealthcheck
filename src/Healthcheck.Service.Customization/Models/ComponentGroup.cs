@@ -15,6 +15,8 @@
         /// </value>
         public string GroupName { get; set; }
 
+        public string GroupId { get; set; }
+
         /// <summary>
         /// Gets or sets the components.
         /// </summary>

@@ -4,6 +4,8 @@
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
     using Healthcheck.Service.Utilities;
+    using Sitecore.ContentSearch;
+    using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System;
     using System.Collections.Generic;
@@ -52,12 +54,14 @@
         public ApplicationInformation AppInfo()
         {
             var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
-
+            var cpu = HardwareUtil.GetCpuLoadAsync(1000) * 100;
             var data = new ApplicationInformation
             {
                 IsAdministrator = Sitecore.Context.User.IsAdministrator,
                 MemoryUsage = string.Format("{0} MB", currentProcess.WorkingSet64 / (1024 * 1024)),
-                CpuTime = String.Format("{0:0.0}", HardwareUtil.GetCpuLoadAsync(1000) * 100)            
+                MemoryUsageNumber = (int)(currentProcess.WorkingSet64 / (1024 * 1024)),
+                CpuTime = String.Format("{0:0.0}", cpu),
+                CpuTimeNumber = (int)Math.Round(cpu, 0)
             };
 
             return data;
@@ -82,8 +86,28 @@
         public List<ComponentGroup> Get()
         {
             var data = this.healthcheckRepository.GetHealthcheck();
-
             return this.LimitErrorEntries(this.healthcheckRepository.GetHealthcheck());
+        }
+
+        [HttpGet]
+        public Dictionary<string, string> GetIndexSummaries()
+        {
+            var indexes = ContentSearchManager.Indexes;
+            Dictionary<string, string> result = new Dictionary<string, string>();
+
+            foreach(var index in indexes)
+            {
+                using (var ctx = ContentSearchManager.GetIndex(index.Name))
+                {
+                    using (var searchContext = ctx.CreateSearchContext())
+                    {
+                        var count = searchContext.GetQueryable<SearchResultItem>().Count();
+                        result.Add(index.Name, count.ToString());
+                    }
+                }
+            }
+
+            return result;
         }
 
         /// <summary>

@@ -16,5 +16,9 @@
         public string MemoryUsage { get; set; }
 
         public string CpuTime { get; set; }
+
+        public int MemoryUsageNumber { get; set; }
+
+        public int CpuTimeNumber { get; set; }
     }
 }

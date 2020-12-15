@@ -42,6 +42,7 @@
                         {
                             var group = new ComponentGroup();
                             group.GroupName = componentGroup["Name"];
+                            group.GroupId = componentGroup.ID.ToString();
                             group.Components = componentGroup.Children.Select(t => new ComponentHealth(t)).ToList();
                             groups.Add(group);
                         }
