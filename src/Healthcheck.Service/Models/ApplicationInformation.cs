@@ -12,13 +12,5 @@
         ///   <c>true</c> if this instance is administrator; otherwise, <c>false</c>.
         /// </value>
         public bool IsAdministrator { get; set; }
-
-        public string MemoryUsage { get; set; }
-
-        public string CpuTime { get; set; }
-
-        public int MemoryUsageNumber { get; set; }
-
-        public int CpuTimeNumber { get; set; }
     }
 }

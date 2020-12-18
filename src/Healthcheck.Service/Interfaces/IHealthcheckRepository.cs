@@ -1,6 +1,7 @@
 ﻿namespace Healthcheck.Service.Interfaces
 {
     using Healthcheck.Service.Customization.Models;
+    using Healthcheck.Service.Models;
     using System.Collections.Generic;
 
     /// <summary>
@@ -40,5 +41,19 @@
         /// Clears the errors but last entry for each component.
         /// </summary>
         void ClearComponentsErrorsButLast();
+
+        List<IndexDetailResponse> GetIndexes();
+
+        ErrorCountReport GetErrorCountReport();
+
+        CacheStatisticsResponse GetCacheStatistics();
+
+        List<DataFolderResponse> GetDataFolderStatistics();
+
+        MemoryUsageResponse GetMemoryUsage();
+
+        CpuTimeResponse GetCpuTime();
+
+        ComponentStatisticsResponse GetComponentStatistics();
     }
 }

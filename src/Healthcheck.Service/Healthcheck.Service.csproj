@@ -113,6 +113,7 @@
     <Compile Include="Domain\LicenseCheck.cs" />
     <Compile Include="Extensions\ComponentHealthExtensions.cs" />
     <Compile Include="Interfaces\IEmailService.cs" />
+    <Compile Include="Models\ActiveSession.cs" />
     <Compile Include="Models\ApplicationInformation.cs" />
     <Compile Include="Models\ApplicationInsights.cs" />
     <Compile Include="Controllers\HealthcheckApiController.cs" />
@@ -128,6 +129,13 @@
     <Compile Include="Interfaces\IComponentFactory.cs" />
     <Compile Include="Interfaces\IHealthcheckRepository.cs" />
     <Compile Include="Interfaces\IHealthcheckService.cs" />
+    <Compile Include="Models\CacheStatisticsResponse.cs" />
+    <Compile Include="Models\ComponentStatisticsResponse.cs" />
+    <Compile Include="Models\CpuTimeResponse.cs" />
+    <Compile Include="Models\DataFolderResponse.cs" />
+    <Compile Include="Models\ErrorCountReport.cs" />
+    <Compile Include="Models\IndexDetailResponse.cs" />
+    <Compile Include="Models\MemoryUsageResponse.cs" />
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Models\WebJobResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,17 +4,24 @@
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Domain;
     using Healthcheck.Service.Interfaces;
+    using Healthcheck.Service.Models;
     using Healthcheck.Service.Utilities;
     using Sitecore;
+    using Sitecore.Caching;
     using Sitecore.Configuration;
+    using Sitecore.ContentSearch;
+    using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.Globalization;
     using Sitecore.SecurityModel;
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.IO;
     using System.Linq;
     using System.Text;
+    using System.Web.Hosting;
 
     /// <summary>
     /// Healthcheck repository
@@ -165,6 +172,138 @@
                 {
                     this.SaveComponent(componentHealth);
                 }
+            }
+        }
+
+        public List<IndexDetailResponse> GetIndexes()
+        {
+            List<IndexDetailResponse> result = new List<IndexDetailResponse>();
+
+            foreach (var index in ContentSearchManager.Indexes)
+            {
+                using (var ctx = ContentSearchManager.GetIndex(index.Name).CreateSearchContext())
+                {
+                    var count = ctx.GetQueryable<SearchResultItem>().Count();
+
+                    result.Add(new IndexDetailResponse { IndexName = index.Name, IndexCount = count });
+                }
+            }
+
+            return result;
+        }
+
+        public ErrorCountReport GetErrorCountReport()
+        {
+            var report = new ErrorCountReport
+            {
+                Dates = new List<System.DateTime>(),
+                Counts = new List<int>()
+            };
+
+            var error = this.GetHealthcheck().SelectMany(t => t.Components).SelectMany(t => t.ErrorList.Entries);
+
+            var result = error.GroupBy(t => t.Created.Date).ToDictionary(t => t.Key, p => p.Count());
+
+            foreach(var key in result.Keys)
+            {
+                report.Dates.Add(key);
+                report.Counts.Add(result[key]);
+            }
+
+            return report;
+        }
+
+        public CacheStatisticsResponse GetCacheStatistics()
+        {
+            var result = new CacheStatisticsResponse();
+
+            var statistics = CacheManager.GetStatistics();
+
+            var caches = CacheManager.GetAllCaches();
+            result.FullCacheSize = caches.Sum(t => t.MaxSize);
+            result.UsedCacheSize = caches.Sum(t => t.Size);
+            result.FullCacheSizeText = MainUtil.FormatSize(result.FullCacheSize);
+            result.UsedCacheText = MainUtil.FormatSize(result.UsedCacheSize);
+            return result;
+        }
+
+        public List<DataFolderResponse> GetDataFolderStatistics()
+        {
+            List<DataFolderResponse> result = new List<DataFolderResponse>();
+
+            foreach(var folder in Directory.GetDirectories(this.GetDataFolderPath()))
+            {
+                var dirInfo = new DirectoryInfo(folder);
+                result.Add(new DataFolderResponse
+                {
+                    Name = dirInfo.Name,
+                    Size = MainUtil.FormatSize(this.DirSize(dirInfo))
+                });
+            }
+
+            return result;
+        }
+
+        public CpuTimeResponse GetCpuTime()
+        {
+            var result = new CpuTimeResponse();
+            var cpu = HardwareUtil.GetCpuLoadAsync(1000) * 100;
+            result.CpuTimeText = String.Format("{0:0.0}", cpu);
+            result.CpuTimeNumber = (int)Math.Round(cpu, 0);
+            return result;
+        }
+
+        public MemoryUsageResponse GetMemoryUsage()
+        {
+            var result = new MemoryUsageResponse();
+            var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
+            result.MemoryUsageNumber = (int)(currentProcess.PrivateMemorySize64 / (1024 * 1024));
+            result.MemoryUsageText = MainUtil.FormatSize(currentProcess.PrivateMemorySize64);
+            return result;
+        }
+
+        public ComponentStatisticsResponse GetComponentStatistics()
+        {
+            var components = this.GetHealthcheck().SelectMany(t=>t.Components);
+
+            return new ComponentStatisticsResponse
+            {
+                ErrorCount = components.Count(t => t.Status == HealthcheckStatus.Error),
+                WarningCount = components.Count(t => t.Status == HealthcheckStatus.Warning),
+                HealthyCount = components.Count(t => t.Status == HealthcheckStatus.Healthy),
+                UnknownCount = components.Count(t => t.Status == HealthcheckStatus.Waiting || t.Status == HealthcheckStatus.UnKnown)
+            };
+        }
+
+        private long DirSize(DirectoryInfo d)
+        {
+            long size = 0;
+            // Add file sizes.
+            FileInfo[] fis = d.GetFiles();
+            foreach (FileInfo fi in fis)
+            {
+                size += fi.Length;
+            }
+            // Add subdirectory sizes.
+            DirectoryInfo[] dis = d.GetDirectories();
+            foreach (DirectoryInfo di in dis)
+            {
+                size += DirSize(di);
+            }
+            return size;
+        }
+
+        private string GetDataFolderPath()
+        {
+            var dataFolder = Settings.DataFolder;
+
+            if (dataFolder.Contains(":\\"))
+            {
+                return dataFolder;
+            }
+            else
+            {
+                return HostingEnvironment.MapPath(dataFolder);
             }
         }
 

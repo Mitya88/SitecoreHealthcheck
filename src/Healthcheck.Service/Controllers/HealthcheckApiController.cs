@@ -4,9 +4,12 @@
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
     using Healthcheck.Service.Utilities;
+    using Sitecore;
+    using Sitecore.Configuration;
     using Sitecore.ContentSearch;
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Services.Infrastructure.Web.Http;
+    using Sitecore.Web.Authentication;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -57,11 +60,7 @@
             var cpu = HardwareUtil.GetCpuLoadAsync(1000) * 100;
             var data = new ApplicationInformation
             {
-                IsAdministrator = Sitecore.Context.User.IsAdministrator,
-                MemoryUsage = string.Format("{0} MB", currentProcess.WorkingSet64 / (1024 * 1024)),
-                MemoryUsageNumber = (int)(currentProcess.WorkingSet64 / (1024 * 1024)),
-                CpuTime = String.Format("{0:0.0}", cpu),
-                CpuTimeNumber = (int)Math.Round(cpu, 0)
+                IsAdministrator = Sitecore.Context.User.IsAdministrator
             };
 
             return data;
@@ -90,24 +89,73 @@
         }
 
         [HttpGet]
-        public Dictionary<string, string> GetIndexSummaries()
+        public List<IndexDetailResponse> GetIndexDetails()
         {
-            var indexes = ContentSearchManager.Indexes;
-            Dictionary<string, string> result = new Dictionary<string, string>();
+            return this.healthcheckRepository.GetIndexes();
+        }
 
-            foreach(var index in indexes)
+        [HttpGet]
+        public ErrorCountReport GetErrorCounts()
+        {
+            return this.healthcheckRepository.GetErrorCountReport();
+        }
+
+        [HttpGet]
+        public CacheStatisticsResponse GetCacheStatistics()
+        {
+            return this.healthcheckRepository.GetCacheStatistics();
+        }
+
+        [HttpGet]
+        public List<DataFolderResponse> GetDataFolderStatistics()
+        {
+            return this.healthcheckRepository.GetDataFolderStatistics();
+        }
+
+        [HttpGet]
+        public MemoryUsageResponse GetMemoryUsage()
+        {
+            return this.healthcheckRepository.GetMemoryUsage();
+        }
+
+        [HttpGet]
+        public ComponentStatisticsResponse GetComponentStatistics()
+        {
+            return this.healthcheckRepository.GetComponentStatistics();
+        }
+
+        [HttpGet]
+        public CpuTimeResponse GetCpuTime()
+        {
+            return this.healthcheckRepository.GetCpuTime();
+        }
+
+        [HttpGet]
+        public object GetActiveUsers()
+        {
+            List<DomainAccessGuard.Session> sessions = DomainAccessGuard.Sessions;
+            List<DomainAccessGuard.Session> list = sessions.Where<DomainAccessGuard.Session>((Func<DomainAccessGuard.Session, bool>)(guardSession => string.Compare(guardSession.UserName, Context.User.Name, StringComparison.InvariantCultureIgnoreCase) == 0 || Context.IsAdministrator || Settings.AllowLogoutOfAllUsers)).ToList<DomainAccessGuard.Session>();
+           
+            int count = list.Count;
+            var result = list.Select<DomainAccessGuard.Session, ActiveSession>(new Func<DomainAccessGuard.Session, ActiveSession>(t => new ActiveSession()
             {
-                using (var ctx = ContentSearchManager.GetIndex(index.Name))
-                {
-                    using (var searchContext = ctx.CreateSearchContext())
-                    {
-                        var count = searchContext.GetQueryable<SearchResultItem>().Count();
-                        result.Add(index.Name, count.ToString());
-                    }
-                }
-            }
+                UserName = t.UserName,
+                LastRequest = DateUtil.ToServerTime(t.LastRequest).ToString(),
+                Login = DateUtil.ToServerTime(t.Created).ToString()
+            })).ToList();
 
             return result;
+        }
+        [HttpGet]
+        public string Memory()
+        {
+            List<string> data = new List<string>();
+
+            for(long i = 0; i < 1000000000000; i++)
+            {
+                data.Add(Guid.NewGuid().ToString());
+            }
+            return "ok";
         }
 
         /// <summary>
