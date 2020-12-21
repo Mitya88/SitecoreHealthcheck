@@ -55,5 +55,7 @@
         CpuTimeResponse GetCpuTime();
 
         ComponentStatisticsResponse GetComponentStatistics();
+
+        DriveInfoResponse GetDriveInfo();
     }
 }

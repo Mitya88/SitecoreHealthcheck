@@ -275,6 +275,27 @@
             };
         }
 
+        public DriveInfoResponse GetDriveInfo()
+        {
+            var result = new DriveInfoResponse();
+
+            string driveLetter = Path.GetPathRoot(Environment.CurrentDirectory);
+
+            var driveInfo = DriveInfo.GetDrives().FirstOrDefault(t => t.Name.Equals(driveLetter, StringComparison.OrdinalIgnoreCase));
+
+            if (driveInfo != null)
+            {
+                result.DriveLetter = driveLetter;
+                result.FreeCapacity = driveInfo.AvailableFreeSpace / (1024 * 1024);
+                result.FreeCapacityText = MainUtil.FormatSize(driveInfo.AvailableFreeSpace);
+                var remainingCapacity = driveInfo.TotalSize - driveInfo.AvailableFreeSpace;
+                result.UsedCapacity = remainingCapacity / (1024 * 1024);
+                result.UsedCapacityText = MainUtil.FormatSize(remainingCapacity);
+            }
+
+            return result;
+        }
+
         private long DirSize(DirectoryInfo d)
         {
             long size = 0;

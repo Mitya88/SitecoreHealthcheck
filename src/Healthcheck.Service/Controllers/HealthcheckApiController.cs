@@ -131,6 +131,12 @@
         }
 
         [HttpGet]
+        public DriveInfoResponse GetDriveInfo()
+        {
+            return this.healthcheckRepository.GetDriveInfo();
+        }
+
+        [HttpGet]
         public object GetActiveUsers()
         {
             List<DomainAccessGuard.Session> sessions = DomainAccessGuard.Sessions;
