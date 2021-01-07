@@ -1,0 +1,82 @@
+﻿namespace Healthcheck.ExternalChecker
+{ 
+    using Healthcheck.Service.Core;
+    using Microsoft.Azure.ServiceBus;
+    using Microsoft.Azure.ServiceBus.Management;
+    using System;
+    using System.Configuration;
+
+    public class InitializeSubscriptionClient
+    {
+        public static void Init()
+        {
+            //Sitecore.Diagnostics.Log.Info("Initialize Healthcheck Topic", this);
+            try
+            {
+            ISubscriptionClient client = new HealthcheckSubscriptionClient();
+
+                var _managementClient = new ManagementClient(new ServiceBusConnectionStringBuilder(ConfigurationManager.ConnectionStrings["sb"].ConnectionString));
+                EnsureTopicExists(_managementClient, ConfigurationManager.AppSettings["Healthcheck.TopicName"]);
+                EnsureSubscriptionExists(_managementClient, ConfigurationManager.AppSettings["Healthcheck.TopicName"], ConfigurationManager.AppSettings["Healthcheck.SubscritionName"]);
+
+                client.RegisterMessageHandler(MessageHandler.ReceiveMessage,
+                    new MessageHandlerOptions((e) => MessageHandler.LogMessageHandlerException(e)) { AutoComplete = true, MaxConcurrentCalls = 1 });
+            }
+            catch (Exception ex)
+            {
+                //Sitecore.Diagnostics.Log.Error("Initialize failed Healthcheck Topic", ex, this);
+            }
+            //Sitecore.Diagnostics.Log.Info("Initialize finished Healthcheck Topic", this);
+        }
+
+        private static TopicDescription EnsureTopicExists(ManagementClient _managementClient, string topicName)
+        {
+            try
+            {
+                return _managementClient.GetTopicAsync(topicName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityNotFoundException)
+            {
+                // it's OK... try and create it instead
+            }
+
+            try
+            {
+                return _managementClient.CreateTopicAsync(topicName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityAlreadyExistsException)
+            {
+                return _managementClient.GetTopicAsync(topicName).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (Exception exception)
+            {
+                throw new ArgumentException($"Could not create topic '{topicName}'", exception);
+            }
+        }
+
+        private static SubscriptionDescription EnsureSubscriptionExists(ManagementClient _managementClient, string topicName, string subscription)
+        {
+            try
+            {
+                return _managementClient.GetSubscriptionAsync(topicName, subscription).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityNotFoundException)
+            {
+                // it's OK... try and create it instead
+            }
+
+            try
+            {
+                return _managementClient.CreateSubscriptionAsync(topicName, subscription).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (MessagingEntityAlreadyExistsException)
+            {
+                return _managementClient.GetSubscriptionAsync(topicName, subscription).ConfigureAwait(false).GetAwaiter().GetResult();
+            }
+            catch (Exception exception)
+            {
+                throw new ArgumentException($"Could not create topic '{topicName}'", exception);
+            }
+        }
+    }
+}
