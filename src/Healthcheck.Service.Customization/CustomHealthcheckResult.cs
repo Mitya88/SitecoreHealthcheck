@@ -29,5 +29,7 @@
         public string HealthyMessage { get; set; }
 
         public Exception Exception { get; set; }
+
+        public ErrorLevel ErrorLevel { get; set; }
     }
 }

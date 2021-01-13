@@ -28,7 +28,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Certificate Check is not configured correctly",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -52,7 +53,8 @@
                         checkResult.ErrorList.Entries.Add(new ErrorEntry
                         {
                             Created = DateTime.UtcNow,
-                            Reason = string.Format("{0} certificate is missing from {1} {2} {3} store", value, storeName, location, findByTypeName)
+                            Reason = string.Format("{0} certificate is missing from {1} {2} {3} store", value, storeName, location, findByTypeName),
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                     else if (cert.Count > 1)
@@ -61,7 +63,8 @@
                         checkResult.ErrorList.Entries.Add(new ErrorEntry
                         {
                             Created = DateTime.UtcNow,
-                            Reason = string.Format("{0} multiple certificate found from {1} {2} {3} store", value, storeName, location, findByTypeName)
+                            Reason = string.Format("{0} multiple certificate found from {1} {2} {3} store", value, storeName, location, findByTypeName),
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                     else
@@ -80,7 +83,8 @@
                                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                                 {
                                     Created = DateTime.UtcNow,
-                                    Reason = string.Format("{0} certificate expired", value, (certificate.NotAfter - DateTime.Now).Days)
+                                    Reason = string.Format("{0} certificate expired", value, (certificate.NotAfter - DateTime.Now).Days),
+                                    ErrorLevel = ErrorLevel.Error
                                 });
                             }
                             else
@@ -88,7 +92,8 @@
                                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                                 {
                                     Created = DateTime.UtcNow,
-                                    Reason = string.Format("{0} certificate will expire in {1} days", value, (certificate.NotAfter - DateTime.Now).Days)
+                                    Reason = string.Format("{0} certificate will expire in {1} days", value, (certificate.NotAfter - DateTime.Now).Days),
+                                    ErrorLevel = ErrorLevel.Error
                                 });
                             }
                         }
@@ -106,7 +111,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

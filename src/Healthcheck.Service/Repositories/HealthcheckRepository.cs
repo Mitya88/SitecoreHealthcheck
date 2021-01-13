@@ -200,15 +200,60 @@
                 Counts = new List<int>()
             };
 
-            var error = this.GetHealthcheck().SelectMany(t => t.Components).SelectMany(t => t.ErrorList.Entries);
+            var error = this.GetHealthcheck().SelectMany(t => t.Components).SelectMany(t => t.ErrorList.Entries).Where(t=>t.ErrorLevel == ErrorLevel.Error);
 
             var result = error.GroupBy(t => t.Created.Date).ToDictionary(t => t.Key, p => p.Count());
 
-            foreach(var key in result.Keys)
+            foreach (var key in result.Keys)
             {
                 report.Dates.Add(key);
                 report.Counts.Add(result[key]);
             }
+
+            return report;
+        }
+
+        public List<UpcomingExpirations> GetUpcomingExpirations()
+        {
+            var report = new List<UpcomingExpirations>();
+
+            // TODO: 
+
+            report.Add(new UpcomingExpirations
+            {
+                Date = DateTime.Now,
+                Name = "Sitecore Licence",
+                Type = "Licence"
+            });
+
+            return report;
+        }
+
+        public List<LastErrorResponse> GetLastErrors()
+        {
+            var report = new List<LastErrorResponse>();
+
+            var dateTime = DateTime.UtcNow.AddDays(-1);
+
+            foreach (var component in this.GetHealthcheck().SelectMany(t => t.Components))
+            {
+                foreach (var error in component.ErrorList.Entries.Where(t => t.ErrorLevel == ErrorLevel.Error))
+                {
+                    if (error.Created > dateTime)
+                    {
+                        if (!report.Any(t => t.ComponentName == component.Name && t.Message == error.Reason))
+                        {
+                            report.Add(new LastErrorResponse
+                            {
+                                ComponentName = component.Name,
+                                Date = error.Created,
+                                Message = error.Reason
+                            });
+                        }
+                    }
+                }
+            }
+            
 
             return report;
         }

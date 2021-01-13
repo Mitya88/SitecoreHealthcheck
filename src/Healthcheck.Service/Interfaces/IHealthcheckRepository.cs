@@ -46,6 +46,10 @@
 
         ErrorCountReport GetErrorCountReport();
 
+        List<LastErrorResponse> GetLastErrors();
+
+        List<UpcomingExpirations> GetUpcomingExpirations();
+
         CacheStatisticsResponse GetCacheStatistics();
 
         List<DataFolderResponse> GetDataFolderStatistics();

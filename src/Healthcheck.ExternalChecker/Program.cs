@@ -1,4 +1,5 @@
 ﻿
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,6 +14,10 @@ namespace Healthcheck.ExternalChecker
     {
         static void Main(string[] args)
         {
+            ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
+
+            var data = redis.GetCounters();
+
             InitializeQueueClient.Init();
             InitializeSubscriptionClient.Init();
 

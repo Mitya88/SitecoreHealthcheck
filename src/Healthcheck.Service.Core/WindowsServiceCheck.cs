@@ -31,7 +31,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Missing service name value",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -47,7 +48,9 @@
                     {
                         Created = DateTime.UtcNow,
                         Reason = string.Format("{0} service is now: {1}", serviceName, service.Status),
-                        Exception = null
+                        Exception = null,
+                        ErrorLevel = ErrorLevel.Error
+
                     });
 
                     return checkResult;
@@ -60,7 +63,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

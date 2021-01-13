@@ -36,7 +36,8 @@
                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                 {
                     Created = DateTime.UtcNow,
-                    Reason = string.Format("{0} could not be parsed, use the following format: <NameSpace>.<Class>,<AssemblyName>", typeValue)
+                    Reason = string.Format("{0} could not be parsed, use the following format: <NameSpace>.<Class>,<AssemblyName>", typeValue),
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -54,7 +55,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = string.Format("{0} assembly could not be loaded, please check the configuration!", assemblyName),
-                    Exception = ex
+                    Exception = ex,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -68,7 +70,8 @@
                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                 {
                     Created = DateTime.UtcNow,
-                    Reason = string.Format("{0} type could not be loaded, please check the configuration!", typeName)
+                    Reason = string.Format("{0} type could not be loaded, please check the configuration!", typeName),
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -84,7 +87,8 @@
                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                 {
                     Created = DateTime.UtcNow,
-                    Reason = string.Format("{0} method could not be loaded, please make sure you implemented the 'DoHealthcheck' method!", methodName)
+                    Reason = string.Format("{0} method could not be loaded, please make sure you implemented the 'DoHealthcheck' method!", methodName),
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -110,7 +114,8 @@
                         {
                             Created = DateTime.UtcNow,
                             Reason = result.ErrorMessage,
-                            Exception = result.Exception
+                            Exception = result.Exception,
+                            ErrorLevel = result.ErrorLevel
                         });
                     }
                 }
@@ -122,7 +127,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = ex.Message,
-                    Exception = ex
+                    Exception = ex,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

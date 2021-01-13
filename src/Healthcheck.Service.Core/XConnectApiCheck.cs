@@ -34,7 +34,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Xdb is disabled",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -47,7 +48,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "XConnect API Check is not configured correctly",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -60,7 +62,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Cannot find the XConnect API connectionstring in the config",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -73,7 +76,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Cannot find the XConnect API Certificate connectionstring in the config",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -103,7 +107,8 @@
                         checkResult.ErrorList.Entries.Add(new ErrorEntry
                         {
                             Created = DateTime.UtcNow,
-                            Reason = string.Format("{0} certificate is missing from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"])
+                            Reason = string.Format("{0} certificate is missing from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"])                            ,
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                     else if (cert.Count > 1)
@@ -112,7 +117,8 @@
                         checkResult.ErrorList.Entries.Add(new ErrorEntry
                         {
                             Created = DateTime.UtcNow,
-                            Reason = string.Format("{0} multiple certificate found from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"])
+                            Reason = string.Format("{0} multiple certificate found from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"]),
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                     else
@@ -131,7 +137,8 @@
                                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                                 {
                                     Created = DateTime.UtcNow,
-                                    Reason = string.Format("{0} certificate expired", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days)
+                                    Reason = string.Format("{0} certificate expired", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days),
+                                    ErrorLevel = ErrorLevel.Error
                                 });
                             }
                             else
@@ -139,7 +146,8 @@
                                 checkResult.ErrorList.Entries.Add(new ErrorEntry
                                 {
                                     Created = DateTime.UtcNow,
-                                    Reason = string.Format("{0} certificate will expire in {1} days", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days)
+                                    Reason = string.Format("{0} certificate will expire in {1} days", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days),
+                                    ErrorLevel = ErrorLevel.Warning
                                 });
                             }
                         }
@@ -168,7 +176,8 @@
                             checkResult.ErrorList.Entries.Add(new ErrorEntry
                             {
                                 Created = DateTime.UtcNow,
-                                Reason = $"XConnect API returned with status code: {(int)response.StatusCode} - {response.ReasonPhrase}"
+                                Reason = $"XConnect API returned with status code: {(int)response.StatusCode} - {response.ReasonPhrase}",
+                                ErrorLevel = ErrorLevel.Error
                             });
                         }
                     }
@@ -179,7 +188,8 @@
                         {
                             Created = DateTime.UtcNow,
                             Reason = exception.Message,
-                            Exception = exception
+                            Exception = exception,
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                     finally
@@ -199,7 +209,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

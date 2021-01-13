@@ -48,7 +48,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
         }

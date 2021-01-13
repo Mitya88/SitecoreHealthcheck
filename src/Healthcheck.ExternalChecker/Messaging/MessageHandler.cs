@@ -6,6 +6,8 @@
     using Microsoft.Azure.ServiceBus.Core;
     using Newtonsoft.Json;
     using System;
+    using System.Configuration;
+    using System.Globalization;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
@@ -19,16 +21,16 @@
                 HealthcheckResult result = null;
                 var messageContract = JsonConvert.DeserializeObject<OutGoingMessage>(Encoding.UTF8.GetString(message.Body));
 
-                if (!SharedConfig.SubscriptionName.Equals(messageContract.TargetInstance, StringComparison.OrdinalIgnoreCase) && !string.IsNullOrEmpty(messageContract.TargetInstance))
-                {
-                    // Trigger only on the proper instance
-                    //Sitecore.Diagnostics.Log.Info($"[Advanced.Healthcheck] - Skipping remote event: {messageContract.TargetInstance}, current instance/Subscription {SharedConfig.SubscriptionName}", message);
-                    return;
-                }
+                //if (!SharedConfig.SubscriptionName.Equals(messageContract.TargetInstance, StringComparison.OrdinalIgnoreCase) && !string.IsNullOrEmpty(messageContract.TargetInstance))
+                //{
+                //    // Trigger only on the proper instance
+                //    //Sitecore.Diagnostics.Log.Info($"[Advanced.Healthcheck] - Skipping remote event: {messageContract.TargetInstance}, current instance/Subscription {SharedConfig.SubscriptionName}", message);
+                //    return;
+                //}
 
                 if (message.Label.Equals(Constants.TemplateNames.RemoteLogFileCheckTemplateName))
                 {
-                    //result = LogFileCheck.RunHealthcheck(messageContract.Parameters["FileNameFormat"], Path.Combine(Sitecore.Configuration.Settings.DataFolder, "logs"), DateTime.ParseExact(messageContract.Parameters["LastCheckTime"], "yyyyMMddTHHmmss", CultureInfo.InvariantCulture), int.Parse(messageContract.Parameters["NumberOfDaysToCheck"]), true);
+                    result = LogFileCheck.RunHealthcheck(messageContract.Parameters["FileNameFormat"], messageContract.Parameters["LogFolder"], DateTime.ParseExact(messageContract.Parameters["LastCheckTime"], "yyyyMMddTHHmmss", CultureInfo.InvariantCulture), int.Parse(messageContract.Parameters["NumberOfDaysToCheck"]), true);
                 }
                 else if (message.Label.Equals(Constants.TemplateNames.RemoteCertificateCheckTemplateName))
                 {
@@ -65,7 +67,7 @@
 
                 if (result != null)
                 {
-                    var sender = new MessageSender(SharedConfig.ConnectionStringOrKey, SharedConfig.IncomingQueueName);
+                    var sender = new MessageSender(ConfigurationManager.ConnectionStrings["sb"].ConnectionString, ConfigurationManager.AppSettings["Healthcheck.IncomingQueueName"]);
 
                     var incomingMessage = new HealthcheckResultMessage
                     {

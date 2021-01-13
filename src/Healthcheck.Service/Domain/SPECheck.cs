@@ -73,7 +73,7 @@
                                 this.ErrorList.Entries.Add(new ErrorEntry
                                 {
                                     Created = DateTime.UtcNow,
-                                    Reason = result["Reason"].ToString()
+                                    Reason = result["Reason"].ToString(),
                                 });
                             }
                             else
@@ -91,7 +91,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = ex.Message,
-                    Exception = ex
+                    Exception = ex,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
         }

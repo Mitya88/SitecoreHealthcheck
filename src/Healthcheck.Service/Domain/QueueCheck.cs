@@ -75,7 +75,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Missing database or table configuration",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return;
@@ -97,7 +98,8 @@
                         {
                             Created = DateTime.UtcNow,
                             Reason = string.Format("{0} table in {1} database has {2} record", this.Table, this.Database, numrows),
-                            Exception = null
+                            Exception = null,
+                            ErrorLevel = ErrorLevel.Warning
                         });
                     }
                     else if (numrows >= this.ErrorCount)
@@ -107,7 +109,8 @@
                         {
                             Created = DateTime.UtcNow,
                             Reason = string.Format("{0} table in {1} database has {2} record", this.Table, this.Database, numrows),
-                            Exception = null
+                            Exception = null,
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                     else
@@ -123,7 +126,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
         }

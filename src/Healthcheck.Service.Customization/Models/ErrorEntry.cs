@@ -41,18 +41,21 @@
         [JsonIgnore]
         public string SerializedException { get; set; }
 
+        public ErrorLevel ErrorLevel { get; set; }
+
         /// <summary>Gets the default error entry.</summary>
         /// defaults: Created = DateTime.UtcNow
         ///           Exception = null
         /// <param name="reason">The reason.</param>
         /// <returns>Default ErrorEntry with a specific reason.</returns>
-        public static ErrorEntry CreateErrorEntry(string reason)
+        public static ErrorEntry CreateErrorEntry(string reason, ErrorLevel errorLevel)
         {
             return new ErrorEntry()
             {
                 Created = DateTime.UtcNow,
                 Reason = reason,
-                Exception = null
+                Exception = null,
+                ErrorLevel = errorLevel
             };
         }
 
@@ -62,7 +65,8 @@
             {
                 Created = DateTime.UtcNow,
                 Reason = reason,
-                Exception = exception
+                Exception = exception,
+                ErrorLevel = ErrorLevel.Error
             };
         }
     }

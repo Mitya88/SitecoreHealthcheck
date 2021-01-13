@@ -39,7 +39,8 @@
                     {
                         Created = DateTime.UtcNow,
                         Reason = string.Format("License will expire in {0} days.", (expirationDate - DateTime.UtcNow).Days),
-                        Exception = null
+                        Exception = null,
+                        ErrorLevel = ErrorLevel.Warning
                     });
 
                     return checkResult;
@@ -52,7 +53,8 @@
                     {
                         Created = DateTime.UtcNow,
                         Reason = string.Format("License will expire in {0} days.", (expirationDate - DateTime.UtcNow).Days),
-                        Exception = null
+                        Exception = null,
+                        ErrorLevel = ErrorLevel.Error
                     });
 
                     return checkResult;
@@ -65,7 +67,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

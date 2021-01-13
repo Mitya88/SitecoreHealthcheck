@@ -67,7 +67,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Item Check is not configured correctly",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return;
@@ -92,6 +93,8 @@
                                     {
                                         Created = DateTime.UtcNow,
                                         Reason = string.Format("{0} is missing from {1} database, in {2} language", this.ItemIdOrQuery, this.Database, this.Language)
+                                        ,
+                                        ErrorLevel = ErrorLevel.Error
                                     });
                                 }
                             }
@@ -105,7 +108,8 @@
                                     this.ErrorList.Entries.Add(new ErrorEntry
                                     {
                                         Created = DateTime.UtcNow,
-                                        Reason = string.Format("{0} is missing from {1} database, in {2} language", this.ItemIdOrQuery, this.Database, this.Language)
+                                        Reason = string.Format("{0} is missing from {1} database, in {2} language", this.ItemIdOrQuery, this.Database, this.Language),
+                                        ErrorLevel = ErrorLevel.Error
                                     });
 
                                     return;
@@ -117,7 +121,8 @@
                                     this.ErrorList.Entries.Add(new ErrorEntry
                                     {
                                         Created = DateTime.UtcNow,
-                                        Reason = string.Format("{0} is missing from {1} database, in {2} language", this.ItemIdOrQuery, this.Database, this.Language)
+                                        Reason = string.Format("{0} is missing from {1} database, in {2} language", this.ItemIdOrQuery, this.Database, this.Language),
+                                        ErrorLevel = ErrorLevel.Error
                                     });
                                 }
                             }
@@ -132,7 +137,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
         }

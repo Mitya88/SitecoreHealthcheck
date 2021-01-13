@@ -152,6 +152,7 @@
 
             return result;
         }
+
         [HttpGet]
         public string Memory()
         {
@@ -162,6 +163,18 @@
                 data.Add(Guid.NewGuid().ToString());
             }
             return "ok";
+        }
+
+        [HttpGet]
+        public List<LastErrorResponse> LastErrors()
+        {
+            return this.healthcheckRepository.GetLastErrors();
+        }
+
+        [HttpGet]
+        public List<UpcomingExpirations> UpcomingExpirations()
+        {
+            return this.healthcheckRepository.GetUpcomingExpirations();
         }
 
         /// <summary>

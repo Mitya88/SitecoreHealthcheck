@@ -31,7 +31,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Log File Check is not configured correctly",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -49,7 +50,8 @@
                     {
                         Created = DateTime.UtcNow,
                         Reason = string.Format("No files can be found with the following pattern: {0}", fileNameFormat),
-                        Exception = null
+                        Exception = null,
+                        ErrorLevel = ErrorLevel.Warning
                     });
 
                     return checkResult;
@@ -84,7 +86,8 @@
                         {
                             Created = error.Time,
                             Reason = error.Message?.Message,
-                            Exception = null
+                            Exception = null,
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                 }
@@ -97,7 +100,8 @@
                         {
                             Created = warn.Time,
                             Reason = warn.Message?.Message,
-                            Exception = null
+                            Exception = null,
+                            ErrorLevel = ErrorLevel.Warning
                         });
                     }
                 }
@@ -109,7 +113,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

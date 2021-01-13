@@ -30,6 +30,8 @@
         /// </value>
         public int NumberOfDaysToCheck { get; set; }
 
+        public string LogFolder { get; set; }
+
         /// <summary>
         /// Gets or sets the item creation date.
         /// </summary>
@@ -45,6 +47,7 @@
         public RemoteLogFileCheck(Item item) : base(item)
         {
             this.FileNameFormat = item["File Name Format"];
+            this.LogFolder = item["Log Folder"];
             this.NumberOfDaysToCheck = Sitecore.MainUtil.GetInt(item["Number of Days to Check"], 0);
             this.ItemCreationDate = item.Created;
         }
@@ -68,7 +71,8 @@
                     {"FileNameFormat", this.FileNameFormat },
                     {"ItemCreationDate", this.ItemCreationDate.ToString("yyyyMMddTHHmmss") },
                     {"NumberOfDaysToCheck", this.NumberOfDaysToCheck.ToString() },
-                    {"LastCheckTime", this.LastCheckTime.ToString("yyyyMMddTHHmmss") }
+                    {"LastCheckTime", this.LastCheckTime.ToString("yyyyMMddTHHmmss") },
+                    {"LogFolder", this.LogFolder }
                 },
                 TargetInstance = this.TargetInstance,
                 ComponentId = this.InnerItem.ID.Guid,

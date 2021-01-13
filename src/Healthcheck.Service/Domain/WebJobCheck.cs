@@ -64,7 +64,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Webjob is not configured correctly.",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return;
@@ -93,7 +94,8 @@
                             this.ErrorList.Entries.Add(new ErrorEntry
                             {
                                 Created = DateTime.UtcNow,
-                                Reason = string.Format("The current state: {0}", webJobResponse.Status)
+                                Reason = string.Format("The current state: {0}", webJobResponse.Status),
+                                ErrorLevel = ErrorLevel.Error
                             });
                         }
                     }
@@ -106,7 +108,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
         }

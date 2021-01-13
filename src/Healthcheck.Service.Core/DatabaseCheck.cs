@@ -29,7 +29,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Missing connectionstring key",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -42,7 +43,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Cannot find the connectionstring in the config",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -61,7 +63,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
 

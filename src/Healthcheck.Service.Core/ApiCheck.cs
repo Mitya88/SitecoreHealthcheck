@@ -41,7 +41,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Missing API URL",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return checkResult;
@@ -81,7 +82,8 @@
                     checkResult.ErrorList.Entries.Add(new ErrorEntry
                     {
                         Created = DateTime.UtcNow,
-                        Reason = $"API returned with status code: {(int)response.StatusCode} - {response.ReasonPhrase}"
+                        Reason = $"API returned with status code: {(int)response.StatusCode} - {response.ReasonPhrase}",
+                        ErrorLevel = ErrorLevel.Error
                     });
                 }
                 else if (!string.IsNullOrEmpty(ExpectedResponseBody))
@@ -94,7 +96,8 @@
                         checkResult.ErrorList.Entries.Add(new ErrorEntry
                         {
                             Created = DateTime.UtcNow,
-                            Reason = $"API returned with an unexpected response body"
+                            Reason = $"API returned with an unexpected response body",
+                            ErrorLevel = ErrorLevel.Error
                         }); ;
                     }
                 }
@@ -106,7 +109,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
             finally

@@ -28,7 +28,7 @@
             if (string.IsNullOrEmpty(_driveName))
             {
                 checkResult.Status = HealthcheckStatus.Warning;
-                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("DriveName is not configured!"));
+                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("DriveName is not configured!", ErrorLevel.Warning));
 
                 return checkResult;
             }
@@ -38,14 +38,14 @@
             if (drives == null)
             {
                 checkResult.Status = HealthcheckStatus.Error;
-                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("Error retriving drives info."));
+                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("Error retriving drives info.", ErrorLevel.Warning));
 
                 return checkResult;
             }
             else if (drives.Count() == 0)
             {
                 checkResult.Status = HealthcheckStatus.Error;
-                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("Drives aren't ready."));
+                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry("Drives aren't ready.", ErrorLevel.Warning));
 
                 return checkResult;
             }
@@ -55,7 +55,7 @@
             if (!drives.Any())
             {
                 checkResult.Status = HealthcheckStatus.Warning;
-                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry($"Cannot find drive with name: {_driveName}"));
+                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry($"Cannot find drive with name: {_driveName}", ErrorLevel.Warning));
 
                 return checkResult;
             }
@@ -64,7 +64,7 @@
             if (errorDrivesCapacity.Count() > 0)
             {
                 checkResult.Status = HealthcheckStatus.Error;
-                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(errorDrivesCapacity, $"Drive: {_driveName} is on very low capacity.")));
+                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(errorDrivesCapacity, $"Drive: {_driveName} is on very low capacity."), ErrorLevel.Warning));
 
                 return checkResult;
             }
@@ -73,7 +73,7 @@
             if (warningDrivesCapacity.Count() > 0)
             {
                 checkResult.Status = HealthcheckStatus.Warning;
-                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(warningDrivesCapacity, $"Drive: {_driveName} is on low capacity.")));
+                checkResult.ErrorList.Entries.Add(ErrorEntry.CreateErrorEntry(CreateStatusMessage(warningDrivesCapacity, $"Drive: {_driveName} is on low capacity."), ErrorLevel.Warning));
 
                 return checkResult;
             }

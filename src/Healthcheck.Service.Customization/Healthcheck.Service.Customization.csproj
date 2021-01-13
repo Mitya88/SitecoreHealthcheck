@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CustomHealthcheckResult.cs" />
     <Compile Include="CustomHealthcheckRun.cs" />
+    <Compile Include="ErrorLevel.cs" />
     <Compile Include="HealthcheckStatus.cs" />
     <Compile Include="Models\ComponentGroup.cs" />
     <Compile Include="Models\ComponentHealth.cs" />

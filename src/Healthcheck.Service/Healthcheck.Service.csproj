@@ -131,6 +131,8 @@
     <Compile Include="Interfaces\IHealthcheckService.cs" />
     <Compile Include="Models\CacheStatisticsResponse.cs" />
     <Compile Include="Models\ComponentStatisticsResponse.cs" />
+    <Compile Include="Models\UpcomingExpirationResponse.cs" />
+    <Compile Include="Models\LastErrorsResponse.cs" />
     <Compile Include="Models\DriveInfoResponse.cs" />
     <Compile Include="Models\CpuTimeResponse.cs" />
     <Compile Include="Models\DataFolderResponse.cs" />

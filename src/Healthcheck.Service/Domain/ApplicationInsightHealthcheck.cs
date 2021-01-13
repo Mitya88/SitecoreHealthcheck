@@ -73,7 +73,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Application Insight Check is not configured correctly",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return;
@@ -90,7 +91,8 @@
                     {
                         Created = DateTime.UtcNow,
                         Reason = "Application Insight Check request error: " + result.StatusCode,
-                        Exception = null
+                        Exception = null,
+                        ErrorLevel = ErrorLevel.Warning
                     });
 
                     return;
@@ -109,7 +111,8 @@
                         {
                             Created = error.Timestamp,
                             Reason = error.CustomDimensions.LoggerName + " " + error.Trace.Message,
-                            Exception = null
+                            Exception = null,
+                            ErrorLevel = ErrorLevel.Error
                         });
                     }
                 }
@@ -122,7 +125,8 @@
                         {
                             Created = warning.Timestamp,
                             Reason = warning.CustomDimensions.LoggerName + " " + warning.Trace.Message,
-                            Exception = null
+                            Exception = null,
+                            ErrorLevel = ErrorLevel.Warning
                         });
                     }
                 }
@@ -134,7 +138,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = exception.Message,
-                    Exception = exception
+                    Exception = exception,
+                    ErrorLevel = ErrorLevel.Error
                 });
             }
         }

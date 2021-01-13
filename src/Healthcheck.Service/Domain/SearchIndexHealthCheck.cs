@@ -68,7 +68,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Search Index Check is not configured correctly",
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return;
@@ -86,7 +87,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Search Index does not exist or cannot be loaded: " + IndexName,
-                    Exception = null
+                    Exception = null,
+                    ErrorLevel = ErrorLevel.Warning
                 });
 
                 return;
@@ -123,7 +125,8 @@
                     {
                         Created = DateTime.UtcNow,
                         Reason = string.Format("Search Index returned less items than expected: {0}, actual: {1} ", this.MinimumExpectedDocumentsCount, totalResults),
-                        Exception = null
+                        Exception = null,
+                        ErrorLevel = ErrorLevel.Error
                     });
 
                     return;
@@ -136,7 +139,8 @@
                 {
                     Created = DateTime.UtcNow,
                     Reason = "Search Index error",
-                    Exception = ex
+                    Exception = ex,
+                    ErrorLevel = ErrorLevel.Error
                 });
 
                 return;
