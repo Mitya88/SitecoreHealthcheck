@@ -18,6 +18,10 @@ Languages:
       Hint: Error Messages
       Value: |
         {"Entries":[{"Reason":"Missing service name value","Created":"2021-02-05T13:20:32.9101679Z","Exception":null},{"Reason":"Missing service name value","Created":"2021-02-05T13:20:45.503015Z","Exception":null}]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "ec6e371e-b53c-4bd5-a0ca-760bfa718131"

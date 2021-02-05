@@ -18,6 +18,10 @@ Languages:
       Hint: Error Messages
       Value: |
         {"Entries":[{"Reason":"Item Check is not configured correctly","Created":"2021-02-05T13:20:33.4726854Z","Exception":null},{"Reason":"Item Check is not configured correctly","Created":"2021-02-05T13:20:45.753001Z","Exception":null}]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "a0c7860c-fa9a-4b9d-a635-71495bfe5f5c"

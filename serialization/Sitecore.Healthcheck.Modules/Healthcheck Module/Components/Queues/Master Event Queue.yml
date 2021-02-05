@@ -21,6 +21,10 @@ Languages:
     - ID: "4e2186ac-3ea9-4875-ba13-b7fd2c384552"
       Hint: Warn Count
       Value: 100
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "aff34d2c-da60-4c9a-8a5f-40626e59dd6c"
