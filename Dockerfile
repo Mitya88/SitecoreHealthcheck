@@ -16,9 +16,9 @@ FROM ${BUILD_IMAGE} AS builder
 
  SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
- RUN Invoke-WebRequest -OutFile nodejs.zip -UseBasicParsing "https://nodejs.org/dist/v8.17.0/node-v8.17.0-win-x64.zip"; `
+ RUN Invoke-WebRequest -OutFile nodejs.zip -UseBasicParsing "https://nodejs.org/dist/v15.4.0/node-v15.4.0-win-x64.zip"; `
      Expand-Archive nodejs.zip -DestinationPath C:\; `
-     Rename-Item "C:\\node-v8.17.0-win-x64" c:\nodejs
+     Rename-Item "C:\\node-v15.4.0-win-x64" c:\nodejs
 
  RUN SETX PATH C:\nodejs
  RUN npm config set registry https://registry.npmjs.org/
@@ -39,19 +39,15 @@ FROM ${BUILD_IMAGE} AS builder
  RUN Invoke-Expression 'robocopy C:\build\src C:\out\transforms /s /ndl /njh /njs *.xdt'
 
 # # Build website with file publish
- #RUN msbuild .\src\website\website\helixbase.Website.csproj /p:DeployHelix=true /p:PublishProfile=DockerBuild.pubxml /t:Restore,Build /p:Configuration=Debug
+
 RUN msbuild .\src\Healthcheck.Service\Healthcheck.Service.csproj  /t:Restore,Build /p:PublishProfile=DockerBuild /p:DeployOnBuild=True
-# # Build XConnect with file publish
-# RUN msbuild .\src\DockerExamples.XConnect\DockerExamples.XConnect.csproj /p:Configuration=$env:BUILD_CONFIGURATION /p:DeployOnBuild=True /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:PublishUrl=C:\out\xconnect
 
 # Create build directory for speak
 WORKDIR C:\build_speak
 COPY src\Healthcheck.Client\ .\
 RUN npm install
-RUN npm run deploy
-
-
-
+RUN npm run build
+RUN npm run toaspx
  FROM ${BASE_IMAGE}
 
  
@@ -59,11 +55,10 @@ RUN npm run deploy
 
  # Copy final build artifacts
  COPY --from=builder C:\out\website .\website\
- ## COPY --from=builder C:\build .\build\
  COPY --from=builder C:\out\transforms .\transforms\
 
- COPY --from=builder C:\out\speakapp .\speakapp\
-# COPY --from=builder C:\out\xconnect .\xconnect\
+ COPY --from=builder C:\build_speak\build .\speakapp\sitecore\shell\client\applications\healthcheck\
+
 
 
 
