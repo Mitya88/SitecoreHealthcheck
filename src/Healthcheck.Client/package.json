@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "toaspx":"@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./toaspx.ps1"
+    "toaspx": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./toaspx.ps1"
   },
   "eslintConfig": {
     "extends": [

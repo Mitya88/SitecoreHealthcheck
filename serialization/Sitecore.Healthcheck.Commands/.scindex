@@ -1,19 +1,19 @@
 ﻿# Do not commit this file to source control or modify it. It is safe to delete; it will recreate itself.
 ---
 File: |
-  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Commands\Healthcheck.yml
-ID: "7af17cfa-bd00-4579-95d9-6b3161aaa27c"
-Parent: "3ebec263-b57e-4a3c-a232-7c70519f9908"
-Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: /sitecore/system/Tasks/Commands/Healthcheck
-Signature: 7Zy5mlYxcSQWhFQWYs2d+BUCV+ZFMf1MntZJMDK7lUU=
-Modified: 637481288149835835
----
-File: |
   C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Commands\Healthcheck\Healthcheck Update Command.yml
 ID: "fbf35846-2b9c-4780-8f33-fbb33272c6e5"
 Parent: "7af17cfa-bd00-4579-95d9-6b3161aaa27c"
 Template: "58119a3e-560e-4da6-97c6-1ace8a5b1219"
 Path: /sitecore/system/Tasks/Commands/Healthcheck/Healthcheck Update Command
 Signature: YKNzlrnB+WAmQT/0lWIjPPvRNYq7LqxlmPQ4bKI6I28=
-Modified: 637481288149845840
+Modified: 637481330905111192
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Commands\Healthcheck.yml
+ID: "7af17cfa-bd00-4579-95d9-6b3161aaa27c"
+Parent: "3ebec263-b57e-4a3c-a232-7c70519f9908"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Tasks/Commands/Healthcheck
+Signature: 7Zy5mlYxcSQWhFQWYs2d+BUCV+ZFMf1MntZJMDK7lUU=
+Modified: 637481330905131182
