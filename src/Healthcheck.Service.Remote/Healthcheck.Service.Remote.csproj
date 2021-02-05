@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyResolver.cs" />
     <Compile Include="DI\RegisterContainerCM.cs" />
     <Compile Include="DI\RegisterContainerCD.cs" />
     <Compile Include="InitializeQueueClient.cs" />
