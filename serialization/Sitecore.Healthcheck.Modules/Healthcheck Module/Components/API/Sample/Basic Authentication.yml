@@ -1,0 +1,33 @@
+﻿---
+ID: "49a4c828-b3b5-4e09-8ea3-0741f3bd3d83"
+Parent: "f786904f-800d-4078-a337-e3095ee2b221"
+Template: "ae017bda-d227-4e85-82ef-8ae548612794"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/API/Sample/Basic Authentication
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200407T121648Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d9d42289-2e53-492e-9d38-5b5d6c66b287"
+    - ID: "abe1d1a9-dd63-43ce-bf18-cbcb68ce44f7"
+      Hint: Username
+      Value: postman
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131954Z
+    - ID: "deaba474-5ae7-4cc3-8f56-4af2cbeec238"
+      Hint: Password
+      Value: password

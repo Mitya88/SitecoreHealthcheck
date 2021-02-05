@@ -1,0 +1,40 @@
+﻿---
+ID: "6be413da-b2d3-4327-87c3-1de9213f2b17"
+Parent: "4dac9b7c-6b33-4ad0-95e8-52a8c4903bb2"
+Template: "a64f4366-3d8b-4ec5-9417-f44ac6030951"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Xdb/XConnect Marketing Automation
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200709T183436Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20210205T132045
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[{"Reason":"Missing service name value","Created":"2021-02-05T13:20:32.9101679Z","Exception":null},{"Reason":"Missing service name value","Created":"2021-02-05T13:20:45.503015Z","Exception":null}]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ec6e371e-b53c-4bd5-a0ca-760bfa718131"
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: The  service is running
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Warning
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T132045Z

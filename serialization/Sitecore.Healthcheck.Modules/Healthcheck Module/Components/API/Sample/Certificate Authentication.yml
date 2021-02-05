@@ -1,0 +1,27 @@
+﻿---
+ID: "89dba3cc-6453-4e0e-9e47-267cb59ef874"
+Parent: "f786904f-800d-4078-a337-e3095ee2b221"
+Template: "11dab743-cc98-4065-90ac-6492b37b6168"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/API/Sample/Certificate Authentication
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200505T090456Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "768e3c5d-4757-4574-9b7f-a7fb1507dba4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131954Z

@@ -1,0 +1,50 @@
+﻿---
+ID: "d5a54069-e0e1-476d-b9aa-e41ffa89bf1e"
+Parent: "009c1a58-6b72-4f4f-805b-814dd9c896e5"
+Template: "0808ad04-66fc-4839-ac86-6f8f58fcfcfb"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Search Indexes/Sample Search Check
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "211e0840-e7f1-4659-a67b-9d9ddb221f9a"
+      Hint: Custom Query
+      Value: |
+        +number_of_days_to_check_t:3;+file_name_format_t:"Crawling.log.*.txt"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200415T132400Z
+    - ID: "2e10fa79-a541-4b8b-88bb-3b4680fa845d"
+      Hint: Indexname
+      Value: sitecore_master_index
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20210205T132045
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2021-02-05T13:20:34.0039271Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2021-02-05T13:20:45.846754Z","Exception":null}]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8425428f-7f30-47f0-a928-01d02faabb19"
+      Hint: Minimum Expected Documents Count
+      Value: 1
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "99ea9f76-76e3-4cc5-97eb-2c912434fca1"
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: Search index contain no errors
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Error
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T132045Z

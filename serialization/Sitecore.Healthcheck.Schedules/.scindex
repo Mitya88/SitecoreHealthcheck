@@ -1,0 +1,28 @@
+﻿# Do not commit this file to source control or modify it. It is safe to delete; it will recreate itself.
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Schedules\Healthcheck\Configured Healthcheck Update Task.yml
+ID: "25ab84dd-14c2-46e8-800b-c44ec2c83fb8"
+Parent: "703105dc-3a93-4628-8369-f03ac1e17206"
+Template: "70244923-fa84-477c-8cbd-62f39642c42b"
+Path: /sitecore/system/Tasks/Schedules/Healthcheck/Configured Healthcheck Update Task
+Signature: MRFVhvj9CTpKGPLUtAD8bCSfpVXh0+9nZeWcBHiyfcI=
+Modified: 637481288149865829
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Schedules\Healthcheck.yml
+ID: "703105dc-3a93-4628-8369-f03ac1e17206"
+Parent: "a705d262-5714-4880-9962-051e25f1416d"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Tasks/Schedules/Healthcheck
+Signature: 7Zy5mlYxcSQWhFQWYs2d+BUCV+ZFMf1MntZJMDK7lUU=
+Modified: 637481288149855846
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Schedules\Healthcheck\Healthcheck Update Task.yml
+ID: "529eb2d5-436d-4095-946b-bf82c844a974"
+Parent: "703105dc-3a93-4628-8369-f03ac1e17206"
+Template: "70244923-fa84-477c-8cbd-62f39642c42b"
+Path: /sitecore/system/Tasks/Schedules/Healthcheck/Healthcheck Update Task
+Signature: uXvlD8ydBHgFahavR9KYL/QCpBiwnoD7gLKAecyPcjE=
+Modified: 637481288150025821

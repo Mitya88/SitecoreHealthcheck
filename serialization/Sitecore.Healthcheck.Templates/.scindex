@@ -1,0 +1,1324 @@
+﻿# Do not commit this file to source control or modify it. It is safe to delete; it will recreate itself.
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Lookup.yml
+ID: "3308e120-ad83-463d-b3db-56d0f1703242"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Lookup
+Signature: U/ydiYBaGnEAZYA2pTLa6Cqu70ZrFj+fSHmtkt5cscM=
+Modified: 637481288145935834
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication.yml
+ID: "3665cb86-4a00-4495-9a44-3ef7e3273beb"
+Parent: "56fb55c8-8ccb-4d2c-ae68-ab14f06ae816"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication
+Signature: UbaTwc0KEFIEKtRZRBc4W1DSEvQOcJ9uv15iafjOBYc=
+Modified: 637481288145985842
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Group\__Standard Values.yml
+ID: "58969bf1-f662-49b1-8018-8064afa76c8c"
+Parent: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Template: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Group/__Standard Values
+Signature: yOVmXI4jEgiaWNudQ8NnryhvpXleEhSERnL+yDKioXY=
+Modified: 637481288146015828
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check.yml
+ID: "5762db9b-abdf-42e6-8747-681ce2e09573"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check
+Signature: o9mOFnXsdC+PvwhrIb2WrvZCWqsJP4JHPIZWtQqC46c=
+Modified: 637481288146045844
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Item Check.yml
+ID: "c2b000ab-7bbc-41e4-93a9-8730bbd99d90"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Item Check
+Signature: Gh+xaw4XYv/FHq3/9kKisePH1qWnT+ZyZmxEAOcrShE=
+Modified: 637481288146075854
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings.yml
+ID: "f998eead-9468-486d-87d7-e6104a22d287"
+Parent: "f58502e1-19ec-49e4-a19e-55f99beab821"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings
+Signature: jTbHd6CEhncOc+7i5d1k+q4CaVqs0IRkX5CkQRUULQM=
+Modified: 637481288146195860
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Basic Authentication\Configuration.yml
+ID: "cbb5619d-24a3-49f4-9221-9b5a6b8a34bd"
+Parent: "ae017bda-d227-4e85-82ef-8ae548612794"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Basic Authentication/Configuration
+Signature: MREQXPcF1wJytU7eFmvLFym/F9Mog3Dufdh5hYA0TkA=
+Modified: 637481288146265835
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\Data\Healthy Message.yml
+ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+Parent: "81235bfb-665c-4c76-aeb2-1659138fc261"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/Data/Healthy Message
+Signature: 2btWnSeP07rPD0J2p8CgYsPKXLTQ4bOW7erZOadfGpo=
+Modified: 637481288146555840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration.yml
+ID: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Parent: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration
+Signature: tIGQXqVzRhVTbTi9KbDqWrMDPsPUlKfVVoJtfWGPxfM=
+Modified: 637481288146695852
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Custom Healthcheck\Configuration.yml
+ID: "251f8b20-a244-4560-b553-121aa0517d0b"
+Parent: "f216e7c7-e9a4-4b24-99c7-07bf6729b085"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Custom Healthcheck/Configuration
+Signature: 4l04CfdATo7Mo+4jHdnqecqoYNxVMszFDqWCI6kJgrA=
+Modified: 637481288146745848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\LocalDisk Space Check\Configuration.yml
+ID: "81c1756c-ebdf-452f-989c-548607f718ff"
+Parent: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/Configuration
+Signature: 3EJ29+zjIptNNwbhu7nFeELRKV/8fmULiojXqnDnz2s=
+Modified: 637481288146785848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Application Insights Check\Configuration.yml
+ID: "0c986164-b99c-4820-9de9-4ade8ab52006"
+Parent: "591a1db4-6da9-4868-bc9d-e044c3fbd759"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Application Insights Check/Configuration
+Signature: pSe9N5VJ3OnuJIkGSBWma2kri4T29VXItaVppft0584=
+Modified: 637481288146725846
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\XConnectAPI Check\__Standard Values.yml
+ID: "65466af7-522e-4b79-8761-f354132009f7"
+Parent: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Template: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check/__Standard Values
+Signature: xmHCiMj9RfacIVKPIBcvNpkZKc9SF8LVxWcTpMmuY4k=
+Modified: 637481303019139645
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\SPE Check\Configuration.yml
+ID: "f3fc0654-5eef-412b-92c0-b667b0021e3d"
+Parent: "a45160d9-bd69-464d-8512-303b598b9605"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/SPE Check/Configuration
+Signature: asR9MJ5nFvy8DzC8y5/cwIDQkZHg4PyCj/Jf8Q85lFw=
+Modified: 637481288147935836
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote API Healthcheck.yml
+ID: "36f33b5d-08ae-4e53-bfaa-8154ac126c16"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote API Healthcheck
+Signature: mgO+spMjX4359gk4slpPPJzD9oQxS7VpO2yi0Iy1BsU=
+Modified: 637481288147905848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\LocalDisk Space Check\Configuration\WarningPercentageThreshold.yml
+ID: "56d91857-4715-46ae-a7a3-2395f6f939eb"
+Parent: "81c1756c-ebdf-452f-989c-548607f718ff"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/Configuration/WarningPercentageThreshold
+Signature: 0E3r4igEiZuqDS5lr+3IowrbD+qd7u7ZErpKmNx8ytg=
+Modified: 637481288148405834
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Certificate Authentication\Configuration\FindByType.yml
+ID: "789cc52d-9e42-450b-9e34-955916301f82"
+Parent: "8163c443-1ff4-4634-9ffc-e4cc8690b63c"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Certificate Authentication/Configuration/FindByType
+Signature: 8Egaz/9IkIDOx4HnQMwz8TQxSWttrAKyh5WAzr28MMo=
+Modified: 637481288148125837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Custom Healthcheck.yml
+ID: "1b8301fe-1971-41ae-87e3-dbb217b908cb"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Custom Healthcheck
+Signature: WrXyeUjdxS5/T2fhhE3GdL+FELUJMSGdGssKAU6IChU=
+Modified: 637481288147835830
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Certificate Authentication\Configuration\Location.yml
+ID: "328181ad-f66a-47d2-97c3-85f1d18c291e"
+Parent: "8163c443-1ff4-4634-9ffc-e4cc8690b63c"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Certificate Authentication/Configuration/Location
+Signature: jRO+KHVa6tiF0ddExzvr6GWbjSFJFs83gMgSxjWPnT8=
+Modified: 637481288148115840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Database Healthcheck.yml
+ID: "cf3a0ea4-1e3a-40fb-bc85-742eef162e78"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Database Healthcheck
+Signature: +TbGcJkKKhOOWCDbH67w9ky4cb+HcaX+uMo0wpqR6sM=
+Modified: 637481288147915837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Certificate Authentication\Configuration\Value.yml
+ID: "b3bc5a6e-fb73-41ef-9040-78e72114f811"
+Parent: "8163c443-1ff4-4634-9ffc-e4cc8690b63c"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Certificate Authentication/Configuration/Value
+Signature: lwx9XnjB+plhNh20839ikyB6DNfmjRdnxgHMrkd8qX8=
+Modified: 637481288148125837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\XConnectAPI Check\Configuration.yml
+ID: "4040954e-2135-4b63-88a4-729c5cbb2648"
+Parent: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check/Configuration
+Signature: 1VwwictFECTarBFuNge2uh+aLvouHPJCe5JyPCDXONU=
+Modified: 637481288147965832
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication\Configuration\Generate Token URL.yml
+ID: "52c573c6-b7dc-44a1-858f-cc7ff8c71832"
+Parent: "64da7656-310b-425e-ad5e-e5d42681646d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication/Configuration/Generate Token URL
+Signature: AQrgLWC/uj5j0zkyhLOujzmwhPUeIB3QzBNAFwFHAsU=
+Modified: 637481288148155842
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Data\Days.yml
+ID: "5890d553-86ed-4297-bbc8-3f89a0c42a95"
+Parent: "3d837675-bce0-43c2-9df4-bdb63ff47a8d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Data/Days
+Signature: JgurZCvM3GS2eGKg68PlRbOAgbgvcFCWoGkyAIH8bM4=
+Modified: 637481288148005821
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication\Configuration\Method.yml
+ID: "0aabbfce-c457-4002-8f3f-3a107497a48f"
+Parent: "64da7656-310b-425e-ad5e-e5d42681646d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication/Configuration/Method
+Signature: Dzul841c5xeglhTqAd8XaDCOTpf0qFUJPlx+QyqOMlY=
+Modified: 637481288148165880
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings\Body.yml
+ID: "bacbd21d-f5a7-49ed-8fb7-09c312297516"
+Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Body
+Signature: oIXDVMqPnVLVUBKHtCi1Bw4KzHJS3fxB1MV9ZL7e4fo=
+Modified: 637481288148045848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication\Configuration\Password.yml
+ID: "2729a134-d54a-493c-9ad9-88c00a2619f0"
+Parent: "64da7656-310b-425e-ad5e-e5d42681646d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication/Configuration/Password
+Signature: 1IO7/Qi4WMKLeQ4ctOpANHfAB60hz+rvPKcPjGzI8rA=
+Modified: 637481288148145850
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings\Sender Email.yml
+ID: "87e5dbf7-db41-4d25-89dc-826b099d391c"
+Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Sender Email
+Signature: rVJDArkeA4o3HMf2M6g/laSXKNK6h1nO1Q6k/tMqPWg=
+Modified: 637481288148025827
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication\Configuration\Token.yml
+ID: "9b88ba88-3eff-4e7f-9e16-a06ee1cdc793"
+Parent: "64da7656-310b-425e-ad5e-e5d42681646d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication/Configuration/Token
+Signature: 1Gsh6w7Mwzu4KK0BpnMvdnaARWnWFrcIXxOMz5WnwhA=
+Modified: 637481288148185847
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings\Sender Name.yml
+ID: "66f6c01c-fa3e-4f89-9b00-a2b9c3d62f70"
+Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Sender Name
+Signature: uiIkLcJDJf92VtDGpM9MGYltIbw6rnMCGL7iQLf2i4Y=
+Modified: 637481288148015826
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration\API Url.yml
+ID: "5f1dc678-41b9-40dd-b3af-a71d8db3b612"
+Parent: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration/API Url
+Signature: AKIHMVawMX7NA8o3xW+mYp/gunNEqIHD59IlZcdjxKo=
+Modified: 637481288148195875
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings\Subject.yml
+ID: "84b70fb0-87b7-4892-b8d4-9a7f96f53593"
+Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Subject
+Signature: wKivjBKPC4jCbI/1ex3pNy5CFlF8FC+eaSTa26gGVmQ=
+Modified: 637481288148035827
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration\Expected Response Body.yml
+ID: "69ba1b83-0aa0-4298-b3b2-039f3e64fbb0"
+Parent: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration/Expected Response Body
+Signature: uCpGpt4ybKZ+KUGDkjPFmeNWB311HXgqOR5X271v32k=
+Modified: 637481288148225841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Base\Remote\Remote Check Started.yml
+ID: "b1327643-8f5e-445f-83e4-ab43932889bc"
+Parent: "ab5bc0e2-5359-4c07-b25e-715b7f89bdfc"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Base/Remote/Remote Check Started
+Signature: 15STkqf6V8slKy6SYT2a2VQSxIzj8ZZjaKK2539ZL+8=
+Modified: 637481288148055824
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration\Post Body.yml
+ID: "155c02f4-b2b9-4d10-87bb-873b4d595cb9"
+Parent: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration/Post Body
+Signature: XDyxMSgjfvEIZSVkXiK1o5bDuwPLyf/1N/scKZtadYY=
+Modified: 637481288148235842
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Application Insights Check\Configuration\Number of Days to Check.yml
+ID: "389e325c-9848-4811-b770-d701bcff2cf7"
+Parent: "0c986164-b99c-4820-9de9-4ade8ab52006"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Application Insights Check/Configuration/Number of Days to Check
+Signature: bM7HkIKSJXDgJLDwjRWMTzYtq12rgTj+e0NpZMzGOfo=
+Modified: 637481288148265863
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration\Request Headers.yml
+ID: "dda84c75-5e8d-407f-a3a9-d8bd56a5c9fd"
+Parent: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration/Request Headers
+Signature: l/WMt78itWEmFKllhpKXktcpAMP4UZ2vDGvz10n4RmE=
+Modified: 637481288148235842
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check\Configuration\FindByType.yml
+ID: "4072b845-610e-4c7c-9c13-91d1da19713a"
+Parent: "5c618d5f-1a21-42a5-8684-cfa4d87682fb"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check/Configuration/FindByType
+Signature: 2Zzo6ONsbITA/zLqR/pXJJJwADAwKfZ3Yy9D3hG4vGY=
+Modified: 637481288148295839
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check\Configuration\Value.yml
+ID: "5baa8ffe-23cf-470f-9575-f09e3528d26d"
+Parent: "5c618d5f-1a21-42a5-8684-cfa4d87682fb"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check/Configuration/Value
+Signature: /kvlhbwt6d4QUePsirUDdkg71Zk3P/ZhgCRkb0AyeAE=
+Modified: 637481288148305831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check\Configuration\Warn Before.yml
+ID: "b57fde00-b26a-4530-8c4e-a55e01a1f2e0"
+Parent: "5c618d5f-1a21-42a5-8684-cfa4d87682fb"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check/Configuration/Warn Before
+Signature: A5XCCk5mn+cuUJJdlCzr0W74buv5fsMjbkaAHOOH/Hc=
+Modified: 637481288148305831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Custom Healthcheck\Configuration\Parameters.yml
+ID: "2166d39b-633f-4fc8-8384-c7b1ec8d2cea"
+Parent: "251f8b20-a244-4560-b553-121aa0517d0b"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Custom Healthcheck/Configuration/Parameters
+Signature: ojt6wMhlo7LcKlc+/t++C1Haq43XuEBEVA3PRe/VTyc=
+Modified: 637481288148325851
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Custom Healthcheck\Configuration\Type.yml
+ID: "1a38f769-65f0-45e8-aee2-44f3700f4db2"
+Parent: "251f8b20-a244-4560-b553-121aa0517d0b"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Custom Healthcheck/Configuration/Type
+Signature: 9yeEz5lmwNN2VYv/Fs6Ul97FpxHCKh82dwGuWq2r0+I=
+Modified: 637481288148315853
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Windows Service Check\Configuration\Service Name.yml
+ID: "590f1268-3005-43c1-ac6b-4efe83ae306a"
+Parent: "d0e38514-3968-4046-a4f0-cef31db045a5"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Windows Service Check/Configuration/Service Name
+Signature: si9NdFS4yFVESSlCsLIHVlxFLqthDr/okpHSXWnD8NQ=
+Modified: 637481288148595831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\XConnectAPI Check\Configuration\Warn Before.yml
+ID: "462fa288-fce0-4dec-a4bc-5446ca81d40b"
+Parent: "4040954e-2135-4b63-88a4-729c5cbb2648"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check/Configuration/Warn Before
+Signature: dY/ErK132XA3df/+0WQtdO4owgISCCqWQDvoewQLMpI=
+Modified: 637481288148615825
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\XConnectAPI Check\Configuration\XConnect Certificate ConnectionString Key.yml
+ID: "94e6b6bb-4cef-4779-bc92-10bbb6da3f6f"
+Parent: "4040954e-2135-4b63-88a4-729c5cbb2648"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check/Configuration/XConnect Certificate ConnectionString Key
+Signature: KqF7dCPBUfabksQQlkhlBbl3fyTSantyC5vKqAXvsjw=
+Modified: 637481288148615825
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\Data.yml
+ID: "81235bfb-665c-4c76-aeb2-1659138fc261"
+Parent: "6be09644-4de0-4d94-ad61-a7f94a2b440b"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/Data
+Signature: kmvUJG2NhBuLAgR+IUeAzJ/ulhHeXmYOAf5OJo5gIjk=
+Modified: 637481288145995861
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Group\Data.yml
+ID: "e46b22e8-638c-4659-8b6f-6dfe4ea0154d"
+Parent: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Group/Data
+Signature: fS61/BXAdDgIUR6tU79NlBtPQC36pkBIYmc8ss5siPI=
+Modified: 637481288146015828
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck.yml
+ID: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck
+Signature: Y2FqSz59yh32qhDC+xud4oaBHkt5GkajXjr6Kp7gpiM=
+Modified: 637481288146025837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Base\Remote.yml
+ID: "ab5bc0e2-5359-4c07-b25e-715b7f89bdfc"
+Parent: "5a1bedca-2255-4193-9f5a-9a4d726e899e"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Base/Remote
+Signature: kmvUJG2NhBuLAgR+IUeAzJ/ulhHeXmYOAf5OJo5gIjk=
+Modified: 637481288146215827
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Group\Data.yml
+ID: "9bc5f154-eb71-4495-b757-27e3e02adb85"
+Parent: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group/Data
+Signature: fS61/BXAdDgIUR6tU79NlBtPQC36pkBIYmc8ss5siPI=
+Modified: 637481288146245844
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Group\__Standard Values.yml
+ID: "ea847df9-df02-41ee-9490-2c9d37930b50"
+Parent: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Template: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group/__Standard Values
+Signature: fGS+C0J8kmGwX/NYheRwXTruMwxNOQRMM5+2UZM8xcQ=
+Modified: 637481303018639493
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Database Healthcheck\Configuration.yml
+ID: "b283ec0e-0d5d-4939-a450-0af017936f83"
+Parent: "03f72a84-a9bc-4cbd-adda-e9ca8871c22b"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Database Healthcheck/Configuration
+Signature: tIGQXqVzRhVTbTi9KbDqWrMDPsPUlKfVVoJtfWGPxfM=
+Modified: 637481288146755863
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote License Check.yml
+ID: "1f1dfd53-2f82-48e0-906b-3336343ca3f2"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote License Check
+Signature: ImVcDJYkrjlkQG2SbtB44hFu2p9X7neNEE31wuSwLs0=
+Modified: 637481288147845833
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings\Error Level.yml
+ID: "1bf91f7a-573d-43c3-92c3-854c7b1a14a3"
+Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Error Level
+Signature: oTbJfwETx4U95wIQNkwLMaaYsRz/4O0XTliGCExYfe8=
+Modified: 637481288148055824
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Mail Settings\Recipient Emails.yml
+ID: "4862d741-4843-4728-8d6d-48576c0855a7"
+Parent: "f998eead-9468-486d-87d7-e6104a22d287"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Mail Settings/Recipient Emails
+Signature: yST+iDxrbnEfXEZ060Av206/OQlrRY/hb89OBnQiOUA=
+Modified: 637481288148025827
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration\Expected Response Code.yml
+ID: "244f889d-68af-41e3-b58d-1b191eb85e2c"
+Parent: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration/Expected Response Code
+Signature: QAK6V6dw1OFX0fvpSvoiT/OUmMqSBBOZ4pQ+o1Lxhk4=
+Modified: 637481288148215832
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\Configuration\Method.yml
+ID: "cddface5-85e5-41ca-99ce-7ed5c4bb61c1"
+Parent: "6aa2e403-aa8f-4a62-a4bb-2fc9497b62c1"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/Configuration/Method
+Signature: YhjaKEkHqmKUjULjXX/9K66w/CoBNffsGFSlocrZrGY=
+Modified: 637481288148205830
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Application Insights Check\Configuration\API Key.yml
+ID: "5554d3ec-02c4-4b41-bdd6-61d2f349831e"
+Parent: "0c986164-b99c-4820-9de9-4ade8ab52006"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Application Insights Check/Configuration/API Key
+Signature: BwqW/tP3+iTIv14OsKzudSZHJ2breNprAYTCFRPqmD4=
+Modified: 637481288148255828
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Application Insights Check\Configuration\Application ID.yml
+ID: "4fda6492-d596-470f-8b65-8f608075381e"
+Parent: "0c986164-b99c-4820-9de9-4ade8ab52006"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Application Insights Check/Configuration/Application ID
+Signature: 3bPGXRUuuRdFJZ6nFMcNACdsr+4OT+o9rBAp7iEeYUs=
+Modified: 637481288148245837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components.yml
+ID: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/User Defined/Healthcheck/Components
+Signature: k9Ec5zQl6Fh95kd9QBDnThEIcLbbaDhT5XoatoUZtaM=
+Modified: 637481288145935834
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Application Insights Check.yml
+ID: "591a1db4-6da9-4868-bc9d-e044c3fbd759"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Application Insights Check
+Signature: zABeroDMv8g1UNeNkmLaO5UsdPbpt4D4gMtc9aloM1Q=
+Modified: 637481288146035871
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck.yml
+ID: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Parent: "b29ee504-861c-492f-95a3-0d890b6fca09"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/User Defined/Healthcheck
+Signature: eH313DFgnBGQZahp+VeevZZUsRaHEISHbg63aMUC4rQ=
+Modified: 637481288145895833
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Base\__Standard Values.yml
+ID: "e0a843f7-0e51-46f4-aec3-4a81ae0e8020"
+Parent: "5a1bedca-2255-4193-9f5a-9a4d726e899e"
+Template: "5a1bedca-2255-4193-9f5a-9a4d726e899e"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Base/__Standard Values
+Signature: XfLJiLtDHS30rV40Q7+xGNP8fdIf6buYdHHRT342Cr4=
+Modified: 637481288146225843
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes.yml
+ID: "56fb55c8-8ccb-4d2c-ae68-ab14f06ae816"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes
+Signature: FcYkNgIHHVler/YHQduArmXePyvPIW5s/klxwwKRLl8=
+Modified: 637481288145905838
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings.yml
+ID: "f58502e1-19ec-49e4-a19e-55f99beab821"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings
+Signature: QkLrafrvS3HCgeZ3hKyE5FYg//wQb5JfJoluTLZpZf0=
+Modified: 637481288145945847
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check\Configuration.yml
+ID: "5c618d5f-1a21-42a5-8684-cfa4d87682fb"
+Parent: "5762db9b-abdf-42e6-8747-681ce2e09573"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check/Configuration
+Signature: NinVDQ0R/BEfdDoECgO3eyp1WkyqV2rB/FoGl4yrxwM=
+Modified: 637481288146735869
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base.yml
+ID: "6be09644-4de0-4d94-ad61-a7f94a2b440b"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base
+Signature: QRDmJjQ2FRR2lzYRjzN95fZSF9i7FPrkHfzuQUbBKzw=
+Modified: 637481288145915827
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\HealthcheckModule.yml
+ID: "8e19ba5f-b802-4400-9e1c-5e07ee97dae3"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/HealthcheckModule
+Signature: OSvWJcaUrrs+6fviDnFkrZ5ffO0iLcsKNGF/fNRtUeE=
+Modified: 637481288145945847
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Certificate Check.yml
+ID: "347b8abf-325d-42d0-9ae3-6b2df204e510"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Certificate Check
+Signature: gAW6dLwL/OlgTZN6brm3TKyFPTmH2q0O/hLJ5VmH4Zw=
+Modified: 637481288147745822
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\__Standard Values.yml
+ID: "245a4832-f576-44d0-9670-973a4797d8cb"
+Parent: "6be09644-4de0-4d94-ad61-a7f94a2b440b"
+Template: "6be09644-4de0-4d94-ad61-a7f94a2b440b"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/__Standard Values
+Signature: Xo+dwIzbAx6Nev6fCNkEqvnbbNUJ1aR2MEQW2B+D89U=
+Modified: 637481288146005850
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Base.yml
+ID: "5a1bedca-2255-4193-9f5a-9a4d726e899e"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Base
+Signature: aluFxaHUXWL5uJParB6vvaIzZEOUIKCfno8TQF8v8zg=
+Modified: 637481288145955848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Disk Space Check.yml
+ID: "95b37919-cbf9-47f4-b0e7-f3d194a80b4b"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Disk Space Check
+Signature: q4yac9DhK+18CE0P9PTtggP7iv206QRYLjSOkU5/3Dg=
+Modified: 637481288147895829
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\KeepAlive Check.yml
+ID: "a1efbb73-039a-415b-8755-b2e93aff1d60"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/KeepAlive Check
+Signature: TgjxHKI97VDOeOd9k+F8YdVkTSSty1CzcgF/Kl3JQPQ=
+Modified: 637481288146085865
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Group.yml
+ID: "646a8437-1d92-49e1-afd0-a6f00fe583c1"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group
+Signature: wb4A9FmvkfYDQEHYtfbHr0+faBHj9N+mlEts5RZPu0w=
+Modified: 637481288145965841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Log File Check.yml
+ID: "d9af243c-7a27-47fc-945f-d1c321fac343"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Log File Check
+Signature: H3PbeqWr1c8NV87UECd2gFhPRVn66u1UnY1DfMrfJLE=
+Modified: 637481288147755848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\License Check.yml
+ID: "5c879c2d-6e9a-480c-8a8a-19bb26ac0257"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/License Check
+Signature: 60F3itq9rBQW+DJj9SBNpqCbF3OWjD77BpB5c/DHYs4=
+Modified: 637481288146092840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Basic Authentication.yml
+ID: "ae017bda-d227-4e85-82ef-8ae548612794"
+Parent: "56fb55c8-8ccb-4d2c-ae68-ab14f06ae816"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Basic Authentication
+Signature: UbaTwc0KEFIEKtRZRBc4W1DSEvQOcJ9uv15iafjOBYc=
+Modified: 637481288145975861
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Windows Service Check.yml
+ID: "eea81b7a-c702-410d-9716-443721d09760"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Windows Service Check
+Signature: xWhjKVk0hw00CcjJXYRIqDI9aHyg2JlmYz2DDIYGyac=
+Modified: 637481288147915837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\LocalDisk Space Check.yml
+ID: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check
+Signature: NQ+eFyXFNL83gkE524Srkr7JCd6uXKPT7FEQfCZ+3NE=
+Modified: 637481288146095863
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Custom Healthcheck.yml
+ID: "f216e7c7-e9a4-4b24-99c7-07bf6729b085"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Custom Healthcheck
+Signature: 0OQcTaCovy+tlLivRESS7Lz7qtuXg/unFb9g8PbuMpk=
+Modified: 637481288146055877
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote XConnectAPI Check.yml
+ID: "e1f493cd-feff-4809-84e7-469870ba1ab2"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote XConnectAPI Check
+Signature: HP5mn7hQZsZYiYDUhEcgi85T40RsFTZtyslVyz0yrLM=
+Modified: 637481288147775840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Log File Check.yml
+ID: "647ece63-2bd1-4682-a302-90920cb85159"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Log File Check
+Signature: IEZIrGsYX2BVA4OWvqBmNzAXzDH8XnIoEr8l4hANv3o=
+Modified: 637481288146105835
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Windows Service Check.yml
+ID: "a64f4366-3d8b-4ec5-9417-f44ac6030951"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Windows Service Check
+Signature: BN5jnh1mG1Mm6IGEpH+atn4w5mVm8imslfPs8eVesvQ=
+Modified: 637481288146145864
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Search Healthcheck\Configuration.yml
+ID: "a9613eea-8c2f-4cb2-bd5d-465d3bcfa30a"
+Parent: "0808ad04-66fc-4839-ac86-6f8f58fcfcfb"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Search Healthcheck/Configuration
+Signature: ucfmbjGAj4FEwR5fZYUOxY+zdfaTK3UmSQYY1OSbTQ8=
+Modified: 637481288147925842
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Queue Check.yml
+ID: "72bf1985-2340-467e-a687-833e8b2e6fe5"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Queue Check
+Signature: XGtIppDeTUy25+krtx4pXQ3Ull+H+WO/mFq367Ub0YE=
+Modified: 637481288146115852
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\Data\Error Messages.yml
+ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+Parent: "81235bfb-665c-4c76-aeb2-1659138fc261"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/Data/Error Messages
+Signature: QY5tX155OCY2X6E2XLx7a8hBZ/05mcMIX5wuas0akQE=
+Modified: 637481288146545831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Basic Authentication\Configuration\Password.yml
+ID: "deaba474-5ae7-4cc3-8f56-4af2cbeec238"
+Parent: "cbb5619d-24a3-49f4-9221-9b5a6b8a34bd"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Basic Authentication/Configuration/Password
+Signature: 1IO7/Qi4WMKLeQ4ctOpANHfAB60hz+rvPKcPjGzI8rA=
+Modified: 637481288148095843
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components.yml
+ID: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components
+Signature: NfJ+WN9v4AIMURGbNQVUYScay/8zhLQuqk/gKTGE7BY=
+Modified: 637481288146125849
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\Data\Last Check Time.yml
+ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+Parent: "81235bfb-665c-4c76-aeb2-1659138fc261"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/Data/Last Check Time
+Signature: /aP9xwH0PEqM5hZPQE/Kqu5uUMcrQT3iRhNHkTaJPfU=
+Modified: 637481288146535848
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Basic Authentication\Configuration\Username.yml
+ID: "abe1d1a9-dd63-43ce-bf18-cbcb68ce44f7"
+Parent: "cbb5619d-24a3-49f4-9221-9b5a6b8a34bd"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Basic Authentication/Configuration/Username
+Signature: rL5/bCSLCftjhtbRehGBDTZE8F8BPhOn0o43bsl7Hgw=
+Modified: 637481288148085831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Search Healthcheck.yml
+ID: "0808ad04-66fc-4839-ac86-6f8f58fcfcfb"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Search Healthcheck
+Signature: WYvc+z5C8Qwnj1M0Yr+FkyVugEjvoca5Q1TWEEAepVA=
+Modified: 637481288146125849
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\Data\Name.yml
+ID: "11c04d55-70fc-4e03-b6a5-0229811ada44"
+Parent: "81235bfb-665c-4c76-aeb2-1659138fc261"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/Data/Name
+Signature: fjKBNC3kIKk7KrxHvCx4RvALE90QH9BgxU49QcjcVIU=
+Modified: 637481288146315835
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Search Healthcheck\Configuration\Custom Query.yml
+ID: "211e0840-e7f1-4659-a67b-9d9ddb221f9a"
+Parent: "a9613eea-8c2f-4cb2-bd5d-465d3bcfa30a"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Search Healthcheck/Configuration/Custom Query
+Signature: /zLqvkOSWbJuW1pgaGB6hUI7kfASHU/1uuMCAARaWnE=
+Modified: 637481288148535856
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\SPE Check.yml
+ID: "a45160d9-bd69-464d-8512-303b598b9605"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/SPE Check
+Signature: XJOpr9w67OXBnISuCOw7tAm+M1Oi+JRdh5L0RNxWRs4=
+Modified: 637481288146135866
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Base\Data\Status.yml
+ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+Parent: "81235bfb-665c-4c76-aeb2-1659138fc261"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/Data/Status
+Signature: iwHY6UpEsWKryIhojtBLE/kvbhbTqb7HE1YOzHNQy44=
+Modified: 637481288146525828
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Search Healthcheck\Configuration\Indexname.yml
+ID: "2e10fa79-a541-4b8b-88bb-3b4680fa845d"
+Parent: "a9613eea-8c2f-4cb2-bd5d-465d3bcfa30a"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Search Healthcheck/Configuration/Indexname
+Signature: tsuBZiOOucUgyXAvHR8B5VtH8A50NXsGFo0DPA36Wkg=
+Modified: 637481288148525841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Web Job Check.yml
+ID: "7eeb1fb3-6a23-46cb-9d43-8919bf4a7bfb"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Web Job Check
+Signature: OS9Ocd2kpzqgDUr03tuaNRNN0GUUjFzjM3qiv6v9qoc=
+Modified: 637481288146145864
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Group\Data\Name.yml
+ID: "0d5613ef-81f3-433f-9957-e35f4fade6f7"
+Parent: "e46b22e8-638c-4659-8b6f-6dfe4ea0154d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Group/Data/Name
+Signature: J5UC4Tz9DqqdPSgYYoEfXckX/viW1XcGiqCmaaxrTCM=
+Modified: 637481288146685841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Search Healthcheck\Configuration\Minimum Expected Documents Count.yml
+ID: "8425428f-7f30-47f0-a928-01d02faabb19"
+Parent: "a9613eea-8c2f-4cb2-bd5d-465d3bcfa30a"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Search Healthcheck/Configuration/Minimum Expected Documents Count
+Signature: XRL0ZXIEzijwurlfr18AIsmzUEy5KYlI8VCONGNxoG8=
+Modified: 637481288148525841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Certificate Authentication\Configuration.yml
+ID: "8163c443-1ff4-4634-9ffc-e4cc8690b63c"
+Parent: "11dab743-cc98-4065-90ac-6492b37b6168"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Certificate Authentication/Configuration
+Signature: wJsJBtqy0PxRyFMmxYtRXR0dHkELpIKDFwTFoCaTNX0=
+Modified: 637481288146275845
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\LocalDisk Space Check\__Standard Values.yml
+ID: "2332a349-989f-401b-8cf3-9295d2496358"
+Parent: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
+Template: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/__Standard Values
+Signature: dD7Ve6mujs1LXRScBLAWNf0OYp281fFzYV1gN2TOmLk=
+Modified: 637481303019129640
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\SPE Check\Configuration\Parameters.yml
+ID: "3f06c441-b06d-4786-abc2-50764a8a0602"
+Parent: "f3fc0654-5eef-412b-92c0-b667b0021e3d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/SPE Check/Configuration/Parameters
+Signature: DL6+tQor04slt+KRIYvudT48DhKq0iT69Wvf3v9GZ50=
+Modified: 637481288148545853
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication\Configuration.yml
+ID: "64da7656-310b-425e-ad5e-e5d42681646d"
+Parent: "3665cb86-4a00-4495-9a44-3ef7e3273beb"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication/Configuration
+Signature: MREQXPcF1wJytU7eFmvLFym/F9Mog3Dufdh5hYA0TkA=
+Modified: 637481288146305827
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Log File Check\Configuration.yml
+ID: "ea05fc67-e675-4fee-afd9-fcfded6b82e7"
+Parent: "647ece63-2bd1-4682-a302-90920cb85159"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Log File Check/Configuration
+Signature: HfXsQ1/yTf2MTd1ur2teri1cbMpSkUIWfh0dBk8C49k=
+Modified: 637481288147625820
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Item Check\Configuration.yml
+ID: "819960b6-1faa-4924-b2a5-72a018bd43ed"
+Parent: "c2b000ab-7bbc-41e4-93a9-8730bbd99d90"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Item Check/Configuration
+Signature: asR9MJ5nFvy8DzC8y5/cwIDQkZHg4PyCj/Jf8Q85lFw=
+Modified: 637481288146765862
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Windows Service Check\Configuration.yml
+ID: "d0e38514-3968-4046-a4f0-cef31db045a5"
+Parent: "a64f4366-3d8b-4ec5-9417-f44ac6030951"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Windows Service Check/Configuration
+Signature: NibrEcktvk2+4dmgk+BnmqVFDDyA93TH7pcSIOqpMYg=
+Modified: 637481288147955837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\KeepAlive Check\__Standard Values.yml
+ID: "c87e2da8-42f5-4ab4-b721-10ccc3081369"
+Parent: "a1efbb73-039a-415b-8755-b2e93aff1d60"
+Template: "a1efbb73-039a-415b-8755-b2e93aff1d60"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/KeepAlive Check/__Standard Values
+Signature: VE+kQ1VMkfQaE9wdO8ZEvJmEEryzl9LycB9M64ReytM=
+Modified: 637481303019119621
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Windows Service Check\__Standard Values.yml
+ID: "af3e06f2-a56d-4ca2-8142-1453183a573d"
+Parent: "a64f4366-3d8b-4ec5-9417-f44ac6030951"
+Template: "a64f4366-3d8b-4ec5-9417-f44ac6030951"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Windows Service Check/__Standard Values
+Signature: Yw4TMD7zZYIbLN+HPjKrlYJ/xmHxAD1cXralMJVwxIo=
+Modified: 637481288147955837
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Group\Data\Name.yml
+ID: "d681ad34-4b3b-40d1-b65f-c7d044cee130"
+Parent: "9bc5f154-eb71-4495-b757-27e3e02adb85"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group/Data/Name
+Signature: J5UC4Tz9DqqdPSgYYoEfXckX/viW1XcGiqCmaaxrTCM=
+Modified: 637481288148075845
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Item Check\Configuration\Database.yml
+ID: "7609b94f-43ea-40f6-82cf-f9e3b69b5cfd"
+Parent: "819960b6-1faa-4924-b2a5-72a018bd43ed"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Item Check/Configuration/Database
+Signature: eOV+VFCqKZYBh/yEAXxxCr+abWiU1F/up5JtL3I6tUk=
+Modified: 637481288148375850
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Remote Component Group\Data\Target Instance.yml
+ID: "c0971f6a-0521-447c-ae59-f72ac767c4a0"
+Parent: "9bc5f154-eb71-4495-b757-27e3e02adb85"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Group/Data/Target Instance
+Signature: tAjzDmX1P62MHwkmUBmnbjEDgq05QTLBUCv2KDGpn+U=
+Modified: 637481288148075845
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Item Check\Configuration\Item.yml
+ID: "db9bac8f-cd3c-4eef-aa29-5fbce9072b6e"
+Parent: "819960b6-1faa-4924-b2a5-72a018bd43ed"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Item Check/Configuration/Item
+Signature: 0aumZOQVcakXD51WesUqasgb/ZqX8AHb23Xsa84cU3c=
+Modified: 637481288148365853
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check\Configuration\Location.yml
+ID: "50827238-36a4-427e-99da-21ec2a53a52e"
+Parent: "5c618d5f-1a21-42a5-8684-cfa4d87682fb"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check/Configuration/Location
+Signature: RrjZfpZQmkl/X9zlob9FHB5vhq9FMJE1d7pNqZMw49Y=
+Modified: 637481288148285841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Item Check\Configuration\Language.yml
+ID: "a4a0aeba-f78b-45ae-8ea1-47ace70fa6a5"
+Parent: "819960b6-1faa-4924-b2a5-72a018bd43ed"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Item Check/Configuration/Language
+Signature: ojmjtRjUnV4BJfDQmS41NaQJtY2Gv9TW4AkYDwGLSkc=
+Modified: 637481288148365853
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Certificate Check\Configuration\StoreName.yml
+ID: "377a62bf-6533-450b-9cb7-a3cc87145803"
+Parent: "5c618d5f-1a21-42a5-8684-cfa4d87682fb"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Certificate Check/Configuration/StoreName
+Signature: sCrzckxv7p7xr1vH4GvRO9F9vfVdTgq5xli+V1t6Nig=
+Modified: 637481288148275840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\License Check\Configuration\ErrorBefore.yml
+ID: "e694131c-14d8-4507-950c-bf867ced47db"
+Parent: "c178105d-77c7-42cd-9ea5-6d9c63881260"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/License Check/Configuration/ErrorBefore
+Signature: tBK+Y0ZL44NspL8IoO2jBRaxoE006RePmgIqSbP+VfQ=
+Modified: 637481288148395849
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\LocalDisk Space Check\Configuration\DriveName.yml
+ID: "a256ad0e-0773-43ee-9bd1-2d782b9d2ffe"
+Parent: "81c1756c-ebdf-452f-989c-548607f718ff"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/Configuration/DriveName
+Signature: TOW+4FspdemdXVUZuf3gDUDorPoQ3AK3h18votr+c5w=
+Modified: 637481288148415840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\LocalDisk Space Check\Configuration\ErrorPercentageThreshold.yml
+ID: "1490bd14-4411-486e-833e-760ae1606e58"
+Parent: "81c1756c-ebdf-452f-989c-548607f718ff"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/Configuration/ErrorPercentageThreshold
+Signature: /OauoPXbDdaVB8XBvP/17D+S3I2657/wPQqFIeiXAXg=
+Modified: 637481288148415840
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Log File Check\Configuration\File Name Format.yml
+ID: "fd310104-f023-46d3-ba0c-38d9de6bc66f"
+Parent: "ea05fc67-e675-4fee-afd9-fcfded6b82e7"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Log File Check/Configuration/File Name Format
+Signature: fwFgOR+J2r3Rv7+mI250yJeRD/yg3+Vdu42SlGYxOu4=
+Modified: 637481288148425867
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Log File Check\Configuration\Number of Days to Check.yml
+ID: "68fd9461-d993-41ea-8acd-4e241f0d216c"
+Parent: "ea05fc67-e675-4fee-afd9-fcfded6b82e7"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Log File Check/Configuration/Number of Days to Check
+Signature: RWVysH+7ee49auZOs+j6VZWnNngp4Hv0/jzJFzU7MJI=
+Modified: 637481288148435852
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Queue Check\Configuration\Database.yml
+ID: "aa244095-4de8-49bc-8cc9-eeb119141a87"
+Parent: "b63c01c2-7fd1-4551-94d3-4f96403a7505"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Queue Check/Configuration/Database
+Signature: Is3mwUeJHVzC1mMs0ga0nYZPhenyvNdaYO+0a13I9fY=
+Modified: 637481288148445829
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Queue Check\Configuration\Error Count.yml
+ID: "e2eabb7e-0c0c-4cfe-a38b-fccd57041165"
+Parent: "b63c01c2-7fd1-4551-94d3-4f96403a7505"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Queue Check/Configuration/Error Count
+Signature: Cof00gXL+i1HTMWORZ2yOHsa/4K24G0eLScng6hEDvs=
+Modified: 637481288148465828
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Queue Check\Configuration\Table.yml
+ID: "ccff75fe-2aa6-4d89-bf5d-a276176856b4"
+Parent: "b63c01c2-7fd1-4551-94d3-4f96403a7505"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Queue Check/Configuration/Table
+Signature: w+72Oy98tbihDN4jAZtlekBI9ZwzF1h68iIZBDAbaVo=
+Modified: 637481288148455820
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Queue Check\Configuration\Warn Count.yml
+ID: "4e2186ac-3ea9-4875-ba13-b7fd2c384552"
+Parent: "b63c01c2-7fd1-4551-94d3-4f96403a7505"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Queue Check/Configuration/Warn Count
+Signature: z8NE2HAc8uZsVIC3Jdp9TApF6z1IQbXOnfLB5rTyx/o=
+Modified: 637481288148455820
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote API Healthcheck\__Standard Values.yml
+ID: "fb7a6b09-77ae-4686-ae8e-0bf9925b3a11"
+Parent: "36f33b5d-08ae-4e53-bfaa-8154ac126c16"
+Template: "36f33b5d-08ae-4e53-bfaa-8154ac126c16"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote API Healthcheck/__Standard Values
+Signature: RKpyd33RUNSMEuvQjjo2qY/hYWRN1pOxEh2neDxATXg=
+Modified: 637481288148505851
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Disk Space Check\__Standard Values.yml
+ID: "a59397ca-3a75-4bba-9fab-32c411d00ca2"
+Parent: "95b37919-cbf9-47f4-b0e7-f3d194a80b4b"
+Template: "95b37919-cbf9-47f4-b0e7-f3d194a80b4b"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Disk Space Check/__Standard Values
+Signature: BsxGpon0PyUo6PpsFMaJzGeLOIB9Iqx87WiMkyn/OLg=
+Modified: 637481288148485830
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote Windows Service Check\__Standard Values.yml
+ID: "cad90a89-8606-44d3-a968-5023530c4126"
+Parent: "eea81b7a-c702-410d-9716-443721d09760"
+Template: "eea81b7a-c702-410d-9716-443721d09760"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Windows Service Check/__Standard Values
+Signature: S3UR+KMMxBsVKCi5PUvbcneV2XzXb1wN35h1bL+9yU0=
+Modified: 637481288148515834
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Remote Components\Remote XConnectAPI Check\__Standard Values.yml
+ID: "e68e6596-f0e7-47e7-b62d-b946813bde5b"
+Parent: "e1f493cd-feff-4809-84e7-469870ba1ab2"
+Template: "e1f493cd-feff-4809-84e7-469870ba1ab2"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote XConnectAPI Check/__Standard Values
+Signature: Wz3IKwOgGgSOY5a4lEnSfZrUmusU5p0YdSymMbRXS7g=
+Modified: 637481303019279622
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\SPE Check\Configuration\Script Item.yml
+ID: "581c8024-c66b-4464-b4e7-a6af37e55646"
+Parent: "f3fc0654-5eef-412b-92c0-b667b0021e3d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/SPE Check/Configuration/Script Item
+Signature: yXLKoRUWwWKOua/xczDZwDhNRk4DFkW3ldxlFOODMXk=
+Modified: 637481288148545853
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Web Job Check\Configuration\Hook Url.yml
+ID: "d2528a1c-8150-435b-b34e-4ba1409dd181"
+Parent: "4a3d9448-b5e6-4a82-a74c-b2ac379628b0"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Web Job Check/Configuration/Hook Url
+Signature: zCivy8cA82BYehcuPtsWFSWqisNUks25DC2mZVMkh+Q=
+Modified: 637481288148565828
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Web Job Check\Configuration\Password.yml
+ID: "2a8b7727-1551-4ab4-9429-74af4c62a59f"
+Parent: "4a3d9448-b5e6-4a82-a74c-b2ac379628b0"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Web Job Check/Configuration/Password
+Signature: Ym3niCTGazUVS8I1AIxM+HirKm+nZJTrUKPPQpF7/PY=
+Modified: 637481288148575831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Web Job Check\Configuration\User Name.yml
+ID: "e8f3a905-238b-43ca-89ba-2cff9f3a48eb"
+Parent: "4a3d9448-b5e6-4a82-a74c-b2ac379628b0"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Web Job Check/Configuration/User Name
+Signature: 9xxfjMQKGeJ/YaTdqKonKTN2xDMzw15SfDDpl8e/+Iw=
+Modified: 637481288148575831
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Component Group.yml
+ID: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Parent: "d70fb6db-084a-426c-967b-fea5dadb9cfd"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Group
+Signature: H6fzhnnFrqSp4lA98YaPPvB1v0zYW+GrbVhNl1YQKpw=
+Modified: 637481288145925855
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Certificate Authentication.yml
+ID: "11dab743-cc98-4065-90ac-6492b37b6168"
+Parent: "56fb55c8-8ccb-4d2c-ae68-ab14f06ae816"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Certificate Authentication
+Signature: eSeusG3V4Mm+tfvXH43YnQyz0PPc6rvrJx/fhS+Bt0E=
+Modified: 637481288145975861
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\HealthcheckModule\__Standard Values.yml
+ID: "c0c15863-856b-423d-847d-160a0dcebb6a"
+Parent: "8e19ba5f-b802-4400-9e1c-5e07ee97dae3"
+Template: "8e19ba5f-b802-4400-9e1c-5e07ee97dae3"
+Path: /sitecore/templates/User Defined/Healthcheck/HealthcheckModule/__Standard Values
+Signature: 2V2qmtykptTwdkZa2wFVUBlqz5ljZTySzWqv1YCm5t8=
+Modified: 637481288146205864
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Database Healthcheck.yml
+ID: "03f72a84-a9bc-4cbd-adda-e9ca8871c22b"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Database Healthcheck
+Signature: ibNrFdxolECwov+2VAuyj7hSuh4YyNF9DMWMBLkPOCw=
+Modified: 637481288146065886
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\API Healthcheck\__Standard Values.yml
+ID: "8ac9d3f3-cbf2-4efd-a648-24008e2a00d7"
+Parent: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Template: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/__Standard Values
+Signature: 3JYNe5lNaB0TxgZ6e/kC2kbnmlGr/+rA6HQIP3xJGkY=
+Modified: 637481288146705857
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\XConnectAPI Check.yml
+ID: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Parent: "3abed1bc-dfe9-4d39-9373-d33bda37a5d8"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check
+Signature: 4aAyaKV4XTmKYPpkjw1q+Grcd0h86sZmrrfbYOvPeDQ=
+Modified: 637481288146155866
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Queue Check\Configuration.yml
+ID: "b63c01c2-7fd1-4551-94d3-4f96403a7505"
+Parent: "72bf1985-2340-467e-a687-833e8b2e6fe5"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Queue Check/Configuration
+Signature: OnFiPcmOdXmkP07rf6dO1KFwT4rwk2F8NKrVG3FREM0=
+Modified: 637481288147695830
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Healthcheck Settings\Data.yml
+ID: "3d837675-bce0-43c2-9df4-bdb63ff47a8d"
+Parent: "f58502e1-19ec-49e4-a19e-55f99beab821"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Healthcheck Settings/Data
+Signature: F4VqH5c39kIRL2fD/O75VhocROuwdBxEmJ6fm5+rt7o=
+Modified: 637481288146175834
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Web Job Check\Configuration.yml
+ID: "4a3d9448-b5e6-4a82-a74c-b2ac379628b0"
+Parent: "7eeb1fb3-6a23-46cb-9d43-8919bf4a7bfb"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Web Job Check/Configuration
+Signature: 0BotppUjkLYXrY2gvUiGNZhKbdCbBpu54CVxz4Mec+A=
+Modified: 637481288147945838
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\License Check\Configuration.yml
+ID: "c178105d-77c7-42cd-9ea5-6d9c63881260"
+Parent: "5c879c2d-6e9a-480c-8a8a-19bb26ac0257"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/License Check/Configuration
+Signature: NinVDQ0R/BEfdDoECgO3eyp1WkyqV2rB/FoGl4yrxwM=
+Modified: 637481288146775866
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\Certificate Authentication\Configuration\StoreName.yml
+ID: "5e83a7d3-e494-4c9e-9444-22ccf7b81953"
+Parent: "8163c443-1ff4-4634-9ffc-e4cc8690b63c"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/Certificate Authentication/Configuration/StoreName
+Signature: CN9wWQp+fhJwJea0SqLt0rIka92zSSxQpaKzxLMzm88=
+Modified: 637481288148105853
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Authentication Modes\JSON Web Token Authentication\Configuration\Username.yml
+ID: "ea21c953-31e2-44e5-b1c2-1d0663b37d00"
+Parent: "64da7656-310b-425e-ad5e-e5d42681646d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Authentication Modes/JSON Web Token Authentication/Configuration/Username
+Signature: rL5/bCSLCftjhtbRehGBDTZE8F8BPhOn0o43bsl7Hgw=
+Modified: 637481288148135841
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\Database Healthcheck\Configuration\Connectionstring Key.yml
+ID: "0970cc09-5523-4757-8759-58b23a95931b"
+Parent: "b283ec0e-0d5d-4939-a450-0af017936f83"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Database Healthcheck/Configuration/Connectionstring Key
+Signature: AKIHMVawMX7NA8o3xW+mYp/gunNEqIHD59IlZcdjxKo=
+Modified: 637481288148335838
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\License Check\Configuration\WarnBefore.yml
+ID: "43b7ce89-2cb0-4ea9-8868-cb627179cc80"
+Parent: "c178105d-77c7-42cd-9ea5-6d9c63881260"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/License Check/Configuration/WarnBefore
+Signature: RrapB36oeeycIAB/E2oKvu3g2KOyHx6v6uoIuFaox9I=
+Modified: 637481288148385839
+---
+File: |
+  C:\git\sitecorehealthcheck\serialization\Sitecore.Healthcheck.Templates\Healthcheck\Components\XConnectAPI Check\Configuration\XConnect Api ConnectionString Key.yml
+ID: "b34eef8d-7b21-4d1e-b31f-480311e00959"
+Parent: "4040954e-2135-4b63-88a4-729c5cbb2648"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check/Configuration/XConnect Api ConnectionString Key
+Signature: /XpU8N9lShLSgwzpuexb5wlRaEHrlkQHTRIlcFyAY/U=
+Modified: 637481288148605843

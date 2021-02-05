@@ -91,7 +91,7 @@
       <Version>6.0.1304</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.ServiceBus">
-      <Version>3.1.0</Version>
+      <Version>3.2.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>9.0.1</Version>

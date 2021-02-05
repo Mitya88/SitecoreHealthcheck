@@ -1,0 +1,40 @@
+﻿---
+ID: "11a42525-369d-411e-9701-f9b1202964ad"
+Parent: "4dac9b7c-6b33-4ad0-95e8-52a8c4903bb2"
+Template: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Xdb/XConnectAPI Check
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200420T073800Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20210205T132101
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[{"Reason":" certificate is missing from My LocalMachine store","Created":"2021-02-05T13:20:33.1445438Z","Exception":null},{"Reason":"Index was out of range. Must be non-negative and less than the size of the collection.\r\nParameter name: index","Created":"2021-02-05T13:20:33.1445438Z","Exception":{"ClassName":"System.ArgumentOutOfRangeException","Message":"Index was out of range. Must be non-negative and less than the size of the collection.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Collections.CollectionBase.System.Collections.IList.get_Item(Int32 index)\r\n   at System.Security.Cryptography.X509Certificates.X509Certificate2Collection.get_Item(Int32 index)\r\n   at Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(String xConnectApiCertificateConnectionStringKey, String xConnectApiConnectionStringKey, Int32 wWarnBefore) in c:\\git\\sitecorehealthcheck\\src\\Healthcheck.Service.Core\\XConnectApiCheck.cs:line 154","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233086,"Source":"mscorlib","WatsonBuckets":null}},{"Reason":" certificate is missing from My LocalMachine store","Created":"2021-02-05T13:20:45.5655033Z","Exception":null},{"Reason":"Index was out of range. Must be non-negative and less than the size of the collection.\r\nParameter name: index","Created":"2021-02-05T13:20:45.5655033Z","Exception":{"ClassName":"System.ArgumentOutOfRangeException","Message":"Index was out of range. Must be non-negative and less than the size of the collection.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Collections.CollectionBase.System.Collections.IList.get_Item(Int32 index)\r\n   at System.Security.Cryptography.X509Certificates.X509Certificate2Collection.get_Item(Int32 index)\r\n   at Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(String xConnectApiCertificateConnectionStringKey, String xConnectApiConnectionStringKey, Int32 wWarnBefore) in c:\\git\\sitecorehealthcheck\\src\\Healthcheck.Service.Core\\XConnectApiCheck.cs:line 154","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233086,"Source":"mscorlib","WatsonBuckets":null}},{"Reason":" certificate is missing from My LocalMachine store","Created":"2021-02-05T13:20:59.1461016Z","Exception":null},{"Reason":"Index was out of range. Must be non-negative and less than the size of the collection.\r\nParameter name: index","Created":"2021-02-05T13:20:59.1461016Z","Exception":{"ClassName":"System.ArgumentOutOfRangeException","Message":"Index was out of range. Must be non-negative and less than the size of the collection.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Collections.CollectionBase.System.Collections.IList.get_Item(Int32 index)\r\n   at System.Security.Cryptography.X509Certificates.X509Certificate2Collection.get_Item(Int32 index)\r\n   at Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(String xConnectApiCertificateConnectionStringKey, String xConnectApiConnectionStringKey, Int32 wWarnBefore) in c:\\git\\sitecorehealthcheck\\src\\Healthcheck.Service.Core\\XConnectApiCheck.cs:line 154","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233086,"Source":"mscorlib","WatsonBuckets":null}},{"Reason":" certificate is missing from My LocalMachine store","Created":"2021-02-05T13:21:01.8185426Z","Exception":null},{"Reason":"Index was out of range. Must be non-negative and less than the size of the collection.\r\nParameter name: index","Created":"2021-02-05T13:21:01.8185426Z","Exception":{"ClassName":"System.ArgumentOutOfRangeException","Message":"Index was out of range. Must be non-negative and less than the size of the collection.","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Collections.CollectionBase.System.Collections.IList.get_Item(Int32 index)\r\n   at System.Security.Cryptography.X509Certificates.X509Certificate2Collection.get_Item(Int32 index)\r\n   at Healthcheck.Service.Core.XConnectApiCheck.RunHealthcheck(String xConnectApiCertificateConnectionStringKey, String xConnectApiConnectionStringKey, Int32 wWarnBefore) in c:\\git\\sitecorehealthcheck\\src\\Healthcheck.Service.Core\\XConnectApiCheck.cs:line 154","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":"8\nSystem.Collections.IList.get_Item\nmscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Collections.CollectionBase\nSystem.Object System.Collections.IList.get_Item(Int32)","HResult":-2146233086,"Source":"mscorlib","WatsonBuckets":null,"ParamName":"index","ActualValue":null}}]}
+    - ID: "462fa288-fce0-4dec-a4bc-5446ca81d40b"
+      Hint: Warn Before
+      Value: 100
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ffad5386-e71f-44d9-aee2-0f38d142883f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Error
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T132101Z

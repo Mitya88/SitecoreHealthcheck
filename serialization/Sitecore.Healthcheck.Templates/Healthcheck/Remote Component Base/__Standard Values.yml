@@ -1,0 +1,30 @@
+﻿---
+ID: "e0a843f7-0e51-46f4-aec3-4a81ae0e8020"
+Parent: "5a1bedca-2255-4193-9f5a-9a4d726e899e"
+Template: "5a1bedca-2255-4193-9f5a-9a4d726e899e"
+Path: /sitecore/templates/User Defined/Healthcheck/Remote Component Base/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200430T090537Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6f2b6030-01a4-46f9-8ed0-c6a96d5967b4"
+    - ID: "b1327643-8f5e-445f-83e4-ab43932889bc"
+      Hint: Remote Check Started
+      Value: Healthy
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131955Z

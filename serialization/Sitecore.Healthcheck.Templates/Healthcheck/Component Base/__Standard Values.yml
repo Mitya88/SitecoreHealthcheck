@@ -1,0 +1,34 @@
+﻿---
+ID: "245a4832-f576-44d0-9670-973a4797d8cb"
+Parent: "6be09644-4de0-4d94-ad61-a7f94a2b440b"
+Template: "6be09644-4de0-4d94-ad61-a7f94a2b440b"
+Path: /sitecore/templates/User Defined/Healthcheck/Component Base/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200430T090537Z
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0027ac14-d01a-47c8-9d1f-73357812ebd6"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Healthy
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131954Z
