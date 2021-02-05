@@ -1,35 +1,70 @@
-# Sitecore SPEAK3 starter template
+# Getting Started with Create React App
 
-This repository contains Speak 3 starter template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+## Available Scripts
 
-## Development server
+In the project directory, you can run:
 
-Run `npm run start` for a disconnected mode. Navigate to `http://localhost:4123/`. The app will automatically reload if you change any of the source files.
+### `npm start`
 
-## Code scaffolding
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Setup
+### `npm test`
 
-1. Set the variables in `init.ps1` (see below). 
-3. Run `init.ps1` script
-4. Run `npm install` command
-5. Run application in disconnected mode, run `npm run start` command
-6. Run `npm run deploy` command 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-`npm run deploy` command will build the application, copy files into your Sitecore instance and open the application in sitecore
-- Files will be copied to {$instanceWebroot}\sitecore\shell\client\applications\{$applicationName} folder
-- Browser will be opened on {$instanceHost}\sitecore\shell\client\{$application} url
-- You can add the following shortcut to your launchpad : {$instanceHost}\sitecore\shell\client\{$application} url
+### `npm run build`
 
-## Variables
-|Variable|Purpose|
-|----|----|
-|$applicationName| This will be your application name|
-|$applicationTitle| Application name which appears in the browser's title|
-|$instanceWebRoot | Webroot of your Sitecore instance|
-|$instanceHost| Url of your Sitecore instance|
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

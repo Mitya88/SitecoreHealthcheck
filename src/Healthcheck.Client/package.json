@@ -1,69 +1,51 @@
 {
-  "name": "healthcheck",
-  "version": "0.2.0",
-  "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "npm run start:disconnected",
-    "start:disconnected": "ng serve --proxy-config disconnected-mode.conf.js",
-    "build": "ng build --prod --base-href=/sitecore/shell/client/Applications/healthcheck/",
-    "postbuild": "ng-sc --entry ./dist/index.html && sc-license-checker",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "delete": "del-cli --force c:\\out\\speakapp\\sitecore\\shell\\client\\applications\\healthcheck",
-    "createDir": "make-dir c:\\out\\speakapp\\sitecore\\shell\\client\\applications\\healthcheck",
-    "copy": "xcopy .\\dist c:\\out\\speakapp\\sitecore\\shell\\client\\applications\\healthcheck /h/i/c/k/e/r/y",
-    "open": "open-cli https://sc10xmcm.dev.local/sitecore/shell/client/applications/healthcheck",
-    "deploy": "npm run build && npm run delete && npm run createDir && npm run copy"
-  },
+  "name": "my-app",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@angular/animations": "4.3.6",
-    "@angular/common": "4.3.6",
-    "@angular/compiler": "4.3.6",
-    "@angular/core": "4.3.6",
-    "@angular/forms": "4.3.6",
-    "@angular/http": "4.3.6",
-    "@angular/platform-browser": "4.3.6",
-    "@angular/platform-browser-dynamic": "4.3.6",
-    "@angular/router": "4.3.6",
     "@speak/icon-fonts": "^1.1.0",
-    "@speak/ng-bcl": "~0.7.0",
-    "@speak/ng-sc": "~0.3.1",
-    "@speak/ng-sc-cli": "~0.3.1",
     "@speak/styling": "^1.0.0-r00110",
-    "@types/highlight.js": "^9.12.3",
-    "chart.js": "^2.9.3",
-    "core-js": "^2.4.1",
-    "moment": "^2.18.0",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
-    "@angular/cli": "1.2.7",
-    "@angular/compiler-cli": "4.3.6",
-    "@angular/language-service": "4.3.6",
-    "@types/chart.js": "^2.9.20",
-    "@types/jasmine": "~2.5.53",
-    "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
-    "codelyzer": "~3.0.1",
-    "del-cli": "^3.0.0",
-    "express": "^4.15.4",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "bootstrap": "^4.5.3",
+    "chart.js": "^2.9.4",
     "express-mock-middleware": "0.0.6",
-    "jasmine-core": "~2.6.2",
-    "jasmine-spec-reporter": "~4.1.0",
-    "karma": "~1.7.0",
-    "karma-chrome-launcher": "~2.1.1",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "make-dir-cli": "^2.0.0",
-    "open-cli": "^5.0.0",
-    "protractor": "~5.1.2",
-    "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "history": "^5.0.0",
+    "loadash": "^1.0.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-chartjs-2": "^2.11.1",
+    "react-dom": "^17.0.1",
+    "react-moment": "^1.0.0",
+    "react-router": "^6.0.0-beta.0",
+    "react-router-dom": "^6.0.0-beta.0",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "toaspx":"@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./toaspx.ps1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

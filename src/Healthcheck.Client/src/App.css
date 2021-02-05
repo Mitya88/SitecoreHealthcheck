@@ -1,0 +1,341 @@
+.health{
+  background-color: green !important;
+  display:block;
+}
+
+.center{
+  text-align:center;
+}
+
+.left{
+  float: left;
+  display: block;
+   font-size: 1.2rem;
+  font-weight: 600;
+}
+.right{
+ text-align: right;
+ display: block;
+ font-size: 1.2rem;
+ color:red;
+ font-weight: 800;
+
+
+}
+
+.right-title{
+  text-align:right;
+  display: block;
+  font-size: 1.5rem;
+}
+
+.clear{
+  clear: both;
+}
+
+.group-name{
+  padding-left:17px;
+}
+
+.ht{
+  display:block;
+}
+
+.tooltip2 {
+  position: relative;
+   display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip3 {
+  position: relative;
+}
+
+.tooltip2 .tooltiptext2 {
+  visibility: hidden;
+   width: 600px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip3 .tooltiptext2 {
+  visibility: hidden;
+   width: 600px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.padding-left-15{
+  padding-left:15px;
+}
+
+.margin-bottom-15{
+  margin-bottom:15px;
+}
+
+.margin-top-40{
+  margin-top:40px;
+}
+
+.tooltip2:hover .tooltiptext2 {
+  visibility: visible;
+}
+
+.tooltip3:hover .tooltiptext2 {
+  visibility: visible;
+}
+
+.healthy-message{
+  width: 15em;
+  text-overflow: ellipsis;
+
+/**
+ * Required properties to achieve text-overflow
+ */
+    white-space: nowrap;
+  overflow: hidden;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+ 
+}
+
+/* tbody{
+  tr{
+      td{
+      padding:0;
+      padding-left:4px;
+      margin:0;
+      height:1.8rem;
+      vertical-align: middle;
+      }
+  }
+} */
+
+.width-1{
+width:1px;
+}
+
+.bold{
+font-weight: 700;
+}
+
+.red{
+color:red;
+}
+
+.margin-center{
+margin: 0 auto;
+}
+
+.form-control{
+width: auto !important;
+}
+.state-block-first{
+margin-left:0px !important;
+}
+.state-block{
+width: 16.6%;
+margin-left:auto;
+}
+
+.state-row{
+margin-left:0px !important;
+margin-right:0px !important;
+color:white;
+}
+
+.progress-indicator-panel{
+  height: 0 !important;
+}
+
+.icon-holder{
+float:left;
+width:40%;
+}
+
+.no-padding{
+padding:0 !important;
+}
+
+.margin-top-15{
+  margin-top:15px;
+}
+.padding-top-30{
+padding-top:30px;
+}
+
+.padding-top-5{
+  padding-top:5px;
+  }
+
+.healthy-state{
+background-color:green;
+color:white;
+padding:1.1em;
+display: inline-block;
+width: 100%;
+height: 75px;
+}
+
+.warning-state{
+background-color:orange;
+color:white;
+padding:1.1em;
+display: inline-block;
+width: 100%;
+height: 75px;
+}
+
+.error-state{
+background-color:red;
+color:white;
+padding:1.1em;
+display: inline-block;
+width: 100%;
+height: 75px;
+}
+
+.unknown-state{
+background-color: rgb(53, 53, 53);
+color:white;
+padding:1.1em;
+display: inline-block;
+width: 100%;
+height: 75px;
+}
+
+.error-count{
+float: right;
+background-color: white;
+color: red;
+border-radius: 10px;
+padding:5px;
+font-weight: 700;
+}
+
+.component-title{
+font-weight: 400;
+font-size: 1.1em;
+padding-top:5px;
+word-break: normal;
+width: 210px;
+display:block;
+float:left;
+}
+
+.flex-correction{
+flex: 0 0 16.666667%;
+}
+
+
+@media (max-width: 1785px) {
+.component-title{
+ 
+  width: 170px;
+}
+}
+
+@media (min-width: 1786px) {
+
+}
+
+.components td{
+  padding:0 !important;
+  vertical-align: middle !important;
+}
+
+.container-rb {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 16px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container-rb input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark-rb {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color: #eee;
+border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container-rb:hover input ~ .checkmark-rb {
+background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-rb input:checked ~ .checkmark-rb {
+background-color:#c42224;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark-rb:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container-rb input:checked ~ .checkmark-rb:after {
+display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container-rb .checkmark-rb:after {
+   top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.radio{
+padding-top:5px;
+}
+
+.hide{
+  display:none;
+}
+
+.allow-scroll{
+  overflow-y: auto;
+  height: 200px;
+}
+
+.height-270{
+ 
+  height: 200px;
+}
