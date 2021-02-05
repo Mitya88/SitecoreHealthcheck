@@ -1,0 +1,55 @@
+﻿---
+ID: "4880bca3-27ae-442c-a0dd-6abda83d5fba"
+Parent: "e52ed6a4-3cf8-499c-a46b-d2218ad1b910"
+Template: "347b8abf-325d-42d0-9ae3-6b2df204e510"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/CD/Remote Certificate Check
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200915T132430Z
+    - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
+      Hint: Last Check Time
+      Value: 20201015T083810
+    - ID: "377a62bf-6533-450b-9cb7-a3cc87145803"
+      Hint: StoreName
+      Value: My
+    - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
+      Hint: Error Messages
+      Value: |
+        {"Entries":[]}
+    - ID: "4072b845-610e-4c7c-9c13-91d1da19713a"
+      Hint: FindByType
+      Value: FindByThumbprint
+    - ID: "50827238-36a4-427e-99da-21ec2a53a52e"
+      Hint: Location
+      Value: LocalMachine
+    - ID: "5baa8ffe-23cf-470f-9575-f09e3528d26d"
+      Hint: Value
+      Value: f618e3528a708e3f92cb9ddd4e932806b20ec953
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0e3a3d76-646c-475f-84ed-1aa29354b2e8"
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: "Expiration: 14/09/2022"
+    - ID: "b1327643-8f5e-445f-83e4-ab43932889bc"
+      Hint: Remote Check Started
+      Value: 20210205T132045
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Healthy
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T132045Z

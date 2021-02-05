@@ -84,9 +84,6 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.3" />
-    <PackageReference Include="Unicorn.Core">
-      <Version>4.1.1</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HealthcheckErrorsApiController.cs" />
@@ -143,24 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Rainbow.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.config" />
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.DeployedContentEditorWarnings.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="web.config">
       <SubType>Designer</SubType>

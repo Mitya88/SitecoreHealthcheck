@@ -1,0 +1,36 @@
+﻿---
+ID: "65466af7-522e-4b79-8761-f354132009f7"
+Parent: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Template: "da5d3dbf-6226-456c-bcf4-cfd5d4f7b2ac"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/XConnectAPI Check/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200420T071653Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2625fc86-b32c-4200-acb7-3a714cd53dfd"
+    - ID: "94e6b6bb-4cef-4779-bc92-10bbb6da3f6f"
+      Hint: XConnect Certificate ConnectionString Key
+      Value: xconnect.collection.certificate
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: XConnect API is healthy
+    - ID: "b34eef8d-7b21-4d1e-b31f-480311e00959"
+      Hint: XConnect Api ConnectionString Key
+      Value: xconnect.collection
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131955Z

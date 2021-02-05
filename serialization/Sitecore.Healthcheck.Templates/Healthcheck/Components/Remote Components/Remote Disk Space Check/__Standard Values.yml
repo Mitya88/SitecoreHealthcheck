@@ -1,0 +1,30 @@
+﻿---
+ID: "a59397ca-3a75-4bba-9fab-32c411d00ca2"
+Parent: "95b37919-cbf9-47f4-b0e7-f3d194a80b4b"
+Template: "95b37919-cbf9-47f4-b0e7-f3d194a80b4b"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote Disk Space Check/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "11c04d55-70fc-4e03-b6a5-0229811ada44"
+      Hint: Name
+      Value: Local Disk Space Check
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200706T102541Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bba71b0a-002a-48a9-a92d-179a1651a77e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131955Z

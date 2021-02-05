@@ -1,0 +1,39 @@
+﻿---
+ID: "e1f493cd-feff-4809-84e7-469870ba1ab2"
+Parent: "8a11da9b-b35e-4cc8-9cd8-0a61e88648b6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote XConnectAPI Check
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Windows Table.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {5A1BEDCA-2255-4193-9F5A-9A4D726E899E}
+    {DA5D3DBF-6226-456C-BCF4-CFD5D4F7B2AC}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{E68E6596-F0E7-47E7-B62D-B946813BDE5B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200420T071358Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "79607717-6144-45de-8495-5c95fe3debc7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131947Z

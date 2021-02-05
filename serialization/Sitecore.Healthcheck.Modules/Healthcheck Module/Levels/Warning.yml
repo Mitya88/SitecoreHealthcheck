@@ -1,0 +1,27 @@
+﻿---
+ID: "58f5769a-532a-4aea-ac5e-94492b1c7bef"
+Parent: "941c95dd-9d79-4c4e-a2e2-f7a626e36371"
+Template: "3308e120-ad83-463d-b3db-56d0f1703242"
+Path: /sitecore/system/Modules/Healthcheck Module/Levels/Warning
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200321T093810Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4b1d2e4c-97f9-416b-ae15-ad2e9323b97e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131952Z

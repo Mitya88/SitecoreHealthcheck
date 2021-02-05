@@ -1,0 +1,36 @@
+﻿---
+ID: "2332a349-989f-401b-8cf3-9295d2496358"
+Parent: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
+Template: "ce76566f-57b8-4b85-b88c-fb158d82dbb8"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/LocalDisk Space Check/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "11c04d55-70fc-4e03-b6a5-0229811ada44"
+      Hint: Name
+      Value: Local Disk Space Check
+    - ID: "1490bd14-4411-486e-833e-760ae1606e58"
+      Hint: ErrorPercentageThreshold
+      Value: 10
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200706T102541Z
+    - ID: "56d91857-4715-46ae-a7a3-2395f6f939eb"
+      Hint: WarningPercentageThreshold
+      Value: 25
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4ad6da81-be98-4ecf-a82e-c08f74d21c9d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131955Z

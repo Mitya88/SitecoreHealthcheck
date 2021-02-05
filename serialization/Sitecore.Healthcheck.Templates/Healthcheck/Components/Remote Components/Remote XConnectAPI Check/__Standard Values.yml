@@ -1,0 +1,36 @@
+﻿---
+ID: "e68e6596-f0e7-47e7-b62d-b946813bde5b"
+Parent: "e1f493cd-feff-4809-84e7-469870ba1ab2"
+Template: "e1f493cd-feff-4809-84e7-469870ba1ab2"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/Remote Components/Remote XConnectAPI Check/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200420T071653Z
+    - ID: "462fa288-fce0-4dec-a4bc-5446ca81d40b"
+      Hint: Warn Before
+      Value: 50
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "01d9ae50-9e3f-452b-a6bb-0ad6d3b6c662"
+    - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
+      Hint: Healthy Message
+      Value: XConnect API is healthy
+    - ID: "b1327643-8f5e-445f-83e4-ab43932889bc"
+      Hint: Remote Check Started
+      Value: 00010101T000000Z
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131955Z

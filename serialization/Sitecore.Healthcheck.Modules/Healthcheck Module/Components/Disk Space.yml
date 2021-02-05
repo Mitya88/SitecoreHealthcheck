@@ -1,0 +1,26 @@
+﻿---
+ID: "d233e308-5a20-47d8-8225-e6dd0e1e1f74"
+Parent: "aa16ef54-4954-4b4b-9056-537f97e9ee0f"
+Template: "f3b3fab1-2a51-41f2-bf30-8c36bc89cf5b"
+Path: /sitecore/system/Modules/Healthcheck Module/Components/Disk Space
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0d5613ef-81f3-433f-9957-e35f4fade6f7"
+      Hint: Name
+      Value: Disk Space
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200713T110832Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c20bdaf0-7bc0-4663-8e50-7bfc2b57b4a2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131952Z

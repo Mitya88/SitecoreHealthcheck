@@ -11,11 +11,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "delete": "del-cli --force c:\\inetpub\\wwwroot\\sc10xmcm.dev.local\\sitecore\\shell\\client\\applications\\healthcheck",
-    "createDir": "make-dir c:\\inetpub\\wwwroot\\sc10xmcm.dev.local\\sitecore\\shell\\client\\applications\\healthcheck",
-    "copy": "xcopy .\\dist c:\\inetpub\\wwwroot\\sc10xmcm.dev.local\\sitecore\\shell\\client\\applications\\healthcheck /h/i/c/k/e/r/y",
+    "delete": "del-cli --force c:\\out\\speakapp\\sitecore\\shell\\client\\applications\\healthcheck",
+    "createDir": "make-dir c:\\out\\speakapp\\sitecore\\shell\\client\\applications\\healthcheck",
+    "copy": "xcopy .\\dist c:\\out\\speakapp\\sitecore\\shell\\client\\applications\\healthcheck /h/i/c/k/e/r/y",
     "open": "open-cli https://sc10xmcm.dev.local/sitecore/shell/client/applications/healthcheck",
-    "deploy": "npm run build && npm run delete && npm run createDir && npm run copy && npm run open"
+    "deploy": "npm run build && npm run delete && npm run createDir && npm run copy"
   },
   "private": true,
   "dependencies": {

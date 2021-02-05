@@ -1,0 +1,34 @@
+﻿---
+ID: "8ac9d3f3-cbf2-4efd-a648-24008e2a00d7"
+Parent: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Template: "3d561f80-51f0-4101-a5ed-f1a59ef91ff5"
+Path: /sitecore/templates/User Defined/Healthcheck/Components/API Healthcheck/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {AE017BDA-D227-4E85-82EF-8AE548612794}
+    {11DAB743-CC98-4065-90AC-6492B37B6168}
+    {3665CB86-4A00-4495-9A44-3EF7E3273BEB}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200430T085112Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7970b276-c809-47c1-8bc0-e4a2bfd6c2f3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20210205T131955Z

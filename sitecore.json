@@ -1,0 +1,10 @@
+{
+  "$schema": "./.sitecore/schemas/RootConfigurationFile.schema.json",
+  "modules": [
+    "./Sitecore.Healthcheck.Serialization.json"
+  ],
+  "serialization": {
+    "defaultMaxRelativeItemPathLength": 100,
+    "defaultModuleRelativeSerializationPath": "serialization"
+  }
+}
