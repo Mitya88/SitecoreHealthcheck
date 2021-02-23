@@ -24,6 +24,7 @@
     /// <seealso cref="Sitecore.Services.Infrastructure.Sitecore.Services.EntityService{Healthcheck.Service.Models.ItemResponse}" />
     [Authorize]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("sitecore/api/ssc/healthcheck")]
     public class HealthcheckApiController : ServicesApiController
     {
         /// <summary>
@@ -56,6 +57,7 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("AppInfo")]
         public ApplicationInformation AppInfo()
         {
             var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
@@ -75,6 +77,7 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("Run")]
         public List<ComponentGroup> Run()
         {
             this.healthcheckService.RunHealthcheck();
@@ -86,6 +89,7 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("get")]
         public List<ComponentGroup> Get()
         {
             var data = this.healthcheckRepository.GetHealthcheck();
@@ -99,6 +103,7 @@
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
         [HttpGet]
+        [Route("Component")]
         public ComponentHealth Component(string id, bool onlyState = false)
         {
             if (!onlyState)
@@ -115,6 +120,7 @@
         /// <param name="id">The identifier.</param>
         /// <returns>Csv</returns>
         [HttpGet]
+        [Route("Csv")]
         public HttpResponseMessage Csv(string id, string componentName)
         {
             string fileName = string.Format("Export_{0}_{1}.csv", componentName, DateTime.Now.ToString("yyyyMMdd_HHmmss"));
@@ -138,6 +144,7 @@
         /// Csv
         /// </returns>
         [HttpGet]
+        [Route("ExportState")]
         public HttpResponseMessage ExportState()
         {
             string fileName = string.Format("StateExport_{0}.csv", DateTime.Now.ToString("yyyyMMdd_HHmmss"));
