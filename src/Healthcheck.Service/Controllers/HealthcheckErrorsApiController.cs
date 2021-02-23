@@ -1,6 +1,7 @@
 ﻿namespace Healthcheck.Service.Controllers
 {
     using Healthcheck.Service.Interfaces;
+    using Healthcheck.Service.Repositories;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System.Web.Http;
     using System.Web.Http.Cors;
@@ -16,6 +17,11 @@
         /// The healthcheck repository
         /// </summary>
         private readonly IHealthcheckRepository healthcheckRepository;
+
+        public HealthcheckErrorsApiController():this(new HealthcheckRepository())
+        {
+
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HealthcheckController" /> class.

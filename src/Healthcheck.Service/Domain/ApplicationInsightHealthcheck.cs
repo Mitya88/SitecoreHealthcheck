@@ -3,6 +3,7 @@
     using Healthcheck.Service.Customization;
     using Healthcheck.Service.Customization.Models;
     using Healthcheck.Service.Interfaces;
+    using Healthcheck.Service.Services;
     using Microsoft.Extensions.DependencyInjection;
     using Sitecore.Data.Items;
     using Sitecore.DependencyInjection;
@@ -53,7 +54,7 @@
             this.ApiKey = item["API Key"];
             this.NumberOfDaysToCheck = Sitecore.MainUtil.GetInt(item["Number of Days to Check"], 0);
 
-            this.applicationInsightsService = ServiceLocator.ServiceProvider.GetService<IApplicationInsightsService>();
+            this.applicationInsightsService = new ApplicationInsightsService();
         }
 
         /// <summary>

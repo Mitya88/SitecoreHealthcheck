@@ -1,8 +1,11 @@
 ﻿namespace Healthcheck.Service.Controllers
 {
     using Healthcheck.Service.Customization.Models;
+    using Healthcheck.Service.Factories;
     using Healthcheck.Service.Interfaces;
     using Healthcheck.Service.Models;
+    using Healthcheck.Service.Repositories;
+    using Healthcheck.Service.Services;
     using Healthcheck.Service.Utilities;
     using Sitecore.Services.Infrastructure.Web.Http;
     using System;
@@ -32,6 +35,10 @@
         /// The healthcheck service
         /// </summary>
         private readonly IHealthcheckService healthcheckService;
+
+        public HealthcheckApiController():this(new HealthcheckRepository(), new HealthcheckService(new ComponentFactory()))
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HealthcheckController" /> class.
