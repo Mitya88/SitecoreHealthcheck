@@ -12,7 +12,7 @@ class CpuChart extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.fetchCpu();
-    }, 1500);
+    }, 2000);
   }
 
   fetchCpu() {

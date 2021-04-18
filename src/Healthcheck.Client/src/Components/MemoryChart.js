@@ -12,7 +12,7 @@ class MemoryChart extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.fetchMemory();
-    }, 1000);
+    }, 2000);
   }
 
   fetchMemory() {
