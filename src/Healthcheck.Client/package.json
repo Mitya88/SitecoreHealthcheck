@@ -34,7 +34,7 @@
     "@speak/ng-sc-cli": "~0.3.1",
     "@speak/styling": "^1.0.0-r00110",
     "@types/highlight.js": "^9.12.3",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "core-js": "^2.4.1",
     "moment": "^2.18.0",
     "zone.js": "^0.8.14"
