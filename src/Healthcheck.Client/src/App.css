@@ -1,3 +1,86 @@
+.gh-content{
+  background-color: #171d52 !important;
+}
+
+.page-nav{
+  background-color:#f7f7f7 !important;
+  color:black !important;
+  border-right: 1px solid #ccc;
+}
+
+.menu-category{
+  background-color:#f7f7f7 !important;
+  color:black !important;
+  background: none !important;
+}
+
+.active{
+  background-color:#bfe1fa !important;
+  color:black !important;
+}
+
+.app-header {
+  background-color:transparent !important;
+  color:black !important;
+}
+
+.page-app-header {
+ 
+  background-color:#f7f7f7 !important;
+  color:black !important;
+  border-bottom: 1px solid #ccc;
+}
+
+.page-main{
+  background-color:#f7f7f7 !important;
+}
+
+body{
+  font-family: "Open Sans" !important;
+}
+
+.card{
+  border: 1px solid #e3e3e3;
+    box-shadow: 0px 3px 8px rgb(0 0 0 / 15%);
+}
+
+a{
+  color:black !important;
+}
+
+.btn-primary{
+  background-color: #171d52 !important;
+    color: #fff!important;
+    border: 1px solid transparent !important;
+    box-sizing: border-box !important;
+    border-radius:5px !important;
+    box-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+h5{
+  color:#5f5f5f !important;
+  padding-top:5px !important;
+}
+
+
+
+.gh-app{
+  font-size:14px !important;
+  font-weight: 600 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .health{
   background-color: green !important;
   display:block;

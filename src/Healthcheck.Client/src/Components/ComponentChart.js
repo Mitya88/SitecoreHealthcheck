@@ -30,7 +30,7 @@ class ComponentChart extends React.Component {
           ctx = chart.chart.ctx;
 
         ctx.restore();
-        var fontSize = (height / 200).toFixed(2);
+        var fontSize = (height / 250).toFixed(2);
         ctx.font = fontSize + "em sans-serif";
         ctx.textBaseline = "middle";
 
@@ -41,8 +41,8 @@ class ComponentChart extends React.Component {
         var text2 = 'Stat',
           textX2 = Math.round((width - ctx.measureText(text2).width) / 2);
 
-        ctx.fillText(text, textX, textY);
-        ctx.fillText(text2, textX2, textY + 20);
+        // ctx.fillText(text, textX, textY);
+        // ctx.fillText(text2, textX2, textY + 20);
         ctx.save();
       }
     }];
@@ -57,16 +57,16 @@ class ComponentChart extends React.Component {
       datasets: [{
         data: [this.state.componentStatistics.HealthyCount, this.state.componentStatistics.WarningCount, this.state.componentStatistics.ErrorCount, this.state.componentStatistics.UnknownCount],
         backgroundColor: [
-          'green',
-          'orange',
-          'red',
-          'black'
+          'rgb(69, 74, 117)',
+          '#c3ecf6',
+          '#c6e9e8',
+          '#c1d2e8'
         ],
         hoverBackgroundColor: [
-          'green',
-          'orange',
-          'red',
-          'black'
+          'rgb(69, 74, 117)',
+          '#c3ecf6',
+          '#c6e9e8',
+          '#c1d2e8'
         ]
       }]
     };
@@ -74,7 +74,7 @@ class ComponentChart extends React.Component {
     const options = {
       responsive: true,
       legend: {
-        display: false
+        display: true
       }
     };
 

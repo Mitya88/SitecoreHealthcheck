@@ -51,12 +51,12 @@ class CacheChart extends React.Component {
       datasets: [{
         data: [usedSize, freeSize],
         backgroundColor: [
-          'red',
-          'green'
+          'rgb(69, 74, 117)',
+          '#bfe1fa'
         ],
         hoverBackgroundColor: [
-          'red',
-          'green',
+          'rgb(69, 74, 117)',
+          '#bfe1fa',
         ]
       }]
     };

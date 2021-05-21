@@ -66,8 +66,8 @@ class MemoryChart extends React.Component {
         label: 'Series 1', // Name the series
         data: this.memoryData, // Specify the data values array
         fill: false,
-        borderColor: '#2196f3', // Add custom color border (Line)
-        backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
+        borderColor: 'rgb(69, 74, 117)', // Add custom color border (Line)
+        backgroundColor: 'rgb(69, 74, 117)', // Add custom color background (Points and Fill)
         borderWidth: 1 // Specify bar border width
       }]
     };

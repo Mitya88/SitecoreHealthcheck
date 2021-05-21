@@ -51,8 +51,8 @@ class ErrorChart extends React.Component {
         label: 'Error counts', // Name the series
         data: errorData, // Specify the data values array
         fill: false,
-        borderColor: 'red', // Add custom color border (Line)
-        backgroundColor: 'red', // Add custom color background (Points and Fill)
+        borderColor: 'rgb(69, 74, 117)', // Add custom color border (Line)
+        backgroundColor: 'rgb(69, 74, 117)', // Add custom color background (Points and Fill)
         borderWidth: 1 // Specify bar border width
       }]
     };
