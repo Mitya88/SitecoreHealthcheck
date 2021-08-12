@@ -8,12 +8,18 @@ class MemoryChart extends React.Component {
     memoryStatistics: {},
     isLoading: true
   }
-
+ 
+  timer = {}
   componentDidMount() {
-    setInterval(() => {
+    console.log('didmount');
+    this.timer = setInterval(() => {
       this.fetchMemory();
     }, 2000);
   }
+
+  componentWillUnmount(){
+  clearInterval(this.timer);
+}
 
   fetchMemory() {
     fetch('/sitecore/api/ssc/healthcheck/getmemoryusage?sc_site=shell')

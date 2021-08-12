@@ -28,7 +28,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "toaspx": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./toaspx.ps1"
+    "toaspx": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./toaspx.ps1",
+    "delete": "del-cli --force ..\\..\\docker\\deploy\\website\\sitecore\\shell\\client\\applications\\healthcheck",
+    "createDir": "make-dir ..\\..\\docker\\deploy\\website\\sitecore\\shell\\client\\applications\\healthcheck",
+    "copy": "xcopy .\\build ..\\..\\docker\\deploy\\website\\sitecore\\shell\\client\\applications\\healthcheck /h/i/c/k/e/r/y",
+    "open": "open-cli https://cm.ash.localhost/sitecore/shell/client/Applications/healthcheck",
+    "deploy": "npm run build && npm run toaspx && npm run delete && npm run createDir && npm run copy && npm run open"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +52,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "del-cli": "^4.0.1",
+    "make-dir-cli": "^3.0.0",
+    "open-cli": "^7.0.0"
   }
 }

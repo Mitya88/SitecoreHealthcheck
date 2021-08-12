@@ -8,6 +8,7 @@
 # # Gather only artifacts necessary for NuGet restore, retaining directory structure
  COPY *.sln nuget.config \nuget\
  COPY src\ \temp\
+  SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
  RUN Invoke-Expression 'robocopy C:\temp C:\nuget\src /s /ndl /njh /njs *.csproj'
 
 FROM ${BUILD_IMAGE} AS builder

@@ -9,11 +9,18 @@ class CpuChart extends React.Component {
     isLoading: true
   }
 
+  timer = null;
   componentDidMount() {
-    setInterval(() => {
+    this.timer = setInterval(() => {
       this.fetchCpu();
     }, 2000);
   }
+
+  
+  componentWillUnmount(){
+    clearInterval(this.timer);
+  }
+  
 
   fetchCpu() {
     fetch('/sitecore/api/ssc/healthcheck/getcputime?sc_site=shell')
