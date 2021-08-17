@@ -36,9 +36,6 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.RegisterContainer.config" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Sitecore.Kernel">
       <Version>9.0.180604</Version>
     </PackageReference>
@@ -58,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Config\Include\Healthcheck\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

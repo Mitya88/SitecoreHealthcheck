@@ -13,14 +13,14 @@ Languages:
       Value: 20200402T150008Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20210205T132045
+      Value: 20210816T082601
     - ID: "389e325c-9848-4811-b770-d701bcff2cf7"
       Hint: Number of Days to Check
       Value: 3
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"Application Insight Check is not configured correctly","Created":"2021-02-05T13:20:45.6748771Z","Exception":null}]}
+        {"Entries":[{"Reason":"Application Insight Check is not configured correctly","Created":"2021-08-16T08:26:01.2788178Z","Exception":null,"ErrorLevel":2}]}
     - ID: "4fda6492-d596-470f-8b65-8f608075381e"
       Hint: Application ID
       Value: 
@@ -33,7 +33,7 @@ Languages:
         sitecore\admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "08ad6f4d-3e81-4b64-ade2-6e3e2dbbc0b3"
+      Value: "d0fbd58a-e399-4f18-a51c-52f2016a665a"
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
       Value: Application insights contains no errors
@@ -46,4 +46,4 @@ Languages:
       Value: Warning
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20210205T132045Z
+      Value: 20210816T082601Z

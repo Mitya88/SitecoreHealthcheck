@@ -9,6 +9,7 @@ import ComponentsPage from './Pages/ComponentsPage';
 import SettingsPage from './Pages/SettingsPage';
 import NotFoundPage from './Pages/NotFoundPage';
 import NavigationBar from './Components/SharedComponents/NavigationBar';
+import ScIcon from './ScComponents/ScIcon';
 class App extends React.Component {
 
   render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
       <div className="page">
         <div className="page-header">
           <ScGlobalHeader applicationTitle="Sitecore Healthcheck" />
+         
         </div>
         <div className="page-app">
           <Router>
@@ -26,8 +28,8 @@ class App extends React.Component {
             <Routes basename="/sitecore/shell/client/Applications/healthcheck/">
               <Route path="/" element={<StartPage />} />
               {/* <Route path="components/:id" element={<ComponentDetailPage/>} /> */}
-              <Route path="components/:id" element={<ComponentDetailPage/>} />
-              <Route path="components" element={<ComponentsPage />} />
+              <Route path="components/:id" element={<ComponentDetailPage  key={Math.random()}/>} />
+              <Route path="components" element={<ComponentsPage/>} />
               <Route path="settings" element={<SettingsPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

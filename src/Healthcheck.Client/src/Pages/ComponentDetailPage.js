@@ -36,7 +36,7 @@ class ComponentDetailPage extends React.Component {
 
   refresh = component => () => {
 
-    var onlyState = true;
+    var onlyState = component.Status == "Waiting" ? true : false;
     this.setState({ isLoading: true });
 
     fetch('/sitecore/api/ssc/healthcheck/component?id=' + component.Id + '&sc_site=shell&onlystate=' + onlyState)

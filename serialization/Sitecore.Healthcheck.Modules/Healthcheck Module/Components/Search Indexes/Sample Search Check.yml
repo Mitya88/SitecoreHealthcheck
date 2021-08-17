@@ -20,11 +20,11 @@ Languages:
       Value: sitecore_master_index
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20210205T132045
+      Value: 20210816T082601
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2021-02-05T13:20:34.0039271Z","Exception":null},{"Reason":"Search Index returned less items than expected: 1, actual: 0 ","Created":"2021-02-05T13:20:45.846754Z","Exception":null}]}
+        {"Entries":[]}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -34,7 +34,7 @@ Languages:
       Value: 1
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "99ea9f76-76e3-4cc5-97eb-2c912434fca1"
+      Value: "f50a1c11-41bd-407f-9b8e-fd62c3330be7"
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
       Value: Search index contain no errors
@@ -44,7 +44,7 @@ Languages:
         sitecore\Admin
     - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
       Hint: Status
-      Value: Error
+      Value: Healthy
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20210205T132045Z
+      Value: 20210816T082601Z

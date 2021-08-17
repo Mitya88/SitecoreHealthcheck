@@ -13,21 +13,24 @@ Languages:
       Value: "20200810T112255:637326553752014373Z"
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20210205T132045
+      Value: 20210816T082624
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[]}
+        {"Entries":[{"Reason":"The remote name could not be resolved: 'cm.ash.localhost'","Created":"2021-08-16T08:26:18.8191379Z","Exception":{"ClassName":"System.Net.WebException","Message":"The remote name could not be resolved: 'cm.ash.localhost'","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)\r\n   at System.Net.WebClient.DownloadData(Uri address)\r\n   at Sitecore.Web.WebUtil.ExecuteWebPage(String url, NameValueCollection headers)\r\n   at Healthcheck.Service.Domain.KeepAliveCheck.RunHealthcheck() in C:\\build\\src\\Healthcheck.Service\\Domain\\KeepAliveCheck.cs:line 42","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233079,"Source":"System","WatsonBuckets":null},"ErrorLevel":1},{"Reason":"The remote name could not be resolved: 'cm.ash.localhost'","Created":"2021-08-16T08:26:21.5692798Z","Exception":{"ClassName":"System.Net.WebException","Message":"The remote name could not be resolved: 'cm.ash.localhost'","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)\r\n   at System.Net.WebClient.DownloadData(Uri address)\r\n   at Sitecore.Web.WebUtil.ExecuteWebPage(String url, NameValueCollection headers)\r\n   at Healthcheck.Service.Domain.KeepAliveCheck.RunHealthcheck() in C:\\build\\src\\Healthcheck.Service\\Domain\\KeepAliveCheck.cs:line 42","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233079,"Source":"System","WatsonBuckets":null},"ErrorLevel":1},{"Reason":"The remote name could not be resolved: 'cm.ash.localhost'","Created":"2021-08-16T08:26:23.3977284Z","Exception":{"ClassName":"System.Net.WebException","Message":"The remote name could not be resolved: 'cm.ash.localhost'","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)\r\n   at System.Net.WebClient.DownloadData(Uri address)\r\n   at Sitecore.Web.WebUtil.ExecuteWebPage(String url, NameValueCollection headers)\r\n   at Healthcheck.Service.Domain.KeepAliveCheck.RunHealthcheck() in C:\\build\\src\\Healthcheck.Service\\Domain\\KeepAliveCheck.cs:line 42","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":null,"HResult":-2146233079,"Source":"System","WatsonBuckets":null},"ErrorLevel":1},{"Reason":"The remote name could not be resolved: 'cm.ash.localhost'","Created":"2021-08-16T08:26:24.8196061Z","Exception":{"ClassName":"System.Net.WebException","Message":"The remote name could not be resolved: 'cm.ash.localhost'","Data":null,"InnerException":null,"HelpURL":null,"StackTraceString":"   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)\r\n   at System.Net.WebClient.DownloadData(Uri address)\r\n   at Sitecore.Web.WebUtil.ExecuteWebPage(String url, NameValueCollection headers)\r\n   at Healthcheck.Service.Domain.KeepAliveCheck.RunHealthcheck() in C:\\build\\src\\Healthcheck.Service\\Domain\\KeepAliveCheck.cs:line 42","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":"8\nDownloadDataInternal\nSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Net.WebClient\nByte[] DownloadDataInternal(System.Uri, System.Net.WebRequest ByRef)","HResult":-2146233079,"Source":"System","WatsonBuckets":null},"ErrorLevel":1}]}
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a9e7f4ca-eb70-45a6-b0f7-8e0932f46eb2"
+      Value: "f667e1c0-5748-4ade-8a3c-c956d06dcf96"
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
-      Value: "The http://localhost/sitecore/service/keepalive.aspx url is working"
+      Value: "The https://cm.ash.localhost/sitecore/service/keepalive.aspx url is working"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
+    - ID: "cc58940f-93f8-4750-a707-fa73dc2d69e1"
+      Hint: Status
+      Value: Error
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20210205T132045Z
+      Value: 20210816T082624Z

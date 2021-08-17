@@ -19,7 +19,7 @@ class ErrorStats extends React.Component {
   render() {
     return (
       <>
-        <div className="col-sm-4">
+        <div className="col-sm-8">
           <div className="card mb-3" >
             <h5 className="center">Errors in the last 24h</h5>
             <div className="card-block main-menu-item allow-scroll">

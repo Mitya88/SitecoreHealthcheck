@@ -13,14 +13,14 @@ Languages:
       Value: 20200323T134154Z
     - ID: "33a59cb4-596d-4d3a-80c7-ffc8948f40c3"
       Hint: Last Check Time
-      Value: 20210205T132045
+      Value: 20210816T082601
     - ID: "377a62bf-6533-450b-9cb7-a3cc87145803"
       Hint: StoreName
       Value: My
     - ID: "390c70ed-6d7c-45f8-861a-545795748b1c"
       Hint: Error Messages
       Value: |
-        {"Entries":[{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2021-02-05T13:20:33.4414178Z","Exception":null},{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2021-02-05T13:20:45.6905026Z","Exception":null}]}
+        {"Entries":[{"Reason":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Created":"2021-08-16T08:26:01.3100569Z","Exception":null,"ErrorLevel":1}]}
     - ID: "4072b845-610e-4c7c-9c13-91d1da19713a"
       Hint: FindByType
       Value: FindByThumbprint
@@ -36,7 +36,7 @@ Languages:
         sitecore\admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4444fa95-048a-4ea6-8c4b-740a32c890fe"
+      Value: "5dfc2b68-6617-46bb-be2d-21a0e309058d"
     - ID: "a17f9233-805e-4508-ac63-0008a3e89b24"
       Hint: Healthy Message
       Value: Log files contain no errors
@@ -52,4 +52,4 @@ Languages:
       Value: Error
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20210205T132045Z
+      Value: 20210816T082601Z

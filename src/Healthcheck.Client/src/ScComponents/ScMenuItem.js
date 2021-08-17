@@ -15,7 +15,7 @@ class ScMenuItem extends React.Component {
     return (
       <>
         <li className="menu-item">
-          <NavLink to={this.props.href} activeClassName="active">
+          <NavLink to={this.props.href} key={this.props.menukey}  activeClassName="active">
             {this.props.children}
           </NavLink>
         </li>

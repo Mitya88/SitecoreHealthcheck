@@ -56,8 +56,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.config" />
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.RegisterContainer.config" />
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.RegisterContainer.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>

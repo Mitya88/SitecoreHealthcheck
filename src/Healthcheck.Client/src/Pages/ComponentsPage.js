@@ -51,6 +51,8 @@ class ComponentsPage extends React.Component {
     fetch('/sitecore/api/ssc/healthcheck/get?sc_site=shell')
       .then(data => data.json())
       .then(data => {
+
+        // data = data.filter((component) => component.Status
         this.setState({ groups: data, isLoading: false });
       });
   }
@@ -85,18 +87,11 @@ class ComponentsPage extends React.Component {
                   <button onClick={this.load} className="btn btn-primary">Refresh</button>
                   <button onClick={this.run} className="btn btn-secondary" >Re run</button>
                   <a className="btn btn-secondary" href="/sitecore/api/ssc/healthcheck/exportstate?sc_site=shell">Export state</a>
-                  <button onClick={this.clearErrors} className="btn btn-primary" >Clean Errors</button>
-                  <select className="form-control" onChange={this.changeStateFilter}>
-                    <option value="All">All</option>
-                    <option value="Healthy only">Healthy only</option>
-                    <option value="Non-Healthy only">Non-Healthy only</option>
-                  </select>
+                  <button onClick={this.clearErrors} className="btn btn-primary" >Clean Errors</button>                
                   
                 </div>
                 <div className="action-bar-right">
-                  <a href="https://docs.advancedschealthcheck.com/" target="_blank" rel="noreferrer">
-                    <ScIcon icon="question" size="small" />
-                  </a>
+                 
                 </div>
               </div>
             </div>
@@ -104,7 +99,6 @@ class ComponentsPage extends React.Component {
             
             <div className="p-4">
               <ScProgressIndicatior show={this.state.isLoading} />
-
               <TableView groups={this.state.groups} refresh={this.refresh} />
             </div>
 

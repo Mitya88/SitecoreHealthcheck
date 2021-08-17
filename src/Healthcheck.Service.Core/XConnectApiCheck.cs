@@ -41,7 +41,8 @@
                 return checkResult;
             }
 
-            if (string.IsNullOrEmpty(xConnectApiCertificateConnectionStringKey) || string.IsNullOrEmpty(xConnectApiConnectionStringKey))
+            if (string.IsNullOrEmpty(xConnectApiConnectionStringKey))
+
             {
                 checkResult.Status = HealthcheckStatus.Warning;
                 checkResult.ErrorList.Entries.Add(new ErrorEntry
@@ -83,8 +84,11 @@
                 return checkResult;
             }
 
+            var skipCertificate = ConfigurationManager.ConnectionStrings[xConnectApiConnectionStringKey].ConnectionString.StartsWith("http://");
+
             try
             {
+
                 var certificateConnectionstring = ConfigurationManager.ConnectionStrings[xConnectApiCertificateConnectionStringKey].ConnectionString.Split(';');
                 NameValueCollection certDetails = new NameValueCollection();
                 foreach (var values in certificateConnectionstring)
@@ -92,63 +96,66 @@
                     var parsed = values.Split('=');
                     certDetails.Add(parsed[0], parsed[1]);
                 }
-
                 var certificateList = new List<X509Certificate2>();
                 var st = (StoreName)Enum.Parse(typeof(StoreName), certDetails["StoreName"]);
                 var store = new X509Store(st, (StoreLocation)Enum.Parse(typeof(StoreLocation), certDetails["StoreLocation"]));
+                X509Certificate2Collection cert = null;
                 try
                 {
-                    store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-
-                    var cert = store.Certificates.Find((X509FindType)Enum.Parse(typeof(X509FindType), certDetails["FindType"]), certDetails["FindValue"], false);
-                    if (cert == null || cert.Count == 0)
+                    if (!skipCertificate && !string.IsNullOrEmpty(certDetails["FindValue"]))
                     {
-                        checkResult.Status = HealthcheckStatus.Error;
-                        checkResult.ErrorList.Entries.Add(new ErrorEntry
-                        {
-                            Created = DateTime.UtcNow,
-                            Reason = string.Format("{0} certificate is missing from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"])                            ,
-                            ErrorLevel = ErrorLevel.Error
-                        });
-                    }
-                    else if (cert.Count > 1)
-                    {
-                        checkResult.Status = HealthcheckStatus.Error;
-                        checkResult.ErrorList.Entries.Add(new ErrorEntry
-                        {
-                            Created = DateTime.UtcNow,
-                            Reason = string.Format("{0} multiple certificate found from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"]),
-                            ErrorLevel = ErrorLevel.Error
-                        });
-                    }
-                    else
-                    {
-                        var certificate = cert[0];
-                        var showExpirationWarning = certificate.NotAfter.AddDays(-wWarnBefore).Date <= DateTime.Now.Date;
-                        checkResult.HealthyMessage = "Expiration: " + certificate.NotAfter.ToString("dd/MM/yyyy");
+                        store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
 
-                        if (showExpirationWarning)
+                        cert = store.Certificates.Find((X509FindType)Enum.Parse(typeof(X509FindType), certDetails["FindType"]), certDetails["FindValue"], false);
+                        if (cert == null || cert.Count == 0)
                         {
-                            checkResult.Status = HealthcheckStatus.Warning;
-
-                            if (certificate.NotAfter.Date < DateTime.Now.Date)
+                            checkResult.Status = HealthcheckStatus.Error;
+                            checkResult.ErrorList.Entries.Add(new ErrorEntry
                             {
-                                checkResult.Status = HealthcheckStatus.Error;
-                                checkResult.ErrorList.Entries.Add(new ErrorEntry
-                                {
-                                    Created = DateTime.UtcNow,
-                                    Reason = string.Format("{0} certificate expired", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days),
-                                    ErrorLevel = ErrorLevel.Error
-                                });
-                            }
-                            else
+                                Created = DateTime.UtcNow,
+                                Reason = string.Format("{0} certificate is missing from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"]),
+                                ErrorLevel = ErrorLevel.Error
+                            });
+                        }
+                        else if (cert.Count > 1)
+                        {
+                            checkResult.Status = HealthcheckStatus.Error;
+                            checkResult.ErrorList.Entries.Add(new ErrorEntry
                             {
-                                checkResult.ErrorList.Entries.Add(new ErrorEntry
+                                Created = DateTime.UtcNow,
+                                Reason = string.Format("{0} multiple certificate found from {1} {2} store", certDetails["FindValue"], certDetails["StoreName"], certDetails["StoreLocation"]),
+                                ErrorLevel = ErrorLevel.Error
+                            });
+                        }
+                        else
+                        {
+                            var certificate = cert[0];
+                            var showExpirationWarning = certificate.NotAfter.AddDays(-wWarnBefore).Date <= DateTime.Now.Date;
+                            checkResult.HealthyMessage = "Expiration: " + certificate.NotAfter.ToString("dd/MM/yyyy");
+
+                            if (showExpirationWarning)
+                            {
+                                checkResult.Status = HealthcheckStatus.Warning;
+
+                                if (certificate.NotAfter.Date < DateTime.Now.Date)
                                 {
-                                    Created = DateTime.UtcNow,
-                                    Reason = string.Format("{0} certificate will expire in {1} days", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days),
-                                    ErrorLevel = ErrorLevel.Warning
-                                });
+                                    checkResult.Status = HealthcheckStatus.Error;
+                                    checkResult.ErrorList.Entries.Add(new ErrorEntry
+                                    {
+                                        Created = DateTime.UtcNow,
+                                        Reason = string.Format("{0} certificate expired", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days),
+                                        ErrorLevel = ErrorLevel.Error
+                                    });
+                                }
+                                else
+                                {
+                                    checkResult.ErrorList.Entries.Add(new ErrorEntry
+                                    {
+                                        Created = DateTime.UtcNow,
+                                        Reason = string.Format("{0} certificate will expire in {1} days", certDetails["FindValue"], (certificate.NotAfter - DateTime.Now).Days),
+                                        ErrorLevel = ErrorLevel.Warning
+                                    });
+                                }
                             }
                         }
                     }
@@ -159,12 +166,19 @@
                     {
                         HttpResponseMessage response = new HttpResponseMessage();
 
-                        var certificate = cert[0];
+                        if (!skipCertificate)
+                        {
+                            var certificate = cert[0];
 
-                        WebRequestHandler handler = new WebRequestHandler();
-                        handler.ClientCertificates.Add(certificate);
+                            WebRequestHandler handler = new WebRequestHandler();
+                            handler.ClientCertificates.Add(certificate);
 
-                        httpClient = new HttpClient(handler);
+                            httpClient = new HttpClient(handler);
+                        }
+                        else
+                        {
+                            httpClient = new HttpClient();
+                        }
 
                         var url = ConfigurationManager.ConnectionStrings[xConnectApiConnectionStringKey].ConnectionString.TrimEnd('/');
                         url = string.Format("{0}/healthz/live", url);

@@ -57,7 +57,9 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.RegisterContainer.config" />
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.RegisterContainer.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
@@ -150,7 +152,9 @@
     <Compile Include="Utilities\JsonUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.config" />
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="libman.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="web.config">

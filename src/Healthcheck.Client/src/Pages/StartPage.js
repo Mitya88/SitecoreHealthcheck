@@ -7,7 +7,6 @@ import ErrorChart from '../Components/ErrorChart';
 import CacheChart from '../Components/CacheChart';
 import DataFolderStats from '../Components/DataFolderStats';
 import IndexStats from '../Components/IndexStats';
-import ActiveUserStats from '../Components/ActiveUserStats';
 import UpcomingExpirations from '../Components/UpcomingExpirations';
 import ErrorStats from '../Components/ErrorStats';
 import DriveInfoChart from '../Components/DriveInfoChart';
@@ -32,7 +31,6 @@ class StartPage extends React.Component {
               <div className="row">
                 <UpcomingExpirations />
                 <ErrorStats />
-                <ActiveUserStats />
               </div>
 
               <div className="row">
