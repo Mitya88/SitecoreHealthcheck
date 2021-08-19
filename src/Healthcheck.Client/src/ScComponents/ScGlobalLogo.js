@@ -4,7 +4,7 @@ class ScGlobalLogo extends React.Component {
     render() {
         return (
             <div className="gh-logo">
-                <a className="global-logo" href="/">
+                <a className="global-logo" href="/sitecore/client/Applications/Launchpad">
                     <svg height="1024px" version="1.1" viewBox="0 0 1024 1024" width="1024px" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="lineargradient-1" x1="50%" x2="50%" y1="67.8691008%" y2="0%">
