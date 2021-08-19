@@ -59,11 +59,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.EventQueue.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Healthcheck.Service.Core\Healthcheck.Service.Core.csproj">
       <Project>{2d943f3f-1daa-4f20-98f3-16724923c409}</Project>
       <Name>Healthcheck.Service.Core</Name>
@@ -73,6 +68,8 @@
       <Name>Healthcheck.Service.Customization</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Config\Include\Healthcheck\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

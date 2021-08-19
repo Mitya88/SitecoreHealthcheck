@@ -9,7 +9,7 @@ class ErrorStats extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/sitecore/api/ssc/healthcheck/lasterrors?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/lasterrors?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ errors: data, isLoading: false });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Doughnut, Line, Bar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import ScProgressIndicatior from '../ScComponents/ScProgressIndicatior';
 
 class CpuChart extends React.Component {
@@ -23,7 +23,7 @@ class CpuChart extends React.Component {
   
 
   fetchCpu() {
-    fetch('/sitecore/api/ssc/healthcheck/getcputime?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/getcputime?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ cpuStatistics: data, isLoading: false });

@@ -1,5 +1,4 @@
 import React from 'react';
-import ScIcon from '../ScComponents/ScIcon';
 import ScProgressIndicatior from '../ScComponents/ScProgressIndicatior';
 
 class UpcomingExpirations extends React.Component {
@@ -10,7 +9,7 @@ class UpcomingExpirations extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/sitecore/api/ssc/healthcheck/upcomingexpirations?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/upcomingexpirations?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ expirations: data, isLoading: false });

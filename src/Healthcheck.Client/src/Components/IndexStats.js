@@ -9,7 +9,7 @@ class IndexStats extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/sitecore/api/ssc/healthcheck/GetIndexDetails?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/GetIndexDetails?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ indexStats: data, isLoading: false });

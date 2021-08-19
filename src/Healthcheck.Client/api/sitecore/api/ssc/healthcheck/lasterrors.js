@@ -1,0 +1,4 @@
+module.exports = (req, res) => {
+  const { name = 'World' } = req.query;
+  res.status(200).json([{"ComponentName":"Sample","Message":"58679A5C202EC1E4D8987F7590DFB031E2973315 certificate is missing from My LocalMachine FindByThumbprint store","Date":"2021-01-07T11:54:31.6971943Z"},{"ComponentName":"Log files","Message":"Failed to perform GeoIp lookup for dd4795c0-1dca-ea8d-93c4-06d7f7aa5063\r\nException: System.InvalidOperationException\r\nMessage: geoIpServiceUri\r\nSource: Sitecore.CES.GeoIp\r\n   at Sitecore.CES.GeoIp.SitecoreProvider.RequestGeoIpService(String ip)\r\n   at Sitecore.CES.GeoIp.SitecoreProvider.GetWhoIsInformationByIp(String ip)\r\n   at Sitecore.Analytics.Lookups.GeoIpManager.GetDataFromLookupProvider(GeoIpHandle geoIpHandle)\r\n","Date":"2021-01-07T12:36:35"}]);
+};

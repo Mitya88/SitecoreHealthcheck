@@ -1,7 +1,6 @@
 import ScApplicationHeader from '../ScComponents/ScApplicationHeader';
 import React from 'react';
 import ScProgressIndicatior from '../ScComponents/ScProgressIndicatior';
-import ScIcon from '../ScComponents/ScIcon';
 import _ from 'lodash';
 import TableView from '../Components/TableView';
 
@@ -21,10 +20,10 @@ class ComponentsPage extends React.Component {
 
   refresh = component => () => {
 
-    var onlyState = component.Status == "Waiting" ? true : false;
+    var onlyState = component.Status === "Waiting" ? true : false;
     this.setState({ isLoading: true });
 
-    fetch('/sitecore/api/ssc/healthcheck/component?id=' + component.Id + '&sc_site=shell&onlystate=' + onlyState)
+    fetch('/api/sitecore/api/ssc/healthcheck/component?id=' + component.Id + '&sc_site=shell&onlystate=' + onlyState)
       .then(data => data.json())
       .then(data => {
 
@@ -48,7 +47,7 @@ class ComponentsPage extends React.Component {
   load = () => {
     this.setState({ isLoading: true });
 
-    fetch('/sitecore/api/ssc/healthcheck/get?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/get?sc_site=shell')
       .then(data => data.json())
       .then(data => {
 
@@ -60,7 +59,7 @@ class ComponentsPage extends React.Component {
   run = () => {
     this.setState({ isLoading: true });
 
-    fetch('/sitecore/api/ssc/healthcheck/run?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/run?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ groups: data, isLoading: false });
@@ -70,7 +69,7 @@ class ComponentsPage extends React.Component {
   clearErrors = () => {
     this.setState({ isLoading: true });
 
-    fetch('/sitecore/api/ssc/healthcheck/errors/clear?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/errors/clear?sc_site=shell')
       .then(data => data.json())
       .then(data => this.setState({ groups: data, isLoading: false }))
   }

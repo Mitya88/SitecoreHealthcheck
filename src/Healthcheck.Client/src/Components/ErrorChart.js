@@ -13,7 +13,7 @@ class ErrorChart extends React.Component {
   }
 
   fetchErrorStatistics() {
-    fetch('/sitecore/api/ssc/healthcheck/geterrorcounts?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/geterrorcounts?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ errorStats: data, isLoading: false });

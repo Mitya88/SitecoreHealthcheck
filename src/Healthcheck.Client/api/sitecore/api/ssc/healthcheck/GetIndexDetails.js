@@ -1,0 +1,4 @@
+module.exports = (req, res) => {
+  const { name = 'World' } = req.query;
+  res.status(200).json([{"IndexName":"sitecore_core_index","IndexCount":19831},{"IndexName":"sitecore_master_index","IndexCount":6961},{"IndexName":"sitecore_web_index","IndexCount":5706},{"IndexName":"sitecore_marketingdefinitions_master","IndexCount":77},{"IndexName":"sitecore_marketingdefinitions_web","IndexCount":77},{"IndexName":"sitecore_marketing_asset_index_master","IndexCount":0},{"IndexName":"sitecore_marketing_asset_index_web","IndexCount":0},{"IndexName":"sitecore_testing_index","IndexCount":0},{"IndexName":"sitecore_suggested_test_index","IndexCount":1},{"IndexName":"sitecore_personalization_index","IndexCount":0},{"IndexName":"sitecore_fxm_master_index","IndexCount":0},{"IndexName":"sitecore_fxm_web_index","IndexCount":0}]);
+};

@@ -156,7 +156,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="libman.json" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.RegisterContainer.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Config\Include\Healthcheck\Sitecore.Healthcheck.Remote.EventQueue.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -180,8 +188,14 @@
       <Project>{C76D4CAC-CAE0-4972-B87F-CD445A64C950}</Project>
       <Name>Healthcheck.Service.Remote.EventQueue</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Healthcheck.Service.Remote\Healthcheck.Service.Remote.csproj">
+      <Project>{dc9cf100-2a5a-4b46-8d31-1f7fb60bdab8}</Project>
+      <Name>Healthcheck.Service.Remote</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

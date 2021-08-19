@@ -12,7 +12,7 @@ class NavigationBar extends React.Component {
   }
 
   load = () => {
-    fetch('/sitecore/api/ssc/healthcheck/get?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/get?sc_site=shell')
       .then(data => data.json())
       .then(data => this.setState({ groups: data }));
   }

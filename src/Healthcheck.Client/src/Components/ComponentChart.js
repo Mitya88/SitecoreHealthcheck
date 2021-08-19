@@ -14,7 +14,7 @@ class ComponentChart extends React.Component {
   }
 
   fetchComponentStatistics() {
-    fetch('/sitecore/api/ssc/healthcheck/getcomponentstatistics?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/getcomponentstatistics?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ componentStatistics: data, isLoading: false });
@@ -25,24 +25,13 @@ class ComponentChart extends React.Component {
 
     let plugins = [{
       beforeDraw: function (chart) {
-        var width = chart.chart.width,
-          height = chart.chart.height,
+         var height = chart.chart.height,
           ctx = chart.chart.ctx;
 
         ctx.restore();
         var fontSize = (height / 250).toFixed(2);
         ctx.font = fontSize + "em sans-serif";
         ctx.textBaseline = "middle";
-
-        var text = 'Component',
-          textX = Math.round((width - ctx.measureText(text).width) / 2),
-          textY = height / 2;
-
-        var text2 = 'Stat',
-          textX2 = Math.round((width - ctx.measureText(text2).width) / 2);
-
-        // ctx.fillText(text, textX, textY);
-        // ctx.fillText(text2, textX2, textY + 20);
         ctx.save();
       }
     }];

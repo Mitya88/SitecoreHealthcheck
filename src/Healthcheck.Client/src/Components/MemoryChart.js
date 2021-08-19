@@ -22,7 +22,7 @@ class MemoryChart extends React.Component {
 }
 
   fetchMemory() {
-    fetch('/sitecore/api/ssc/healthcheck/getmemoryusage?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/getmemoryusage?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.memoryData.push(data.MemoryUsageNumber);

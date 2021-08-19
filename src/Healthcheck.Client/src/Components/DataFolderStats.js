@@ -9,7 +9,7 @@ class DataFolderStats extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/sitecore/api/ssc/healthcheck/Getdatafolderstatistics?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/Getdatafolderstatistics?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ dataFolderStats: data, isLoading: false });

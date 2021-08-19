@@ -9,7 +9,6 @@ import ComponentsPage from './Pages/ComponentsPage';
 import SettingsPage from './Pages/SettingsPage';
 import NotFoundPage from './Pages/NotFoundPage';
 import NavigationBar from './Components/SharedComponents/NavigationBar';
-import ScIcon from './ScComponents/ScIcon';
 class App extends React.Component {
 
   render() {

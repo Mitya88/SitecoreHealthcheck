@@ -10,7 +10,7 @@ class DriveInfoChart extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/sitecore/api/ssc/healthcheck/getdriveinfo?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/getdriveinfo?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         this.setState({ driveStatistics: data, isLoading: false });

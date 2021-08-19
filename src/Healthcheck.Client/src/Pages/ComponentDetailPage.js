@@ -3,14 +3,11 @@ import { useParams } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import TableView from '../Components/TableView';
 import ScApplicationHeader from '../ScComponents/ScApplicationHeader';
-import ScIcon from '../ScComponents/ScIcon';
 import ScProgressIndicatior from '../ScComponents/ScProgressIndicatior';
 import _ from 'lodash';
 
 class ComponentDetailPage extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+ 
 
   state = {
     isLoading: false,
@@ -26,7 +23,7 @@ class ComponentDetailPage extends React.Component {
   load = () => {
     this.setState({ isLoading: true });
 
-    fetch('/sitecore/api/ssc/healthcheck/get?sc_site=shell')
+    fetch('/api/sitecore/api/ssc/healthcheck/get?sc_site=shell')
       .then(data => data.json())
       .then(data => {
         var selectedGroup = _.find(data, {GroupId:this.props.params.id})
@@ -36,10 +33,10 @@ class ComponentDetailPage extends React.Component {
 
   refresh = component => () => {
 
-    var onlyState = component.Status == "Waiting" ? true : false;
+    var onlyState = component.Status === "Waiting" ? true : false;
     this.setState({ isLoading: true });
 
-    fetch('/sitecore/api/ssc/healthcheck/component?id=' + component.Id + '&sc_site=shell&onlystate=' + onlyState)
+    fetch('/api/sitecore/api/ssc/healthcheck/component?id=' + component.Id + '&sc_site=shell&onlystate=' + onlyState)
       .then(data => data.json())
       .then(data => {
 

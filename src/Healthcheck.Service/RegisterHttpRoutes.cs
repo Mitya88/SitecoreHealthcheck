@@ -19,15 +19,15 @@
         protected virtual void RegisterRoute(RouteCollection routes)
         {
             RouteTable.Routes.MapHttpRoute("HealthcheckErrors",
-                "sitecore/api/ssc/healthcheck/errors/{action}",
+                "api/sitecore/api/ssc/healthcheck/errors/{action}",
                 new { controller = "HealthcheckErrorsApi" });
 
             RouteTable.Routes.MapHttpRoute("Healthcheck",
-                "sitecore/api/ssc/healthcheck/{action}",
+                "api/sitecore/api/ssc/healthcheck/{action}",
                 new { controller = "HealthcheckApi" });
 
             RouteTable.Routes.MapHttpRoute("HealthcheckComponent",
-                "sitecore/api/ssc/healthcheck/{action}/{id}",
+                "api/sitecore/api/ssc/healthcheck/{action}/{id}",
                 new { controller = "HealthcheckApi" });
         }
     }
