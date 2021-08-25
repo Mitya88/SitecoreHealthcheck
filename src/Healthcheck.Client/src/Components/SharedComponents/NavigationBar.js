@@ -27,7 +27,7 @@ class NavigationBar extends React.Component {
           <ScMenuCategory categoryTitle="Components" isOpened={true} icon="chart_pie">
             <ScMenuItem href="/sitecore/shell/client/Applications/healthcheck/components">All</ScMenuItem>
             {this.state.groups.map(group =>
-              <ScMenuItem menukey={group.GroupId} key={group.GroupId} href={`/sitecore/shell/client/Applications/healthcheck/components/${group.GroupId}`} >{group.GroupName}
+              <ScMenuItem menukey={group.GroupId} key={group.GroupId} href={`/sitecore/shell/client/Applications/healthcheck/detail/${group.GroupId}`} >{group.GroupName}
               </ScMenuItem>
             )}
           </ScMenuCategory>
