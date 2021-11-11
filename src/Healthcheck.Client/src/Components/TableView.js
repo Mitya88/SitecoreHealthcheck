@@ -40,7 +40,7 @@ class TableView extends React.Component {
             <tbody>
               {this.props.groups.map(group =>
                 group.Components.map(component =>
-                  <tr key={component.Id} onDoubleClick={this.props.refresh(component)}>
+                  <tr key={component.Id} onClick={this.props.refresh(component)}>
                     <td className="center">
                       {component.Status === "Healthy" ? <ScIcon color="green" icon="navigate_check" size="medium" /> : ""}
                       {component.Status === "Warning" ? <ScIcon color="orange" icon="about" size="medium" /> : ""}
