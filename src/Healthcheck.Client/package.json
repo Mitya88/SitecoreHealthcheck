@@ -36,7 +36,7 @@
     "@types/highlight.js": "^9.12.3",
     "chart.js": "^2.9.3",
     "core-js": "^2.4.1",
-    "moment": "^2.18.0",
+    "moment": "^2.29.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
